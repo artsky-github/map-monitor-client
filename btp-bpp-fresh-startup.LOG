@@ -1,0 +1,1042 @@
+22/02/24 16:46:14:111 : OnSessionChange 'SessionLogoff'
+22/02/24 16:46:14:111 : NotifyEvent uStdExitedEvent
+22/02/24 16:46:14:111 : NotifyEvent uSpgEnteredEvent
+22/02/24 16:46:14:111 : NotifyEvent uSpgExitedEvent
+22/02/24 16:46:14:111 : NotifyEvent uStpEnteredEvent
+22/02/24 16:46:14:226 : OnSessionChange 'ConsoleDisconnect'
+22/02/24 16:46:14:482 : OnSessionChange 'ConsoleConnect'
+22/02/24 16:46:31:972 : OnSessionChange 'SessionLogon'
+22/02/24 16:46:31:972 : NotifyEvent uStpExitedEvent
+22/02/24 16:46:31:972 : NotifyEvent uStgEnteredEvent
+22/02/24 16:46:31:972 : NotifyEvent uStgExitedEvent
+22/02/24 16:46:31:972 : NotifyEvent uStdEnteredEvent
+22/02/24 16:46:48:557 : Call accepted from 127.0.0.1:50826 - 5672
+22/02/24 16:46:48:558 : Starting ServiceCupps(5672)
+22/02/24 16:46:48:558 : Started ServiceCupps(5672)
+22/02/24 16:46:48:565 : 
+----------------------------- Inbound (PLT) 5672 -----------------------------
+<?xml version="1.0" encoding="utf-8" ?>
+<cupps messageID="1"
+xmlns:xsi="http://www.w3.org/2001/XMLschema-instance"
+messageName="interfaceLevelsAvailableRequest">
+<interfaceLevelsAvailableRequest hsXsdVersion="01.01.0127"/>
+</cupps>
+-------------------------------------------------------------------------------
+22/02/24 16:46:48:565 : Message 'interfaceLevelsAvailableRequest' from application 'Unknown'
+22/02/24 16:46:48:565 : Current Directory 'C:\APPS\CUPPSFS'
+22/02/24 16:46:48:565 : CUPPS XSD found 'CUPPS-01.00.0122.XSD'
+22/02/24 16:46:48:565 : CUPPS XSD found 'CUPPS-01.01.0128.XSD'
+22/02/24 16:46:48:565 : CUPPS XSD found 'CUPPS-01.03.0017.XSD'
+22/02/24 16:46:48:565 : CUPPS XSD found 'CUPPS-01.04.0016.XSD'
+22/02/24 16:46:48:565 : 
+----------------------------- Outbound (PLT) 5672 -----------------------------
+01000002AA
+<?xml version="1.0" encoding="utf-8" ?>
+<cupps messageID="1"
+xmlns:xsi="http://www.w3.org/2001/XMLschema-instance"
+messageName="interfaceLevelsAvailableResponse">
+<interfaceLevelsAvailableResponse result="OK">
+<interfaceLevel level="01.00"
+wsLocalPath="C:/APPS/CUPPSFS/CUPPS-01.00.0122.XSD"
+xsdVersion="01.00.0122"/>
+<interfaceLevel level="01.01"
+wsLocalPath="C:/APPS/CUPPSFS/CUPPS-01.01.0128.XSD"
+xsdVersion="01.01.0128"/>
+<interfaceLevel level="01.03"
+wsLocalPath="C:/APPS/CUPPSFS/CUPPS-01.03.0017.XSD"
+xsdVersion="01.03.0017"/>
+<interfaceLevel level="01.04"
+wsLocalPath="C:/APPS/CUPPSFS/CUPPS-01.04.0016.XSD"
+xsdVersion="01.04.0016"/>
+</interfaceLevelsAvailableResponse>
+</cupps>
+-------------------------------------------------------------------------------
+22/02/24 16:46:48:566 : 
+----------------------------- Inbound (PLT) 5672 -----------------------------
+<?xml version="1.0" encoding="utf-8" ?>
+<cupps messageID="2"
+xmlns:xsi="http://www.w3.org/2001/XMLschema-instance"
+messageName="interfaceLevelRequest">
+<interfaceLevelRequest level="01.04"/>
+</cupps>
+-------------------------------------------------------------------------------
+22/02/24 16:46:48:566 : Message 'interfaceLevelRequest' from application 'Unknown'
+22/02/24 16:46:48:566 : 
+----------------------------- Outbound (PLT) 5672 -----------------------------
+01000000C7
+<?xml version="1.0" encoding="utf-8" ?>
+<cupps messageID="2"
+xmlns:xsi="http://www.w3.org/2001/XMLschema-instance"
+messageName="interfaceLevelResponse">
+<interfaceLevelResponse result="OK"/>
+</cupps>
+-------------------------------------------------------------------------------
+22/02/24 16:46:48:631 : 
+----------------------------- Inbound (PLT) 5672 -----------------------------
+<?xml version="1.0" encoding="utf-8" ?>
+<cupps xmlns="http://www.cupps.aero/cupps/01.04"
+deviceName="PLATFORM"
+timeStamp="2024-02-22 21:46:48.631"
+messageID="3"
+xmlns:xsi="http://www.w3.org/2001/XMLschema-instance"
+messageName="authenticateRequest">
+<authenticateRequest airline="FS" eventToken="1234567890ABCDEF">
+<applicationList>
+<application applicationName="CommonLauncher" applicationVersion="1.44.0.0"/>
+</applicationList>
+</authenticateRequest>
+</cupps>
+-------------------------------------------------------------------------------
+22/02/24 16:46:48:631 : Message 'authenticateRequest' from application 'Unknown'
+22/02/24 16:46:48:631 : NotifyEvent aStpExitedEvent
+22/02/24 16:46:48:631 : NotifyEvent aStgEnteredEvent
+22/02/24 16:46:48:631 : NotifyEvent aStgExitedEvent
+22/02/24 16:46:48:631 : NotifyEvent aAthEnteredEvent
+22/02/24 16:46:48:632 : DataLog File C:\APPS\CUPPSFS\SRQ1C067XXXX-240222-214648631990.JSON - Created
+22/02/24 16:46:48:632 : NotifyEvent aAthExitedEvent Application COMMONLAUNCHER
+22/02/24 16:46:48:632 : NotifyEvent aStdEnteredEvent Application COMMONLAUNCHER
+22/02/24 16:46:48:632 : 
+----------------------------- Outbound (PLT) 5672 -----------------------------
+0100000ECB
+<?xml version="1.0" encoding="utf-8" ?>
+<cupps xmlns="http://www.cupps.aero/cupps/01.04"
+deviceName="PLATFORM"
+timeStamp="2024-02-22 21:46:48.632"
+messageID="3"
+xmlns:xsi="http://www.w3.org/2001/XMLschema-instance"
+messageName="authenticateResponse">
+<authenticateResponse result="OK" deviceToken="032BA8F900000081">
+<platformParameter platformVendor="AeroCloud Systems" platformVersion="2.87" platformTime="20240222T214648">
+<cryptAlgorithmInfo>
+<defaultCryptAlgorithm>
+<cryptAlgorithm name="aes-strong"/>
+</defaultCryptAlgorithm>
+<availableCryptAlgorithms>
+<cryptAlgorithm name="aes-strong"/>
+<cryptAlgorithm name="des-weak"/>
+</availableCryptAlgorithms>
+</cryptAlgorithmInfo>
+<ipVersionSupport runIPv4="true" runIPv6="false" />
+</platformParameter>
+<applicationParameter>
+<storage storageT="persistentGlobal" path="//WINDOWS/TEMP/FS/" driveLetter="C"/> 
+<storage storageT="persistentLocal" path="//WINDOWS/TEMP/FS/" driveLetter="C"/>
+<storage storageT="transient" path="//WINDOWS/TEMP/FS/" driveLetter="C"/>
+</applicationParameter>
+<workstationParameter name="SRQ1C067" locDesc="AIRPORT" defaultSpooledPrinter="" wsTime="20240222T214648">
+<vendorModelInfo vendor="NONE" model="NONE" miscInfo="NONE"/>
+</workstationParameter>
+<deviceList>
+<device deviceIndex="1" deviceName="SRQ1C067BC1" deviceParameterType="bcDeviceParameter">
+<supportedInterfaceModes>
+<interfaceMode mode="standard"/>
+</supportedInterfaceModes>
+<bcDeviceParameter numberVisualIndicator="0">
+<vendorModelInfo vendor="ZEBRA" model="DS9208"/>
+<ipAndPort hostName="SRQ1C067" ip="127.0.0.1" ipv6="::" port="7535"/>
+<bcStatus init="false" powerOff="false" ready="true" unknown="false" desc="ONLINE"/>
+</bcDeviceParameter>
+</device>
+<device deviceIndex="2" deviceName="SRQ1C067BP1" deviceParameterType="bpDeviceParameter">
+<supportedInterfaceModes>
+<interfaceMode mode="aea"/>
+</supportedInterfaceModes>
+<bpDeviceParameter supportsColor="none">
+<vendorModelInfo vendor="VIDTRONIX" model="MAP" miscInfo="000000"/>
+<ipAndPort hostName="SRQ1C067" ip="127.0.0.1" ipv6="::" port="7535"/>
+<bpStatus init="false" powerOff="false" ready="true" unknown="false" paperOut="false" paperJam="false" desc="ONLINE"/>
+</bpDeviceParameter>
+</device>
+<device deviceIndex="3" deviceName="SRQ1C067BT1" deviceParameterType="btDeviceParameter">
+<supportedInterfaceModes>
+<interfaceMode mode="aea"/>
+</supportedInterfaceModes>
+<btDeviceParameter supportsColor="none">
+<vendorModelInfo vendor="VIDTRONIX" model="MAP" miscInfo="000000"/>
+<ipAndPort hostName="SRQ1C067" ip="127.0.0.1" ipv6="::" port="7535"/>
+<btStatus init="false" powerOff="false" ready="true" unknown="false" paperOut="false" paperJam="false" desc="ONLINE"/>
+<rfidCapabilities supportRFID="noRFID"/>
+</btDeviceParameter>
+</device>
+<device deviceIndex="4" deviceName="SRQ1C067MS1" deviceParameterType="msDeviceParameter">
+<supportedInterfaceModes>
+<interfaceMode mode="standard"/>
+</supportedInterfaceModes>
+<msDeviceParameter numberOfTracks="3" supportsJIS2="false" style="swipe" msCapabilities="PlatformOnly">
+<vendorModelInfo vendor="ACCESS-IS" model="AKB500"/>
+<ipAndPort hostName="SRQ1C067" ip="127.0.0.1" ipv6="::" port="7535"/>
+<msStatus init="false" powerOff="false" ready="true" unknown="false" desc="ONLINE"/>
+</msDeviceParameter>
+</device>
+<device deviceIndex="5" deviceName="SRQ1C067OC1" deviceParameterType="ocDeviceParameter">
+<supportedInterfaceModes>
+<interfaceMode mode="standard"/>
+</supportedInterfaceModes>
+<ocDeviceParameter numCharsPerLine="45" numLines="3" style="swipe">
+<vendorModelInfo vendor="ACCESS-IS" model="AKB500"/>
+<ipAndPort hostName="SRQ1C067" ip="127.0.0.1" ipv6="::" port="7535"/>
+<ocStatus init="false" powerOff="false" ready="true" unknown="false" desc="ONLINE"/>
+</ocDeviceParameter>
+</device>
+</deviceList>
+</authenticateResponse>
+</cupps>
+-------------------------------------------------------------------------------
+22/02/24 16:46:48:696 : Call accepted from 127.0.0.1:50829 - 5776
+22/02/24 16:46:48:697 : Starting ServiceCupps(5776)
+22/02/24 16:46:48:698 : Started ServiceCupps(5776)
+22/02/24 16:46:48:698 : 
+----------------------------- Inbound (PLT) 5776 -----------------------------
+<?xml version="1.0" encoding="utf-8" ?>
+<cupps messageID="1"
+xmlns:xsi="http://www.w3.org/2001/XMLschema-instance"
+messageName="interfaceLevelsAvailableRequest">
+<interfaceLevelsAvailableRequest hsXsdVersion="01.01.0127"/>
+</cupps>
+-------------------------------------------------------------------------------
+22/02/24 16:46:48:698 : Message 'interfaceLevelsAvailableRequest' from application 'Unknown'
+22/02/24 16:46:48:698 : Current Directory 'C:\APPS\CUPPSFS'
+22/02/24 16:46:48:698 : CUPPS XSD found 'CUPPS-01.00.0122.XSD'
+22/02/24 16:46:48:698 : CUPPS XSD found 'CUPPS-01.01.0128.XSD'
+22/02/24 16:46:48:698 : CUPPS XSD found 'CUPPS-01.03.0017.XSD'
+22/02/24 16:46:48:698 : CUPPS XSD found 'CUPPS-01.04.0016.XSD'
+22/02/24 16:46:48:698 : 
+----------------------------- Outbound (PLT) 5776 -----------------------------
+01000002AA
+<?xml version="1.0" encoding="utf-8" ?>
+<cupps messageID="1"
+xmlns:xsi="http://www.w3.org/2001/XMLschema-instance"
+messageName="interfaceLevelsAvailableResponse">
+<interfaceLevelsAvailableResponse result="OK">
+<interfaceLevel level="01.00"
+wsLocalPath="C:/APPS/CUPPSFS/CUPPS-01.00.0122.XSD"
+xsdVersion="01.00.0122"/>
+<interfaceLevel level="01.01"
+wsLocalPath="C:/APPS/CUPPSFS/CUPPS-01.01.0128.XSD"
+xsdVersion="01.01.0128"/>
+<interfaceLevel level="01.03"
+wsLocalPath="C:/APPS/CUPPSFS/CUPPS-01.03.0017.XSD"
+xsdVersion="01.03.0017"/>
+<interfaceLevel level="01.04"
+wsLocalPath="C:/APPS/CUPPSFS/CUPPS-01.04.0016.XSD"
+xsdVersion="01.04.0016"/>
+</interfaceLevelsAvailableResponse>
+</cupps>
+-------------------------------------------------------------------------------
+22/02/24 16:46:48:698 : 
+----------------------------- Inbound (PLT) 5776 -----------------------------
+<?xml version="1.0" encoding="utf-8" ?>
+<cupps messageID="2"
+xmlns:xsi="http://www.w3.org/2001/XMLschema-instance"
+messageName="interfaceLevelRequest">
+<interfaceLevelRequest level="01.04"/>
+</cupps>
+-------------------------------------------------------------------------------
+22/02/24 16:46:48:699 : Message 'interfaceLevelRequest' from application 'Unknown'
+22/02/24 16:46:48:699 : 
+----------------------------- Outbound (PLT) 5776 -----------------------------
+01000000C7
+<?xml version="1.0" encoding="utf-8" ?>
+<cupps messageID="2"
+xmlns:xsi="http://www.w3.org/2001/XMLschema-instance"
+messageName="interfaceLevelResponse">
+<interfaceLevelResponse result="OK"/>
+</cupps>
+-------------------------------------------------------------------------------
+22/02/24 16:46:48:755 : 
+----------------------------- Inbound (PLT) 5776 -----------------------------
+<?xml version="1.0" encoding="utf-8" ?>
+<cupps xmlns="http://www.cupps.aero/cupps/01.04"
+deviceName="SRQ1C067BC1"
+timeStamp="2024-02-22 21:46:48.755"
+messageID="3"
+xmlns:xsi="http://www.w3.org/2001/XMLschema-instance"
+messageName="deviceAcquireRequest">
+<deviceAcquireRequest deviceName="SRQ1C067BC1" deviceToken="032BA8F900000081" airlineID="FS"/>
+</cupps>
+-------------------------------------------------------------------------------
+22/02/24 16:46:48:755 : Message 'deviceAcquireRequest' from application 'Unknown'
+22/02/24 16:46:48:755 : 
+----------------------------- Outbound (BC1) 5776 -----------------------------
+010000030D
+<?xml version="1.0" encoding="utf-8" ?>
+<cupps xmlns="http://www.cupps.aero/cupps/01.04"
+deviceName="SRQ1C067BC1"
+timeStamp="2024-02-22 21:46:48.755"
+messageID="3"
+xmlns:xsi="http://www.w3.org/2001/XMLschema-instance"
+messageName="deviceAcquireResponse">
+<deviceAcquireResponse result="OK">
+<device deviceIndex="1" deviceName="SRQ1C067BC1" deviceParameterType="bcDeviceParameter">
+<supportedInterfaceModes>
+<interfaceMode mode="standard"/>
+</supportedInterfaceModes>
+<bcDeviceParameter numberVisualIndicator="0">
+<vendorModelInfo vendor="ZEBRA" model="DS9208"/>
+<ipAndPort hostName="SRQ1C067" ip="127.0.0.1" ipv6="::" port="7535"/>
+<bcStatus init="false" powerOff="false" ready="true" unknown="false" desc="ONLINE"/>
+</bcDeviceParameter>
+</device>
+</deviceAcquireResponse>
+</cupps>
+-------------------------------------------------------------------------------
+22/02/24 16:46:48:755 : DataLog File C:\APPS\CUPPSFS\SRQ1C067BCR1-240222-214648755168.JSON - Created
+22/02/24 16:46:48:755 : Application 'COMMONLAUNCHER' - Device 'PLT' - (5672)
+22/02/24 16:46:48:755 : Application 'COMMONLAUNCHER' - Device 'BC1' - (5776)
+22/02/24 16:46:48:816 : Call accepted from 127.0.0.1:50831 - 5800
+22/02/24 16:46:48:816 : Starting ServiceCupps(5800)
+22/02/24 16:46:48:816 : Started ServiceCupps(5800)
+22/02/24 16:46:48:816 : 
+----------------------------- Inbound (PLT) 5800 -----------------------------
+<?xml version="1.0" encoding="utf-8" ?>
+<cupps messageID="1"
+xmlns:xsi="http://www.w3.org/2001/XMLschema-instance"
+messageName="interfaceLevelsAvailableRequest">
+<interfaceLevelsAvailableRequest hsXsdVersion="01.01.0127"/>
+</cupps>
+-------------------------------------------------------------------------------
+22/02/24 16:46:48:816 : Message 'interfaceLevelsAvailableRequest' from application 'Unknown'
+22/02/24 16:46:48:816 : Current Directory 'C:\APPS\CUPPSFS'
+22/02/24 16:46:48:816 : CUPPS XSD found 'CUPPS-01.00.0122.XSD'
+22/02/24 16:46:48:816 : CUPPS XSD found 'CUPPS-01.01.0128.XSD'
+22/02/24 16:46:48:816 : CUPPS XSD found 'CUPPS-01.03.0017.XSD'
+22/02/24 16:46:48:816 : CUPPS XSD found 'CUPPS-01.04.0016.XSD'
+22/02/24 16:46:48:817 : 
+----------------------------- Outbound (PLT) 5800 -----------------------------
+01000002AA
+<?xml version="1.0" encoding="utf-8" ?>
+<cupps messageID="1"
+xmlns:xsi="http://www.w3.org/2001/XMLschema-instance"
+messageName="interfaceLevelsAvailableResponse">
+<interfaceLevelsAvailableResponse result="OK">
+<interfaceLevel level="01.00"
+wsLocalPath="C:/APPS/CUPPSFS/CUPPS-01.00.0122.XSD"
+xsdVersion="01.00.0122"/>
+<interfaceLevel level="01.01"
+wsLocalPath="C:/APPS/CUPPSFS/CUPPS-01.01.0128.XSD"
+xsdVersion="01.01.0128"/>
+<interfaceLevel level="01.03"
+wsLocalPath="C:/APPS/CUPPSFS/CUPPS-01.03.0017.XSD"
+xsdVersion="01.03.0017"/>
+<interfaceLevel level="01.04"
+wsLocalPath="C:/APPS/CUPPSFS/CUPPS-01.04.0016.XSD"
+xsdVersion="01.04.0016"/>
+</interfaceLevelsAvailableResponse>
+</cupps>
+-------------------------------------------------------------------------------
+22/02/24 16:46:48:817 : 
+----------------------------- Inbound (PLT) 5800 -----------------------------
+<?xml version="1.0" encoding="utf-8" ?>
+<cupps messageID="2"
+xmlns:xsi="http://www.w3.org/2001/XMLschema-instance"
+messageName="interfaceLevelRequest">
+<interfaceLevelRequest level="01.04"/>
+</cupps>
+-------------------------------------------------------------------------------
+22/02/24 16:46:48:817 : Message 'interfaceLevelRequest' from application 'Unknown'
+22/02/24 16:46:48:817 : 
+----------------------------- Outbound (PLT) 5800 -----------------------------
+01000000C7
+<?xml version="1.0" encoding="utf-8" ?>
+<cupps messageID="2"
+xmlns:xsi="http://www.w3.org/2001/XMLschema-instance"
+messageName="interfaceLevelResponse">
+<interfaceLevelResponse result="OK"/>
+</cupps>
+-------------------------------------------------------------------------------
+22/02/24 16:46:48:880 : 
+----------------------------- Inbound (PLT) 5800 -----------------------------
+<?xml version="1.0" encoding="utf-8" ?>
+<cupps xmlns="http://www.cupps.aero/cupps/01.04"
+deviceName="SRQ1C067BP1"
+timeStamp="2024-02-22 21:46:48.880"
+messageID="3"
+xmlns:xsi="http://www.w3.org/2001/XMLschema-instance"
+messageName="deviceAcquireRequest">
+<deviceAcquireRequest deviceName="SRQ1C067BP1" deviceToken="032BA8F900000081" airlineID="FS"/>
+</cupps>
+-------------------------------------------------------------------------------
+22/02/24 16:46:48:880 : Message 'deviceAcquireRequest' from application 'Unknown'
+22/02/24 16:46:48:880 : 
+----------------------------- Outbound (BP1) 5800 -----------------------------
+0100000338
+<?xml version="1.0" encoding="utf-8" ?>
+<cupps xmlns="http://www.cupps.aero/cupps/01.04"
+deviceName="SRQ1C067BP1"
+timeStamp="2024-02-22 21:46:48.880"
+messageID="3"
+xmlns:xsi="http://www.w3.org/2001/XMLschema-instance"
+messageName="deviceAcquireResponse">
+<deviceAcquireResponse result="OK">
+<device deviceIndex="2" deviceName="SRQ1C067BP1" deviceParameterType="bpDeviceParameter">
+<supportedInterfaceModes>
+<interfaceMode mode="aea"/>
+</supportedInterfaceModes>
+<bpDeviceParameter supportsColor="none">
+<vendorModelInfo vendor="VIDTRONIX" model="MAP" miscInfo="000000"/>
+<ipAndPort hostName="SRQ1C067" ip="127.0.0.1" ipv6="::" port="7535"/>
+<bpStatus init="false" powerOff="false" ready="true" unknown="false" paperOut="false" paperJam="false" desc="ONLINE"/>
+</bpDeviceParameter>
+</device>
+</deviceAcquireResponse>
+</cupps>
+-------------------------------------------------------------------------------
+22/02/24 16:46:48:880 : DataLog File C:\APPS\CUPPSFS\SRQ1C067BPP1-240222-214648880702.JSON - Created
+22/02/24 16:46:48:880 : Application 'COMMONLAUNCHER' - Device 'PLT' - (5672)
+22/02/24 16:46:48:880 : Application 'COMMONLAUNCHER' - Device 'BC1' - (5776)
+22/02/24 16:46:48:880 : Application 'COMMONLAUNCHER' - Device 'BP1' - (5800)
+22/02/24 16:46:48:941 : DataLog File SRQ1C067XXXX-240222-214648631990.JSON - Uploaded
+22/02/24 16:46:48:943 : 
+----------------------------- Inbound (BP1) 5800 -----------------------------
+<?xml version="1.0" encoding="utf-8" ?>
+<cupps xmlns="http://www.cupps.aero/cupps/01.04"
+deviceName="SRQ1C067BP1"
+timeStamp="2024-02-22 21:46:48.944"
+messageID="4"
+xmlns:xsi="http://www.w3.org/2001/XMLschema-instance"
+messageName="interfaceModeRequest">
+<interfaceModeRequest mode="aea"/>
+</cupps>
+-------------------------------------------------------------------------------
+22/02/24 16:46:48:943 : Message 'interfaceModeRequest' from application 'COMMONLAUNCHER'
+22/02/24 16:46:48:943 : 
+----------------------------- Outbound (PLT) 5672 -----------------------------
+0100000139
+<?xml version="1.0" encoding="utf-8" ?>
+<cupps xmlns="http://www.cupps.aero/cupps/01.04"
+deviceName="PLATFORM"
+timeStamp="2024-02-22 21:46:48.943"
+messageID="4294901760"
+xmlns:xsi="http://www.w3.org/2001/XMLschema-instance"
+messageName="notify">
+<notify>
+<dStdExitedEvent device="SRQ1C067BP1"/>
+</notify>
+</cupps>
+-------------------------------------------------------------------------------
+22/02/24 16:46:48:943 : 
+----------------------------- Outbound (PLT) 5672 -----------------------------
+010000019A
+<?xml version="1.0" encoding="utf-8" ?>
+<cupps xmlns="http://www.cupps.aero/cupps/01.04"
+deviceName="PLATFORM"
+timeStamp="2024-02-22 21:46:48.943"
+messageID="4294901761"
+xmlns:xsi="http://www.w3.org/2001/XMLschema-instance"
+messageName="notify">
+<notify>
+<dLkdEnteredEvent workstation="SRQ1C067" device="SRQ1C067BP1" user="FS" applicationName="COMMONLAUNCHER" applicationVersion="1.44.0.0"/>
+</notify>
+</cupps>
+-------------------------------------------------------------------------------
+22/02/24 16:46:48:943 : 
+----------------------------- Outbound (BP1) 5800 -----------------------------
+010000012C
+<?xml version="1.0" encoding="utf-8" ?>
+<cupps xmlns="http://www.cupps.aero/cupps/01.04"
+deviceName="SRQ1C067BP1"
+timeStamp="2024-02-22 21:46:48.943"
+messageID="4"
+xmlns:xsi="http://www.w3.org/2001/XMLschema-instance"
+messageName="interfaceModeResponse">
+<interfaceModeResponse result="OK"/>
+</cupps>
+-------------------------------------------------------------------------------
+22/02/24 16:46:48:943 : 
+----------------------------- Inbound (BP1) 5800 -----------------------------
+<?xml version="1.0" encoding="utf-8" ?>
+<cupps xmlns="http://www.cupps.aero/cupps/01.04"
+deviceName="SRQ1C067BP1"
+timeStamp="2024-02-22 21:46:48.944"
+messageID="5"
+xmlns:xsi="http://www.w3.org/2001/XMLschema-instance"
+messageName="aeaRequest">
+<aeaRequest>
+<aeaMessage><aeaText>SQ</aeaText></aeaMessage>
+</aeaRequest>
+</cupps>
+-------------------------------------------------------------------------------
+22/02/24 16:46:48:943 : Message 'aeaRequest' from application 'COMMONLAUNCHER'
+22/02/24 16:46:48:944 : DataLog File C:\APPS\CUPPSFS\SRQ1C067BPP1-240222-214648943796.JSON - Created
+22/02/24 16:46:48:944 : Waiting for AEA Semaphore on COM11
+22/02/24 16:46:48:944 : Acquired AEA Semaphore on COM11
+22/02/24 16:46:48:944 : Data sent to port 'COM11' from 'BP1'
+0000  53 51                                            |SQ              |
+22/02/24 16:46:48:944 : ComData write on port 'COM11' for 'BP1'
+0000  02 53 51 03                                      |.SQ.            |
+22/02/24 16:46:48:944 : 
+----------------------------- Outbound (BP1) 5800 -----------------------------
+0100000118
+<?xml version="1.0" encoding="utf-8" ?>
+<cupps xmlns="http://www.cupps.aero/cupps/01.04"
+deviceName="SRQ1C067BP1"
+timeStamp="2024-02-22 21:46:48.944"
+messageID="5"
+xmlns:xsi="http://www.w3.org/2001/XMLschema-instance"
+messageName="aeaResponse">
+<aeaResponse result="OK"/>
+</cupps>
+-------------------------------------------------------------------------------
+22/02/24 16:46:48:974 : AeaBusyTime 00062 (Max 20002) on 'COM11'
+22/02/24 16:46:48:974 : Device BP1 State DEV_LKD
+22/02/24 16:46:49:004 : Call accepted from 127.0.0.1:50833 - 5868
+22/02/24 16:46:49:005 : Starting ServiceCupps(5868)
+22/02/24 16:46:49:005 : Started ServiceCupps(5868)
+22/02/24 16:46:49:005 : 
+----------------------------- Inbound (PLT) 5868 -----------------------------
+<?xml version="1.0" encoding="utf-8" ?>
+<cupps messageID="1"
+xmlns:xsi="http://www.w3.org/2001/XMLschema-instance"
+messageName="interfaceLevelsAvailableRequest">
+<interfaceLevelsAvailableRequest hsXsdVersion="01.01.0127"/>
+</cupps>
+-------------------------------------------------------------------------------
+22/02/24 16:46:49:005 : Message 'interfaceLevelsAvailableRequest' from application 'Unknown'
+22/02/24 16:46:49:005 : Current Directory 'C:\APPS\CUPPSFS'
+22/02/24 16:46:49:005 : CUPPS XSD found 'CUPPS-01.00.0122.XSD'
+22/02/24 16:46:49:005 : CUPPS XSD found 'CUPPS-01.01.0128.XSD'
+22/02/24 16:46:49:005 : CUPPS XSD found 'CUPPS-01.03.0017.XSD'
+22/02/24 16:46:49:005 : CUPPS XSD found 'CUPPS-01.04.0016.XSD'
+22/02/24 16:46:49:005 : 
+----------------------------- Outbound (PLT) 5868 -----------------------------
+01000002AA
+<?xml version="1.0" encoding="utf-8" ?>
+<cupps messageID="1"
+xmlns:xsi="http://www.w3.org/2001/XMLschema-instance"
+messageName="interfaceLevelsAvailableResponse">
+<interfaceLevelsAvailableResponse result="OK">
+<interfaceLevel level="01.00"
+wsLocalPath="C:/APPS/CUPPSFS/CUPPS-01.00.0122.XSD"
+xsdVersion="01.00.0122"/>
+<interfaceLevel level="01.01"
+wsLocalPath="C:/APPS/CUPPSFS/CUPPS-01.01.0128.XSD"
+xsdVersion="01.01.0128"/>
+<interfaceLevel level="01.03"
+wsLocalPath="C:/APPS/CUPPSFS/CUPPS-01.03.0017.XSD"
+xsdVersion="01.03.0017"/>
+<interfaceLevel level="01.04"
+wsLocalPath="C:/APPS/CUPPSFS/CUPPS-01.04.0016.XSD"
+xsdVersion="01.04.0016"/>
+</interfaceLevelsAvailableResponse>
+</cupps>
+-------------------------------------------------------------------------------
+22/02/24 16:46:49:005 : 
+----------------------------- Inbound (PLT) 5868 -----------------------------
+<?xml version="1.0" encoding="utf-8" ?>
+<cupps messageID="2"
+xmlns:xsi="http://www.w3.org/2001/XMLschema-instance"
+messageName="interfaceLevelRequest">
+<interfaceLevelRequest level="01.04"/>
+</cupps>
+-------------------------------------------------------------------------------
+22/02/24 16:46:49:005 : Message 'interfaceLevelRequest' from application 'Unknown'
+22/02/24 16:46:49:005 : 
+----------------------------- Outbound (PLT) 5868 -----------------------------
+01000000C7
+<?xml version="1.0" encoding="utf-8" ?>
+<cupps messageID="2"
+xmlns:xsi="http://www.w3.org/2001/XMLschema-instance"
+messageName="interfaceLevelResponse">
+<interfaceLevelResponse result="OK"/>
+</cupps>
+-------------------------------------------------------------------------------
+22/02/24 16:46:49:036 : AeaBusyTime 00125 (Max 20002) on 'COM11'
+22/02/24 16:46:49:036 : ComData read on port 'COM11' for 'BP1'
+0000  02 45 41 53 45 53 51 4F 4B 23 4F 53 3D 30 23 52  |.EASESQOK#OS=0#R|
+0010  46 3D 32 23 53 49 3D 31 31 32 31 33 31 23 44 4F  |F=2#SI=112131#DO|
+0020  3D 30 30 30 23 50 30 3D 30 23 4C 47 3D 30 23 4C  |=000#P0=0#LG=0#L|
+0030  50 3D 30 23 43 55 3D 32 23 45 50 3D 32 23 42 56  |P=0#CU=2#EP=2#BV|
+0040  3D 30 03                                         |=0.             |
+22/02/24 16:46:49:036 : MsgDone on port COM11
+22/02/24 16:46:49:036 : Data received on port 'COM11' for 'BP1'
+0000  45 41 53 45 53 51 4F 4B 23 4F 53 3D 30 23 52 46  |EASESQOK#OS=0#RF|
+0010  3D 32 23 53 49 3D 31 31 32 31 33 31 23 44 4F 3D  |=2#SI=112131#DO=|
+0020  30 30 30 23 50 30 3D 30 23 4C 47 3D 30 23 4C 50  |000#P0=0#LG=0#LP|
+0030  3D 30 23 43 55 3D 32 23 45 50 3D 32 23 42 56 3D  |=0#CU=2#EP=2#BV=|
+0040  30                                               |0               |
+22/02/24 16:46:49:036 : DataLog File C:\APPS\CUPPSFS\SRQ1C067BPP1-240222-214649036918.JSON - Created
+22/02/24 16:46:49:036 : 
+----------------------------- Outbound (BP1) 5800 -----------------------------
+010000018D
+<?xml version="1.0" encoding="utf-8" ?>
+<cupps xmlns="http://www.cupps.aero/cupps/01.04"
+deviceName="SRQ1C067BP1"
+timeStamp="2024-02-22 21:46:49.036"
+messageID="4294901760"
+xmlns:xsi="http://www.w3.org/2001/XMLschema-instance"
+messageName="aeaRequest">
+<aeaRequest>
+<aeaMessage><aeaText>HDCSQOK#OS=0#RF=2#SI=112131#DO=000#P0=0#LG=0#LP=0#CU=2#EP=2#BV=0</aeaText></aeaMessage>
+</aeaRequest>
+</cupps>
+-------------------------------------------------------------------------------
+22/02/24 16:46:49:036 : Releasing AEA Semaphore on 'COM11'
+22/02/24 16:46:49:068 : 
+----------------------------- Inbound (PLT) 5868 -----------------------------
+<?xml version="1.0" encoding="utf-8" ?>
+<cupps xmlns="http://www.cupps.aero/cupps/01.04"
+deviceName="SRQ1C067BT1"
+timeStamp="2024-02-22 21:46:49.069"
+messageID="3"
+xmlns:xsi="http://www.w3.org/2001/XMLschema-instance"
+messageName="deviceAcquireRequest">
+<deviceAcquireRequest deviceName="SRQ1C067BT1" deviceToken="032BA8F900000081" airlineID="FS"/>
+</cupps>
+-------------------------------------------------------------------------------
+22/02/24 16:46:49:068 : Message 'deviceAcquireRequest' from application 'Unknown'
+22/02/24 16:46:49:069 : 
+----------------------------- Outbound (BT1) 5868 -----------------------------
+0100000361
+<?xml version="1.0" encoding="utf-8" ?>
+<cupps xmlns="http://www.cupps.aero/cupps/01.04"
+deviceName="SRQ1C067BT1"
+timeStamp="2024-02-22 21:46:49.069"
+messageID="3"
+xmlns:xsi="http://www.w3.org/2001/XMLschema-instance"
+messageName="deviceAcquireResponse">
+<deviceAcquireResponse result="OK">
+<device deviceIndex="3" deviceName="SRQ1C067BT1" deviceParameterType="btDeviceParameter">
+<supportedInterfaceModes>
+<interfaceMode mode="aea"/>
+</supportedInterfaceModes>
+<btDeviceParameter supportsColor="none">
+<vendorModelInfo vendor="VIDTRONIX" model="MAP" miscInfo="000000"/>
+<ipAndPort hostName="SRQ1C067" ip="127.0.0.1" ipv6="::" port="7535"/>
+<btStatus init="false" powerOff="false" ready="true" unknown="false" paperOut="false" paperJam="false" desc="ONLINE"/>
+<rfidCapabilities supportRFID="noRFID"/>
+</btDeviceParameter>
+</device>
+</deviceAcquireResponse>
+</cupps>
+-------------------------------------------------------------------------------
+22/02/24 16:46:49:069 : DataLog File C:\APPS\CUPPSFS\SRQ1C067BTP1-240222-214649069803.JSON - Created
+22/02/24 16:46:49:069 : Application 'COMMONLAUNCHER' - Device 'PLT' - (5672)
+22/02/24 16:46:49:069 : Application 'COMMONLAUNCHER' - Device 'BC1' - (5776)
+22/02/24 16:46:49:069 : Application 'COMMONLAUNCHER' - Device 'BP1' - (5800)
+22/02/24 16:46:49:069 : Application 'COMMONLAUNCHER' - Device 'BT1' - (5868)
+22/02/24 16:46:49:129 : 
+----------------------------- Inbound (BT1) 5868 -----------------------------
+<?xml version="1.0" encoding="utf-8" ?>
+<cupps xmlns="http://www.cupps.aero/cupps/01.04"
+deviceName="SRQ1C067BT1"
+timeStamp="2024-02-22 21:46:49.129"
+messageID="4"
+xmlns:xsi="http://www.w3.org/2001/XMLschema-instance"
+messageName="interfaceModeRequest">
+<interfaceModeRequest mode="aea"/>
+</cupps>
+-------------------------------------------------------------------------------
+22/02/24 16:46:49:129 : 
+----------------------------- Inbound (BP1) 5800 -----------------------------
+<?xml version="1.0" encoding="utf-8" ?>
+<cupps xmlns="http://www.cupps.aero/cupps/01.04"
+deviceName="SRQ1C067BP1"
+timeStamp="2024-02-22 21:46:49.129"
+messageID="4294901760"
+xmlns:xsi="http://www.w3.org/2001/XMLschema-instance"
+messageName="aeaResponse">
+<aeaResponse result="OK"/>
+</cupps>
+-------------------------------------------------------------------------------
+22/02/24 16:46:49:129 : Message 'interfaceModeRequest' from application 'COMMONLAUNCHER'
+22/02/24 16:46:49:129 : 
+----------------------------- Outbound (PLT) 5672 -----------------------------
+0100000139
+<?xml version="1.0" encoding="utf-8" ?>
+<cupps xmlns="http://www.cupps.aero/cupps/01.04"
+deviceName="PLATFORM"
+timeStamp="2024-02-22 21:46:49.129"
+messageID="4294901762"
+xmlns:xsi="http://www.w3.org/2001/XMLschema-instance"
+messageName="notify">
+<notify>
+<dStdExitedEvent device="SRQ1C067BT1"/>
+</notify>
+</cupps>
+-------------------------------------------------------------------------------
+22/02/24 16:46:49:129 : Message 'aeaResponse' from application 'COMMONLAUNCHER'
+22/02/24 16:46:49:129 : 
+----------------------------- Outbound (PLT) 5672 -----------------------------
+010000019A
+<?xml version="1.0" encoding="utf-8" ?>
+<cupps xmlns="http://www.cupps.aero/cupps/01.04"
+deviceName="PLATFORM"
+timeStamp="2024-02-22 21:46:49.129"
+messageID="4294901763"
+xmlns:xsi="http://www.w3.org/2001/XMLschema-instance"
+messageName="notify">
+<notify>
+<dLkdEnteredEvent workstation="SRQ1C067" device="SRQ1C067BT1" user="FS" applicationName="COMMONLAUNCHER" applicationVersion="1.44.0.0"/>
+</notify>
+</cupps>
+-------------------------------------------------------------------------------
+22/02/24 16:46:49:129 : 
+----------------------------- Outbound (BT1) 5868 -----------------------------
+010000012C
+<?xml version="1.0" encoding="utf-8" ?>
+<cupps xmlns="http://www.cupps.aero/cupps/01.04"
+deviceName="SRQ1C067BT1"
+timeStamp="2024-02-22 21:46:49.129"
+messageID="4"
+xmlns:xsi="http://www.w3.org/2001/XMLschema-instance"
+messageName="interfaceModeResponse">
+<interfaceModeResponse result="OK"/>
+</cupps>
+-------------------------------------------------------------------------------
+22/02/24 16:46:49:129 : 
+----------------------------- Inbound (BT1) 5868 -----------------------------
+<?xml version="1.0" encoding="utf-8" ?>
+<cupps xmlns="http://www.cupps.aero/cupps/01.04"
+deviceName="SRQ1C067BT1"
+timeStamp="2024-02-22 21:46:49.129"
+messageID="5"
+xmlns:xsi="http://www.w3.org/2001/XMLschema-instance"
+messageName="aeaRequest">
+<aeaRequest>
+<aeaMessage><aeaText>SQ</aeaText></aeaMessage>
+</aeaRequest>
+</cupps>
+-------------------------------------------------------------------------------
+22/02/24 16:46:49:129 : Message 'aeaRequest' from application 'COMMONLAUNCHER'
+22/02/24 16:46:49:130 : DataLog File C:\APPS\CUPPSFS\SRQ1C067BTP1-240222-214649129642.JSON - Created
+22/02/24 16:46:49:130 : Waiting for AEA Semaphore on COM12
+22/02/24 16:46:49:130 : Acquired AEA Semaphore on COM12
+22/02/24 16:46:49:130 : Data sent to port 'COM12' from 'BT1'
+0000  53 51                                            |SQ              |
+22/02/24 16:46:49:130 : ComData write on port 'COM12' for 'BT1'
+0000  02 53 51 03                                      |.SQ.            |
+22/02/24 16:46:49:130 : 
+----------------------------- Outbound (BT1) 5868 -----------------------------
+0100000118
+<?xml version="1.0" encoding="utf-8" ?>
+<cupps xmlns="http://www.cupps.aero/cupps/01.04"
+deviceName="SRQ1C067BT1"
+timeStamp="2024-02-22 21:46:49.130"
+messageID="5"
+xmlns:xsi="http://www.w3.org/2001/XMLschema-instance"
+messageName="aeaResponse">
+<aeaResponse result="OK"/>
+</cupps>
+-------------------------------------------------------------------------------
+22/02/24 16:46:49:145 : AeaBusyTime 00062 (Max 20002) on 'COM12'
+22/02/24 16:46:49:145 : Device BT1 State DEV_LKD
+22/02/24 16:46:49:192 : Call accepted from 127.0.0.1:50836 - 5896
+22/02/24 16:46:49:192 : Starting ServiceCupps(5896)
+22/02/24 16:46:49:192 : Started ServiceCupps(5896)
+22/02/24 16:46:49:193 : 
+----------------------------- Inbound (PLT) 5896 -----------------------------
+<?xml version="1.0" encoding="utf-8" ?>
+<cupps messageID="1"
+xmlns:xsi="http://www.w3.org/2001/XMLschema-instance"
+messageName="interfaceLevelsAvailableRequest">
+<interfaceLevelsAvailableRequest hsXsdVersion="01.01.0127"/>
+</cupps>
+-------------------------------------------------------------------------------
+22/02/24 16:46:49:193 : Message 'interfaceLevelsAvailableRequest' from application 'Unknown'
+22/02/24 16:46:49:193 : Current Directory 'C:\APPS\CUPPSFS'
+22/02/24 16:46:49:193 : CUPPS XSD found 'CUPPS-01.00.0122.XSD'
+22/02/24 16:46:49:193 : CUPPS XSD found 'CUPPS-01.01.0128.XSD'
+22/02/24 16:46:49:193 : CUPPS XSD found 'CUPPS-01.03.0017.XSD'
+22/02/24 16:46:49:193 : CUPPS XSD found 'CUPPS-01.04.0016.XSD'
+22/02/24 16:46:49:193 : 
+----------------------------- Outbound (PLT) 5896 -----------------------------
+01000002AA
+<?xml version="1.0" encoding="utf-8" ?>
+<cupps messageID="1"
+xmlns:xsi="http://www.w3.org/2001/XMLschema-instance"
+messageName="interfaceLevelsAvailableResponse">
+<interfaceLevelsAvailableResponse result="OK">
+<interfaceLevel level="01.00"
+wsLocalPath="C:/APPS/CUPPSFS/CUPPS-01.00.0122.XSD"
+xsdVersion="01.00.0122"/>
+<interfaceLevel level="01.01"
+wsLocalPath="C:/APPS/CUPPSFS/CUPPS-01.01.0128.XSD"
+xsdVersion="01.01.0128"/>
+<interfaceLevel level="01.03"
+wsLocalPath="C:/APPS/CUPPSFS/CUPPS-01.03.0017.XSD"
+xsdVersion="01.03.0017"/>
+<interfaceLevel level="01.04"
+wsLocalPath="C:/APPS/CUPPSFS/CUPPS-01.04.0016.XSD"
+xsdVersion="01.04.0016"/>
+</interfaceLevelsAvailableResponse>
+</cupps>
+-------------------------------------------------------------------------------
+22/02/24 16:46:49:193 : 
+----------------------------- Inbound (PLT) 5896 -----------------------------
+<?xml version="1.0" encoding="utf-8" ?>
+<cupps messageID="2"
+xmlns:xsi="http://www.w3.org/2001/XMLschema-instance"
+messageName="interfaceLevelRequest">
+<interfaceLevelRequest level="01.04"/>
+</cupps>
+-------------------------------------------------------------------------------
+22/02/24 16:46:49:202 : Message 'interfaceLevelRequest' from application 'Unknown'
+22/02/24 16:46:49:203 : 
+----------------------------- Outbound (PLT) 5896 -----------------------------
+01000000C7
+<?xml version="1.0" encoding="utf-8" ?>
+<cupps messageID="2"
+xmlns:xsi="http://www.w3.org/2001/XMLschema-instance"
+messageName="interfaceLevelResponse">
+<interfaceLevelResponse result="OK"/>
+</cupps>
+-------------------------------------------------------------------------------
+22/02/24 16:46:49:206 : AeaBusyTime 00125 (Max 20002) on 'COM12'
+22/02/24 16:46:49:206 : ComData read on port 'COM12' for 'BT1'
+0000  02 45 41 53 45 53 51 4F 4B 23 4F 53 3D 30 23 52  |.EASESQOK#OS=0#R|
+0010  46 3D 32 23 53 49 3D 31 31 32 31 33 31 23 44 4F  |F=2#SI=112131#DO|
+0020  3D 30 30 30 23 50 30 3D 30 23 4C 47 3D 30 23 4C  |=000#P0=0#LG=0#L|
+0030  50 3D 30 23 43 55 3D 32 23 45 50 3D 32 03        |P=0#CU=2#EP=2.  |
+22/02/24 16:46:49:206 : MsgDone on port COM12
+22/02/24 16:46:49:206 : Data received on port 'COM12' for 'BT1'
+0000  45 41 53 45 53 51 4F 4B 23 4F 53 3D 30 23 52 46  |EASESQOK#OS=0#RF|
+0010  3D 32 23 53 49 3D 31 31 32 31 33 31 23 44 4F 3D  |=2#SI=112131#DO=|
+0020  30 30 30 23 50 30 3D 30 23 4C 47 3D 30 23 4C 50  |000#P0=0#LG=0#LP|
+0030  3D 30 23 43 55 3D 32 23 45 50 3D 32              |=0#CU=2#EP=2    |
+22/02/24 16:46:49:207 : DataLog File C:\APPS\CUPPSFS\SRQ1C067BTP1-240222-214649206765.JSON - Created
+22/02/24 16:46:49:207 : 
+----------------------------- Outbound (BT1) 5868 -----------------------------
+0100000188
+<?xml version="1.0" encoding="utf-8" ?>
+<cupps xmlns="http://www.cupps.aero/cupps/01.04"
+deviceName="SRQ1C067BT1"
+timeStamp="2024-02-22 21:46:49.207"
+messageID="4294901760"
+xmlns:xsi="http://www.w3.org/2001/XMLschema-instance"
+messageName="aeaRequest">
+<aeaRequest>
+<aeaMessage><aeaText>HDCSQOK#OS=0#RF=2#SI=112131#DO=000#P0=0#LG=0#LP=0#CU=2#EP=2</aeaText></aeaMessage>
+</aeaRequest>
+</cupps>
+-------------------------------------------------------------------------------
+22/02/24 16:46:49:207 : Releasing AEA Semaphore on 'COM12'
+22/02/24 16:46:49:252 : 
+----------------------------- Inbound (PLT) 5896 -----------------------------
+<?xml version="1.0" encoding="utf-8" ?>
+<cupps xmlns="http://www.cupps.aero/cupps/01.04"
+deviceName="SRQ1C067MS1"
+timeStamp="2024-02-22 21:46:49.253"
+messageID="3"
+xmlns:xsi="http://www.w3.org/2001/XMLschema-instance"
+messageName="deviceAcquireRequest">
+<deviceAcquireRequest deviceName="SRQ1C067MS1" deviceToken="032BA8F900000081" airlineID="FS" msFoidMasking="fullTrackData"/>
+</cupps>
+-------------------------------------------------------------------------------
+22/02/24 16:46:49:252 : Message 'deviceAcquireRequest' from application 'Unknown'
+22/02/24 16:46:49:252 : 
+----------------------------- Outbound (MS1) 5896 -----------------------------
+010000034B
+<?xml version="1.0" encoding="utf-8" ?>
+<cupps xmlns="http://www.cupps.aero/cupps/01.04"
+deviceName="SRQ1C067MS1"
+timeStamp="2024-02-22 21:46:49.252"
+messageID="3"
+xmlns:xsi="http://www.w3.org/2001/XMLschema-instance"
+messageName="deviceAcquireResponse">
+<deviceAcquireResponse result="OK">
+<device deviceIndex="4" deviceName="SRQ1C067MS1" deviceParameterType="msDeviceParameter">
+<supportedInterfaceModes>
+<interfaceMode mode="standard"/>
+</supportedInterfaceModes>
+<msDeviceParameter numberOfTracks="3" supportsJIS2="false" style="swipe" msCapabilities="PlatformOnly">
+<vendorModelInfo vendor="ACCESS-IS" model="AKB500"/>
+<ipAndPort hostName="SRQ1C067" ip="127.0.0.1" ipv6="::" port="7535"/>
+<msStatus init="false" powerOff="false" ready="true" unknown="false" desc="ONLINE"/>
+</msDeviceParameter>
+</device>
+</deviceAcquireResponse>
+</cupps>
+-------------------------------------------------------------------------------
+22/02/24 16:46:49:253 : DataLog File C:\APPS\CUPPSFS\SRQ1C067MSR1-240222-214649252806.JSON - Created
+22/02/24 16:46:49:253 : Application 'COMMONLAUNCHER' - Device 'PLT' - (5672)
+22/02/24 16:46:49:253 : Application 'COMMONLAUNCHER' - Device 'BC1' - (5776)
+22/02/24 16:46:49:253 : Application 'COMMONLAUNCHER' - Device 'BP1' - (5800)
+22/02/24 16:46:49:253 : Application 'COMMONLAUNCHER' - Device 'BT1' - (5868)
+22/02/24 16:46:49:253 : Application 'COMMONLAUNCHER' - Device 'MS1' - (5896)
+22/02/24 16:46:49:314 : 
+----------------------------- Inbound (BT1) 5868 -----------------------------
+<?xml version="1.0" encoding="utf-8" ?>
+<cupps xmlns="http://www.cupps.aero/cupps/01.04"
+deviceName="SRQ1C067BT1"
+timeStamp="2024-02-22 21:46:49.314"
+messageID="4294901760"
+xmlns:xsi="http://www.w3.org/2001/XMLschema-instance"
+messageName="aeaResponse">
+<aeaResponse result="OK"/>
+</cupps>
+-------------------------------------------------------------------------------
+22/02/24 16:46:49:314 : Message 'aeaResponse' from application 'COMMONLAUNCHER'
+22/02/24 16:46:49:314 : Call accepted from 127.0.0.1:50837 - 5920
+22/02/24 16:46:49:314 : Starting ServiceCupps(5920)
+22/02/24 16:46:49:315 : Started ServiceCupps(5920)
+22/02/24 16:46:49:315 : 
+----------------------------- Inbound (PLT) 5920 -----------------------------
+<?xml version="1.0" encoding="utf-8" ?>
+<cupps messageID="1"
+xmlns:xsi="http://www.w3.org/2001/XMLschema-instance"
+messageName="interfaceLevelsAvailableRequest">
+<interfaceLevelsAvailableRequest hsXsdVersion="01.01.0127"/>
+</cupps>
+-------------------------------------------------------------------------------
+22/02/24 16:46:49:315 : Message 'interfaceLevelsAvailableRequest' from application 'Unknown'
+22/02/24 16:46:49:315 : Current Directory 'C:\APPS\CUPPSFS'
+22/02/24 16:46:49:315 : CUPPS XSD found 'CUPPS-01.00.0122.XSD'
+22/02/24 16:46:49:315 : CUPPS XSD found 'CUPPS-01.01.0128.XSD'
+22/02/24 16:46:49:315 : CUPPS XSD found 'CUPPS-01.03.0017.XSD'
+22/02/24 16:46:49:315 : CUPPS XSD found 'CUPPS-01.04.0016.XSD'
+22/02/24 16:46:49:315 : 
+----------------------------- Outbound (PLT) 5920 -----------------------------
+01000002AA
+<?xml version="1.0" encoding="utf-8" ?>
+<cupps messageID="1"
+xmlns:xsi="http://www.w3.org/2001/XMLschema-instance"
+messageName="interfaceLevelsAvailableResponse">
+<interfaceLevelsAvailableResponse result="OK">
+<interfaceLevel level="01.00"
+wsLocalPath="C:/APPS/CUPPSFS/CUPPS-01.00.0122.XSD"
+xsdVersion="01.00.0122"/>
+<interfaceLevel level="01.01"
+wsLocalPath="C:/APPS/CUPPSFS/CUPPS-01.01.0128.XSD"
+xsdVersion="01.01.0128"/>
+<interfaceLevel level="01.03"
+wsLocalPath="C:/APPS/CUPPSFS/CUPPS-01.03.0017.XSD"
+xsdVersion="01.03.0017"/>
+<interfaceLevel level="01.04"
+wsLocalPath="C:/APPS/CUPPSFS/CUPPS-01.04.0016.XSD"
+xsdVersion="01.04.0016"/>
+</interfaceLevelsAvailableResponse>
+</cupps>
+-------------------------------------------------------------------------------
+22/02/24 16:46:49:316 : 
+----------------------------- Inbound (PLT) 5920 -----------------------------
+<?xml version="1.0" encoding="utf-8" ?>
+<cupps messageID="2"
+xmlns:xsi="http://www.w3.org/2001/XMLschema-instance"
+messageName="interfaceLevelRequest">
+<interfaceLevelRequest level="01.04"/>
+</cupps>
+-------------------------------------------------------------------------------
+22/02/24 16:46:49:316 : Message 'interfaceLevelRequest' from application 'Unknown'
+22/02/24 16:46:49:316 : 
+----------------------------- Outbound (PLT) 5920 -----------------------------
+01000000C7
+<?xml version="1.0" encoding="utf-8" ?>
+<cupps messageID="2"
+xmlns:xsi="http://www.w3.org/2001/XMLschema-instance"
+messageName="interfaceLevelResponse">
+<interfaceLevelResponse result="OK"/>
+</cupps>
+-------------------------------------------------------------------------------
+22/02/24 16:46:49:377 : 
+----------------------------- Inbound (PLT) 5920 -----------------------------
+<?xml version="1.0" encoding="utf-8" ?>
+<cupps xmlns="http://www.cupps.aero/cupps/01.04"
+deviceName="SRQ1C067OC1"
+timeStamp="2024-02-22 21:46:49.377"
+messageID="3"
+xmlns:xsi="http://www.w3.org/2001/XMLschema-instance"
+messageName="deviceAcquireRequest">
+<deviceAcquireRequest deviceName="SRQ1C067OC1" deviceToken="032BA8F900000081" airlineID="FS"/>
+</cupps>
+-------------------------------------------------------------------------------
+22/02/24 16:46:49:377 : Message 'deviceAcquireRequest' from application 'Unknown'
+22/02/24 16:46:49:377 : 
+----------------------------- Outbound (OC1) 5920 -----------------------------
+0100000327
+<?xml version="1.0" encoding="utf-8" ?>
+<cupps xmlns="http://www.cupps.aero/cupps/01.04"
+deviceName="SRQ1C067OC1"
+timeStamp="2024-02-22 21:46:49.377"
+messageID="3"
+xmlns:xsi="http://www.w3.org/2001/XMLschema-instance"
+messageName="deviceAcquireResponse">
+<deviceAcquireResponse result="OK">
+<device deviceIndex="5" deviceName="SRQ1C067OC1" deviceParameterType="ocDeviceParameter">
+<supportedInterfaceModes>
+<interfaceMode mode="standard"/>
+</supportedInterfaceModes>
+<ocDeviceParameter numCharsPerLine="45" numLines="3" style="swipe">
+<vendorModelInfo vendor="ACCESS-IS" model="AKB500"/>
+<ipAndPort hostName="SRQ1C067" ip="127.0.0.1" ipv6="::" port="7535"/>
+<ocStatus init="false" powerOff="false" ready="true" unknown="false" desc="ONLINE"/>
+</ocDeviceParameter>
+</device>
+</deviceAcquireResponse>
+</cupps>
+-------------------------------------------------------------------------------
+22/02/24 16:46:49:377 : DataLog File C:\APPS\CUPPSFS\SRQ1C067OCR1-240222-214649377508.JSON - Created
+22/02/24 16:46:49:377 : Application 'COMMONLAUNCHER' - Device 'PLT' - (5672)
+22/02/24 16:46:49:377 : Application 'COMMONLAUNCHER' - Device 'BC1' - (5776)
+22/02/24 16:46:49:377 : Application 'COMMONLAUNCHER' - Device 'BP1' - (5800)
+22/02/24 16:46:49:377 : Application 'COMMONLAUNCHER' - Device 'BT1' - (5868)
+22/02/24 16:46:49:377 : Application 'COMMONLAUNCHER' - Device 'MS1' - (5896)
+22/02/24 16:46:49:377 : Application 'COMMONLAUNCHER' - Device 'OC1' - (5920)
+22/02/24 16:46:49:636 : DataLog File SRQ1C067BCR1-240222-214648755168.JSON - Uploaded
+22/02/24 16:46:49:813 : DataLog File SRQ1C067BPP1-240222-214648880702.JSON - Uploaded
+22/02/24 16:46:49:991 : DataLog File SRQ1C067BPP1-240222-214648943796.JSON - Uploaded
+22/02/24 16:46:50:170 : DataLog File SRQ1C067BPP1-240222-214649036918.JSON - Uploaded
+22/02/24 16:46:50:358 : DataLog File SRQ1C067BTP1-240222-214649069803.JSON - Uploaded
+22/02/24 16:46:50:537 : DataLog File SRQ1C067BTP1-240222-214649129642.JSON - Uploaded
+22/02/24 16:46:50:710 : DataLog File SRQ1C067BTP1-240222-214649206765.JSON - Uploaded
+22/02/24 16:46:50:890 : DataLog File SRQ1C067MSR1-240222-214649252806.JSON - Uploaded
+22/02/24 16:46:51:074 : DataLog File SRQ1C067OCR1-240222-214649377508.JSON - Uploaded
+22/02/24 16:47:02:147 : Network error on 5776 with BC1
+22/02/24 16:47:02:147 : Stopping ServiceCupps(5776)
+22/02/24 16:47:02:147 : Network error on 5672 with ---
+22/02/24 16:47:02:147 : Stopping ServiceCupps(5672)
+22/02/24 16:47:02:147 : Releasing lock on device 'BC1'
+22/02/24 16:47:02:147 : Released  device lock on 'BC1'
+22/02/24 16:47:02:147 : Network error on 5800 with BP1
+22/02/24 16:47:02:147 : Stopping ServiceCupps(5800)
+22/02/24 16:47:02:147 : Releasing lock on device 'BP1'
+22/02/24 16:47:02:148 : DataLog File C:\APPS\CUPPSFS\SRQ1C067XXXX-240222-214702147918.JSON - Created
+22/02/24 16:47:02:148 : NotifyEvent aStdExitedEvent Application COMMONLAUNCHER
+22/02/24 16:47:02:148 : NotifyEvent aStpEnteredEvent Application COMMONLAUNCHER
+22/02/24 16:47:02:148 : DataLog File C:\APPS\CUPPSFS\SRQ1C067BCR1-240222-214702147918.JSON - Created
+22/02/24 16:47:02:148 : Network error on 5868 with BT1
+22/02/24 16:47:02:148 : Stopping ServiceCupps(5868)
+22/02/24 16:47:02:148 : Releasing lock on device 'BT1'
+22/02/24 16:47:02:148 : Releasing device lock on 'BT1'
+22/02/24 16:47:02:148 : Released  device lock on 'BT1'
+22/02/24 16:47:02:148 : Releasing device lock on 'BP1'
+22/02/24 16:47:02:148 : Released  device lock on 'BP1'
+22/02/24 16:47:02:148 : Network error on 5896 with MS1
+22/02/24 16:47:02:148 : Stopping ServiceCupps(5896)
+22/02/24 16:47:02:148 : Releasing lock on device 'MS1'
+22/02/24 16:47:02:148 : Released  device lock on 'MS1'
+22/02/24 16:47:02:148 : Network error on 5920 with OC1
+22/02/24 16:47:02:148 : Stopping ServiceCupps(5920)
+22/02/24 16:47:02:148 : Releasing lock on device 'OC1'
+22/02/24 16:47:02:148 : Released  device lock on 'OC1'
+22/02/24 16:47:02:149 : DataLog File C:\APPS\CUPPSFS\SRQ1C067BTP1-240222-214702148913.JSON - Created
+22/02/24 16:47:02:149 : DataLog File C:\APPS\CUPPSFS\SRQ1C067MSR1-240222-214702148913.JSON - Created
+22/02/24 16:47:02:149 : DataLog File C:\APPS\CUPPSFS\SRQ1C067BPP1-240222-214702148913.JSON - Created
+22/02/24 16:47:02:150 : DataLog File C:\APPS\CUPPSFS\SRQ1C067OCR1-240222-214702148913.JSON - Created
+22/02/24 16:47:02:162 : Stopped ServiceCupps(5868)
+22/02/24 16:47:02:162 : Stopped ServiceCupps(5672)
+22/02/24 16:47:02:162 : Stopped ServiceCupps(5800)
+22/02/24 16:47:02:162 : Stopped ServiceCupps(5920)
+22/02/24 16:47:02:162 : Stopped ServiceCupps(5776)
+22/02/24 16:47:02:162 : Stopped ServiceCupps(5896)
+22/02/24 16:47:02:178 : Device BT1 State DEV_STD
+22/02/24 16:47:02:210 : Device BP1 State DEV_STD
+22/02/24 16:47:02:348 : DataLog File SRQ1C067BCR1-240222-214702147918.JSON - Uploaded
+22/02/24 16:47:02:557 : DataLog File SRQ1C067XXXX-240222-214702147918.JSON - Uploaded
+22/02/24 16:47:03:245 : DataLog File SRQ1C067BPP1-240222-214702148913.JSON - Uploaded
+22/02/24 16:47:03:407 : OnSessionChange 'SessionLogoff'
+22/02/24 16:47:03:407 : NotifyEvent uStdExitedEvent
+22/02/24 16:47:03:407 : NotifyEvent uSpgEnteredEvent
+22/02/24 16:47:03:407 : NotifyEvent uSpgExitedEvent
+22/02/24 16:47:03:407 : NotifyEvent uStpEnteredEvent
+22/02/24 16:47:03:447 : DataLog File SRQ1C067BTP1-240222-214702148913.JSON - Uploaded
+22/02/24 16:47:03:514 : OnSessionChange 'ConsoleDisconnect'
+22/02/24 16:47:03:621 : DataLog File SRQ1C067MSR1-240222-214702148913.JSON - Uploaded
+22/02/24 16:47:03:785 : OnSessionChange 'ConsoleConnect'
+22/02/24 16:47:03:807 : DataLog File SRQ1C067OCR1-240222-214702148913.JSON - Uploaded
+22/02/24 16:47:15:435 : OnSessionChange 'SessionLogon'
+22/02/24 16:47:15:435 : NotifyEvent uStpExitedEvent
+22/02/24 16:47:15:435 : NotifyEvent uStgEnteredEvent
+22/02/24 16:47:15:435 : NotifyEvent uStgExitedEvent
+22/02/24 16:47:15:435 : NotifyEvent uStdEnteredEvent
+
+<btStatus init="false" powerOff="false" ready="true" unknown="false" paperOut="false" paperJam="false" desc="ONLINE"/>
