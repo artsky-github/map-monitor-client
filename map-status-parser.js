@@ -67,7 +67,7 @@ const watchCuppsLog = (filename) => {
 const findParentTag = (parentTag, childNode) => {
   let parentNode = childNode;
   while (parentNode.name != parentTag) {
-    parentNode = parentNode.parent.parent;
+    parentNode = parentNode.parent;
   }
   return parentNode;
 };
