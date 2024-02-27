@@ -1039,4 +1039,6 @@ messageName="deviceAcquireResponse">
 22/02/24 16:47:15:435 : NotifyEvent uStgExitedEvent
 22/02/24 16:47:15:435 : NotifyEvent uStdEnteredEvent
 
-<btStatus init="false" powerOff="false" ready="true" unknown="false" paperOut="false" paperJam="false" desc="ONLINE"/>
+
+
+
