@@ -6,10 +6,10 @@ const os = require("os");
 const MapStatus = (function () {
   let btCount = 0;
   let bpCount = 0;
-  let btStatus = "";
-  let bpStatus = "";
-  let btTimestamp = "";
-  let bpTimestamp = "";
+  let btStatus = null;
+  let bpStatus = null;
+  let btTimestamp = null;
+  let bpTimestamp = null;
   let pcName = os.hostname();
   return {
     btCount,
@@ -41,7 +41,9 @@ const domhandler = new hp2.DomHandler((err, dom) => {
       recentBpStatus
     ).attribs.timeStamp;
 
+    console.log("---- MapStatus object has been updated ----");
     console.log(MapStatus);
+    console.log("-------------------------------------------");
   }
 });
 
@@ -70,5 +72,7 @@ const findParentTag = (parentTag, childNode) => {
   return parentNode;
 };
 
+console.log("---- MapStatus object on program load ----");
 console.log(MapStatus);
+console.log("------------------------------------------");
 watchCuppsLog("btp-bpp-fresh-startup.LOG");
