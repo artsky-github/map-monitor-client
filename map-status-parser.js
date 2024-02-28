@@ -3,6 +3,9 @@ const chokidar = require("chokidar");
 const fs = require("fs");
 const os = require("os");
 
+// bt paper total per box = 200
+// bp paper total per box = 5000
+
 const MapStatus = (function () {
   let btCount = 0;
   let bpCount = 0;
@@ -25,10 +28,23 @@ const MapStatus = (function () {
 const domhandler = new hp2.DomHandler((err, dom) => {
   if (err) throw err;
   else {
+
+    const findParentTag = (parentTag, childNode) => {
+      let parentNode = childNode;
+      while (parentNode.name != parentTag) {
+        parentNode = parentNode.parent;
+      }
+      return parentNode;
+    };
+
+    const getRecentTag = (tagArray) => {
+      return tagArray[tagArray.length - 1];
+    };
+
     const btStatusArray = hp2.DomUtils.getElementsByTagName("btStatus", dom);
     const bpStatusArray = hp2.DomUtils.getElementsByTagName("bpStatus", dom);
-    const recentBtStatus = btStatusArray[btStatusArray.length - 1];
-    const recentBpStatus = bpStatusArray[bpStatusArray.length - 1];
+    const recentBtStatus = getRecentTag(btStatusArray);
+    const recentBpStatus = getRecentTag(bpStatusArray);
 
     MapStatus.btStatus = recentBtStatus.attribs;
     MapStatus.bpStatus = recentBpStatus.attribs;
@@ -62,14 +78,6 @@ const watchCuppsLog = (filename) => {
         }
       });
     });
-};
-
-const findParentTag = (parentTag, childNode) => {
-  let parentNode = childNode;
-  while (parentNode.name != parentTag) {
-    parentNode = parentNode.parent;
-  }
-  return parentNode;
 };
 
 console.log("---- MapStatus object on program load ----");
