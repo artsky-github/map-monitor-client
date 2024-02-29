@@ -8,7 +8,9 @@ const os = require("os");
 
 const MapStatus = (function () {
   let btCount = 0;
+  let btRemaining = 200;
   let bpCount = 0;
+  let bpRemaining = 5000;
   let btStatus = null;
   let bpStatus = null;
   let btTimestamp = null;
@@ -16,7 +18,9 @@ const MapStatus = (function () {
   let pcName = os.hostname();
   return {
     btCount,
+    btRemaining,
     bpCount,
+    bpRemaining,
     btStatus,
     bpStatus,
     btTimestamp,
@@ -28,10 +32,9 @@ const MapStatus = (function () {
 const domhandler = new hp2.DomHandler((err, dom) => {
   if (err) throw err;
   else {
-
     const findParentTag = (parentTag, childNode) => {
       let parentNode = childNode;
-      while (parentNode.name != parentTag) {
+      while (parentNode.name !== parentTag) {
         parentNode = parentNode.parent;
       }
       return parentNode;
@@ -41,11 +44,27 @@ const domhandler = new hp2.DomHandler((err, dom) => {
       return tagArray[tagArray.length - 1];
     };
 
+    const countPrints = (dom, isBp) => {
+      const successMessage = isBp
+        ? "T//CIPROK#100#201#300#VSR#01W"
+        : "HDCPROK101";
+
+      return hp2.DomUtils.filter((elem) => {
+        return (
+          elem.name === "aeaText" && elem.children[0].data === successMessage
+        );
+      }, dom).length;
+    };
+
     const btStatusArray = hp2.DomUtils.getElementsByTagName("btStatus", dom);
     const bpStatusArray = hp2.DomUtils.getElementsByTagName("bpStatus", dom);
     const recentBtStatus = getRecentTag(btStatusArray);
     const recentBpStatus = getRecentTag(bpStatusArray);
 
+    MapStatus.bpCount = countPrints(dom, true);
+    MapStatus.bpRemaining = MapStatus.bpRemaining - MapStatus.bpCount;
+    MapStatus.btCount = countPrints(dom, false);
+    MapStatus.btRemaining = MapStatus.btRemaining - MapStatus.btCount;
     MapStatus.btStatus = recentBtStatus.attribs;
     MapStatus.bpStatus = recentBpStatus.attribs;
     MapStatus.btTimestamp = findParentTag(
@@ -80,7 +99,7 @@ const watchCuppsLog = (filename) => {
     });
 };
 
-console.log("---- MapStatus object on program load ----");
+console.log("---- MapStatus object has been created ----");
 console.log(MapStatus);
 console.log("------------------------------------------");
-watchCuppsLog("btp-bpp-fresh-startup.LOG");
+watchCuppsLog("bpp-print-successful.LOG");
