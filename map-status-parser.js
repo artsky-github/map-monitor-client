@@ -2,10 +2,15 @@ const hp2 = require("htmlparser2");
 const chokidar = require("chokidar");
 const fs = require("fs");
 const os = require("os");
+const date = new Date();
+const cuppsfsFileName = `CUPPSFS${date.getFullYear().toString().slice(-2)}${(
+  "0" +
+  (date.getMonth() + 1)
+)
+  .toString()
+  .slice(-2)}${("0" + date.getDate()).toString().slice(-2)}.LOG`;
 
-// bt paper total per box = 200
-// bp paper total per box = 5000
-
+// IIFE object for Vidtronix MAP printers used in SRQ Airport.
 const MapStatus = (function () {
   let btCount = 0;
   let btRemaining = 200;
@@ -56,6 +61,15 @@ const domhandler = new hp2.DomHandler((err, dom) => {
       }, dom).length;
     };
 
+    const countCuppsMonitorPrints = (dom, isBp) => {
+      const successMessage = isBp ? "T//CIPROK#100#20" : ".EASEPROK101.";
+      console.log(
+        hp2.DomUtils.filter((elem) => {
+          return (elem.type = "text");
+        })
+      );
+    };
+
     const btStatusArray = hp2.DomUtils.getElementsByTagName("btStatus", dom);
     const bpStatusArray = hp2.DomUtils.getElementsByTagName("bpStatus", dom);
     const recentBtStatus = getRecentTag(btStatusArray);
@@ -102,4 +116,5 @@ const watchCuppsLog = (filename) => {
 console.log("---- MapStatus object has been created ----");
 console.log(MapStatus);
 console.log("------------------------------------------");
-watchCuppsLog("bpp-print-successful.LOG");
+console.log(`Accessing: ${cuppsfsFileName}`);
+watchCuppsLog(cuppsfsFileName);
