@@ -35,6 +35,15 @@ const MapStatus = (function () {
   };
 })();
 
+// IFEE object that contains all the possible successful print status messages. Differing due to multiple printing applications used my multiple airlines. 
+const aeaPrintMessages = (function () {
+  // successful print messages in order: CUPPS Diagnostic,
+  const bpSuccessMessages = ["T//CIPROK#100#201#300#VSR#01W"];
+  const btSuccessMessages = ["HDCPROK101"];
+  return {bpSuccessMessages, btSuccessMessages};
+})();
+
+
 const domhandler = new hp2.DomHandler((err, dom) => {
   if (err) throw err;
   else {
@@ -50,14 +59,24 @@ const domhandler = new hp2.DomHandler((err, dom) => {
       return tagArray[tagArray.length - 1];
     };
 
+    // Function used in conjunction with the countPrints function. Used to iteratively check if an aea message has any of the successful print messages.
+    const hasSuccessMessage = (currMessage, successMessages) => {
+      for (let message in successMessages) {
+        if (currMessage === message) {
+          return true; 
+        }
+      }
+      return false; 
+    }
+
     const countPrints = (dom, isBp) => {
-      const successMessage = isBp
-        ? "T//CIPROK#100#201#300#VSR#01W"
-        : "HDCPROK101";
+      const successMessages = isBp
+        ? aeaPrintMessages.bpSuccessMessages
+        : aeaPrintMessages.btSuccessMessages;
 
       return hp2.DomUtils.filter((elem) => {
         return (
-          elem.name === "aeaText" && elem.children[0].data === successMessage
+          elem.name === "aeaText" && hasSuccessMessage(elem.children[0].data, successMessages)
         );
       }, dom).length;
     };
@@ -66,7 +85,7 @@ const domhandler = new hp2.DomHandler((err, dom) => {
       const successMessage = isBp ? ".T//CIPROK#100#2" : ".EASEPROK101.";
       let successMessageRegex = new RegExp(`\\${successMessage}`,`g`);
       let counter = 0;
-      
+
       const successNodes = hp2.DomUtils.filter((elem) => {
           if (elem.data === undefined) {
             return; 
