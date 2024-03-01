@@ -2,6 +2,7 @@ const hp2 = require("htmlparser2");
 const chokidar = require("chokidar");
 const fs = require("fs");
 const os = require("os");
+const dh = require("domhandler");
 const date = new Date();
 const cuppsfsFileName = `CUPPSFS${date.getFullYear().toString().slice(-2)}${(
   "0" +
@@ -63,11 +64,26 @@ const domhandler = new hp2.DomHandler((err, dom) => {
 
     const countCuppsMonitorPrints = (dom, isBp) => {
       const successMessage = isBp ? "T//CIPROK#100#20" : ".EASEPROK101.";
-      console.log(
-        hp2.DomUtils.filter((elem) => {
-          return (elem.type = "text");
-        })
-      );
+      let successMessageRegex; 
+      let counter = 0; 
+      switch (isBp) {
+        case (true) :
+          successMessageRegex = new RegExp(`${successMessage}`,`g`);
+          break; 
+        case (false) :
+          successMessageRegex = new RegExp(`\\${successMessage}`,`g`);
+          break; 
+      }
+      const successNodes = hp2.DomUtils.filter((elem) => {
+          if (elem.data === undefined) {
+            return; 
+          }
+          return elem.data.includes(successMessage);
+      }, dom);
+      for (let currNode of successNodes) {
+        counter += currNode.data.match(successMessageRegex).length;
+      }
+      return counter; 
     };
 
     const btStatusArray = hp2.DomUtils.getElementsByTagName("btStatus", dom);
@@ -75,9 +91,9 @@ const domhandler = new hp2.DomHandler((err, dom) => {
     const recentBtStatus = getRecentTag(btStatusArray);
     const recentBpStatus = getRecentTag(bpStatusArray);
 
-    MapStatus.bpCount = countPrints(dom, true);
+    MapStatus.bpCount = countPrints(dom, true) + countCuppsMonitorPrints(dom, true);
     MapStatus.bpRemaining = MapStatus.bpRemaining - MapStatus.bpCount;
-    MapStatus.btCount = countPrints(dom, false);
+    MapStatus.btCount = countPrints(dom, false) + countCuppsMonitorPrints(dom, false);
     MapStatus.btRemaining = MapStatus.btRemaining - MapStatus.btCount;
     MapStatus.btStatus = recentBtStatus.attribs;
     MapStatus.bpStatus = recentBpStatus.attribs;
