@@ -63,17 +63,10 @@ const domhandler = new hp2.DomHandler((err, dom) => {
     };
 
     const countCuppsMonitorPrints = (dom, isBp) => {
-      const successMessage = isBp ? "T//CIPROK#100#20" : ".EASEPROK101.";
-      let successMessageRegex; 
-      let counter = 0; 
-      switch (isBp) {
-        case (true) :
-          successMessageRegex = new RegExp(`${successMessage}`,`g`);
-          break; 
-        case (false) :
-          successMessageRegex = new RegExp(`\\${successMessage}`,`g`);
-          break; 
-      }
+      const successMessage = isBp ? ".T//CIPROK#100#2" : ".EASEPROK101.";
+      let successMessageRegex = new RegExp(`\\${successMessage}`,`g`);
+      let counter = 0;
+      
       const successNodes = hp2.DomUtils.filter((elem) => {
           if (elem.data === undefined) {
             return; 
