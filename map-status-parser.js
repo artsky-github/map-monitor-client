@@ -2,8 +2,9 @@ const hp2 = require("htmlparser2");
 const chokidar = require("chokidar");
 const fs = require("fs");
 const os = require("os");
-const dh = require("domhandler");
 const date = new Date();
+
+// Dependent on the correct time set on the individual CUPPS computer to access the right file.
 const cuppsfsFileName = `CUPPSFS${date.getFullYear().toString().slice(-2)}${(
   "0" +
   (date.getMonth() + 1)
@@ -15,8 +16,11 @@ const cuppsfsFileName = `CUPPSFS${date.getFullYear().toString().slice(-2)}${(
 const MapStatus = (function () {
   let btCount = 0;
   let btRemaining = 200;
+  let btLoadPath = 'FULL'; 
   let bpCount = 0;
-  let bpRemaining = 5000;
+  let bpRemaining = 10000;
+  let bpLoadPathA = 'FULL';
+  let bpLoadPathB = 'FULL';
   let btStatus = null;
   let bpStatus = null;
   let btTimestamp = null;
@@ -25,8 +29,11 @@ const MapStatus = (function () {
   return {
     btCount,
     btRemaining,
+    btLoadPath,
     bpCount,
     bpRemaining,
+    bpLoadPathA,
+    bpLoadPathB,
     btStatus,
     bpStatus,
     btTimestamp,
@@ -98,15 +105,42 @@ const domhandler = new hp2.DomHandler((err, dom) => {
       return counter; 
     };
 
+    const loadPathStatus = (paperRemainder, isBp) => {
+      if (isBp) {
+        if (paperRemainder >= 5000) {
+          return "FULL";
+        } else if (paperRemainder < 5000 && paperRemainder > 250) {
+          return "GOOD";
+        } else if (paperRemainder < 250 && paperRemainder > 0) {
+          return "LOW";
+        } else {
+          return "EMPTY";
+        }
+      } else {
+        if (paperRemainder >= 250) {
+          return "FULL";
+        } else if (paperRemainder < 250 && paperRemainder > 50) {
+          return "GOOD";
+        } else if (paperRemainder < 50 && paperRemainder > 0) {
+          return "LOW";
+        } else {
+          return "EMPTY";
+        }
+      }
+    }
+
     const btStatusArray = hp2.DomUtils.getElementsByTagName("btStatus", dom);
     const bpStatusArray = hp2.DomUtils.getElementsByTagName("bpStatus", dom);
     const recentBtStatus = getRecentTag(btStatusArray);
     const recentBpStatus = getRecentTag(bpStatusArray);
 
-    MapStatus.bpCount = countPrints(dom, true) + countCuppsMonitorPrints(dom, true);
-    MapStatus.bpRemaining = MapStatus.bpRemaining - MapStatus.bpCount;
     MapStatus.btCount = countPrints(dom, false) + countCuppsMonitorPrints(dom, false);
-    MapStatus.btRemaining = MapStatus.btRemaining - MapStatus.btCount;
+    MapStatus.btRemaining = 200 - MapStatus.btCount;
+    MapStatus.btLoadPath = loadPathStatus(MapStatus.btRemaining, false);
+    MapStatus.bpCount = countPrints(dom, true) + countCuppsMonitorPrints(dom, true);
+    MapStatus.bpRemaining = 10000 - MapStatus.bpCount;
+    MapStatus.bpLoadPathA = loadPathStatus((MapStatus.bpRemaining - 5000), true);
+    MapStatus.bpLoadPathB = loadPathStatus(MapStatus.bpRemaining, true);
     MapStatus.btStatus = recentBtStatus.attribs;
     MapStatus.bpStatus = recentBpStatus.attribs;
     MapStatus.btTimestamp = findParentTag(

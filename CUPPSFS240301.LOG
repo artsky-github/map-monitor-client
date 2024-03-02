@@ -3571,3 +3571,2593 @@ messageName="deviceUnlockResponse">
 29/02/24 15:48:33:460 : NotifyEvent uStgExitedEvent
 29/02/24 15:48:33:460 : NotifyEvent uStdEnteredEvent
 
+29/02/24 15:56:18:741 : OnSessionChange 'SessionLogoff'
+29/02/24 15:56:18:741 : NotifyEvent uStdExitedEvent
+29/02/24 15:56:18:741 : NotifyEvent uSpgEnteredEvent
+29/02/24 15:56:18:741 : NotifyEvent uSpgExitedEvent
+29/02/24 15:56:18:741 : NotifyEvent uStpEnteredEvent
+29/02/24 15:56:18:868 : OnSessionChange 'ConsoleDisconnect'
+29/02/24 15:56:19:161 : OnSessionChange 'ConsoleConnect'
+29/02/24 15:56:32:084 : OnSessionChange 'SessionLogon'
+29/02/24 15:56:32:084 : NotifyEvent uStpExitedEvent
+29/02/24 15:56:32:084 : NotifyEvent uStgEnteredEvent
+29/02/24 15:56:32:084 : NotifyEvent uStgExitedEvent
+29/02/24 15:56:32:084 : NotifyEvent uStdEnteredEvent
+29/02/24 15:56:49:182 : Call accepted from 127.0.0.1:51613 - 5352
+29/02/24 15:56:49:182 : Starting ServiceCupps(5352)
+29/02/24 15:56:49:182 : Started ServiceCupps(5352)
+29/02/24 15:56:49:192 : 
+----------------------------- Inbound (PLT) 5352 -----------------------------
+<?xml version="1.0" encoding="utf-8" ?>
+<cupps messageID="1"
+xmlns:xsi="http://www.w3.org/2001/XMLschema-instance"
+messageName="interfaceLevelsAvailableRequest">
+<interfaceLevelsAvailableRequest hsXsdVersion="01.01.0127"/>
+</cupps>
+-------------------------------------------------------------------------------
+29/02/24 15:56:49:192 : Message 'interfaceLevelsAvailableRequest' from application 'Unknown'
+29/02/24 15:56:49:192 : Current Directory 'C:\APPS\CUPPSFS'
+29/02/24 15:56:49:192 : CUPPS XSD found 'CUPPS-01.00.0122.XSD'
+29/02/24 15:56:49:192 : CUPPS XSD found 'CUPPS-01.01.0128.XSD'
+29/02/24 15:56:49:192 : CUPPS XSD found 'CUPPS-01.03.0017.XSD'
+29/02/24 15:56:49:192 : CUPPS XSD found 'CUPPS-01.04.0016.XSD'
+29/02/24 15:56:49:192 : 
+----------------------------- Outbound (PLT) 5352 -----------------------------
+01000002AA
+<?xml version="1.0" encoding="utf-8" ?>
+<cupps messageID="1"
+xmlns:xsi="http://www.w3.org/2001/XMLschema-instance"
+messageName="interfaceLevelsAvailableResponse">
+<interfaceLevelsAvailableResponse result="OK">
+<interfaceLevel level="01.00"
+wsLocalPath="C:/APPS/CUPPSFS/CUPPS-01.00.0122.XSD"
+xsdVersion="01.00.0122"/>
+<interfaceLevel level="01.01"
+wsLocalPath="C:/APPS/CUPPSFS/CUPPS-01.01.0128.XSD"
+xsdVersion="01.01.0128"/>
+<interfaceLevel level="01.03"
+wsLocalPath="C:/APPS/CUPPSFS/CUPPS-01.03.0017.XSD"
+xsdVersion="01.03.0017"/>
+<interfaceLevel level="01.04"
+wsLocalPath="C:/APPS/CUPPSFS/CUPPS-01.04.0016.XSD"
+xsdVersion="01.04.0016"/>
+</interfaceLevelsAvailableResponse>
+</cupps>
+-------------------------------------------------------------------------------
+29/02/24 15:56:49:194 : 
+----------------------------- Inbound (PLT) 5352 -----------------------------
+<?xml version="1.0" encoding="utf-8" ?>
+<cupps messageID="2"
+xmlns:xsi="http://www.w3.org/2001/XMLschema-instance"
+messageName="interfaceLevelRequest">
+<interfaceLevelRequest level="01.04"/>
+</cupps>
+-------------------------------------------------------------------------------
+29/02/24 15:56:49:194 : Message 'interfaceLevelRequest' from application 'Unknown'
+29/02/24 15:56:49:194 : 
+----------------------------- Outbound (PLT) 5352 -----------------------------
+01000000C7
+<?xml version="1.0" encoding="utf-8" ?>
+<cupps messageID="2"
+xmlns:xsi="http://www.w3.org/2001/XMLschema-instance"
+messageName="interfaceLevelResponse">
+<interfaceLevelResponse result="OK"/>
+</cupps>
+-------------------------------------------------------------------------------
+29/02/24 15:56:49:256 : 
+----------------------------- Inbound (PLT) 5352 -----------------------------
+<?xml version="1.0" encoding="utf-8" ?>
+<cupps xmlns="http://www.cupps.aero/cupps/01.04"
+deviceName="PLATFORM"
+timeStamp="2024-02-29 20:56:49.255"
+messageID="3"
+xmlns:xsi="http://www.w3.org/2001/XMLschema-instance"
+messageName="authenticateRequest">
+<authenticateRequest airline="FS" eventToken="1234567890ABCDEF">
+<applicationList>
+<application applicationName="CommonLauncher" applicationVersion="1.44.0.0"/>
+</applicationList>
+</authenticateRequest>
+</cupps>
+-------------------------------------------------------------------------------
+29/02/24 15:56:49:257 : Message 'authenticateRequest' from application 'Unknown'
+29/02/24 15:56:49:257 : NotifyEvent aStpExitedEvent
+29/02/24 15:56:49:257 : NotifyEvent aStgEnteredEvent
+29/02/24 15:56:49:257 : NotifyEvent aStgExitedEvent
+29/02/24 15:56:49:257 : NotifyEvent aAthEnteredEvent
+29/02/24 15:56:49:257 : DataLog File C:\APPS\CUPPSFS\SRQ1C059XXXX-240229-205649257531.JSON - Created
+29/02/24 15:56:49:576 : NotifyEvent aAthExitedEvent Application COMMONLAUNCHER
+29/02/24 15:56:49:576 : NotifyEvent aStdEnteredEvent Application COMMONLAUNCHER
+29/02/24 15:56:49:576 : 
+----------------------------- Outbound (PLT) 5352 -----------------------------
+0100001237
+<?xml version="1.0" encoding="utf-8" ?>
+<cupps xmlns="http://www.cupps.aero/cupps/01.04"
+deviceName="PLATFORM"
+timeStamp="2024-02-29 20:56:49.576"
+messageID="3"
+xmlns:xsi="http://www.w3.org/2001/XMLschema-instance"
+messageName="authenticateResponse">
+<authenticateResponse result="OK" deviceToken="02FDD76B0000000A">
+<platformParameter platformVendor="AeroCloud Systems" platformVersion="2.87" platformTime="20240229T205649">
+<cryptAlgorithmInfo>
+<defaultCryptAlgorithm>
+<cryptAlgorithm name="aes-strong"/>
+</defaultCryptAlgorithm>
+<availableCryptAlgorithms>
+<cryptAlgorithm name="aes-strong"/>
+<cryptAlgorithm name="des-weak"/>
+</availableCryptAlgorithms>
+</cryptAlgorithmInfo>
+<ipVersionSupport runIPv4="true" runIPv6="false" />
+</platformParameter>
+<applicationParameter>
+<storage storageT="persistentGlobal" path="//WINDOWS/TEMP/FS/" driveLetter="C"/> 
+<storage storageT="persistentLocal" path="//WINDOWS/TEMP/FS/" driveLetter="C"/>
+<storage storageT="transient" path="//WINDOWS/TEMP/FS/" driveLetter="C"/>
+</applicationParameter>
+<workstationParameter name="SRQ1C059" locDesc="AIRPORT" defaultSpooledPrinter="" wsTime="20240229T205649">
+<vendorModelInfo vendor="NONE" model="NONE" miscInfo="NONE"/>
+</workstationParameter>
+<deviceList>
+<device deviceIndex="1" deviceName="SRQ1C059BC1" deviceParameterType="bcDeviceParameter">
+<supportedInterfaceModes>
+<interfaceMode mode="standard"/>
+</supportedInterfaceModes>
+<bcDeviceParameter numberVisualIndicator="0">
+<vendorModelInfo vendor="ZEBRA" model="DS9208"/>
+<ipAndPort hostName="SRQ1C059" ip="127.0.0.1" ipv6="::" port="7535"/>
+<bcStatus init="false" powerOff="false" ready="true" unknown="false" desc="ONLINE"/>
+</bcDeviceParameter>
+</device>
+<device deviceIndex="2" deviceName="SRQ1C059BP1" deviceParameterType="bpDeviceParameter">
+<supportedInterfaceModes>
+<interfaceMode mode="aea"/>
+</supportedInterfaceModes>
+<bpDeviceParameter supportsColor="none">
+<vendorModelInfo vendor="VIDTRONIX" model="MAP" miscInfo="000000"/>
+<ipAndPort hostName="SRQ1C059" ip="127.0.0.1" ipv6="::" port="7535"/>
+<bpStatus init="false" powerOff="false" ready="true" unknown="false" paperOut="false" paperJam="false" desc="ONLINE"/>
+</bpDeviceParameter>
+</device>
+<device deviceIndex="3" deviceName="SRQ1C059BT1" deviceParameterType="btDeviceParameter">
+<supportedInterfaceModes>
+<interfaceMode mode="aea"/>
+</supportedInterfaceModes>
+<btDeviceParameter supportsColor="none">
+<vendorModelInfo vendor="VIDTRONIX" model="MAP" miscInfo="000000"/>
+<ipAndPort hostName="SRQ1C059" ip="127.0.0.1" ipv6="::" port="7535"/>
+<btStatus init="false" powerOff="false" ready="true" unknown="false" paperOut="false" paperJam="false" desc="ONLINE"/>
+<rfidCapabilities supportRFID="noRFID"/>
+</btDeviceParameter>
+</device>
+<device deviceIndex="4" deviceName="SRQ1C059MS1" deviceParameterType="msDeviceParameter">
+<supportedInterfaceModes>
+<interfaceMode mode="standard"/>
+</supportedInterfaceModes>
+<msDeviceParameter numberOfTracks="3" supportsJIS2="false" style="swipe" msCapabilities="PlatformOnly">
+<vendorModelInfo vendor="ACCESS-IS" model="AKB500"/>
+<ipAndPort hostName="SRQ1C059" ip="127.0.0.1" ipv6="::" port="7535"/>
+<msStatus init="false" powerOff="false" ready="true" unknown="false" desc="ONLINE"/>
+</msDeviceParameter>
+</device>
+<device deviceIndex="5" deviceName="SRQ1C059OC1" deviceParameterType="ocDeviceParameter">
+<supportedInterfaceModes>
+<interfaceMode mode="standard"/>
+</supportedInterfaceModes>
+<ocDeviceParameter numCharsPerLine="45" numLines="3" style="swipe">
+<vendorModelInfo vendor="ACCESS-IS" model="AKB500"/>
+<ipAndPort hostName="SRQ1C059" ip="127.0.0.1" ipv6="::" port="7535"/>
+<ocStatus init="false" powerOff="false" ready="true" unknown="false" desc="ONLINE"/>
+</ocDeviceParameter>
+</device>
+<device deviceIndex="6" deviceName="SRQ1C059PR1" deviceParameterType="prDeviceParameter">
+<supportedInterfaceModes>
+<interfaceMode mode="standard"/>
+</supportedInterfaceModes>
+<prDeviceParameter supportsColor="none">
+<vendorModelInfo vendor="DCP" model="UNKNOWN"/>
+<ipAndPort hostName="SRQ1C059" ip="127.0.0.1" ipv6="::" port="7535"/>
+<prStatus init="false" powerOff="false" ready="true" unknown="false" paperOut="false" paperJam="false" desc="ONLINE"/>
+<supportedStocks>
+<supportedStock stockName="Letter" supportsColor="none" stockWidth="216" stockHeight="279" leftMargin="25" rightMargin="25" topMargin="25" bottomMargin="25" perforationLeft="0"/>
+<supportedStock stockName="A4" supportsColor="none" stockWidth="210" stockHeight="297" leftMargin="25" rightMargin="25" topMargin="25" bottomMargin="25" perforationLeft="0"/>
+</supportedStocks>
+</prDeviceParameter>
+</device>
+</deviceList>
+</authenticateResponse>
+</cupps>
+-------------------------------------------------------------------------------
+29/02/24 15:56:49:577 : Call accepted from 127.0.0.1:51616 - 5240
+29/02/24 15:56:49:578 : Starting ServiceCupps(5240)
+29/02/24 15:56:49:578 : Started ServiceCupps(5240)
+29/02/24 15:56:49:578 : 
+----------------------------- Inbound (PLT) 5240 -----------------------------
+<?xml version="1.0" encoding="utf-8" ?>
+<cupps messageID="1"
+xmlns:xsi="http://www.w3.org/2001/XMLschema-instance"
+messageName="interfaceLevelsAvailableRequest">
+<interfaceLevelsAvailableRequest hsXsdVersion="01.01.0127"/>
+</cupps>
+-------------------------------------------------------------------------------
+29/02/24 15:56:49:578 : Message 'interfaceLevelsAvailableRequest' from application 'Unknown'
+29/02/24 15:56:49:578 : Current Directory 'C:\APPS\CUPPSFS'
+29/02/24 15:56:49:578 : CUPPS XSD found 'CUPPS-01.00.0122.XSD'
+29/02/24 15:56:49:578 : CUPPS XSD found 'CUPPS-01.01.0128.XSD'
+29/02/24 15:56:49:578 : CUPPS XSD found 'CUPPS-01.03.0017.XSD'
+29/02/24 15:56:49:578 : CUPPS XSD found 'CUPPS-01.04.0016.XSD'
+29/02/24 15:56:49:579 : 
+----------------------------- Outbound (PLT) 5240 -----------------------------
+01000002AA
+<?xml version="1.0" encoding="utf-8" ?>
+<cupps messageID="1"
+xmlns:xsi="http://www.w3.org/2001/XMLschema-instance"
+messageName="interfaceLevelsAvailableResponse">
+<interfaceLevelsAvailableResponse result="OK">
+<interfaceLevel level="01.00"
+wsLocalPath="C:/APPS/CUPPSFS/CUPPS-01.00.0122.XSD"
+xsdVersion="01.00.0122"/>
+<interfaceLevel level="01.01"
+wsLocalPath="C:/APPS/CUPPSFS/CUPPS-01.01.0128.XSD"
+xsdVersion="01.01.0128"/>
+<interfaceLevel level="01.03"
+wsLocalPath="C:/APPS/CUPPSFS/CUPPS-01.03.0017.XSD"
+xsdVersion="01.03.0017"/>
+<interfaceLevel level="01.04"
+wsLocalPath="C:/APPS/CUPPSFS/CUPPS-01.04.0016.XSD"
+xsdVersion="01.04.0016"/>
+</interfaceLevelsAvailableResponse>
+</cupps>
+-------------------------------------------------------------------------------
+29/02/24 15:56:49:579 : 
+----------------------------- Inbound (PLT) 5240 -----------------------------
+<?xml version="1.0" encoding="utf-8" ?>
+<cupps messageID="2"
+xmlns:xsi="http://www.w3.org/2001/XMLschema-instance"
+messageName="interfaceLevelRequest">
+<interfaceLevelRequest level="01.04"/>
+</cupps>
+-------------------------------------------------------------------------------
+29/02/24 15:56:49:579 : Message 'interfaceLevelRequest' from application 'Unknown'
+29/02/24 15:56:49:587 : 
+----------------------------- Outbound (PLT) 5240 -----------------------------
+01000000C7
+<?xml version="1.0" encoding="utf-8" ?>
+<cupps messageID="2"
+xmlns:xsi="http://www.w3.org/2001/XMLschema-instance"
+messageName="interfaceLevelResponse">
+<interfaceLevelResponse result="OK"/>
+</cupps>
+-------------------------------------------------------------------------------
+29/02/24 15:56:49:604 : DataLog File SRQ1C059XXXX-240229-205649257531.JSON - Uploaded
+29/02/24 15:56:49:632 : 
+----------------------------- Inbound (PLT) 5240 -----------------------------
+<?xml version="1.0" encoding="utf-8" ?>
+<cupps xmlns="http://www.cupps.aero/cupps/01.04"
+deviceName="SRQ1C059BC1"
+timeStamp="2024-02-29 20:56:49.632"
+messageID="3"
+xmlns:xsi="http://www.w3.org/2001/XMLschema-instance"
+messageName="deviceAcquireRequest">
+<deviceAcquireRequest deviceName="SRQ1C059BC1" deviceToken="02FDD76B0000000A" airlineID="FS"/>
+</cupps>
+-------------------------------------------------------------------------------
+29/02/24 15:56:49:633 : Message 'deviceAcquireRequest' from application 'Unknown'
+29/02/24 15:56:49:633 : 
+----------------------------- Outbound (BC1) 5240 -----------------------------
+010000030D
+<?xml version="1.0" encoding="utf-8" ?>
+<cupps xmlns="http://www.cupps.aero/cupps/01.04"
+deviceName="SRQ1C059BC1"
+timeStamp="2024-02-29 20:56:49.633"
+messageID="3"
+xmlns:xsi="http://www.w3.org/2001/XMLschema-instance"
+messageName="deviceAcquireResponse">
+<deviceAcquireResponse result="OK">
+<device deviceIndex="1" deviceName="SRQ1C059BC1" deviceParameterType="bcDeviceParameter">
+<supportedInterfaceModes>
+<interfaceMode mode="standard"/>
+</supportedInterfaceModes>
+<bcDeviceParameter numberVisualIndicator="0">
+<vendorModelInfo vendor="ZEBRA" model="DS9208"/>
+<ipAndPort hostName="SRQ1C059" ip="127.0.0.1" ipv6="::" port="7535"/>
+<bcStatus init="false" powerOff="false" ready="true" unknown="false" desc="ONLINE"/>
+</bcDeviceParameter>
+</device>
+</deviceAcquireResponse>
+</cupps>
+-------------------------------------------------------------------------------
+29/02/24 15:56:49:633 : DataLog File C:\APPS\CUPPSFS\SRQ1C059BCR1-240229-205649633526.JSON - Created
+29/02/24 15:56:49:633 : Application 'COMMONLAUNCHER' - Device 'PLT' - (5352)
+29/02/24 15:56:49:633 : Application 'COMMONLAUNCHER' - Device 'BC1' - (5240)
+29/02/24 15:56:49:697 : Call accepted from 127.0.0.1:51618 - 6004
+29/02/24 15:56:49:697 : Starting ServiceCupps(6004)
+29/02/24 15:56:49:701 : Started ServiceCupps(6004)
+29/02/24 15:56:49:703 : 
+----------------------------- Inbound (PLT) 6004 -----------------------------
+<?xml version="1.0" encoding="utf-8" ?>
+<cupps messageID="1"
+xmlns:xsi="http://www.w3.org/2001/XMLschema-instance"
+messageName="interfaceLevelsAvailableRequest">
+<interfaceLevelsAvailableRequest hsXsdVersion="01.01.0127"/>
+</cupps>
+-------------------------------------------------------------------------------
+29/02/24 15:56:49:703 : Message 'interfaceLevelsAvailableRequest' from application 'Unknown'
+29/02/24 15:56:49:703 : Current Directory 'C:\APPS\CUPPSFS'
+29/02/24 15:56:49:703 : CUPPS XSD found 'CUPPS-01.00.0122.XSD'
+29/02/24 15:56:49:703 : CUPPS XSD found 'CUPPS-01.01.0128.XSD'
+29/02/24 15:56:49:703 : CUPPS XSD found 'CUPPS-01.03.0017.XSD'
+29/02/24 15:56:49:703 : CUPPS XSD found 'CUPPS-01.04.0016.XSD'
+29/02/24 15:56:49:703 : 
+----------------------------- Outbound (PLT) 6004 -----------------------------
+01000002AA
+<?xml version="1.0" encoding="utf-8" ?>
+<cupps messageID="1"
+xmlns:xsi="http://www.w3.org/2001/XMLschema-instance"
+messageName="interfaceLevelsAvailableResponse">
+<interfaceLevelsAvailableResponse result="OK">
+<interfaceLevel level="01.00"
+wsLocalPath="C:/APPS/CUPPSFS/CUPPS-01.00.0122.XSD"
+xsdVersion="01.00.0122"/>
+<interfaceLevel level="01.01"
+wsLocalPath="C:/APPS/CUPPSFS/CUPPS-01.01.0128.XSD"
+xsdVersion="01.01.0128"/>
+<interfaceLevel level="01.03"
+wsLocalPath="C:/APPS/CUPPSFS/CUPPS-01.03.0017.XSD"
+xsdVersion="01.03.0017"/>
+<interfaceLevel level="01.04"
+wsLocalPath="C:/APPS/CUPPSFS/CUPPS-01.04.0016.XSD"
+xsdVersion="01.04.0016"/>
+</interfaceLevelsAvailableResponse>
+</cupps>
+-------------------------------------------------------------------------------
+29/02/24 15:56:49:703 : 
+----------------------------- Inbound (PLT) 6004 -----------------------------
+<?xml version="1.0" encoding="utf-8" ?>
+<cupps messageID="2"
+xmlns:xsi="http://www.w3.org/2001/XMLschema-instance"
+messageName="interfaceLevelRequest">
+<interfaceLevelRequest level="01.04"/>
+</cupps>
+-------------------------------------------------------------------------------
+29/02/24 15:56:49:703 : Message 'interfaceLevelRequest' from application 'Unknown'
+29/02/24 15:56:49:704 : 
+----------------------------- Outbound (PLT) 6004 -----------------------------
+01000000C7
+<?xml version="1.0" encoding="utf-8" ?>
+<cupps messageID="2"
+xmlns:xsi="http://www.w3.org/2001/XMLschema-instance"
+messageName="interfaceLevelResponse">
+<interfaceLevelResponse result="OK"/>
+</cupps>
+-------------------------------------------------------------------------------
+29/02/24 15:56:49:760 : 
+----------------------------- Inbound (PLT) 6004 -----------------------------
+<?xml version="1.0" encoding="utf-8" ?>
+<cupps xmlns="http://www.cupps.aero/cupps/01.04"
+deviceName="SRQ1C059BP1"
+timeStamp="2024-02-29 20:56:49.760"
+messageID="3"
+xmlns:xsi="http://www.w3.org/2001/XMLschema-instance"
+messageName="deviceAcquireRequest">
+<deviceAcquireRequest deviceName="SRQ1C059BP1" deviceToken="02FDD76B0000000A" airlineID="FS"/>
+</cupps>
+-------------------------------------------------------------------------------
+29/02/24 15:56:49:760 : Message 'deviceAcquireRequest' from application 'Unknown'
+29/02/24 15:56:49:761 : 
+----------------------------- Outbound (BP1) 6004 -----------------------------
+0100000338
+<?xml version="1.0" encoding="utf-8" ?>
+<cupps xmlns="http://www.cupps.aero/cupps/01.04"
+deviceName="SRQ1C059BP1"
+timeStamp="2024-02-29 20:56:49.761"
+messageID="3"
+xmlns:xsi="http://www.w3.org/2001/XMLschema-instance"
+messageName="deviceAcquireResponse">
+<deviceAcquireResponse result="OK">
+<device deviceIndex="2" deviceName="SRQ1C059BP1" deviceParameterType="bpDeviceParameter">
+<supportedInterfaceModes>
+<interfaceMode mode="aea"/>
+</supportedInterfaceModes>
+<bpDeviceParameter supportsColor="none">
+<vendorModelInfo vendor="VIDTRONIX" model="MAP" miscInfo="000000"/>
+<ipAndPort hostName="SRQ1C059" ip="127.0.0.1" ipv6="::" port="7535"/>
+<bpStatus init="false" powerOff="false" ready="true" unknown="false" paperOut="false" paperJam="false" desc="ONLINE"/>
+</bpDeviceParameter>
+</device>
+</deviceAcquireResponse>
+</cupps>
+-------------------------------------------------------------------------------
+29/02/24 15:56:49:761 : DataLog File C:\APPS\CUPPSFS\SRQ1C059BPP1-240229-205649761185.JSON - Created
+29/02/24 15:56:49:761 : Application 'COMMONLAUNCHER' - Device 'PLT' - (5352)
+29/02/24 15:56:49:761 : Application 'COMMONLAUNCHER' - Device 'BC1' - (5240)
+29/02/24 15:56:49:761 : Application 'COMMONLAUNCHER' - Device 'BP1' - (6004)
+29/02/24 15:56:49:824 : 
+----------------------------- Inbound (BP1) 6004 -----------------------------
+<?xml version="1.0" encoding="utf-8" ?>
+<cupps xmlns="http://www.cupps.aero/cupps/01.04"
+deviceName="SRQ1C059BP1"
+timeStamp="2024-02-29 20:56:49.824"
+messageID="4"
+xmlns:xsi="http://www.w3.org/2001/XMLschema-instance"
+messageName="interfaceModeRequest">
+<interfaceModeRequest mode="aea"/>
+</cupps>
+-------------------------------------------------------------------------------
+29/02/24 15:56:49:825 : Message 'interfaceModeRequest' from application 'COMMONLAUNCHER'
+29/02/24 15:56:49:825 : 
+----------------------------- Outbound (PLT) 5352 -----------------------------
+0100000139
+<?xml version="1.0" encoding="utf-8" ?>
+<cupps xmlns="http://www.cupps.aero/cupps/01.04"
+deviceName="PLATFORM"
+timeStamp="2024-02-29 20:56:49.825"
+messageID="4294901760"
+xmlns:xsi="http://www.w3.org/2001/XMLschema-instance"
+messageName="notify">
+<notify>
+<dStdExitedEvent device="SRQ1C059BP1"/>
+</notify>
+</cupps>
+-------------------------------------------------------------------------------
+29/02/24 15:56:49:825 : 
+----------------------------- Outbound (PLT) 5352 -----------------------------
+010000019A
+<?xml version="1.0" encoding="utf-8" ?>
+<cupps xmlns="http://www.cupps.aero/cupps/01.04"
+deviceName="PLATFORM"
+timeStamp="2024-02-29 20:56:49.825"
+messageID="4294901761"
+xmlns:xsi="http://www.w3.org/2001/XMLschema-instance"
+messageName="notify">
+<notify>
+<dLkdEnteredEvent workstation="SRQ1C059" device="SRQ1C059BP1" user="FS" applicationName="COMMONLAUNCHER" applicationVersion="1.44.0.0"/>
+</notify>
+</cupps>
+-------------------------------------------------------------------------------
+29/02/24 15:56:49:825 : 
+----------------------------- Outbound (BP1) 6004 -----------------------------
+010000012C
+<?xml version="1.0" encoding="utf-8" ?>
+<cupps xmlns="http://www.cupps.aero/cupps/01.04"
+deviceName="SRQ1C059BP1"
+timeStamp="2024-02-29 20:56:49.825"
+messageID="4"
+xmlns:xsi="http://www.w3.org/2001/XMLschema-instance"
+messageName="interfaceModeResponse">
+<interfaceModeResponse result="OK"/>
+</cupps>
+-------------------------------------------------------------------------------
+29/02/24 15:56:49:825 : 
+----------------------------- Inbound (BP1) 6004 -----------------------------
+<?xml version="1.0" encoding="utf-8" ?>
+<cupps xmlns="http://www.cupps.aero/cupps/01.04"
+deviceName="SRQ1C059BP1"
+timeStamp="2024-02-29 20:56:49.824"
+messageID="5"
+xmlns:xsi="http://www.w3.org/2001/XMLschema-instance"
+messageName="aeaRequest">
+<aeaRequest>
+<aeaMessage><aeaText>SQ</aeaText></aeaMessage>
+</aeaRequest>
+</cupps>
+-------------------------------------------------------------------------------
+29/02/24 15:56:49:825 : Message 'aeaRequest' from application 'COMMONLAUNCHER'
+29/02/24 15:56:49:826 : DataLog File C:\APPS\CUPPSFS\SRQ1C059BPP1-240229-205649825014.JSON - Created
+29/02/24 15:56:49:826 : Waiting for AEA Semaphore on COM11
+29/02/24 15:56:49:826 : Acquired AEA Semaphore on COM11
+29/02/24 15:56:49:826 : Data sent to port 'COM11' from 'BP1'
+0000  53 51                                            |SQ              |
+29/02/24 15:56:49:826 : ComData write on port 'COM11' for 'BP1'
+0000  02 53 51 03                                      |.SQ.            |
+29/02/24 15:56:49:826 : 
+----------------------------- Outbound (BP1) 6004 -----------------------------
+0100000118
+<?xml version="1.0" encoding="utf-8" ?>
+<cupps xmlns="http://www.cupps.aero/cupps/01.04"
+deviceName="SRQ1C059BP1"
+timeStamp="2024-02-29 20:56:49.826"
+messageID="5"
+xmlns:xsi="http://www.w3.org/2001/XMLschema-instance"
+messageName="aeaResponse">
+<aeaResponse result="OK"/>
+</cupps>
+-------------------------------------------------------------------------------
+29/02/24 15:56:49:871 : AeaBusyTime 00062 (Max 20002) on 'COM11'
+29/02/24 15:56:49:871 : Device BP1 State DEV_LKD
+29/02/24 15:56:49:871 : ComData read on port 'COM11' for 'BP1'
+0000  02 45 41 53 45 53 51 4F 4B 23 4F 53 3D 30 23 52  |.EASESQOK#OS=0#R|
+0010  46 3D 32 23 53 49 3D 31 31 32 31 33 31 23 44 4F  |F=2#SI=112131#DO|
+0020  3D 30 30 30 23 50 30 3D 30 23 4C 47 3D 30 23 4C  |=000#P0=0#LG=0#L|
+0030  50 3D 30 23 43 55 3D 32 23 45 50 3D 32 23 42 56  |P=0#CU=2#EP=2#BV|
+0040  3D 30 03                                         |=0.             |
+29/02/24 15:56:49:871 : MsgDone on port COM11
+29/02/24 15:56:49:871 : Data received on port 'COM11' for 'BP1'
+0000  45 41 53 45 53 51 4F 4B 23 4F 53 3D 30 23 52 46  |EASESQOK#OS=0#RF|
+0010  3D 32 23 53 49 3D 31 31 32 31 33 31 23 44 4F 3D  |=2#SI=112131#DO=|
+0020  30 30 30 23 50 30 3D 30 23 4C 47 3D 30 23 4C 50  |000#P0=0#LG=0#LP|
+0030  3D 30 23 43 55 3D 32 23 45 50 3D 32 23 42 56 3D  |=0#CU=2#EP=2#BV=|
+0040  30                                               |0               |
+29/02/24 15:56:49:871 : DataLog File C:\APPS\CUPPSFS\SRQ1C059BPP1-240229-205649871887.JSON - Created
+29/02/24 15:56:49:872 : 
+----------------------------- Outbound (BP1) 6004 -----------------------------
+010000018D
+<?xml version="1.0" encoding="utf-8" ?>
+<cupps xmlns="http://www.cupps.aero/cupps/01.04"
+deviceName="SRQ1C059BP1"
+timeStamp="2024-02-29 20:56:49.872"
+messageID="4294901760"
+xmlns:xsi="http://www.w3.org/2001/XMLschema-instance"
+messageName="aeaRequest">
+<aeaRequest>
+<aeaMessage><aeaText>HDCSQOK#OS=0#RF=2#SI=112131#DO=000#P0=0#LG=0#LP=0#CU=2#EP=2#BV=0</aeaText></aeaMessage>
+</aeaRequest>
+</cupps>
+-------------------------------------------------------------------------------
+29/02/24 15:56:49:872 : Releasing AEA Semaphore on 'COM11'
+29/02/24 15:56:49:887 : Call accepted from 127.0.0.1:51620 - 792
+29/02/24 15:56:49:888 : Starting ServiceCupps(792)
+29/02/24 15:56:49:888 : Started ServiceCupps(792)
+29/02/24 15:56:49:888 : 
+----------------------------- Inbound (PLT) 792 -----------------------------
+<?xml version="1.0" encoding="utf-8" ?>
+<cupps messageID="1"
+xmlns:xsi="http://www.w3.org/2001/XMLschema-instance"
+messageName="interfaceLevelsAvailableRequest">
+<interfaceLevelsAvailableRequest hsXsdVersion="01.01.0127"/>
+</cupps>
+-------------------------------------------------------------------------------
+29/02/24 15:56:49:888 : Message 'interfaceLevelsAvailableRequest' from application 'Unknown'
+29/02/24 15:56:49:888 : Current Directory 'C:\APPS\CUPPSFS'
+29/02/24 15:56:49:888 : CUPPS XSD found 'CUPPS-01.00.0122.XSD'
+29/02/24 15:56:49:888 : CUPPS XSD found 'CUPPS-01.01.0128.XSD'
+29/02/24 15:56:49:888 : CUPPS XSD found 'CUPPS-01.03.0017.XSD'
+29/02/24 15:56:49:888 : CUPPS XSD found 'CUPPS-01.04.0016.XSD'
+29/02/24 15:56:49:888 : 
+----------------------------- Outbound (PLT) 792 -----------------------------
+01000002AA
+<?xml version="1.0" encoding="utf-8" ?>
+<cupps messageID="1"
+xmlns:xsi="http://www.w3.org/2001/XMLschema-instance"
+messageName="interfaceLevelsAvailableResponse">
+<interfaceLevelsAvailableResponse result="OK">
+<interfaceLevel level="01.00"
+wsLocalPath="C:/APPS/CUPPSFS/CUPPS-01.00.0122.XSD"
+xsdVersion="01.00.0122"/>
+<interfaceLevel level="01.01"
+wsLocalPath="C:/APPS/CUPPSFS/CUPPS-01.01.0128.XSD"
+xsdVersion="01.01.0128"/>
+<interfaceLevel level="01.03"
+wsLocalPath="C:/APPS/CUPPSFS/CUPPS-01.03.0017.XSD"
+xsdVersion="01.03.0017"/>
+<interfaceLevel level="01.04"
+wsLocalPath="C:/APPS/CUPPSFS/CUPPS-01.04.0016.XSD"
+xsdVersion="01.04.0016"/>
+</interfaceLevelsAvailableResponse>
+</cupps>
+-------------------------------------------------------------------------------
+29/02/24 15:56:49:888 : 
+----------------------------- Inbound (PLT) 792 -----------------------------
+<?xml version="1.0" encoding="utf-8" ?>
+<cupps messageID="2"
+xmlns:xsi="http://www.w3.org/2001/XMLschema-instance"
+messageName="interfaceLevelRequest">
+<interfaceLevelRequest level="01.04"/>
+</cupps>
+-------------------------------------------------------------------------------
+29/02/24 15:56:49:888 : Message 'interfaceLevelRequest' from application 'Unknown'
+29/02/24 15:56:49:888 : 
+----------------------------- Outbound (PLT) 792 -----------------------------
+01000000C7
+<?xml version="1.0" encoding="utf-8" ?>
+<cupps messageID="2"
+xmlns:xsi="http://www.w3.org/2001/XMLschema-instance"
+messageName="interfaceLevelResponse">
+<interfaceLevelResponse result="OK"/>
+</cupps>
+-------------------------------------------------------------------------------
+29/02/24 15:56:49:949 : 
+----------------------------- Inbound (PLT) 792 -----------------------------
+<?xml version="1.0" encoding="utf-8" ?>
+<cupps xmlns="http://www.cupps.aero/cupps/01.04"
+deviceName="SRQ1C059BT1"
+timeStamp="2024-02-29 20:56:49.949"
+messageID="3"
+xmlns:xsi="http://www.w3.org/2001/XMLschema-instance"
+messageName="deviceAcquireRequest">
+<deviceAcquireRequest deviceName="SRQ1C059BT1" deviceToken="02FDD76B0000000A" airlineID="FS"/>
+</cupps>
+-------------------------------------------------------------------------------
+29/02/24 15:56:49:949 : Message 'deviceAcquireRequest' from application 'Unknown'
+29/02/24 15:56:49:949 : 
+----------------------------- Outbound (BT1) 792 -----------------------------
+0100000361
+<?xml version="1.0" encoding="utf-8" ?>
+<cupps xmlns="http://www.cupps.aero/cupps/01.04"
+deviceName="SRQ1C059BT1"
+timeStamp="2024-02-29 20:56:49.949"
+messageID="3"
+xmlns:xsi="http://www.w3.org/2001/XMLschema-instance"
+messageName="deviceAcquireResponse">
+<deviceAcquireResponse result="OK">
+<device deviceIndex="3" deviceName="SRQ1C059BT1" deviceParameterType="btDeviceParameter">
+<supportedInterfaceModes>
+<interfaceMode mode="aea"/>
+</supportedInterfaceModes>
+<btDeviceParameter supportsColor="none">
+<vendorModelInfo vendor="VIDTRONIX" model="MAP" miscInfo="000000"/>
+<ipAndPort hostName="SRQ1C059" ip="127.0.0.1" ipv6="::" port="7535"/>
+<btStatus init="false" powerOff="false" ready="true" unknown="false" paperOut="false" paperJam="false" desc="ONLINE"/>
+<rfidCapabilities supportRFID="noRFID"/>
+</btDeviceParameter>
+</device>
+</deviceAcquireResponse>
+</cupps>
+-------------------------------------------------------------------------------
+29/02/24 15:56:49:950 : DataLog File C:\APPS\CUPPSFS\SRQ1C059BTP1-240229-205649949678.JSON - Created
+29/02/24 15:56:49:950 : Application 'COMMONLAUNCHER' - Device 'PLT' - (5352)
+29/02/24 15:56:49:950 : Application 'COMMONLAUNCHER' - Device 'BC1' - (5240)
+29/02/24 15:56:49:950 : Application 'COMMONLAUNCHER' - Device 'BP1' - (6004)
+29/02/24 15:56:49:950 : Application 'COMMONLAUNCHER' - Device 'BT1' - (792)
+29/02/24 15:56:50:011 : 
+----------------------------- Inbound (BT1) 792 -----------------------------
+<?xml version="1.0" encoding="utf-8" ?>
+<cupps xmlns="http://www.cupps.aero/cupps/01.04"
+deviceName="SRQ1C059BT1"
+timeStamp="2024-02-29 20:56:50.011"
+messageID="4"
+xmlns:xsi="http://www.w3.org/2001/XMLschema-instance"
+messageName="interfaceModeRequest">
+<interfaceModeRequest mode="aea"/>
+</cupps>
+-------------------------------------------------------------------------------
+29/02/24 15:56:50:011 : 
+----------------------------- Inbound (BP1) 6004 -----------------------------
+<?xml version="1.0" encoding="utf-8" ?>
+<cupps xmlns="http://www.cupps.aero/cupps/01.04"
+deviceName="SRQ1C059BP1"
+timeStamp="2024-02-29 20:56:50.011"
+messageID="4294901760"
+xmlns:xsi="http://www.w3.org/2001/XMLschema-instance"
+messageName="aeaResponse">
+<aeaResponse result="OK"/>
+</cupps>
+-------------------------------------------------------------------------------
+29/02/24 15:56:50:011 : Message 'interfaceModeRequest' from application 'COMMONLAUNCHER'
+29/02/24 15:56:50:011 : 
+----------------------------- Outbound (PLT) 5352 -----------------------------
+0100000139
+<?xml version="1.0" encoding="utf-8" ?>
+<cupps xmlns="http://www.cupps.aero/cupps/01.04"
+deviceName="PLATFORM"
+timeStamp="2024-02-29 20:56:50.011"
+messageID="4294901762"
+xmlns:xsi="http://www.w3.org/2001/XMLschema-instance"
+messageName="notify">
+<notify>
+<dStdExitedEvent device="SRQ1C059BT1"/>
+</notify>
+</cupps>
+-------------------------------------------------------------------------------
+29/02/24 15:56:50:011 : 
+----------------------------- Outbound (PLT) 5352 -----------------------------
+010000019A
+<?xml version="1.0" encoding="utf-8" ?>
+<cupps xmlns="http://www.cupps.aero/cupps/01.04"
+deviceName="PLATFORM"
+timeStamp="2024-02-29 20:56:50.011"
+messageID="4294901763"
+xmlns:xsi="http://www.w3.org/2001/XMLschema-instance"
+messageName="notify">
+<notify>
+<dLkdEnteredEvent workstation="SRQ1C059" device="SRQ1C059BT1" user="FS" applicationName="COMMONLAUNCHER" applicationVersion="1.44.0.0"/>
+</notify>
+</cupps>
+-------------------------------------------------------------------------------
+29/02/24 15:56:50:011 : 
+----------------------------- Outbound (BT1) 792 -----------------------------
+010000012C
+<?xml version="1.0" encoding="utf-8" ?>
+<cupps xmlns="http://www.cupps.aero/cupps/01.04"
+deviceName="SRQ1C059BT1"
+timeStamp="2024-02-29 20:56:50.011"
+messageID="4"
+xmlns:xsi="http://www.w3.org/2001/XMLschema-instance"
+messageName="interfaceModeResponse">
+<interfaceModeResponse result="OK"/>
+</cupps>
+-------------------------------------------------------------------------------
+29/02/24 15:56:50:011 : 
+----------------------------- Inbound (BT1) 792 -----------------------------
+<?xml version="1.0" encoding="utf-8" ?>
+<cupps xmlns="http://www.cupps.aero/cupps/01.04"
+deviceName="SRQ1C059BT1"
+timeStamp="2024-02-29 20:56:50.011"
+messageID="5"
+xmlns:xsi="http://www.w3.org/2001/XMLschema-instance"
+messageName="aeaRequest">
+<aeaRequest>
+<aeaMessage><aeaText>SQ</aeaText></aeaMessage>
+</aeaRequest>
+</cupps>
+-------------------------------------------------------------------------------
+29/02/24 15:56:50:011 : Message 'aeaResponse' from application 'COMMONLAUNCHER'
+29/02/24 15:56:50:012 : Message 'aeaRequest' from application 'COMMONLAUNCHER'
+29/02/24 15:56:50:012 : DataLog File C:\APPS\CUPPSFS\SRQ1C059BTP1-240229-205650012512.JSON - Created
+29/02/24 15:56:50:012 : Waiting for AEA Semaphore on COM12
+29/02/24 15:56:50:012 : Acquired AEA Semaphore on COM12
+29/02/24 15:56:50:012 : Data sent to port 'COM12' from 'BT1'
+0000  53 51                                            |SQ              |
+29/02/24 15:56:50:012 : ComData write on port 'COM12' for 'BT1'
+0000  02 53 51 03                                      |.SQ.            |
+29/02/24 15:56:50:012 : 
+----------------------------- Outbound (BT1) 792 -----------------------------
+0100000118
+<?xml version="1.0" encoding="utf-8" ?>
+<cupps xmlns="http://www.cupps.aero/cupps/01.04"
+deviceName="SRQ1C059BT1"
+timeStamp="2024-02-29 20:56:50.012"
+messageID="5"
+xmlns:xsi="http://www.w3.org/2001/XMLschema-instance"
+messageName="aeaResponse">
+<aeaResponse result="OK"/>
+</cupps>
+-------------------------------------------------------------------------------
+29/02/24 15:56:50:056 : AeaBusyTime 00063 (Max 20002) on 'COM12'
+29/02/24 15:56:50:056 : Device BT1 State DEV_LKD
+29/02/24 15:56:50:056 : ComData read on port 'COM12' for 'BT1'
+0000  02 45 41 53 45 53 51 4F 4B 23 4F 53 3D 30 23 52  |.EASESQOK#OS=0#R|
+0010  46 3D 32 23 53 49 3D 31 31 32 31 33 31 23 44 4F  |F=2#SI=112131#DO|
+0020  3D 30 30 30 23 50 30 3D 30 23 4C 47 3D 30 23 4C  |=000#P0=0#LG=0#L|
+0030  50 3D 30 23 43 55 3D 32 23 45 50 3D 32 03        |P=0#CU=2#EP=2.  |
+29/02/24 15:56:50:056 : MsgDone on port COM12
+29/02/24 15:56:50:056 : Data received on port 'COM12' for 'BT1'
+0000  45 41 53 45 53 51 4F 4B 23 4F 53 3D 30 23 52 46  |EASESQOK#OS=0#RF|
+0010  3D 32 23 53 49 3D 31 31 32 31 33 31 23 44 4F 3D  |=2#SI=112131#DO=|
+0020  30 30 30 23 50 30 3D 30 23 4C 47 3D 30 23 4C 50  |000#P0=0#LG=0#LP|
+0030  3D 30 23 43 55 3D 32 23 45 50 3D 32              |=0#CU=2#EP=2    |
+29/02/24 15:56:50:057 : DataLog File C:\APPS\CUPPSFS\SRQ1C059BTP1-240229-205650056393.JSON - Created
+29/02/24 15:56:50:057 : 
+----------------------------- Outbound (BT1) 792 -----------------------------
+0100000188
+<?xml version="1.0" encoding="utf-8" ?>
+<cupps xmlns="http://www.cupps.aero/cupps/01.04"
+deviceName="SRQ1C059BT1"
+timeStamp="2024-02-29 20:56:50.057"
+messageID="4294901760"
+xmlns:xsi="http://www.w3.org/2001/XMLschema-instance"
+messageName="aeaRequest">
+<aeaRequest>
+<aeaMessage><aeaText>HDCSQOK#OS=0#RF=2#SI=112131#DO=000#P0=0#LG=0#LP=0#CU=2#EP=2</aeaText></aeaMessage>
+</aeaRequest>
+</cupps>
+-------------------------------------------------------------------------------
+29/02/24 15:56:50:057 : Releasing AEA Semaphore on 'COM12'
+29/02/24 15:56:50:072 : Call accepted from 127.0.0.1:51625 - 5712
+29/02/24 15:56:50:073 : Starting ServiceCupps(5712)
+29/02/24 15:56:50:073 : Started ServiceCupps(5712)
+29/02/24 15:56:50:073 : 
+----------------------------- Inbound (PLT) 5712 -----------------------------
+<?xml version="1.0" encoding="utf-8" ?>
+<cupps messageID="1"
+xmlns:xsi="http://www.w3.org/2001/XMLschema-instance"
+messageName="interfaceLevelsAvailableRequest">
+<interfaceLevelsAvailableRequest hsXsdVersion="01.01.0127"/>
+</cupps>
+-------------------------------------------------------------------------------
+29/02/24 15:56:50:073 : Message 'interfaceLevelsAvailableRequest' from application 'Unknown'
+29/02/24 15:56:50:073 : Current Directory 'C:\APPS\CUPPSFS'
+29/02/24 15:56:50:073 : CUPPS XSD found 'CUPPS-01.00.0122.XSD'
+29/02/24 15:56:50:073 : CUPPS XSD found 'CUPPS-01.01.0128.XSD'
+29/02/24 15:56:50:073 : CUPPS XSD found 'CUPPS-01.03.0017.XSD'
+29/02/24 15:56:50:073 : CUPPS XSD found 'CUPPS-01.04.0016.XSD'
+29/02/24 15:56:50:073 : 
+----------------------------- Outbound (PLT) 5712 -----------------------------
+01000002AA
+<?xml version="1.0" encoding="utf-8" ?>
+<cupps messageID="1"
+xmlns:xsi="http://www.w3.org/2001/XMLschema-instance"
+messageName="interfaceLevelsAvailableResponse">
+<interfaceLevelsAvailableResponse result="OK">
+<interfaceLevel level="01.00"
+wsLocalPath="C:/APPS/CUPPSFS/CUPPS-01.00.0122.XSD"
+xsdVersion="01.00.0122"/>
+<interfaceLevel level="01.01"
+wsLocalPath="C:/APPS/CUPPSFS/CUPPS-01.01.0128.XSD"
+xsdVersion="01.01.0128"/>
+<interfaceLevel level="01.03"
+wsLocalPath="C:/APPS/CUPPSFS/CUPPS-01.03.0017.XSD"
+xsdVersion="01.03.0017"/>
+<interfaceLevel level="01.04"
+wsLocalPath="C:/APPS/CUPPSFS/CUPPS-01.04.0016.XSD"
+xsdVersion="01.04.0016"/>
+</interfaceLevelsAvailableResponse>
+</cupps>
+-------------------------------------------------------------------------------
+29/02/24 15:56:50:073 : 
+----------------------------- Inbound (PLT) 5712 -----------------------------
+<?xml version="1.0" encoding="utf-8" ?>
+<cupps messageID="2"
+xmlns:xsi="http://www.w3.org/2001/XMLschema-instance"
+messageName="interfaceLevelRequest">
+<interfaceLevelRequest level="01.04"/>
+</cupps>
+-------------------------------------------------------------------------------
+29/02/24 15:56:50:073 : Message 'interfaceLevelRequest' from application 'Unknown'
+29/02/24 15:56:50:074 : 
+----------------------------- Outbound (PLT) 5712 -----------------------------
+01000000C7
+<?xml version="1.0" encoding="utf-8" ?>
+<cupps messageID="2"
+xmlns:xsi="http://www.w3.org/2001/XMLschema-instance"
+messageName="interfaceLevelResponse">
+<interfaceLevelResponse result="OK"/>
+</cupps>
+-------------------------------------------------------------------------------
+29/02/24 15:56:50:132 : 
+----------------------------- Inbound (PLT) 5712 -----------------------------
+<?xml version="1.0" encoding="utf-8" ?>
+<cupps xmlns="http://www.cupps.aero/cupps/01.04"
+deviceName="SRQ1C059MS1"
+timeStamp="2024-02-29 20:56:50.132"
+messageID="3"
+xmlns:xsi="http://www.w3.org/2001/XMLschema-instance"
+messageName="deviceAcquireRequest">
+<deviceAcquireRequest deviceName="SRQ1C059MS1" deviceToken="02FDD76B0000000A" airlineID="FS" msFoidMasking="fullTrackData"/>
+</cupps>
+-------------------------------------------------------------------------------
+29/02/24 15:56:50:132 : Message 'deviceAcquireRequest' from application 'Unknown'
+29/02/24 15:56:50:132 : 
+----------------------------- Outbound (MS1) 5712 -----------------------------
+010000034B
+<?xml version="1.0" encoding="utf-8" ?>
+<cupps xmlns="http://www.cupps.aero/cupps/01.04"
+deviceName="SRQ1C059MS1"
+timeStamp="2024-02-29 20:56:50.132"
+messageID="3"
+xmlns:xsi="http://www.w3.org/2001/XMLschema-instance"
+messageName="deviceAcquireResponse">
+<deviceAcquireResponse result="OK">
+<device deviceIndex="4" deviceName="SRQ1C059MS1" deviceParameterType="msDeviceParameter">
+<supportedInterfaceModes>
+<interfaceMode mode="standard"/>
+</supportedInterfaceModes>
+<msDeviceParameter numberOfTracks="3" supportsJIS2="false" style="swipe" msCapabilities="PlatformOnly">
+<vendorModelInfo vendor="ACCESS-IS" model="AKB500"/>
+<ipAndPort hostName="SRQ1C059" ip="127.0.0.1" ipv6="::" port="7535"/>
+<msStatus init="false" powerOff="false" ready="true" unknown="false" desc="ONLINE"/>
+</msDeviceParameter>
+</device>
+</deviceAcquireResponse>
+</cupps>
+-------------------------------------------------------------------------------
+29/02/24 15:56:50:133 : DataLog File C:\APPS\CUPPSFS\SRQ1C059MSR1-240229-205650132191.JSON - Created
+29/02/24 15:56:50:133 : Application 'COMMONLAUNCHER' - Device 'PLT' - (5352)
+29/02/24 15:56:50:133 : Application 'COMMONLAUNCHER' - Device 'BC1' - (5240)
+29/02/24 15:56:50:133 : Application 'COMMONLAUNCHER' - Device 'BP1' - (6004)
+29/02/24 15:56:50:133 : Application 'COMMONLAUNCHER' - Device 'BT1' - (792)
+29/02/24 15:56:50:133 : Application 'COMMONLAUNCHER' - Device 'MS1' - (5712)
+29/02/24 15:56:50:193 : 
+----------------------------- Inbound (BT1) 792 -----------------------------
+<?xml version="1.0" encoding="utf-8" ?>
+<cupps xmlns="http://www.cupps.aero/cupps/01.04"
+deviceName="SRQ1C059BT1"
+timeStamp="2024-02-29 20:56:50.193"
+messageID="4294901760"
+xmlns:xsi="http://www.w3.org/2001/XMLschema-instance"
+messageName="aeaResponse">
+<aeaResponse result="OK"/>
+</cupps>
+-------------------------------------------------------------------------------
+29/02/24 15:56:50:193 : Call accepted from 127.0.0.1:51627 - 5984
+29/02/24 15:56:50:193 : Message 'aeaResponse' from application 'COMMONLAUNCHER'
+29/02/24 15:56:50:193 : Starting ServiceCupps(5984)
+29/02/24 15:56:50:194 : Started ServiceCupps(5984)
+29/02/24 15:56:50:194 : 
+----------------------------- Inbound (PLT) 5984 -----------------------------
+<?xml version="1.0" encoding="utf-8" ?>
+<cupps messageID="1"
+xmlns:xsi="http://www.w3.org/2001/XMLschema-instance"
+messageName="interfaceLevelsAvailableRequest">
+<interfaceLevelsAvailableRequest hsXsdVersion="01.01.0127"/>
+</cupps>
+-------------------------------------------------------------------------------
+29/02/24 15:56:50:194 : Message 'interfaceLevelsAvailableRequest' from application 'Unknown'
+29/02/24 15:56:50:194 : Current Directory 'C:\APPS\CUPPSFS'
+29/02/24 15:56:50:194 : CUPPS XSD found 'CUPPS-01.00.0122.XSD'
+29/02/24 15:56:50:194 : CUPPS XSD found 'CUPPS-01.01.0128.XSD'
+29/02/24 15:56:50:194 : CUPPS XSD found 'CUPPS-01.03.0017.XSD'
+29/02/24 15:56:50:194 : CUPPS XSD found 'CUPPS-01.04.0016.XSD'
+29/02/24 15:56:50:194 : 
+----------------------------- Outbound (PLT) 5984 -----------------------------
+01000002AA
+<?xml version="1.0" encoding="utf-8" ?>
+<cupps messageID="1"
+xmlns:xsi="http://www.w3.org/2001/XMLschema-instance"
+messageName="interfaceLevelsAvailableResponse">
+<interfaceLevelsAvailableResponse result="OK">
+<interfaceLevel level="01.00"
+wsLocalPath="C:/APPS/CUPPSFS/CUPPS-01.00.0122.XSD"
+xsdVersion="01.00.0122"/>
+<interfaceLevel level="01.01"
+wsLocalPath="C:/APPS/CUPPSFS/CUPPS-01.01.0128.XSD"
+xsdVersion="01.01.0128"/>
+<interfaceLevel level="01.03"
+wsLocalPath="C:/APPS/CUPPSFS/CUPPS-01.03.0017.XSD"
+xsdVersion="01.03.0017"/>
+<interfaceLevel level="01.04"
+wsLocalPath="C:/APPS/CUPPSFS/CUPPS-01.04.0016.XSD"
+xsdVersion="01.04.0016"/>
+</interfaceLevelsAvailableResponse>
+</cupps>
+-------------------------------------------------------------------------------
+29/02/24 15:56:50:194 : 
+----------------------------- Inbound (PLT) 5984 -----------------------------
+<?xml version="1.0" encoding="utf-8" ?>
+<cupps messageID="2"
+xmlns:xsi="http://www.w3.org/2001/XMLschema-instance"
+messageName="interfaceLevelRequest">
+<interfaceLevelRequest level="01.04"/>
+</cupps>
+-------------------------------------------------------------------------------
+29/02/24 15:56:50:194 : Message 'interfaceLevelRequest' from application 'Unknown'
+29/02/24 15:56:50:194 : 
+----------------------------- Outbound (PLT) 5984 -----------------------------
+01000000C7
+<?xml version="1.0" encoding="utf-8" ?>
+<cupps messageID="2"
+xmlns:xsi="http://www.w3.org/2001/XMLschema-instance"
+messageName="interfaceLevelResponse">
+<interfaceLevelResponse result="OK"/>
+</cupps>
+-------------------------------------------------------------------------------
+29/02/24 15:56:50:254 : 
+----------------------------- Inbound (PLT) 5984 -----------------------------
+<?xml version="1.0" encoding="utf-8" ?>
+<cupps xmlns="http://www.cupps.aero/cupps/01.04"
+deviceName="SRQ1C059OC1"
+timeStamp="2024-02-29 20:56:50.255"
+messageID="3"
+xmlns:xsi="http://www.w3.org/2001/XMLschema-instance"
+messageName="deviceAcquireRequest">
+<deviceAcquireRequest deviceName="SRQ1C059OC1" deviceToken="02FDD76B0000000A" airlineID="FS"/>
+</cupps>
+-------------------------------------------------------------------------------
+29/02/24 15:56:50:254 : Message 'deviceAcquireRequest' from application 'Unknown'
+29/02/24 15:56:50:254 : 
+----------------------------- Outbound (OC1) 5984 -----------------------------
+0100000327
+<?xml version="1.0" encoding="utf-8" ?>
+<cupps xmlns="http://www.cupps.aero/cupps/01.04"
+deviceName="SRQ1C059OC1"
+timeStamp="2024-02-29 20:56:50.254"
+messageID="3"
+xmlns:xsi="http://www.w3.org/2001/XMLschema-instance"
+messageName="deviceAcquireResponse">
+<deviceAcquireResponse result="OK">
+<device deviceIndex="5" deviceName="SRQ1C059OC1" deviceParameterType="ocDeviceParameter">
+<supportedInterfaceModes>
+<interfaceMode mode="standard"/>
+</supportedInterfaceModes>
+<ocDeviceParameter numCharsPerLine="45" numLines="3" style="swipe">
+<vendorModelInfo vendor="ACCESS-IS" model="AKB500"/>
+<ipAndPort hostName="SRQ1C059" ip="127.0.0.1" ipv6="::" port="7535"/>
+<ocStatus init="false" powerOff="false" ready="true" unknown="false" desc="ONLINE"/>
+</ocDeviceParameter>
+</device>
+</deviceAcquireResponse>
+</cupps>
+-------------------------------------------------------------------------------
+29/02/24 15:56:50:255 : DataLog File C:\APPS\CUPPSFS\SRQ1C059OCR1-240229-205650254890.JSON - Created
+29/02/24 15:56:50:255 : Application 'COMMONLAUNCHER' - Device 'PLT' - (5352)
+29/02/24 15:56:50:255 : Application 'COMMONLAUNCHER' - Device 'BC1' - (5240)
+29/02/24 15:56:50:255 : Application 'COMMONLAUNCHER' - Device 'BP1' - (6004)
+29/02/24 15:56:50:255 : Application 'COMMONLAUNCHER' - Device 'BT1' - (792)
+29/02/24 15:56:50:255 : Application 'COMMONLAUNCHER' - Device 'MS1' - (5712)
+29/02/24 15:56:50:255 : Application 'COMMONLAUNCHER' - Device 'OC1' - (5984)
+29/02/24 15:56:50:315 : Call accepted from 127.0.0.1:51629 - 5620
+29/02/24 15:56:50:317 : Starting ServiceCupps(5620)
+29/02/24 15:56:50:317 : Started ServiceCupps(5620)
+29/02/24 15:56:50:317 : 
+----------------------------- Inbound (PLT) 5620 -----------------------------
+<?xml version="1.0" encoding="utf-8" ?>
+<cupps messageID="1"
+xmlns:xsi="http://www.w3.org/2001/XMLschema-instance"
+messageName="interfaceLevelsAvailableRequest">
+<interfaceLevelsAvailableRequest hsXsdVersion="01.01.0127"/>
+</cupps>
+-------------------------------------------------------------------------------
+29/02/24 15:56:50:317 : Message 'interfaceLevelsAvailableRequest' from application 'Unknown'
+29/02/24 15:56:50:317 : Current Directory 'C:\APPS\CUPPSFS'
+29/02/24 15:56:50:317 : CUPPS XSD found 'CUPPS-01.00.0122.XSD'
+29/02/24 15:56:50:317 : CUPPS XSD found 'CUPPS-01.01.0128.XSD'
+29/02/24 15:56:50:317 : CUPPS XSD found 'CUPPS-01.03.0017.XSD'
+29/02/24 15:56:50:317 : CUPPS XSD found 'CUPPS-01.04.0016.XSD'
+29/02/24 15:56:50:317 : 
+----------------------------- Outbound (PLT) 5620 -----------------------------
+01000002AA
+<?xml version="1.0" encoding="utf-8" ?>
+<cupps messageID="1"
+xmlns:xsi="http://www.w3.org/2001/XMLschema-instance"
+messageName="interfaceLevelsAvailableResponse">
+<interfaceLevelsAvailableResponse result="OK">
+<interfaceLevel level="01.00"
+wsLocalPath="C:/APPS/CUPPSFS/CUPPS-01.00.0122.XSD"
+xsdVersion="01.00.0122"/>
+<interfaceLevel level="01.01"
+wsLocalPath="C:/APPS/CUPPSFS/CUPPS-01.01.0128.XSD"
+xsdVersion="01.01.0128"/>
+<interfaceLevel level="01.03"
+wsLocalPath="C:/APPS/CUPPSFS/CUPPS-01.03.0017.XSD"
+xsdVersion="01.03.0017"/>
+<interfaceLevel level="01.04"
+wsLocalPath="C:/APPS/CUPPSFS/CUPPS-01.04.0016.XSD"
+xsdVersion="01.04.0016"/>
+</interfaceLevelsAvailableResponse>
+</cupps>
+-------------------------------------------------------------------------------
+29/02/24 15:56:50:317 : 
+----------------------------- Inbound (PLT) 5620 -----------------------------
+<?xml version="1.0" encoding="utf-8" ?>
+<cupps messageID="2"
+xmlns:xsi="http://www.w3.org/2001/XMLschema-instance"
+messageName="interfaceLevelRequest">
+<interfaceLevelRequest level="01.04"/>
+</cupps>
+-------------------------------------------------------------------------------
+29/02/24 15:56:50:317 : Message 'interfaceLevelRequest' from application 'Unknown'
+29/02/24 15:56:50:317 : 
+----------------------------- Outbound (PLT) 5620 -----------------------------
+01000000C7
+<?xml version="1.0" encoding="utf-8" ?>
+<cupps messageID="2"
+xmlns:xsi="http://www.w3.org/2001/XMLschema-instance"
+messageName="interfaceLevelResponse">
+<interfaceLevelResponse result="OK"/>
+</cupps>
+-------------------------------------------------------------------------------
+29/02/24 15:56:50:333 : DataLog File SRQ1C059BCR1-240229-205649633526.JSON - Uploaded
+29/02/24 15:56:50:378 : 
+----------------------------- Inbound (PLT) 5620 -----------------------------
+<?xml version="1.0" encoding="utf-8" ?>
+<cupps xmlns="http://www.cupps.aero/cupps/01.04"
+deviceName="SRQ1C059PR1"
+timeStamp="2024-02-29 20:56:50.378"
+messageID="3"
+xmlns:xsi="http://www.w3.org/2001/XMLschema-instance"
+messageName="deviceAcquireRequest">
+<deviceAcquireRequest deviceName="SRQ1C059PR1" deviceToken="02FDD76B0000000A" airlineID="FS"/>
+</cupps>
+-------------------------------------------------------------------------------
+29/02/24 15:56:50:378 : Message 'deviceAcquireRequest' from application 'Unknown'
+29/02/24 15:56:50:466 : 
+----------------------------- Outbound (PR1) 5620 -----------------------------
+01000004B0
+<?xml version="1.0" encoding="utf-8" ?>
+<cupps xmlns="http://www.cupps.aero/cupps/01.04"
+deviceName="SRQ1C059PR1"
+timeStamp="2024-02-29 20:56:50.466"
+messageID="3"
+xmlns:xsi="http://www.w3.org/2001/XMLschema-instance"
+messageName="deviceAcquireResponse">
+<deviceAcquireResponse result="OK">
+<device deviceIndex="6" deviceName="SRQ1C059PR1" deviceParameterType="prDeviceParameter">
+<supportedInterfaceModes>
+<interfaceMode mode="standard"/>
+</supportedInterfaceModes>
+<prDeviceParameter supportsColor="none">
+<vendorModelInfo vendor="DCP" model="UNKNOWN"/>
+<ipAndPort hostName="SRQ1C059" ip="127.0.0.1" ipv6="::" port="7535"/>
+<prStatus init="false" powerOff="false" ready="true" unknown="false" paperOut="false" paperJam="false" desc="ONLINE"/>
+<supportedStocks>
+<supportedStock stockName="Letter" supportsColor="none" stockWidth="216" stockHeight="279" leftMargin="25" rightMargin="25" topMargin="25" bottomMargin="25" perforationLeft="0"/>
+<supportedStock stockName="A4" supportsColor="none" stockWidth="210" stockHeight="297" leftMargin="25" rightMargin="25" topMargin="25" bottomMargin="25" perforationLeft="0"/>
+</supportedStocks>
+</prDeviceParameter>
+</device>
+</deviceAcquireResponse>
+</cupps>
+-------------------------------------------------------------------------------
+29/02/24 15:56:50:467 : DataLog File C:\APPS\CUPPSFS\SRQ1C059DCP1-240229-205650466296.JSON - Created
+29/02/24 15:56:50:467 : Application 'COMMONLAUNCHER' - Device 'PLT' - (5352)
+29/02/24 15:56:50:467 : Application 'COMMONLAUNCHER' - Device 'BC1' - (5240)
+29/02/24 15:56:50:467 : Application 'COMMONLAUNCHER' - Device 'BP1' - (6004)
+29/02/24 15:56:50:467 : Application 'COMMONLAUNCHER' - Device 'BT1' - (792)
+29/02/24 15:56:50:467 : Application 'COMMONLAUNCHER' - Device 'MS1' - (5712)
+29/02/24 15:56:50:467 : Application 'COMMONLAUNCHER' - Device 'OC1' - (5984)
+29/02/24 15:56:50:467 : Application 'COMMONLAUNCHER' - Device 'PR1' - (5620)
+29/02/24 15:56:50:552 : DataLog File SRQ1C059BPP1-240229-205649761185.JSON - Uploaded
+29/02/24 15:56:50:755 : DataLog File SRQ1C059BPP1-240229-205649825014.JSON - Uploaded
+29/02/24 15:56:50:963 : DataLog File SRQ1C059BPP1-240229-205649871887.JSON - Uploaded
+29/02/24 15:56:51:181 : DataLog File SRQ1C059BTP1-240229-205649949678.JSON - Uploaded
+29/02/24 15:56:51:384 : DataLog File SRQ1C059BTP1-240229-205650012512.JSON - Uploaded
+29/02/24 15:56:51:588 : DataLog File SRQ1C059BTP1-240229-205650056393.JSON - Uploaded
+29/02/24 15:56:52:487 : DataLog File SRQ1C059DCP1-240229-205650466296.JSON - Uploaded
+29/02/24 15:56:52:717 : DataLog File SRQ1C059MSR1-240229-205650132191.JSON - Uploaded
+29/02/24 15:56:52:932 : DataLog File SRQ1C059OCR1-240229-205650254890.JSON - Uploaded
+29/02/24 15:57:01:025 : Waiting for AEA Semaphore on COM11
+29/02/24 15:57:01:025 : Acquired AEA Semaphore on COM11
+29/02/24 15:57:01:025 : Data sent to port 'COM11' from 'BP1'
+0000  50 54 23 23 3F 57 39 42 23 40 3B 23 54 2F 2F 23  |PT##?W9B#@;#T//#|
+0010  54 2F 2F 43 49 23 54 2F 2F 43 49 23 30 31 30 31  |T//CI#T//CI#0101|
+0020  31 31 30 31 31 32 30 31 31 33 30 31 32 31 30 31  |1101120113012101|
+0030  32 32 30 31 32 33 30 31 33 31 30 31 33 32 30 31  |2201230131013201|
+0040  33 33 30 31 34 31 30 31 34 32 30 31 34 33 30 31  |3301410142014301|
+0050  43 23 30 36 32 30 45 30 31 44 35 33 44 23 30 37  |C#0620E01D53D#07|
+0060  32 30 44 23 30 45 30 34 44 23 31 33 31 38 46 35  |20D#0E04D#1318F5|
+0070  35 23 31 46 30 33 46 30 31 4A 35 33 31 31 30 38  |5#1F03F01J531108|
+0080  31 33 30 38 44 23 32 35 30 35 4A 36 33 46 31 30  |1308D#2505J63F10|
+0090  23 32 42 31 38 46 31 36 47 35 35 23 33 30 32 30  |#2B18F16G55#3020|
+00A0  44 31 39 23 33 33 30 31 4A 36 31 23 33 35 30 35  |D19#3301J61#3505|
+00B0  4A 36 38 23 33 36 30 35 4C 35 33 46 23 33 37 30  |J68#3605L53F#370|
+00C0  36 4C 35 38 46 23 33 38 30 33 4D 36 33 52 23 33  |6L58F#3803M63R#3|
+00D0  41 30 35 4A 33 32 52 23 33 42 30 36 4A 31 36 52  |A05J32R#3B06J16R|
+00E0  23 33 43 30 33 4A 30 32 4D 36 33 52 23 33 45 30  |#3C03J02M63R#3E0|
+00F0  32 4C 37 30 46 23 33 46 30 33 4C 30 32 4F 36 35  |2L70F#3F03L02O65|
+0100  52 23 34 35 30 32 4F 35 33 23 34 36 30 33 4F 35  |R#4502O53#4603O5|
+0110  35 23 34 38 30 33 50 36 31 23 34 39 30 39 50 36  |5#4803P61#4909P6|
+0120  34 23 39 41 30 31 4F 32 38 23 41 45 32 30 50 35  |4#9A01O28#AE20P5|
+0130  33 23 41 46 31 33 51 35 33 23 43 45 30 35 46 30  |3#AF13Q53#CE05F0|
+0140  34 4A 35 36 23 44 32 33 39 4E 30 31 23 44 33 33  |4J56#D239N01#D33|
+0150  39 4F 30 31 23 44 35 42 52 45 34 32 32 30 35 31  |9O01#D5BRE422051|
+0160  23 45 30 30 32 52 35 35 23 45 31 32 30 45 35 33  |#E002R55#E120E53|
+0170  23 45 36 33 39 4D 30 31 23 45 37 30 33 4F 35 38  |#E639M01#E703O58|
+0180  23 45 38 30 35 4F 36 32 44 23 45 46 31 34 52 35  |#E805O62D#EF14R5|
+0190  38 23                                            |8#              |
+29/02/24 15:57:01:026 : ComData write on port 'COM11' for 'BP1'
+0000  02 50 54 23 23 3F 57 39 42 23 40 3B 23 54 2F 2F  |.PT##?W9B#@;#T//|
+0010  23 54 2F 2F 43 49 23 54 2F 2F 43 49 23 30 31 30  |#T//CI#T//CI#010|
+0020  31 31 31 30 31 31 32 30 31 31 33 30 31 32 31 30  |1110112011301210|
+0030  31 32 32 30 31 32 33 30 31 33 31 30 31 33 32 30  |1220123013101320|
+0040  31 33 33 30 31 34 31 30 31 34 32 30 31 34 33 30  |1330141014201430|
+0050  31 43 23 30 36 32 30 45 30 31 44 35 33 44 23 30  |1C#0620E01D53D#0|
+0060  37 32 30 44 23 30 45 30 34 44 23 31 33 31 38 46  |720D#0E04D#1318F|
+0070  35 35 23 31 46 30 33 46 30 31 4A 35 33 31 31 30  |55#1F03F01J53110|
+0080  38 31 33 30 38 44 23 32 35 30 35 4A 36 33 46 31  |81308D#2505J63F1|
+0090  30 23 32 42 31 38 46 31 36 47 35 35 23 33 30 32  |0#2B18F16G55#302|
+00A0  30 44 31 39 23 33 33 30 31 4A 36 31 23 33 35 30  |0D19#3301J61#350|
+00B0  35 4A 36 38 23 33 36 30 35 4C 35 33 46 23 33 37  |5J68#3605L53F#37|
+00C0  30 36 4C 35 38 46 23 33 38 30 33 4D 36 33 52 23  |06L58F#3803M63R#|
+00D0  33 41 30 35 4A 33 32 52 23 33 42 30 36 4A 31 36  |3A05J32R#3B06J16|
+00E0  52 23 33 43 30 33 4A 30 32 4D 36 33 52 23 33 45  |R#3C03J02M63R#3E|
+00F0  30 32 4C 37 30 46 23 33 46 30 33 4C 30 32 4F 36  |02L70F#3F03L02O6|
+0100  35 52 23 34 35 30 32 4F 35 33 23 34 36 30 33 4F  |5R#4502O53#4603O|
+0110  35 35 23 34 38 30 33 50 36 31 23 34 39 30 39 50  |55#4803P61#4909P|
+0120  36 34 23 39 41 30 31 4F 32 38 23 41 45 32 30 50  |64#9A01O28#AE20P|
+0130  35 33 23 41 46 31 33 51 35 33 23 43 45 30 35 46  |53#AF13Q53#CE05F|
+0140  30 34 4A 35 36 23 44 32 33 39 4E 30 31 23 44 33  |04J56#D239N01#D3|
+0150  33 39 4F 30 31 23 44 35 42 52 45 34 32 32 30 35  |39O01#D5BRE42205|
+0160  31 23 45 30 30 32 52 35 35 23 45 31 32 30 45 35  |1#E002R55#E120E5|
+0170  33 23 45 36 33 39 4D 30 31 23 45 37 30 33 4F 35  |3#E639M01#E703O5|
+0180  38 23 45 38 30 35 4F 36 32 44 23 45 46 31 34 52  |8#E805O62D#EF14R|
+0190  35 38 23 03                                      |58#.            |
+29/02/24 15:57:01:071 : AeaBusyTime 00079 (Max 20402) on 'COM11'
+29/02/24 15:57:01:123 : AeaBusyTime 00125 (Max 20402) on 'COM11'
+29/02/24 15:57:01:127 : Waiting for AEA event on COM11
+29/02/24 15:57:01:186 : AeaBusyTime 00188 (Max 20402) on 'COM11'
+29/02/24 15:57:01:249 : AeaBusyTime 00250 (Max 20402) on 'COM11'
+29/02/24 15:57:01:249 : ComData read on port 'COM11' for 'BP1'
+0000  02 45 41 53 45 50 54 4F 4B 42 36 53 36 54 36 56  |.EASEPTOKB6S6T6V|
+0010  36 57 39 03                                      |6W9.            |
+29/02/24 15:57:01:249 : MsgDone on port COM11
+29/02/24 15:57:01:249 : Data received on port 'COM11' for 'BP1'
+0000  45 41 53 45 50 54 4F 4B 42 36 53 36 54 36 56 36  |EASEPTOKB6S6T6V6|
+0010  57 39                                            |W9              |
+29/02/24 15:57:01:250 : Releasing AEA Semaphore on 'COM11'
+29/02/24 15:57:01:520 : Waiting for AEA Semaphore on COM11
+29/02/24 15:57:01:520 : Acquired AEA Semaphore on COM11
+29/02/24 15:57:01:520 : Data sent to port 'COM11' from 'BP1'
+0000  54 54 30 33 23 30 31 42 30 30 30 31 33 30 35 31  |TT03#01B00013051|
+0010  30 35 30 39 39 30 30 30 33 30 30 30 30 30 23 30  |05099000300000#0|
+0020  32 42 30 30 30 31 35 31 30 31 37 30 30 32 35 30  |2B00015101700250|
+0030  30 30 35 30 30 30 30 30 23 30 33 42 30 33 37 30  |00500000#03B0370|
+0040  35 31 30 31 37 30 30 32 35 30 30 30 35 30 30 30  |5101700250005000|
+0050  30 30 23 30 34 42 30 37 35 30 35 31 30 31 37 30  |00#04B0750510170|
+0060  30 32 34 30 30 30 35 30 30 30 30 30 23 30 35 42  |024000500000#05B|
+0070  30 30 30 31 36 38 30 31 34 30 30 39 39 30 30 30  |0001680140099000|
+0080  33 30 30 30 30 30 23 30 36 42 31 33 32 34 34 36  |300000#06B132446|
+0090  35 30 38 30 30 32 30 30 30 30 33 30 30 30 30 30  |5080020000300000|
+00A0  23 30 37 42 31 33 32 34 36 31 30 31 34 30 30 35  |#07B132461014005|
+00B0  32 30 30 30 33 30 30 30 30 30 23 30 38 54 30 30  |2000300000#08T00|
+00C0  39 30 33 38 30 30 30 41 4C 4C 40 30 30 30 30 30  |9038000ALL@00000|
+00D0  53 45 41 54 23 30 39 54 30 34 31 30 33 38 30 30  |SEAT#09T04103800|
+00E0  30 41 4C 4C 40 30 30 30 30 30 47 41 54 45 20 43  |0ALL@00000GATE C|
+00F0  4C 4F 53 45 53 23 31 30 54 30 38 34 30 33 38 30  |LOSES#10T0840380|
+0100  30 30 41 4C 4C 40 30 30 30 30 30 47 41 54 45 23  |00ALL@00000GATE#|
+0110  31 31 54 30 30 30 31 37 34 35 30 30 41 41 41 41  |11T000174500AAAA|
+0120  30 30 30 30 30 42 4F 41 52 44 49 4E 47 20 50 41  |00000BOARDING PA|
+0130  53 53 23 31 32 54 30 30 30 31 37 38 30 30 30 41  |SS#12T000178000A|
+0140  4C 4C 40 30 30 30 30 30 43 41 52 54 45 20 44 27  |LL@00000CARTE D'|
+0150  41 43 43 45 53 20 41 20 42 4F 52 44 2F 42 4F 52  |ACCES A BORD/BOR|
+0160  44 4B 41 52 54 45 23 31 33 54 30 30 30 31 38 31  |DKARTE#13T000181|
+0170  30 30 30 41 4C 4C 40 30 30 30 30 30 54 41 52 4A  |000ALL@00000TARJ|
+0180  45 54 41 20 44 45 20 45 4D 42 41 52 51 55 45 2F  |ETA DE EMBARQUE/|
+0190  43 41 52 54 41 20 44 27 49 4D 42 41 52 43 4F 23  |CARTA D'IMBARCO#|
+01A0  31 34 54 30 36 30 30 37 33 30 30 30 41 4C 4C 40  |14T060073000ALL@|
+01B0  30 30 30 30 30 53 55 42 4A 45 43 54 20 54 4F 20  |00000SUBJECT TO |
+01C0  43 4F 4E 44 49 54 49 4F 4E 53 20 4F 46 20 43 41  |CONDITIONS OF CA|
+01D0  52 52 49 41 47 45 2C 20 43 4F 50 49 45 53 23 31  |RRIAGE, COPIES#1|
+01E0  35 54 30 36 30 30 37 36 30 30 30 41 4C 4C 40 30  |5T060076000ALL@0|
+01F0  30 30 30 30 41 56 41 49 4C 41 42 4C 45 20 4F 4E  |0000AVAILABLE ON|
+0200  20 52 45 51 55 45 53 54 2E 20 20 20 53 45 45 20  | REQUEST.   SEE |
+0210  49 4D 50 4F 52 54 41 4E 54 23 31 36 54 30 36 30  |IMPORTANT#16T060|
+0220  30 37 39 30 30 30 41 4C 4C 40 30 30 30 30 30 4E  |079000ALL@00000N|
+0230  4F 54 49 43 45 53 20 4F 4E 20 54 48 45 20 42 41  |OTICES ON THE BA|
+0240  43 4B 20 4F 46 20 54 48 49 53 20 44 4F 43 55 4D  |CK OF THIS DOCUM|
+0250  45 4E 54 2E 23 34 30 54 31 33 32 34 31 36 35 30  |ENT.#40T13241650|
+0260  30 41 4C 4C 40 30 30 30 30 30 4E 41 4D 45 20 4F  |0ALL@00000NAME O|
+0270  46 20 50 41 53 53 45 4E 47 45 52 23 34 31 54 31  |F PASSENGER#41T1|
+0280  33 32 34 32 37 30 30 30 41 4C 4C 40 30 30 30 30  |32427000ALL@0000|
+0290  30 46 52 4F 4D 23 34 32 54 31 33 32 34 33 31 30  |0FROM#42T1324310|
+02A0  30 30 41 4C 4C 40 30 30 30 30 30 54 4F 23 34 33  |00ALL@00000TO#43|
+02B0  54 31 33 33 34 34 32 30 30 30 41 4C 4C 40 30 30  |T133442000ALL@00|
+02C0  30 30 30 46 4C 49 47 48 54 20 4E 4F 2E 23 34 34  |000FLIGHT NO.#44|
+02D0  54 31 33 33 34 35 30 30 30 30 41 4C 4C 40 30 30  |T133450000ALL@00|
+02E0  30 30 30 47 41 54 45 20 20 47 41 54 45 20 43 4C  |000GATE  GATE CL|
+02F0  4F 53 45 53 20 20 53 45 41 54 23 34 35 54 31 33  |OSES  SEAT#45T13|
+0300  33 30 36 34 30 30 30 41 4C 4C 40 30 30 30 30 30  |3064000ALL@00000|
+0310  50 43 53 2E 20 43 4B 2E 57 54 2E 55 4E 43 4B 20  |PCS. CK.WT.UNCK |
+0320  53 45 51 20 4E 4F 23 34 36 54 31 35 34 30 34 32  |SEQ NO#46T154042|
+0330  30 30 30 41 4C 4C 40 30 30 30 30 30 43 4C 41 53  |000ALL@00000CLAS|
+0340  53 2F 44 41 54 45 20 20 20 20 54 49 4D 45 23 34  |S/DATE    TIME#4|
+0350  37 53 30 30 30 31 31 33 35 30 30 36 31 38 35 30  |7S00011350061850|
+0360  30 30 30 30 30 23 35 30 54 30 30 30 31 31 31 30  |00000#50T0001110|
+0370  30 30 41 41 41 41 30 30 30 30 30 41 45 52 4F 43  |00AAAA00000AEROC|
+0380  4C 4F 55 44 20 53 59 53 54 45 4D 53 23 35 31 4C  |LOUD SYSTEMS#51L|
+0390  31 31 32 35 31 32 30 30 31 30 30 30 30 30 23 35  |11251200100000#5|
+03A0  32 54 31 33 35 30 31 31 30 30 30 41 41 41 41 30  |2T135011000AAAA0|
+03B0  30 30 30 30 41 45 52 4F 43 4C 4F 55 44 20 53 59  |0000AEROCLOUD SY|
+03C0  53 54 45 4D 53                                   |STEMS           |
+29/02/24 15:57:01:520 : ComData write on port 'COM11' for 'BP1'
+0000  02 54 54 30 33 23 30 31 42 30 30 30 31 33 30 35  |.TT03#01B0001305|
+0010  31 30 35 30 39 39 30 30 30 33 30 30 30 30 30 23  |105099000300000#|
+0020  30 32 42 30 30 30 31 35 31 30 31 37 30 30 32 35  |02B0001510170025|
+0030  30 30 30 35 30 30 30 30 30 23 30 33 42 30 33 37  |000500000#03B037|
+0040  30 35 31 30 31 37 30 30 32 35 30 30 30 35 30 30  |0510170025000500|
+0050  30 30 30 23 30 34 42 30 37 35 30 35 31 30 31 37  |000#04B075051017|
+0060  30 30 32 34 30 30 30 35 30 30 30 30 30 23 30 35  |0024000500000#05|
+0070  42 30 30 30 31 36 38 30 31 34 30 30 39 39 30 30  |B000168014009900|
+0080  30 33 30 30 30 30 30 23 30 36 42 31 33 32 34 34  |0300000#06B13244|
+0090  36 35 30 38 30 30 32 30 30 30 30 33 30 30 30 30  |6508002000030000|
+00A0  30 23 30 37 42 31 33 32 34 36 31 30 31 34 30 30  |0#07B13246101400|
+00B0  35 32 30 30 30 33 30 30 30 30 30 23 30 38 54 30  |52000300000#08T0|
+00C0  30 39 30 33 38 30 30 30 41 4C 4C 40 30 30 30 30  |09038000ALL@0000|
+00D0  30 53 45 41 54 23 30 39 54 30 34 31 30 33 38 30  |0SEAT#09T0410380|
+00E0  30 30 41 4C 4C 40 30 30 30 30 30 47 41 54 45 20  |00ALL@00000GATE |
+00F0  43 4C 4F 53 45 53 23 31 30 54 30 38 34 30 33 38  |CLOSES#10T084038|
+0100  30 30 30 41 4C 4C 40 30 30 30 30 30 47 41 54 45  |000ALL@00000GATE|
+0110  23 31 31 54 30 30 30 31 37 34 35 30 30 41 41 41  |#11T000174500AAA|
+0120  41 30 30 30 30 30 42 4F 41 52 44 49 4E 47 20 50  |A00000BOARDING P|
+0130  41 53 53 23 31 32 54 30 30 30 31 37 38 30 30 30  |ASS#12T000178000|
+0140  41 4C 4C 40 30 30 30 30 30 43 41 52 54 45 20 44  |ALL@00000CARTE D|
+0150  27 41 43 43 45 53 20 41 20 42 4F 52 44 2F 42 4F  |'ACCES A BORD/BO|
+0160  52 44 4B 41 52 54 45 23 31 33 54 30 30 30 31 38  |RDKARTE#13T00018|
+0170  31 30 30 30 41 4C 4C 40 30 30 30 30 30 54 41 52  |1000ALL@00000TAR|
+0180  4A 45 54 41 20 44 45 20 45 4D 42 41 52 51 55 45  |JETA DE EMBARQUE|
+0190  2F 43 41 52 54 41 20 44 27 49 4D 42 41 52 43 4F  |/CARTA D'IMBARCO|
+01A0  23 31 34 54 30 36 30 30 37 33 30 30 30 41 4C 4C  |#14T060073000ALL|
+01B0  40 30 30 30 30 30 53 55 42 4A 45 43 54 20 54 4F  |@00000SUBJECT TO|
+01C0  20 43 4F 4E 44 49 54 49 4F 4E 53 20 4F 46 20 43  | CONDITIONS OF C|
+01D0  41 52 52 49 41 47 45 2C 20 43 4F 50 49 45 53 23  |ARRIAGE, COPIES#|
+01E0  31 35 54 30 36 30 30 37 36 30 30 30 41 4C 4C 40  |15T060076000ALL@|
+01F0  30 30 30 30 30 41 56 41 49 4C 41 42 4C 45 20 4F  |00000AVAILABLE O|
+0200  4E 20 52 45 51 55 45 53 54 2E 20 20 20 53 45 45  |N REQUEST.   SEE|
+0210  20 49 4D 50 4F 52 54 41 4E 54 23 31 36 54 30 36  | IMPORTANT#16T06|
+0220  30 30 37 39 30 30 30 41 4C 4C 40 30 30 30 30 30  |0079000ALL@00000|
+0230  4E 4F 54 49 43 45 53 20 4F 4E 20 54 48 45 20 42  |NOTICES ON THE B|
+0240  41 43 4B 20 4F 46 20 54 48 49 53 20 44 4F 43 55  |ACK OF THIS DOCU|
+0250  4D 45 4E 54 2E 23 34 30 54 31 33 32 34 31 36 35  |MENT.#40T1324165|
+0260  30 30 41 4C 4C 40 30 30 30 30 30 4E 41 4D 45 20  |00ALL@00000NAME |
+0270  4F 46 20 50 41 53 53 45 4E 47 45 52 23 34 31 54  |OF PASSENGER#41T|
+0280  31 33 32 34 32 37 30 30 30 41 4C 4C 40 30 30 30  |132427000ALL@000|
+0290  30 30 46 52 4F 4D 23 34 32 54 31 33 32 34 33 31  |00FROM#42T132431|
+02A0  30 30 30 41 4C 4C 40 30 30 30 30 30 54 4F 23 34  |000ALL@00000TO#4|
+02B0  33 54 31 33 33 34 34 32 30 30 30 41 4C 4C 40 30  |3T133442000ALL@0|
+02C0  30 30 30 30 46 4C 49 47 48 54 20 4E 4F 2E 23 34  |0000FLIGHT NO.#4|
+02D0  34 54 31 33 33 34 35 30 30 30 30 41 4C 4C 40 30  |4T133450000ALL@0|
+02E0  30 30 30 30 47 41 54 45 20 20 47 41 54 45 20 43  |0000GATE  GATE C|
+02F0  4C 4F 53 45 53 20 20 53 45 41 54 23 34 35 54 31  |LOSES  SEAT#45T1|
+0300  33 33 30 36 34 30 30 30 41 4C 4C 40 30 30 30 30  |33064000ALL@0000|
+0310  30 50 43 53 2E 20 43 4B 2E 57 54 2E 55 4E 43 4B  |0PCS. CK.WT.UNCK|
+0320  20 53 45 51 20 4E 4F 23 34 36 54 31 35 34 30 34  | SEQ NO#46T15404|
+0330  32 30 30 30 41 4C 4C 40 30 30 30 30 30 43 4C 41  |2000ALL@00000CLA|
+0340  53 53 2F 44 41 54 45 20 20 20 20 54 49 4D 45 23  |SS/DATE    TIME#|
+0350  34 37 53 30 30 30 31 31 33 35 30 30 36 31 38 35  |47S0001135006185|
+0360  30 30 30 30 30 30 23 35 30 54 30 30 30 31 31 31  |000000#50T000111|
+0370  30 30 30 41 41 41 41 30 30 30 30 30 41 45 52 4F  |000AAAA00000AERO|
+0380  43 4C 4F 55 44 20 53 59 53 54 45 4D 53 23 35 31  |CLOUD SYSTEMS#51|
+0390  4C 31 31 32 35 31 32 30 30 31 30 30 30 30 30 23  |L11251200100000#|
+03A0  35 32 54 31 33 35 30 31 31 30 30 30 41 41 41 41  |52T135011000AAAA|
+03B0  30 30 30 30 30 41 45 52 4F 43 4C 4F 55 44 20 53  |00000AEROCLOUD S|
+03C0  59 53 54 45 4D 53 03                             |YSTEMS.         |
+29/02/24 15:57:01:566 : AeaBusyTime 00063 (Max 20965) on 'COM11'
+29/02/24 15:57:01:627 : AeaBusyTime 00125 (Max 20965) on 'COM11'
+29/02/24 15:57:01:690 : AeaBusyTime 00188 (Max 20965) on 'COM11'
+29/02/24 15:57:01:752 : AeaBusyTime 00234 (Max 20965) on 'COM11'
+29/02/24 15:57:01:775 : Waiting for AEA event on COM11
+29/02/24 15:57:01:815 : AeaBusyTime 00313 (Max 20965) on 'COM11'
+29/02/24 15:57:01:879 : AeaBusyTime 00375 (Max 20965) on 'COM11'
+29/02/24 15:57:01:941 : AeaBusyTime 00438 (Max 20965) on 'COM11'
+29/02/24 15:57:01:941 : ComData read on port 'COM11' for 'BP1'
+0000  02 45 41 53 45 54 54 4F 4B 30 31 30 32 30 33 30  |.EASETTOK0102030|
+0010  35 30 36 03                                      |506.            |
+29/02/24 15:57:01:941 : MsgDone on port COM11
+29/02/24 15:57:01:941 : Data received on port 'COM11' for 'BP1'
+0000  45 41 53 45 54 54 4F 4B 30 31 30 32 30 33 30 35  |EASETTOK01020305|
+0010  30 36                                            |06              |
+29/02/24 15:57:01:941 : Releasing AEA Semaphore on 'COM11'
+29/02/24 15:57:02:165 : Waiting for AEA Semaphore on COM11
+29/02/24 15:57:02:165 : Acquired AEA Semaphore on COM11
+29/02/24 15:57:02:165 : Data sent to port 'COM11' from 'BP1'
+0000  4C 54 30 31 30 36 36 30 0A 05 01 01 00 00 00 00  |LT010660........|
+0010  3F 00 3F 00 00 00 00 00 00 00 00 00 00 00 00 00  |?.?.............|
+0020  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  |................|
+0030  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  |................|
+0040  00 00 00 00 00 00 00 00 00 01 08 00 01 00 00 00  |................|
+0050  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  |................|
+0060  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  |................|
+0070  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  |................|
+0080  00 00 00 00 00 00 00 00 C8 FF C8 FF C8 FF C8 FF  |................|
+0090  C2 FF C1 C0 0F C4 FF C2 FF C1 C0 0F C4 FF C1 FF  |................|
+00A0  C1 F0 C2 00 3F C3 FF C1 FF C1 F0 C2 00 3F C3 FF  |....?........?..|
+00B0  C1 FF C3 00 0F C3 FF C1 FF C3 00 0F C3 FF C1 FF  |................|
+00C0  00 0F C1 C0 00 C3 FF C1 FF 00 0F C1 C0 00 C3 FF  |................|
+00D0  C1 F0 00 C2 FF 00 C3 FF C1 F0 00 C2 FF 00 C3 FF  |................|
+00E0  C1 F0 0F C2 FF C1 C0 00 C2 FF C1 F0 0F C2 FF C1  |................|
+00F0  C0 00 C2 FF C1 C0 3F C2 FF C1 F0 00 0F C1 FF C1  |......?.........|
+0100  C0 3F C2 FF C1 F0 00 0F C1 FF C1 C0 C3 FF C1 F0  |.?..............|
+0110  C2 00 C1 FF C1 C0 C3 FF C1 F0 C2 00 C1 FF C1 C0  |................|
+0120  C3 FF C1 FC C2 00 3F C1 C0 C3 FF C1 FC C2 00 3F  |......?........?|
+0130  00 C5 FF C1 C0 3F 00 C5 FF C1 C0 3F 00 C1 FF C1  |.....?.....?....|
+0140  F0 3F C2 FF C1 F0 0F 00 C1 FF C1 F0 3F C2 FF C1  |.?..........?...|
+0150  F0 0F C1 C0 C1 FF C1 FC 0F C2 FF C1 FC 03 C1 C0  |................|
+0160  C1 FF C1 FC 0F C2 FF C1 FC 03 C1 C0 C1 FF C1 FC  |................|
+0170  03 C2 FF C1 FC 03 C1 C0 C1 FF C1 FC 03 C2 FF C1  |................|
+0180  FC 03 C1 C0 C2 FF 00 C2 FF C1 FC 03 C1 C0 C2 FF  |................|
+0190  00 C2 FF C1 FC 03 C1 C0 0F C1 FF 00 C2 FF C1 FC  |................|
+01A0  03 C1 C0 0F C1 FF 00 C2 FF C1 FC 03 C1 F0 0F C1  |................|
+01B0  FF 00 3F C1 FF C1 FC 0F C1 F0 0F C1 FF 00 3F C1  |..?...........?.|
+01C0  FF C1 FC 0F C1 FC 03 C1 FF C1 C0 0F C1 FF C1 F0  |................|
+01D0  0F C1 FC 03 C1 FF C1 C0 0F C1 FF C1 F0 0F C1 FC  |................|
+01E0  00 0F C1 C0 03 C1 FF C1 C0 3F C1 FC 00 0F C1 C0  |.........?......|
+01F0  03 C1 FF C1 C0 3F C1 FF C4 00 03 C1 F0 C1 FF C1  |.....?..........|
+0200  FF C4 00 03 C1 F0 C1 FF C1 FF C1 F0 C3 00 03 C2  |................|
+0210  FF C1 FF C1 F0 C3 00 03 C2 FF C2 FF C3 00 03 C2  |................|
+0220  FF C2 FF C3 00 03 C2 FF C3 FF C1 C0 0F C3 FF C3  |................|
+0230  FF C1 C0 0F C3 FF C3 FF C1 C0 0F C3 FF C3 FF C1  |................|
+0240  C0 0F C3 FF C3 FF 00 3F C3 FF C3 FF 00 3F C3 FF  |.......?.....?..|
+0250  C3 FF 00 C4 FF C3 FF 00 C4 FF C3 FF 00 C4 FF C3  |................|
+0260  FF 00 C4 FF C2 FF C1 FC 03 C4 FF C2 FF C1 FC 03  |................|
+0270  C4 FF C2 FF C1 FC 3F C4 FF C2 FF C1 FC 3F C4 FF  |......?......?..|
+0280  C2 FF C1 FC 3F C4 FF C2 FF C1 FC 3F C4 FF C2 FF  |....?......?....|
+0290  C1 F0 3F C4 FF C2 FF C1 F0 3F C4 FF              |..?......?..    |
+29/02/24 15:57:02:166 : ComData write on port 'COM11' for 'BP1'
+0000  02 4C 54 30 31 30 36 36 30 10 0A 10 05 10 01 10  |.LT010660.......|
+0010  01 10 00 10 00 10 00 10 00 3F 10 00 3F 10 00 10  |.........?..?...|
+0020  00 10 00 10 00 10 00 10 00 10 00 10 00 10 00 10  |................|
+0030  00 10 00 10 00 10 00 10 00 10 00 10 00 10 00 10  |................|
+0040  00 10 00 10 00 10 00 10 00 10 00 10 00 10 00 10  |................|
+0050  00 10 00 10 00 10 00 10 00 10 00 10 00 10 00 10  |................|
+0060  00 10 00 10 00 10 00 10 00 10 00 10 00 10 00 10  |................|
+0070  00 10 00 10 00 10 00 10 00 10 00 10 00 10 00 10  |................|
+0080  00 10 00 10 00 10 00 10 00 10 01 10 08 10 00 10  |................|
+0090  01 10 00 10 00 10 00 10 00 10 00 10 00 10 00 10  |................|
+00A0  00 10 00 10 00 10 00 10 00 10 00 10 00 10 00 10  |................|
+00B0  00 10 00 10 00 10 00 10 00 10 00 10 00 10 00 10  |................|
+00C0  00 10 00 10 00 10 00 10 00 10 00 10 00 10 00 10  |................|
+00D0  00 10 00 10 00 10 00 10 00 10 00 10 00 10 00 10  |................|
+00E0  00 10 00 10 00 10 00 10 00 10 00 10 00 10 00 10  |................|
+00F0  00 10 00 10 00 10 00 10 00 10 00 10 00 10 00 10  |................|
+0100  00 10 00 10 00 10 00 C8 FF C8 FF C8 FF C8 FF C2  |................|
+0110  FF C1 C0 10 0F C4 FF C2 FF C1 C0 10 0F C4 FF C1  |................|
+0120  FF C1 F0 C2 10 00 3F C3 FF C1 FF C1 F0 C2 10 00  |......?.........|
+0130  3F C3 FF C1 FF C3 10 00 10 0F C3 FF C1 FF C3 10  |?...............|
+0140  00 10 0F C3 FF C1 FF 10 00 10 0F C1 C0 10 00 C3  |................|
+0150  FF C1 FF 10 00 10 0F C1 C0 10 00 C3 FF C1 F0 10  |................|
+0160  00 C2 FF 10 00 C3 FF C1 F0 10 00 C2 FF 10 00 C3  |................|
+0170  FF C1 F0 10 0F C2 FF C1 C0 10 00 C2 FF C1 F0 10  |................|
+0180  0F C2 FF C1 C0 10 00 C2 FF C1 C0 3F C2 FF C1 F0  |...........?....|
+0190  10 00 10 0F C1 FF C1 C0 3F C2 FF C1 F0 10 00 10  |........?.......|
+01A0  0F C1 FF C1 C0 C3 FF C1 F0 C2 10 00 C1 FF C1 C0  |................|
+01B0  C3 FF C1 F0 C2 10 00 C1 FF C1 C0 C3 FF C1 FC C2  |................|
+01C0  10 00 3F C1 C0 C3 FF C1 FC C2 10 00 3F 10 00 C5  |..?.........?...|
+01D0  FF C1 C0 3F 10 00 C5 FF C1 C0 3F 10 00 C1 FF C1  |...?......?.....|
+01E0  F0 3F C2 FF C1 F0 10 0F 10 00 C1 FF C1 F0 3F C2  |.?............?.|
+01F0  FF C1 F0 10 0F C1 C0 C1 FF C1 FC 10 0F C2 FF C1  |................|
+0200  FC 10 03 C1 C0 C1 FF C1 FC 10 0F C2 FF C1 FC 10  |................|
+0210  03 C1 C0 C1 FF C1 FC 10 03 C2 FF C1 FC 10 03 C1  |................|
+0220  C0 C1 FF C1 FC 10 03 C2 FF C1 FC 10 03 C1 C0 C2  |................|
+0230  FF 10 00 C2 FF C1 FC 10 03 C1 C0 C2 FF 10 00 C2  |................|
+0240  FF C1 FC 10 03 C1 C0 10 0F C1 FF 10 00 C2 FF C1  |................|
+0250  FC 10 03 C1 C0 10 0F C1 FF 10 00 C2 FF C1 FC 10  |................|
+0260  03 C1 F0 10 0F C1 FF 10 00 3F C1 FF C1 FC 10 0F  |.........?......|
+0270  C1 F0 10 0F C1 FF 10 00 3F C1 FF C1 FC 10 0F C1  |........?.......|
+0280  FC 10 03 C1 FF C1 C0 10 0F C1 FF C1 F0 10 0F C1  |................|
+0290  FC 10 03 C1 FF C1 C0 10 0F C1 FF C1 F0 10 0F C1  |................|
+02A0  FC 10 00 10 0F C1 C0 10 03 C1 FF C1 C0 3F C1 FC  |.............?..|
+02B0  10 00 10 0F C1 C0 10 03 C1 FF C1 C0 3F C1 FF C4  |............?...|
+02C0  10 00 10 03 C1 F0 C1 FF C1 FF C4 10 00 10 03 C1  |................|
+02D0  F0 C1 FF C1 FF C1 F0 C3 10 00 10 03 C2 FF C1 FF  |................|
+02E0  C1 F0 C3 10 00 10 03 C2 FF C2 FF C3 10 00 10 03  |................|
+02F0  C2 FF C2 FF C3 10 00 10 03 C2 FF C3 FF C1 C0 10  |................|
+0300  0F C3 FF C3 FF C1 C0 10 0F C3 FF C3 FF C1 C0 10  |................|
+0310  0F C3 FF C3 FF C1 C0 10 0F C3 FF C3 FF 10 00 3F  |...............?|
+0320  C3 FF C3 FF 10 00 3F C3 FF C3 FF 10 00 C4 FF C3  |......?.........|
+0330  FF 10 00 C4 FF C3 FF 10 00 C4 FF C3 FF 10 00 C4  |................|
+0340  FF C2 FF C1 FC 10 03 C4 FF C2 FF C1 FC 10 03 C4  |................|
+0350  FF C2 FF C1 FC 3F C4 FF C2 FF C1 FC 3F C4 FF C2  |.....?......?...|
+0360  FF C1 FC 3F C4 FF C2 FF C1 FC 3F C4 FF C2 FF C1  |...?......?.....|
+0370  F0 3F C4 FF C2 FF C1 F0 3F C4 FF 03              |.?......?...    |
+29/02/24 15:57:02:194 : AeaBusyTime 00063 (Max 20668) on 'COM11'
+29/02/24 15:57:02:255 : AeaBusyTime 00125 (Max 20668) on 'COM11'
+29/02/24 15:57:02:317 : AeaBusyTime 00188 (Max 20668) on 'COM11'
+29/02/24 15:57:02:380 : AeaBusyTime 00250 (Max 20668) on 'COM11'
+29/02/24 15:57:02:387 : Waiting for AEA event on COM11
+29/02/24 15:57:02:444 : AeaBusyTime 00313 (Max 20668) on 'COM11'
+29/02/24 15:57:02:506 : AeaBusyTime 00375 (Max 20668) on 'COM11'
+29/02/24 15:57:02:568 : AeaBusyTime 00438 (Max 20668) on 'COM11'
+29/02/24 15:57:02:628 : AeaBusyTime 00500 (Max 20668) on 'COM11'
+29/02/24 15:57:02:691 : AeaBusyTime 00563 (Max 20668) on 'COM11'
+29/02/24 15:57:02:691 : ComData read on port 'COM11' for 'BP1'
+0000  02 45 41 53 45 4C 54 4F 4B 30 31 30 34 30 35 03  |.EASELTOK010405.|
+29/02/24 15:57:02:691 : MsgDone on port COM11
+29/02/24 15:57:02:691 : Data received on port 'COM11' for 'BP1'
+0000  45 41 53 45 4C 54 4F 4B 30 31 30 34 30 35        |EASELTOK010405  |
+29/02/24 15:57:02:691 : Releasing AEA Semaphore on 'COM11'
+29/02/24 15:57:02:911 : Waiting for AEA Semaphore on COM11
+29/02/24 15:57:02:911 : Acquired AEA Semaphore on COM11
+29/02/24 15:57:02:911 : Data sent to port 'COM11' from 'BP1'
+0000  43 50 23 41 23 30 31 57 23 31 33 4C 4F 4E 44 4F  |CP#A#01W#13LONDO|
+0010  4E 20 20 20 20 20 20 20 4C 48 52 23 31 46 59 59  |N       LHR#1FYY|
+0020  23 32 35 31 37 4A 55 4E 23 33 35 20 30 38 35 35  |#2517JUN#35 0855|
+0030  23 33 36 31 23 33 37 30 38 33 35 23 33 41 31 23  |#361#370835#3A1#|
+0040  33 42 30 38 33 35 23 43 45 20 30 30 31 23 43 50  |3B0835#CE 001#CP|
+0050  23 43 30 31 23 30 36 54 45 53 54 2F 41 20 4D 52  |#C01#06TEST/A MR|
+0060  23 30 37 54 45 53 54 2F 41 20 4D 52 23 32 42 4E  |#07TEST/A MR#2BN|
+0070  45 57 20 59 4F 52 4B 20 20 20 20 20 4A 46 4B 23  |EW YORK     JFK#|
+0080  33 33 46 23 33 38 30 31 41 23 33 43 30 31 41 23  |33F#3801A#3C01A#|
+0090  33 45 40 40 30 33 23 34 35 20 33 23 34 36 20 20  |3E@@03#45 3#46  |
+00A0  30 23 41 45 50 41 53 53 45 4E 47 45 52 20 54 49  |0#AEPASSENGER TI|
+00B0  43 4B 45 54 20 41 4E 44 23 41 46 42 41 47 47 41  |CKET AND#AFBAGGA|
+00C0  47 45 20 43 48 45 43 4B 23 44 35 4D 31 54 45 53  |GE CHECK#D5M1TES|
+00D0  54 2F 41 20 4D 52 20 20 20 20 20 20 20 20 20 20  |T/A MR          |
+00E0  20 45 50 4E 52 52 45 46 20 4C 48 52 4A 46 4B 59  | EPNRREF LHRJFKY|
+00F0  59 20 30 30 30 31 20 31 36 38 46 30 31 41 20 30  |Y 0001 168F01A 0|
+0100  30 30 30 38 35 30 30 23 45 30 30 30 23 45 31 59  |0008500#E000#E1Y|
+0110  59 2F 42 4C 55 45 31 33 34 30 32 37 31 37 23 45  |Y/BLUE13402717#E|
+0120  36 44 45 50 41 52 54 53 20 54 45 52 4D 49 4E 41  |6DEPARTS TERMINA|
+0130  4C 20 31 23 45 37 20 20 30 23 45 38 30 30 38 23  |L 1#E7  0#E8008#|
+0140  45 46 45 54 4B 54 20 4E 4F 20 43 4F 55 50 4F 4E  |EFETKT NO COUPON|
+0150  23                                               |#               |
+29/02/24 15:57:02:911 : ComData write on port 'COM11' for 'BP1'
+0000  02 43 50 23 41 23 30 31 57 23 31 33 4C 4F 4E 44  |.CP#A#01W#13LOND|
+0010  4F 4E 20 20 20 20 20 20 20 4C 48 52 23 31 46 59  |ON       LHR#1FY|
+0020  59 23 32 35 31 37 4A 55 4E 23 33 35 20 30 38 35  |Y#2517JUN#35 085|
+0030  35 23 33 36 31 23 33 37 30 38 33 35 23 33 41 31  |5#361#370835#3A1|
+0040  23 33 42 30 38 33 35 23 43 45 20 30 30 31 23 43  |#3B0835#CE 001#C|
+0050  50 23 43 30 31 23 30 36 54 45 53 54 2F 41 20 4D  |P#C01#06TEST/A M|
+0060  52 23 30 37 54 45 53 54 2F 41 20 4D 52 23 32 42  |R#07TEST/A MR#2B|
+0070  4E 45 57 20 59 4F 52 4B 20 20 20 20 20 4A 46 4B  |NEW YORK     JFK|
+0080  23 33 33 46 23 33 38 30 31 41 23 33 43 30 31 41  |#33F#3801A#3C01A|
+0090  23 33 45 40 40 30 33 23 34 35 20 33 23 34 36 20  |#3E@@03#45 3#46 |
+00A0  20 30 23 41 45 50 41 53 53 45 4E 47 45 52 20 54  | 0#AEPASSENGER T|
+00B0  49 43 4B 45 54 20 41 4E 44 23 41 46 42 41 47 47  |ICKET AND#AFBAGG|
+00C0  41 47 45 20 43 48 45 43 4B 23 44 35 4D 31 54 45  |AGE CHECK#D5M1TE|
+00D0  53 54 2F 41 20 4D 52 20 20 20 20 20 20 20 20 20  |ST/A MR         |
+00E0  20 20 45 50 4E 52 52 45 46 20 4C 48 52 4A 46 4B  |  EPNRREF LHRJFK|
+00F0  59 59 20 30 30 30 31 20 31 36 38 46 30 31 41 20  |YY 0001 168F01A |
+0100  30 30 30 30 38 35 30 30 23 45 30 30 30 23 45 31  |00008500#E000#E1|
+0110  59 59 2F 42 4C 55 45 31 33 34 30 32 37 31 37 23  |YY/BLUE13402717#|
+0120  45 36 44 45 50 41 52 54 53 20 54 45 52 4D 49 4E  |E6DEPARTS TERMIN|
+0130  41 4C 20 31 23 45 37 20 20 30 23 45 38 30 30 38  |AL 1#E7  0#E8008|
+0140  23 45 46 45 54 4B 54 20 4E 4F 20 43 4F 55 50 4F  |#EFETKT NO COUPO|
+0150  4E 23 03                                         |N#.             |
+29/02/24 15:57:02:937 : AeaBusyTime 00063 (Max 20337) on 'COM11'
+29/02/24 15:57:02:996 : Waiting for AEA event on COM11
+29/02/24 15:57:03:000 : AeaBusyTime 00125 (Max 20337) on 'COM11'
+29/02/24 15:57:03:064 : AeaBusyTime 00188 (Max 20337) on 'COM11'
+29/02/24 15:57:03:128 : AeaBusyTime 00266 (Max 20337) on 'COM11'
+29/02/24 15:57:03:190 : AeaBusyTime 00329 (Max 20337) on 'COM11'
+29/02/24 15:57:03:254 : AeaBusyTime 00391 (Max 20337) on 'COM11'
+29/02/24 15:57:03:316 : AeaBusyTime 00454 (Max 20337) on 'COM11'
+29/02/24 15:57:03:378 : AeaBusyTime 00516 (Max 20337) on 'COM11'
+29/02/24 15:57:03:442 : AeaBusyTime 00579 (Max 20337) on 'COM11'
+29/02/24 15:57:03:510 : AeaBusyTime 00641 (Max 20337) on 'COM11'
+29/02/24 15:57:03:566 : AeaBusyTime 00704 (Max 20337) on 'COM11'
+29/02/24 15:57:03:630 : AeaBusyTime 00766 (Max 20337) on 'COM11'
+29/02/24 15:57:03:693 : AeaBusyTime 00829 (Max 20337) on 'COM11'
+29/02/24 15:57:03:755 : AeaBusyTime 00891 (Max 20337) on 'COM11'
+29/02/24 15:57:03:817 : AeaBusyTime 00954 (Max 20337) on 'COM11'
+29/02/24 15:57:03:879 : AeaBusyTime 01016 (Max 20337) on 'COM11'
+29/02/24 15:57:03:941 : AeaBusyTime 01079 (Max 20337) on 'COM11'
+29/02/24 15:57:04:005 : AeaBusyTime 01141 (Max 20337) on 'COM11'
+29/02/24 15:57:04:068 : AeaBusyTime 01204 (Max 20337) on 'COM11'
+29/02/24 15:57:04:132 : AeaBusyTime 01266 (Max 20337) on 'COM11'
+29/02/24 15:57:04:196 : AeaBusyTime 01329 (Max 20337) on 'COM11'
+29/02/24 15:57:04:258 : AeaBusyTime 01391 (Max 20337) on 'COM11'
+29/02/24 15:57:04:319 : AeaBusyTime 01454 (Max 20337) on 'COM11'
+29/02/24 15:57:04:383 : AeaBusyTime 01516 (Max 20337) on 'COM11'
+29/02/24 15:57:04:446 : AeaBusyTime 01579 (Max 20337) on 'COM11'
+29/02/24 15:57:04:510 : AeaBusyTime 01641 (Max 20337) on 'COM11'
+29/02/24 15:57:04:574 : AeaBusyTime 01704 (Max 20337) on 'COM11'
+29/02/24 15:57:04:638 : AeaBusyTime 01766 (Max 20337) on 'COM11'
+29/02/24 15:57:04:700 : AeaBusyTime 01829 (Max 20337) on 'COM11'
+29/02/24 15:57:04:764 : AeaBusyTime 01891 (Max 20337) on 'COM11'
+29/02/24 15:57:04:824 : AeaBusyTime 01954 (Max 20337) on 'COM11'
+29/02/24 15:57:04:887 : AeaBusyTime 02016 (Max 20337) on 'COM11'
+29/02/24 15:57:04:951 : AeaBusyTime 02079 (Max 20337) on 'COM11'
+29/02/24 15:57:05:013 : AeaBusyTime 02141 (Max 20337) on 'COM11'
+29/02/24 15:57:05:077 : AeaBusyTime 02204 (Max 20337) on 'COM11'
+29/02/24 15:57:05:141 : AeaBusyTime 02266 (Max 20337) on 'COM11'
+29/02/24 15:57:05:204 : AeaBusyTime 02329 (Max 20337) on 'COM11'
+29/02/24 15:57:05:268 : AeaBusyTime 02407 (Max 20337) on 'COM11'
+29/02/24 15:57:05:331 : AeaBusyTime 02469 (Max 20337) on 'COM11'
+29/02/24 15:57:05:395 : AeaBusyTime 02532 (Max 20337) on 'COM11'
+29/02/24 15:57:05:459 : AeaBusyTime 02594 (Max 20337) on 'COM11'
+29/02/24 15:57:05:522 : AeaBusyTime 02657 (Max 20337) on 'COM11'
+29/02/24 15:57:05:584 : AeaBusyTime 02719 (Max 20337) on 'COM11'
+29/02/24 15:57:05:648 : AeaBusyTime 02782 (Max 20337) on 'COM11'
+29/02/24 15:57:05:712 : AeaBusyTime 02844 (Max 20337) on 'COM11'
+29/02/24 15:57:05:776 : AeaBusyTime 02907 (Max 20337) on 'COM11'
+29/02/24 15:57:05:840 : AeaBusyTime 02969 (Max 20337) on 'COM11'
+29/02/24 15:57:05:903 : AeaBusyTime 03032 (Max 20337) on 'COM11'
+29/02/24 15:57:05:965 : AeaBusyTime 03094 (Max 20337) on 'COM11'
+29/02/24 15:57:06:029 : AeaBusyTime 03157 (Max 20337) on 'COM11'
+29/02/24 15:57:06:091 : AeaBusyTime 03219 (Max 20337) on 'COM11'
+29/02/24 15:57:06:153 : AeaBusyTime 03282 (Max 20337) on 'COM11'
+29/02/24 15:57:06:222 : AeaBusyTime 03360 (Max 20337) on 'COM11'
+29/02/24 15:57:06:279 : AeaBusyTime 03407 (Max 20337) on 'COM11'
+29/02/24 15:57:06:341 : AeaBusyTime 03469 (Max 20337) on 'COM11'
+29/02/24 15:57:06:402 : AeaBusyTime 03532 (Max 20337) on 'COM11'
+29/02/24 15:57:06:466 : AeaBusyTime 03594 (Max 20337) on 'COM11'
+29/02/24 15:57:06:530 : AeaBusyTime 03657 (Max 20337) on 'COM11'
+29/02/24 15:57:06:594 : AeaBusyTime 03719 (Max 20337) on 'COM11'
+29/02/24 15:57:06:657 : AeaBusyTime 03782 (Max 20337) on 'COM11'
+29/02/24 15:57:06:721 : AeaBusyTime 03860 (Max 20337) on 'COM11'
+29/02/24 15:57:06:783 : AeaBusyTime 03907 (Max 20337) on 'COM11'
+29/02/24 15:57:06:847 : AeaBusyTime 03985 (Max 20337) on 'COM11'
+29/02/24 15:57:06:911 : AeaBusyTime 04047 (Max 20337) on 'COM11'
+29/02/24 15:57:06:972 : AeaBusyTime 04110 (Max 20337) on 'COM11'
+29/02/24 15:57:07:034 : AeaBusyTime 04172 (Max 20337) on 'COM11'
+29/02/24 15:57:07:096 : AeaBusyTime 04235 (Max 20337) on 'COM11'
+29/02/24 15:57:07:160 : AeaBusyTime 04297 (Max 20337) on 'COM11'
+29/02/24 15:57:07:224 : AeaBusyTime 04360 (Max 20337) on 'COM11'
+29/02/24 15:57:07:288 : AeaBusyTime 04422 (Max 20337) on 'COM11'
+29/02/24 15:57:07:352 : AeaBusyTime 04485 (Max 20337) on 'COM11'
+29/02/24 15:57:07:413 : AeaBusyTime 04547 (Max 20337) on 'COM11'
+29/02/24 15:57:07:477 : AeaBusyTime 04610 (Max 20337) on 'COM11'
+29/02/24 15:57:07:541 : AeaBusyTime 04672 (Max 20337) on 'COM11'
+29/02/24 15:57:07:605 : AeaBusyTime 04735 (Max 20337) on 'COM11'
+29/02/24 15:57:07:670 : AeaBusyTime 04797 (Max 20337) on 'COM11'
+29/02/24 15:57:07:731 : AeaBusyTime 04860 (Max 20337) on 'COM11'
+29/02/24 15:57:07:792 : AeaBusyTime 04922 (Max 20337) on 'COM11'
+29/02/24 15:57:07:854 : AeaBusyTime 04985 (Max 20337) on 'COM11'
+29/02/24 15:57:07:916 : AeaBusyTime 05047 (Max 20337) on 'COM11'
+29/02/24 15:57:07:979 : AeaBusyTime 05110 (Max 20337) on 'COM11'
+29/02/24 15:57:08:041 : AeaBusyTime 05172 (Max 20337) on 'COM11'
+29/02/24 15:57:08:104 : AeaBusyTime 05235 (Max 20337) on 'COM11'
+29/02/24 15:57:08:167 : AeaBusyTime 05297 (Max 20337) on 'COM11'
+29/02/24 15:57:08:228 : AeaBusyTime 05360 (Max 20337) on 'COM11'
+29/02/24 15:57:08:291 : AeaBusyTime 05422 (Max 20337) on 'COM11'
+29/02/24 15:57:08:355 : AeaBusyTime 05485 (Max 20337) on 'COM11'
+29/02/24 15:57:08:418 : AeaBusyTime 05547 (Max 20337) on 'COM11'
+29/02/24 15:57:08:481 : AeaBusyTime 05610 (Max 20337) on 'COM11'
+29/02/24 15:57:08:543 : AeaBusyTime 05672 (Max 20337) on 'COM11'
+29/02/24 15:57:08:606 : AeaBusyTime 05735 (Max 20337) on 'COM11'
+29/02/24 15:57:08:670 : AeaBusyTime 05797 (Max 20337) on 'COM11'
+29/02/24 15:57:08:732 : AeaBusyTime 05860 (Max 20337) on 'COM11'
+29/02/24 15:57:08:795 : AeaBusyTime 05922 (Max 20337) on 'COM11'
+29/02/24 15:57:08:858 : AeaBusyTime 05985 (Max 20337) on 'COM11'
+29/02/24 15:57:08:919 : AeaBusyTime 06047 (Max 20337) on 'COM11'
+29/02/24 15:57:08:983 : AeaBusyTime 06110 (Max 20337) on 'COM11'
+29/02/24 15:57:09:046 : AeaBusyTime 06172 (Max 20337) on 'COM11'
+29/02/24 15:57:09:109 : AeaBusyTime 06235 (Max 20337) on 'COM11'
+29/02/24 15:57:09:172 : AeaBusyTime 06297 (Max 20337) on 'COM11'
+29/02/24 15:57:09:235 : AeaBusyTime 06360 (Max 20337) on 'COM11'
+29/02/24 15:57:09:298 : AeaBusyTime 06422 (Max 20337) on 'COM11'
+29/02/24 15:57:09:362 : AeaBusyTime 06500 (Max 20337) on 'COM11'
+29/02/24 15:57:09:362 : ComData read on port 'COM11' for 'BP1'
+0000  02 54 2F 2F 43 49 50 52 4F 4B 23 31 30 30 23 32  |.T//CIPROK#100#2|
+0010  30 31 23 33 30 30 23 56 53 52 23 30 31 57 03     |01#300#VSR#01W. |
+29/02/24 15:57:09:362 : MsgDone on port COM11
+29/02/24 15:57:09:362 : Data received on port 'COM11' for 'BP1'
+0000  54 2F 2F 43 49 50 52 4F 4B 23 31 30 30 23 32 30  |T//CIPROK#100#20|
+0010  31 23 33 30 30 23 56 53 52 23 30 31 57           |1#300#VSR#01W   |
+29/02/24 15:57:09:362 : Releasing AEA Semaphore on 'COM11'
+29/02/24 15:57:12:624 : Waiting for AEA Semaphore on COM11
+29/02/24 15:57:12:624 : Acquired AEA Semaphore on COM11
+29/02/24 15:57:12:625 : Data sent to port 'COM11' from 'BP1'
+0000  50 54 23 23 3F 57 39 42 23 40 3B 23 54 2F 2F 23  |PT##?W9B#@;#T//#|
+0010  54 2F 2F 43 49 23 54 2F 2F 43 49 23 30 31 30 31  |T//CI#T//CI#0101|
+0020  31 31 30 31 31 32 30 31 31 33 30 31 32 31 30 31  |1101120113012101|
+0030  32 32 30 31 32 33 30 31 33 31 30 31 33 32 30 31  |2201230131013201|
+0040  33 33 30 31 34 31 30 31 34 32 30 31 34 33 30 31  |3301410142014301|
+0050  43 23 30 36 32 30 45 30 31 44 35 33 44 23 30 37  |C#0620E01D53D#07|
+0060  32 30 44 23 30 45 30 34 44 23 31 33 31 38 46 35  |20D#0E04D#1318F5|
+0070  35 23 31 46 30 33 46 30 31 4A 35 33 31 31 30 38  |5#1F03F01J531108|
+0080  31 33 30 38 44 23 32 35 30 35 4A 36 33 46 31 30  |1308D#2505J63F10|
+0090  23 32 42 31 38 46 31 36 47 35 35 23 33 30 32 30  |#2B18F16G55#3020|
+00A0  44 31 39 23 33 33 30 31 4A 36 31 23 33 35 30 35  |D19#3301J61#3505|
+00B0  4A 36 38 23 33 36 30 35 4C 35 33 46 23 33 37 30  |J68#3605L53F#370|
+00C0  36 4C 35 38 46 23 33 38 30 33 4D 36 33 52 23 33  |6L58F#3803M63R#3|
+00D0  41 30 35 4A 33 32 52 23 33 42 30 36 4A 31 36 52  |A05J32R#3B06J16R|
+00E0  23 33 43 30 33 4A 30 32 4D 36 33 52 23 33 45 30  |#3C03J02M63R#3E0|
+00F0  32 4C 37 30 46 23 33 46 30 33 4C 30 32 4F 36 35  |2L70F#3F03L02O65|
+0100  52 23 34 35 30 32 4F 35 33 23 34 36 30 33 4F 35  |R#4502O53#4603O5|
+0110  35 23 34 38 30 33 50 36 31 23 34 39 30 39 50 36  |5#4803P61#4909P6|
+0120  34 23 39 41 30 31 4F 32 38 23 41 45 32 30 50 35  |4#9A01O28#AE20P5|
+0130  33 23 41 46 31 33 51 35 33 23 43 45 30 35 46 30  |3#AF13Q53#CE05F0|
+0140  34 4A 35 36 23 44 32 33 39 4E 30 31 23 44 33 33  |4J56#D239N01#D33|
+0150  39 4F 30 31 23 44 35 42 52 45 34 32 32 30 35 31  |9O01#D5BRE422051|
+0160  23 45 30 30 32 52 35 35 23 45 31 32 30 45 35 33  |#E002R55#E120E53|
+0170  23 45 36 33 39 4D 30 31 23 45 37 30 33 4F 35 38  |#E639M01#E703O58|
+0180  23 45 38 30 35 4F 36 32 44 23 45 46 31 34 52 35  |#E805O62D#EF14R5|
+0190  38 23                                            |8#              |
+29/02/24 15:57:12:625 : ComData write on port 'COM11' for 'BP1'
+0000  02 50 54 23 23 3F 57 39 42 23 40 3B 23 54 2F 2F  |.PT##?W9B#@;#T//|
+0010  23 54 2F 2F 43 49 23 54 2F 2F 43 49 23 30 31 30  |#T//CI#T//CI#010|
+0020  31 31 31 30 31 31 32 30 31 31 33 30 31 32 31 30  |1110112011301210|
+0030  31 32 32 30 31 32 33 30 31 33 31 30 31 33 32 30  |1220123013101320|
+0040  31 33 33 30 31 34 31 30 31 34 32 30 31 34 33 30  |1330141014201430|
+0050  31 43 23 30 36 32 30 45 30 31 44 35 33 44 23 30  |1C#0620E01D53D#0|
+0060  37 32 30 44 23 30 45 30 34 44 23 31 33 31 38 46  |720D#0E04D#1318F|
+0070  35 35 23 31 46 30 33 46 30 31 4A 35 33 31 31 30  |55#1F03F01J53110|
+0080  38 31 33 30 38 44 23 32 35 30 35 4A 36 33 46 31  |81308D#2505J63F1|
+0090  30 23 32 42 31 38 46 31 36 47 35 35 23 33 30 32  |0#2B18F16G55#302|
+00A0  30 44 31 39 23 33 33 30 31 4A 36 31 23 33 35 30  |0D19#3301J61#350|
+00B0  35 4A 36 38 23 33 36 30 35 4C 35 33 46 23 33 37  |5J68#3605L53F#37|
+00C0  30 36 4C 35 38 46 23 33 38 30 33 4D 36 33 52 23  |06L58F#3803M63R#|
+00D0  33 41 30 35 4A 33 32 52 23 33 42 30 36 4A 31 36  |3A05J32R#3B06J16|
+00E0  52 23 33 43 30 33 4A 30 32 4D 36 33 52 23 33 45  |R#3C03J02M63R#3E|
+00F0  30 32 4C 37 30 46 23 33 46 30 33 4C 30 32 4F 36  |02L70F#3F03L02O6|
+0100  35 52 23 34 35 30 32 4F 35 33 23 34 36 30 33 4F  |5R#4502O53#4603O|
+0110  35 35 23 34 38 30 33 50 36 31 23 34 39 30 39 50  |55#4803P61#4909P|
+0120  36 34 23 39 41 30 31 4F 32 38 23 41 45 32 30 50  |64#9A01O28#AE20P|
+0130  35 33 23 41 46 31 33 51 35 33 23 43 45 30 35 46  |53#AF13Q53#CE05F|
+0140  30 34 4A 35 36 23 44 32 33 39 4E 30 31 23 44 33  |04J56#D239N01#D3|
+0150  33 39 4F 30 31 23 44 35 42 52 45 34 32 32 30 35  |39O01#D5BRE42205|
+0160  31 23 45 30 30 32 52 35 35 23 45 31 32 30 45 35  |1#E002R55#E120E5|
+0170  33 23 45 36 33 39 4D 30 31 23 45 37 30 33 4F 35  |3#E639M01#E703O5|
+0180  38 23 45 38 30 35 4F 36 32 44 23 45 46 31 34 52  |8#E805O62D#EF14R|
+0190  35 38 23 03                                      |58#.            |
+29/02/24 15:57:12:635 : AeaBusyTime 00062 (Max 20402) on 'COM11'
+29/02/24 15:57:12:697 : AeaBusyTime 00125 (Max 20402) on 'COM11'
+29/02/24 15:57:12:727 : Waiting for AEA event on COM11
+29/02/24 15:57:12:761 : AeaBusyTime 00187 (Max 20402) on 'COM11'
+29/02/24 15:57:12:822 : AeaBusyTime 00250 (Max 20402) on 'COM11'
+29/02/24 15:57:12:822 : ComData read on port 'COM11' for 'BP1'
+0000  02 45 41 53 45 50 54 4F 4B 42 36 53 36 54 36 56  |.EASEPTOKB6S6T6V|
+0010  36 57 39 03                                      |6W9.            |
+29/02/24 15:57:12:822 : MsgDone on port COM11
+29/02/24 15:57:12:822 : Data received on port 'COM11' for 'BP1'
+0000  45 41 53 45 50 54 4F 4B 42 36 53 36 54 36 56 36  |EASEPTOKB6S6T6V6|
+0010  57 39                                            |W9              |
+29/02/24 15:57:12:822 : Releasing AEA Semaphore on 'COM11'
+29/02/24 15:57:13:082 : Waiting for AEA Semaphore on COM11
+29/02/24 15:57:13:082 : Acquired AEA Semaphore on COM11
+29/02/24 15:57:13:082 : Data sent to port 'COM11' from 'BP1'
+0000  54 54 30 33 23 30 31 42 30 30 30 31 33 30 35 31  |TT03#01B00013051|
+0010  30 35 30 39 39 30 30 30 33 30 30 30 30 30 23 30  |05099000300000#0|
+0020  32 42 30 30 30 31 35 31 30 31 37 30 30 32 35 30  |2B00015101700250|
+0030  30 30 35 30 30 30 30 30 23 30 33 42 30 33 37 30  |00500000#03B0370|
+0040  35 31 30 31 37 30 30 32 35 30 30 30 35 30 30 30  |5101700250005000|
+0050  30 30 23 30 34 42 30 37 35 30 35 31 30 31 37 30  |00#04B0750510170|
+0060  30 32 34 30 30 30 35 30 30 30 30 30 23 30 35 42  |024000500000#05B|
+0070  30 30 30 31 36 38 30 31 34 30 30 39 39 30 30 30  |0001680140099000|
+0080  33 30 30 30 30 30 23 30 36 42 31 33 32 34 34 36  |300000#06B132446|
+0090  35 30 38 30 30 32 30 30 30 30 33 30 30 30 30 30  |5080020000300000|
+00A0  23 30 37 42 31 33 32 34 36 31 30 31 34 30 30 35  |#07B132461014005|
+00B0  32 30 30 30 33 30 30 30 30 30 23 30 38 54 30 30  |2000300000#08T00|
+00C0  39 30 33 38 30 30 30 41 4C 4C 40 30 30 30 30 30  |9038000ALL@00000|
+00D0  53 45 41 54 23 30 39 54 30 34 31 30 33 38 30 30  |SEAT#09T04103800|
+00E0  30 41 4C 4C 40 30 30 30 30 30 47 41 54 45 20 43  |0ALL@00000GATE C|
+00F0  4C 4F 53 45 53 23 31 30 54 30 38 34 30 33 38 30  |LOSES#10T0840380|
+0100  30 30 41 4C 4C 40 30 30 30 30 30 47 41 54 45 23  |00ALL@00000GATE#|
+0110  31 31 54 30 30 30 31 37 34 35 30 30 41 41 41 41  |11T000174500AAAA|
+0120  30 30 30 30 30 42 4F 41 52 44 49 4E 47 20 50 41  |00000BOARDING PA|
+0130  53 53 23 31 32 54 30 30 30 31 37 38 30 30 30 41  |SS#12T000178000A|
+0140  4C 4C 40 30 30 30 30 30 43 41 52 54 45 20 44 27  |LL@00000CARTE D'|
+0150  41 43 43 45 53 20 41 20 42 4F 52 44 2F 42 4F 52  |ACCES A BORD/BOR|
+0160  44 4B 41 52 54 45 23 31 33 54 30 30 30 31 38 31  |DKARTE#13T000181|
+0170  30 30 30 41 4C 4C 40 30 30 30 30 30 54 41 52 4A  |000ALL@00000TARJ|
+0180  45 54 41 20 44 45 20 45 4D 42 41 52 51 55 45 2F  |ETA DE EMBARQUE/|
+0190  43 41 52 54 41 20 44 27 49 4D 42 41 52 43 4F 23  |CARTA D'IMBARCO#|
+01A0  31 34 54 30 36 30 30 37 33 30 30 30 41 4C 4C 40  |14T060073000ALL@|
+01B0  30 30 30 30 30 53 55 42 4A 45 43 54 20 54 4F 20  |00000SUBJECT TO |
+01C0  43 4F 4E 44 49 54 49 4F 4E 53 20 4F 46 20 43 41  |CONDITIONS OF CA|
+01D0  52 52 49 41 47 45 2C 20 43 4F 50 49 45 53 23 31  |RRIAGE, COPIES#1|
+01E0  35 54 30 36 30 30 37 36 30 30 30 41 4C 4C 40 30  |5T060076000ALL@0|
+01F0  30 30 30 30 41 56 41 49 4C 41 42 4C 45 20 4F 4E  |0000AVAILABLE ON|
+0200  20 52 45 51 55 45 53 54 2E 20 20 20 53 45 45 20  | REQUEST.   SEE |
+0210  49 4D 50 4F 52 54 41 4E 54 23 31 36 54 30 36 30  |IMPORTANT#16T060|
+0220  30 37 39 30 30 30 41 4C 4C 40 30 30 30 30 30 4E  |079000ALL@00000N|
+0230  4F 54 49 43 45 53 20 4F 4E 20 54 48 45 20 42 41  |OTICES ON THE BA|
+0240  43 4B 20 4F 46 20 54 48 49 53 20 44 4F 43 55 4D  |CK OF THIS DOCUM|
+0250  45 4E 54 2E 23 34 30 54 31 33 32 34 31 36 35 30  |ENT.#40T13241650|
+0260  30 41 4C 4C 40 30 30 30 30 30 4E 41 4D 45 20 4F  |0ALL@00000NAME O|
+0270  46 20 50 41 53 53 45 4E 47 45 52 23 34 31 54 31  |F PASSENGER#41T1|
+0280  33 32 34 32 37 30 30 30 41 4C 4C 40 30 30 30 30  |32427000ALL@0000|
+0290  30 46 52 4F 4D 23 34 32 54 31 33 32 34 33 31 30  |0FROM#42T1324310|
+02A0  30 30 41 4C 4C 40 30 30 30 30 30 54 4F 23 34 33  |00ALL@00000TO#43|
+02B0  54 31 33 33 34 34 32 30 30 30 41 4C 4C 40 30 30  |T133442000ALL@00|
+02C0  30 30 30 46 4C 49 47 48 54 20 4E 4F 2E 23 34 34  |000FLIGHT NO.#44|
+02D0  54 31 33 33 34 35 30 30 30 30 41 4C 4C 40 30 30  |T133450000ALL@00|
+02E0  30 30 30 47 41 54 45 20 20 47 41 54 45 20 43 4C  |000GATE  GATE CL|
+02F0  4F 53 45 53 20 20 53 45 41 54 23 34 35 54 31 33  |OSES  SEAT#45T13|
+0300  33 30 36 34 30 30 30 41 4C 4C 40 30 30 30 30 30  |3064000ALL@00000|
+0310  50 43 53 2E 20 43 4B 2E 57 54 2E 55 4E 43 4B 20  |PCS. CK.WT.UNCK |
+0320  53 45 51 20 4E 4F 23 34 36 54 31 35 34 30 34 32  |SEQ NO#46T154042|
+0330  30 30 30 41 4C 4C 40 30 30 30 30 30 43 4C 41 53  |000ALL@00000CLAS|
+0340  53 2F 44 41 54 45 20 20 20 20 54 49 4D 45 23 34  |S/DATE    TIME#4|
+0350  37 53 30 30 30 31 31 33 35 30 30 36 31 38 35 30  |7S00011350061850|
+0360  30 30 30 30 30 23 35 30 54 30 30 30 31 31 31 30  |00000#50T0001110|
+0370  30 30 41 41 41 41 30 30 30 30 30 41 45 52 4F 43  |00AAAA00000AEROC|
+0380  4C 4F 55 44 20 53 59 53 54 45 4D 53 23 35 31 4C  |LOUD SYSTEMS#51L|
+0390  31 31 32 35 31 32 30 30 31 30 30 30 30 30 23 35  |11251200100000#5|
+03A0  32 54 31 33 35 30 31 31 30 30 30 41 41 41 41 30  |2T135011000AAAA0|
+03B0  30 30 30 30 41 45 52 4F 43 4C 4F 55 44 20 53 59  |0000AEROCLOUD SY|
+03C0  53 54 45 4D 53                                   |STEMS           |
+29/02/24 15:57:13:083 : ComData write on port 'COM11' for 'BP1'
+0000  02 54 54 30 33 23 30 31 42 30 30 30 31 33 30 35  |.TT03#01B0001305|
+0010  31 30 35 30 39 39 30 30 30 33 30 30 30 30 30 23  |105099000300000#|
+0020  30 32 42 30 30 30 31 35 31 30 31 37 30 30 32 35  |02B0001510170025|
+0030  30 30 30 35 30 30 30 30 30 23 30 33 42 30 33 37  |000500000#03B037|
+0040  30 35 31 30 31 37 30 30 32 35 30 30 30 35 30 30  |0510170025000500|
+0050  30 30 30 23 30 34 42 30 37 35 30 35 31 30 31 37  |000#04B075051017|
+0060  30 30 32 34 30 30 30 35 30 30 30 30 30 23 30 35  |0024000500000#05|
+0070  42 30 30 30 31 36 38 30 31 34 30 30 39 39 30 30  |B000168014009900|
+0080  30 33 30 30 30 30 30 23 30 36 42 31 33 32 34 34  |0300000#06B13244|
+0090  36 35 30 38 30 30 32 30 30 30 30 33 30 30 30 30  |6508002000030000|
+00A0  30 23 30 37 42 31 33 32 34 36 31 30 31 34 30 30  |0#07B13246101400|
+00B0  35 32 30 30 30 33 30 30 30 30 30 23 30 38 54 30  |52000300000#08T0|
+00C0  30 39 30 33 38 30 30 30 41 4C 4C 40 30 30 30 30  |09038000ALL@0000|
+00D0  30 53 45 41 54 23 30 39 54 30 34 31 30 33 38 30  |0SEAT#09T0410380|
+00E0  30 30 41 4C 4C 40 30 30 30 30 30 47 41 54 45 20  |00ALL@00000GATE |
+00F0  43 4C 4F 53 45 53 23 31 30 54 30 38 34 30 33 38  |CLOSES#10T084038|
+0100  30 30 30 41 4C 4C 40 30 30 30 30 30 47 41 54 45  |000ALL@00000GATE|
+0110  23 31 31 54 30 30 30 31 37 34 35 30 30 41 41 41  |#11T000174500AAA|
+0120  41 30 30 30 30 30 42 4F 41 52 44 49 4E 47 20 50  |A00000BOARDING P|
+0130  41 53 53 23 31 32 54 30 30 30 31 37 38 30 30 30  |ASS#12T000178000|
+0140  41 4C 4C 40 30 30 30 30 30 43 41 52 54 45 20 44  |ALL@00000CARTE D|
+0150  27 41 43 43 45 53 20 41 20 42 4F 52 44 2F 42 4F  |'ACCES A BORD/BO|
+0160  52 44 4B 41 52 54 45 23 31 33 54 30 30 30 31 38  |RDKARTE#13T00018|
+0170  31 30 30 30 41 4C 4C 40 30 30 30 30 30 54 41 52  |1000ALL@00000TAR|
+0180  4A 45 54 41 20 44 45 20 45 4D 42 41 52 51 55 45  |JETA DE EMBARQUE|
+0190  2F 43 41 52 54 41 20 44 27 49 4D 42 41 52 43 4F  |/CARTA D'IMBARCO|
+01A0  23 31 34 54 30 36 30 30 37 33 30 30 30 41 4C 4C  |#14T060073000ALL|
+01B0  40 30 30 30 30 30 53 55 42 4A 45 43 54 20 54 4F  |@00000SUBJECT TO|
+01C0  20 43 4F 4E 44 49 54 49 4F 4E 53 20 4F 46 20 43  | CONDITIONS OF C|
+01D0  41 52 52 49 41 47 45 2C 20 43 4F 50 49 45 53 23  |ARRIAGE, COPIES#|
+01E0  31 35 54 30 36 30 30 37 36 30 30 30 41 4C 4C 40  |15T060076000ALL@|
+01F0  30 30 30 30 30 41 56 41 49 4C 41 42 4C 45 20 4F  |00000AVAILABLE O|
+0200  4E 20 52 45 51 55 45 53 54 2E 20 20 20 53 45 45  |N REQUEST.   SEE|
+0210  20 49 4D 50 4F 52 54 41 4E 54 23 31 36 54 30 36  | IMPORTANT#16T06|
+0220  30 30 37 39 30 30 30 41 4C 4C 40 30 30 30 30 30  |0079000ALL@00000|
+0230  4E 4F 54 49 43 45 53 20 4F 4E 20 54 48 45 20 42  |NOTICES ON THE B|
+0240  41 43 4B 20 4F 46 20 54 48 49 53 20 44 4F 43 55  |ACK OF THIS DOCU|
+0250  4D 45 4E 54 2E 23 34 30 54 31 33 32 34 31 36 35  |MENT.#40T1324165|
+0260  30 30 41 4C 4C 40 30 30 30 30 30 4E 41 4D 45 20  |00ALL@00000NAME |
+0270  4F 46 20 50 41 53 53 45 4E 47 45 52 23 34 31 54  |OF PASSENGER#41T|
+0280  31 33 32 34 32 37 30 30 30 41 4C 4C 40 30 30 30  |132427000ALL@000|
+0290  30 30 46 52 4F 4D 23 34 32 54 31 33 32 34 33 31  |00FROM#42T132431|
+02A0  30 30 30 41 4C 4C 40 30 30 30 30 30 54 4F 23 34  |000ALL@00000TO#4|
+02B0  33 54 31 33 33 34 34 32 30 30 30 41 4C 4C 40 30  |3T133442000ALL@0|
+02C0  30 30 30 30 46 4C 49 47 48 54 20 4E 4F 2E 23 34  |0000FLIGHT NO.#4|
+02D0  34 54 31 33 33 34 35 30 30 30 30 41 4C 4C 40 30  |4T133450000ALL@0|
+02E0  30 30 30 30 47 41 54 45 20 20 47 41 54 45 20 43  |0000GATE  GATE C|
+02F0  4C 4F 53 45 53 20 20 53 45 41 54 23 34 35 54 31  |LOSES  SEAT#45T1|
+0300  33 33 30 36 34 30 30 30 41 4C 4C 40 30 30 30 30  |33064000ALL@0000|
+0310  30 50 43 53 2E 20 43 4B 2E 57 54 2E 55 4E 43 4B  |0PCS. CK.WT.UNCK|
+0320  20 53 45 51 20 4E 4F 23 34 36 54 31 35 34 30 34  | SEQ NO#46T15404|
+0330  32 30 30 30 41 4C 4C 40 30 30 30 30 30 43 4C 41  |2000ALL@00000CLA|
+0340  53 53 2F 44 41 54 45 20 20 20 20 54 49 4D 45 23  |SS/DATE    TIME#|
+0350  34 37 53 30 30 30 31 31 33 35 30 30 36 31 38 35  |47S0001135006185|
+0360  30 30 30 30 30 30 23 35 30 54 30 30 30 31 31 31  |000000#50T000111|
+0370  30 30 30 41 41 41 41 30 30 30 30 30 41 45 52 4F  |000AAAA00000AERO|
+0380  43 4C 4F 55 44 20 53 59 53 54 45 4D 53 23 35 31  |CLOUD SYSTEMS#51|
+0390  4C 31 31 32 35 31 32 30 30 31 30 30 30 30 30 23  |L11251200100000#|
+03A0  35 32 54 31 33 35 30 31 31 30 30 30 41 41 41 41  |52T135011000AAAA|
+03B0  30 30 30 30 30 41 45 52 4F 43 4C 4F 55 44 20 53  |00000AEROCLOUD S|
+03C0  59 53 54 45 4D 53 03                             |YSTEMS.         |
+29/02/24 15:57:13:133 : AeaBusyTime 00062 (Max 20965) on 'COM11'
+29/02/24 15:57:13:195 : AeaBusyTime 00125 (Max 20965) on 'COM11'
+29/02/24 15:57:13:259 : AeaBusyTime 00187 (Max 20965) on 'COM11'
+29/02/24 15:57:13:323 : AeaBusyTime 00250 (Max 20965) on 'COM11'
+29/02/24 15:57:13:338 : Waiting for AEA event on COM11
+29/02/24 15:57:13:386 : AeaBusyTime 00312 (Max 20965) on 'COM11'
+29/02/24 15:57:13:450 : AeaBusyTime 00375 (Max 20965) on 'COM11'
+29/02/24 15:57:13:512 : AeaBusyTime 00437 (Max 20965) on 'COM11'
+29/02/24 15:57:13:512 : ComData read on port 'COM11' for 'BP1'
+0000  02 45 41 53 45 54 54 4F 4B 30 31 30 32 30 33 30  |.EASETTOK0102030|
+0010  35 30 36 03                                      |506.            |
+29/02/24 15:57:13:512 : MsgDone on port COM11
+29/02/24 15:57:13:512 : Data received on port 'COM11' for 'BP1'
+0000  45 41 53 45 54 54 4F 4B 30 31 30 32 30 33 30 35  |EASETTOK01020305|
+0010  30 36                                            |06              |
+29/02/24 15:57:13:512 : Releasing AEA Semaphore on 'COM11'
+29/02/24 15:57:13:746 : Waiting for AEA Semaphore on COM11
+29/02/24 15:57:13:746 : Acquired AEA Semaphore on COM11
+29/02/24 15:57:13:746 : Data sent to port 'COM11' from 'BP1'
+0000  4C 54 30 31 30 36 36 30 0A 05 01 01 00 00 00 00  |LT010660........|
+0010  3F 00 3F 00 00 00 00 00 00 00 00 00 00 00 00 00  |?.?.............|
+0020  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  |................|
+0030  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  |................|
+0040  00 00 00 00 00 00 00 00 00 01 08 00 01 00 00 00  |................|
+0050  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  |................|
+0060  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  |................|
+0070  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  |................|
+0080  00 00 00 00 00 00 00 00 C8 FF C8 FF C8 FF C8 FF  |................|
+0090  C2 FF C1 C0 0F C4 FF C2 FF C1 C0 0F C4 FF C1 FF  |................|
+00A0  C1 F0 C2 00 3F C3 FF C1 FF C1 F0 C2 00 3F C3 FF  |....?........?..|
+00B0  C1 FF C3 00 0F C3 FF C1 FF C3 00 0F C3 FF C1 FF  |................|
+00C0  00 0F C1 C0 00 C3 FF C1 FF 00 0F C1 C0 00 C3 FF  |................|
+00D0  C1 F0 00 C2 FF 00 C3 FF C1 F0 00 C2 FF 00 C3 FF  |................|
+00E0  C1 F0 0F C2 FF C1 C0 00 C2 FF C1 F0 0F C2 FF C1  |................|
+00F0  C0 00 C2 FF C1 C0 3F C2 FF C1 F0 00 0F C1 FF C1  |......?.........|
+0100  C0 3F C2 FF C1 F0 00 0F C1 FF C1 C0 C3 FF C1 F0  |.?..............|
+0110  C2 00 C1 FF C1 C0 C3 FF C1 F0 C2 00 C1 FF C1 C0  |................|
+0120  C3 FF C1 FC C2 00 3F C1 C0 C3 FF C1 FC C2 00 3F  |......?........?|
+0130  00 C5 FF C1 C0 3F 00 C5 FF C1 C0 3F 00 C1 FF C1  |.....?.....?....|
+0140  F0 3F C2 FF C1 F0 0F 00 C1 FF C1 F0 3F C2 FF C1  |.?..........?...|
+0150  F0 0F C1 C0 C1 FF C1 FC 0F C2 FF C1 FC 03 C1 C0  |................|
+0160  C1 FF C1 FC 0F C2 FF C1 FC 03 C1 C0 C1 FF C1 FC  |................|
+0170  03 C2 FF C1 FC 03 C1 C0 C1 FF C1 FC 03 C2 FF C1  |................|
+0180  FC 03 C1 C0 C2 FF 00 C2 FF C1 FC 03 C1 C0 C2 FF  |................|
+0190  00 C2 FF C1 FC 03 C1 C0 0F C1 FF 00 C2 FF C1 FC  |................|
+01A0  03 C1 C0 0F C1 FF 00 C2 FF C1 FC 03 C1 F0 0F C1  |................|
+01B0  FF 00 3F C1 FF C1 FC 0F C1 F0 0F C1 FF 00 3F C1  |..?...........?.|
+01C0  FF C1 FC 0F C1 FC 03 C1 FF C1 C0 0F C1 FF C1 F0  |................|
+01D0  0F C1 FC 03 C1 FF C1 C0 0F C1 FF C1 F0 0F C1 FC  |................|
+01E0  00 0F C1 C0 03 C1 FF C1 C0 3F C1 FC 00 0F C1 C0  |.........?......|
+01F0  03 C1 FF C1 C0 3F C1 FF C4 00 03 C1 F0 C1 FF C1  |.....?..........|
+0200  FF C4 00 03 C1 F0 C1 FF C1 FF C1 F0 C3 00 03 C2  |................|
+0210  FF C1 FF C1 F0 C3 00 03 C2 FF C2 FF C3 00 03 C2  |................|
+0220  FF C2 FF C3 00 03 C2 FF C3 FF C1 C0 0F C3 FF C3  |................|
+0230  FF C1 C0 0F C3 FF C3 FF C1 C0 0F C3 FF C3 FF C1  |................|
+0240  C0 0F C3 FF C3 FF 00 3F C3 FF C3 FF 00 3F C3 FF  |.......?.....?..|
+0250  C3 FF 00 C4 FF C3 FF 00 C4 FF C3 FF 00 C4 FF C3  |................|
+0260  FF 00 C4 FF C2 FF C1 FC 03 C4 FF C2 FF C1 FC 03  |................|
+0270  C4 FF C2 FF C1 FC 3F C4 FF C2 FF C1 FC 3F C4 FF  |......?......?..|
+0280  C2 FF C1 FC 3F C4 FF C2 FF C1 FC 3F C4 FF C2 FF  |....?......?....|
+0290  C1 F0 3F C4 FF C2 FF C1 F0 3F C4 FF              |..?......?..    |
+29/02/24 15:57:13:746 : ComData write on port 'COM11' for 'BP1'
+0000  02 4C 54 30 31 30 36 36 30 10 0A 10 05 10 01 10  |.LT010660.......|
+0010  01 10 00 10 00 10 00 10 00 3F 10 00 3F 10 00 10  |.........?..?...|
+0020  00 10 00 10 00 10 00 10 00 10 00 10 00 10 00 10  |................|
+0030  00 10 00 10 00 10 00 10 00 10 00 10 00 10 00 10  |................|
+0040  00 10 00 10 00 10 00 10 00 10 00 10 00 10 00 10  |................|
+0050  00 10 00 10 00 10 00 10 00 10 00 10 00 10 00 10  |................|
+0060  00 10 00 10 00 10 00 10 00 10 00 10 00 10 00 10  |................|
+0070  00 10 00 10 00 10 00 10 00 10 00 10 00 10 00 10  |................|
+0080  00 10 00 10 00 10 00 10 00 10 01 10 08 10 00 10  |................|
+0090  01 10 00 10 00 10 00 10 00 10 00 10 00 10 00 10  |................|
+00A0  00 10 00 10 00 10 00 10 00 10 00 10 00 10 00 10  |................|
+00B0  00 10 00 10 00 10 00 10 00 10 00 10 00 10 00 10  |................|
+00C0  00 10 00 10 00 10 00 10 00 10 00 10 00 10 00 10  |................|
+00D0  00 10 00 10 00 10 00 10 00 10 00 10 00 10 00 10  |................|
+00E0  00 10 00 10 00 10 00 10 00 10 00 10 00 10 00 10  |................|
+00F0  00 10 00 10 00 10 00 10 00 10 00 10 00 10 00 10  |................|
+0100  00 10 00 10 00 10 00 C8 FF C8 FF C8 FF C8 FF C2  |................|
+0110  FF C1 C0 10 0F C4 FF C2 FF C1 C0 10 0F C4 FF C1  |................|
+0120  FF C1 F0 C2 10 00 3F C3 FF C1 FF C1 F0 C2 10 00  |......?.........|
+0130  3F C3 FF C1 FF C3 10 00 10 0F C3 FF C1 FF C3 10  |?...............|
+0140  00 10 0F C3 FF C1 FF 10 00 10 0F C1 C0 10 00 C3  |................|
+0150  FF C1 FF 10 00 10 0F C1 C0 10 00 C3 FF C1 F0 10  |................|
+0160  00 C2 FF 10 00 C3 FF C1 F0 10 00 C2 FF 10 00 C3  |................|
+0170  FF C1 F0 10 0F C2 FF C1 C0 10 00 C2 FF C1 F0 10  |................|
+0180  0F C2 FF C1 C0 10 00 C2 FF C1 C0 3F C2 FF C1 F0  |...........?....|
+0190  10 00 10 0F C1 FF C1 C0 3F C2 FF C1 F0 10 00 10  |........?.......|
+01A0  0F C1 FF C1 C0 C3 FF C1 F0 C2 10 00 C1 FF C1 C0  |................|
+01B0  C3 FF C1 F0 C2 10 00 C1 FF C1 C0 C3 FF C1 FC C2  |................|
+01C0  10 00 3F C1 C0 C3 FF C1 FC C2 10 00 3F 10 00 C5  |..?.........?...|
+01D0  FF C1 C0 3F 10 00 C5 FF C1 C0 3F 10 00 C1 FF C1  |...?......?.....|
+01E0  F0 3F C2 FF C1 F0 10 0F 10 00 C1 FF C1 F0 3F C2  |.?............?.|
+01F0  FF C1 F0 10 0F C1 C0 C1 FF C1 FC 10 0F C2 FF C1  |................|
+0200  FC 10 03 C1 C0 C1 FF C1 FC 10 0F C2 FF C1 FC 10  |................|
+0210  03 C1 C0 C1 FF C1 FC 10 03 C2 FF C1 FC 10 03 C1  |................|
+0220  C0 C1 FF C1 FC 10 03 C2 FF C1 FC 10 03 C1 C0 C2  |................|
+0230  FF 10 00 C2 FF C1 FC 10 03 C1 C0 C2 FF 10 00 C2  |................|
+0240  FF C1 FC 10 03 C1 C0 10 0F C1 FF 10 00 C2 FF C1  |................|
+0250  FC 10 03 C1 C0 10 0F C1 FF 10 00 C2 FF C1 FC 10  |................|
+0260  03 C1 F0 10 0F C1 FF 10 00 3F C1 FF C1 FC 10 0F  |.........?......|
+0270  C1 F0 10 0F C1 FF 10 00 3F C1 FF C1 FC 10 0F C1  |........?.......|
+0280  FC 10 03 C1 FF C1 C0 10 0F C1 FF C1 F0 10 0F C1  |................|
+0290  FC 10 03 C1 FF C1 C0 10 0F C1 FF C1 F0 10 0F C1  |................|
+02A0  FC 10 00 10 0F C1 C0 10 03 C1 FF C1 C0 3F C1 FC  |.............?..|
+02B0  10 00 10 0F C1 C0 10 03 C1 FF C1 C0 3F C1 FF C4  |............?...|
+02C0  10 00 10 03 C1 F0 C1 FF C1 FF C4 10 00 10 03 C1  |................|
+02D0  F0 C1 FF C1 FF C1 F0 C3 10 00 10 03 C2 FF C1 FF  |................|
+02E0  C1 F0 C3 10 00 10 03 C2 FF C2 FF C3 10 00 10 03  |................|
+02F0  C2 FF C2 FF C3 10 00 10 03 C2 FF C3 FF C1 C0 10  |................|
+0300  0F C3 FF C3 FF C1 C0 10 0F C3 FF C3 FF C1 C0 10  |................|
+0310  0F C3 FF C3 FF C1 C0 10 0F C3 FF C3 FF 10 00 3F  |...............?|
+0320  C3 FF C3 FF 10 00 3F C3 FF C3 FF 10 00 C4 FF C3  |......?.........|
+0330  FF 10 00 C4 FF C3 FF 10 00 C4 FF C3 FF 10 00 C4  |................|
+0340  FF C2 FF C1 FC 10 03 C4 FF C2 FF C1 FC 10 03 C4  |................|
+0350  FF C2 FF C1 FC 3F C4 FF C2 FF C1 FC 3F C4 FF C2  |.....?......?...|
+0360  FF C1 FC 3F C4 FF C2 FF C1 FC 3F C4 FF C2 FF C1  |...?......?.....|
+0370  F0 3F C4 FF C2 FF C1 F0 3F C4 FF 03              |.?......?...    |
+29/02/24 15:57:13:758 : AeaBusyTime 00062 (Max 20668) on 'COM11'
+29/02/24 15:57:13:821 : AeaBusyTime 00125 (Max 20668) on 'COM11'
+29/02/24 15:57:13:885 : AeaBusyTime 00187 (Max 20668) on 'COM11'
+29/02/24 15:57:13:947 : AeaBusyTime 00250 (Max 20668) on 'COM11'
+29/02/24 15:57:13:967 : Waiting for AEA event on COM11
+29/02/24 15:57:14:009 : AeaBusyTime 00312 (Max 20668) on 'COM11'
+29/02/24 15:57:14:071 : AeaBusyTime 00375 (Max 20668) on 'COM11'
+29/02/24 15:57:14:134 : AeaBusyTime 00437 (Max 20668) on 'COM11'
+29/02/24 15:57:14:195 : AeaBusyTime 00500 (Max 20668) on 'COM11'
+29/02/24 15:57:14:258 : AeaBusyTime 00562 (Max 20668) on 'COM11'
+29/02/24 15:57:14:258 : ComData read on port 'COM11' for 'BP1'
+0000  02 45 41 53 45 4C 54 4F 4B 30 31 30 34 30 35 03  |.EASELTOK010405.|
+29/02/24 15:57:14:258 : MsgDone on port COM11
+29/02/24 15:57:14:258 : Data received on port 'COM11' for 'BP1'
+0000  45 41 53 45 4C 54 4F 4B 30 31 30 34 30 35        |EASELTOK010405  |
+29/02/24 15:57:14:258 : Releasing AEA Semaphore on 'COM11'
+29/02/24 15:57:14:469 : Waiting for AEA Semaphore on COM11
+29/02/24 15:57:14:469 : Acquired AEA Semaphore on COM11
+29/02/24 15:57:14:469 : Data sent to port 'COM11' from 'BP1'
+0000  43 50 23 41 23 30 31 57 23 31 33 4C 4F 4E 44 4F  |CP#A#01W#13LONDO|
+0010  4E 20 20 20 20 20 20 20 4C 48 52 23 31 46 59 59  |N       LHR#1FYY|
+0020  23 32 35 31 37 4A 55 4E 23 33 35 20 30 38 35 35  |#2517JUN#35 0855|
+0030  23 33 36 31 23 33 37 30 38 33 35 23 33 41 31 23  |#361#370835#3A1#|
+0040  33 42 30 38 33 35 23 43 45 20 30 30 31 23 43 50  |3B0835#CE 001#CP|
+0050  23 43 30 31 23 30 36 54 45 53 54 2F 41 20 4D 52  |#C01#06TEST/A MR|
+0060  23 30 37 54 45 53 54 2F 41 20 4D 52 23 32 42 4E  |#07TEST/A MR#2BN|
+0070  45 57 20 59 4F 52 4B 20 20 20 20 20 4A 46 4B 23  |EW YORK     JFK#|
+0080  33 33 46 23 33 38 30 31 41 23 33 43 30 31 41 23  |33F#3801A#3C01A#|
+0090  33 45 40 40 30 33 23 34 35 20 33 23 34 36 20 20  |3E@@03#45 3#46  |
+00A0  30 23 41 45 50 41 53 53 45 4E 47 45 52 20 54 49  |0#AEPASSENGER TI|
+00B0  43 4B 45 54 20 41 4E 44 23 41 46 42 41 47 47 41  |CKET AND#AFBAGGA|
+00C0  47 45 20 43 48 45 43 4B 23 44 35 4D 31 54 45 53  |GE CHECK#D5M1TES|
+00D0  54 2F 41 20 4D 52 20 20 20 20 20 20 20 20 20 20  |T/A MR          |
+00E0  20 45 50 4E 52 52 45 46 20 4C 48 52 4A 46 4B 59  | EPNRREF LHRJFKY|
+00F0  59 20 30 30 30 31 20 31 36 38 46 30 31 41 20 30  |Y 0001 168F01A 0|
+0100  30 30 30 38 35 30 30 23 45 30 30 30 23 45 31 59  |0008500#E000#E1Y|
+0110  59 2F 42 4C 55 45 31 33 34 30 32 37 31 37 23 45  |Y/BLUE13402717#E|
+0120  36 44 45 50 41 52 54 53 20 54 45 52 4D 49 4E 41  |6DEPARTS TERMINA|
+0130  4C 20 31 23 45 37 20 20 30 23 45 38 30 30 38 23  |L 1#E7  0#E8008#|
+0140  45 46 45 54 4B 54 20 4E 4F 20 43 4F 55 50 4F 4E  |EFETKT NO COUPON|
+0150  23                                               |#               |
+29/02/24 15:57:14:470 : ComData write on port 'COM11' for 'BP1'
+0000  02 43 50 23 41 23 30 31 57 23 31 33 4C 4F 4E 44  |.CP#A#01W#13LOND|
+0010  4F 4E 20 20 20 20 20 20 20 4C 48 52 23 31 46 59  |ON       LHR#1FY|
+0020  59 23 32 35 31 37 4A 55 4E 23 33 35 20 30 38 35  |Y#2517JUN#35 085|
+0030  35 23 33 36 31 23 33 37 30 38 33 35 23 33 41 31  |5#361#370835#3A1|
+0040  23 33 42 30 38 33 35 23 43 45 20 30 30 31 23 43  |#3B0835#CE 001#C|
+0050  50 23 43 30 31 23 30 36 54 45 53 54 2F 41 20 4D  |P#C01#06TEST/A M|
+0060  52 23 30 37 54 45 53 54 2F 41 20 4D 52 23 32 42  |R#07TEST/A MR#2B|
+0070  4E 45 57 20 59 4F 52 4B 20 20 20 20 20 4A 46 4B  |NEW YORK     JFK|
+0080  23 33 33 46 23 33 38 30 31 41 23 33 43 30 31 41  |#33F#3801A#3C01A|
+0090  23 33 45 40 40 30 33 23 34 35 20 33 23 34 36 20  |#3E@@03#45 3#46 |
+00A0  20 30 23 41 45 50 41 53 53 45 4E 47 45 52 20 54  | 0#AEPASSENGER T|
+00B0  49 43 4B 45 54 20 41 4E 44 23 41 46 42 41 47 47  |ICKET AND#AFBAGG|
+00C0  41 47 45 20 43 48 45 43 4B 23 44 35 4D 31 54 45  |AGE CHECK#D5M1TE|
+00D0  53 54 2F 41 20 4D 52 20 20 20 20 20 20 20 20 20  |ST/A MR         |
+00E0  20 20 45 50 4E 52 52 45 46 20 4C 48 52 4A 46 4B  |  EPNRREF LHRJFK|
+00F0  59 59 20 30 30 30 31 20 31 36 38 46 30 31 41 20  |YY 0001 168F01A |
+0100  30 30 30 30 38 35 30 30 23 45 30 30 30 23 45 31  |00008500#E000#E1|
+0110  59 59 2F 42 4C 55 45 31 33 34 30 32 37 31 37 23  |YY/BLUE13402717#|
+0120  45 36 44 45 50 41 52 54 53 20 54 45 52 4D 49 4E  |E6DEPARTS TERMIN|
+0130  41 4C 20 31 23 45 37 20 20 30 23 45 38 30 30 38  |AL 1#E7  0#E8008|
+0140  23 45 46 45 54 4B 54 20 4E 4F 20 43 4F 55 50 4F  |#EFETKT NO COUPO|
+0150  4E 23 03                                         |N#.             |
+29/02/24 15:57:14:509 : AeaBusyTime 00062 (Max 20337) on 'COM11'
+29/02/24 15:57:14:554 : Waiting for AEA event on COM11
+29/02/24 15:57:14:572 : AeaBusyTime 00125 (Max 20337) on 'COM11'
+29/02/24 15:57:14:635 : AeaBusyTime 00187 (Max 20337) on 'COM11'
+29/02/24 15:57:14:699 : AeaBusyTime 00250 (Max 20337) on 'COM11'
+29/02/24 15:57:14:763 : AeaBusyTime 00312 (Max 20337) on 'COM11'
+29/02/24 15:57:14:842 : AeaBusyTime 00390 (Max 20337) on 'COM11'
+29/02/24 15:57:14:903 : AeaBusyTime 00453 (Max 20337) on 'COM11'
+29/02/24 15:57:14:968 : AeaBusyTime 00515 (Max 20337) on 'COM11'
+29/02/24 15:57:15:030 : AeaBusyTime 00578 (Max 20337) on 'COM11'
+29/02/24 15:57:15:094 : AeaBusyTime 00640 (Max 20337) on 'COM11'
+29/02/24 15:57:15:158 : AeaBusyTime 00703 (Max 20337) on 'COM11'
+29/02/24 15:57:15:222 : AeaBusyTime 00781 (Max 20337) on 'COM11'
+29/02/24 15:57:15:285 : AeaBusyTime 00843 (Max 20337) on 'COM11'
+29/02/24 15:57:15:347 : AeaBusyTime 00906 (Max 20337) on 'COM11'
+29/02/24 15:57:15:409 : AeaBusyTime 00968 (Max 20337) on 'COM11'
+29/02/24 15:57:15:471 : AeaBusyTime 01031 (Max 20337) on 'COM11'
+29/02/24 15:57:15:535 : AeaBusyTime 01093 (Max 20337) on 'COM11'
+29/02/24 15:57:15:598 : AeaBusyTime 01156 (Max 20337) on 'COM11'
+29/02/24 15:57:15:658 : AeaBusyTime 01218 (Max 20337) on 'COM11'
+29/02/24 15:57:15:722 : AeaBusyTime 01281 (Max 20337) on 'COM11'
+29/02/24 15:57:15:786 : AeaBusyTime 01343 (Max 20337) on 'COM11'
+29/02/24 15:57:15:849 : AeaBusyTime 01406 (Max 20337) on 'COM11'
+29/02/24 15:57:15:913 : AeaBusyTime 01468 (Max 20337) on 'COM11'
+29/02/24 15:57:15:978 : AeaBusyTime 01531 (Max 20337) on 'COM11'
+29/02/24 15:57:16:035 : AeaBusyTime 01593 (Max 20337) on 'COM11'
+29/02/24 15:57:16:096 : AeaBusyTime 01656 (Max 20337) on 'COM11'
+29/02/24 15:57:16:158 : AeaBusyTime 01703 (Max 20337) on 'COM11'
+29/02/24 15:57:16:221 : AeaBusyTime 01781 (Max 20337) on 'COM11'
+29/02/24 15:57:16:285 : AeaBusyTime 01843 (Max 20337) on 'COM11'
+29/02/24 15:57:16:349 : AeaBusyTime 01906 (Max 20337) on 'COM11'
+29/02/24 15:57:16:409 : AeaBusyTime 01968 (Max 20337) on 'COM11'
+29/02/24 15:57:16:472 : AeaBusyTime 02031 (Max 20337) on 'COM11'
+29/02/24 15:57:16:536 : AeaBusyTime 02093 (Max 20337) on 'COM11'
+29/02/24 15:57:16:600 : AeaBusyTime 02156 (Max 20337) on 'COM11'
+29/02/24 15:57:16:664 : AeaBusyTime 02218 (Max 20337) on 'COM11'
+29/02/24 15:57:16:728 : AeaBusyTime 02281 (Max 20337) on 'COM11'
+29/02/24 15:57:16:791 : AeaBusyTime 02343 (Max 20337) on 'COM11'
+29/02/24 15:57:16:854 : AeaBusyTime 02406 (Max 20337) on 'COM11'
+29/02/24 15:57:16:916 : AeaBusyTime 02468 (Max 20337) on 'COM11'
+29/02/24 15:57:16:979 : AeaBusyTime 02531 (Max 20337) on 'COM11'
+29/02/24 15:57:17:042 : AeaBusyTime 02593 (Max 20337) on 'COM11'
+29/02/24 15:57:17:106 : AeaBusyTime 02656 (Max 20337) on 'COM11'
+29/02/24 15:57:17:169 : AeaBusyTime 02718 (Max 20337) on 'COM11'
+29/02/24 15:57:17:231 : AeaBusyTime 02781 (Max 20337) on 'COM11'
+29/02/24 15:57:17:295 : AeaBusyTime 02843 (Max 20337) on 'COM11'
+29/02/24 15:57:17:359 : AeaBusyTime 02906 (Max 20337) on 'COM11'
+29/02/24 15:57:17:423 : AeaBusyTime 02968 (Max 20337) on 'COM11'
+29/02/24 15:57:17:487 : AeaBusyTime 03046 (Max 20337) on 'COM11'
+29/02/24 15:57:17:550 : AeaBusyTime 03109 (Max 20337) on 'COM11'
+29/02/24 15:57:17:613 : AeaBusyTime 03171 (Max 20337) on 'COM11'
+29/02/24 15:57:17:676 : AeaBusyTime 03234 (Max 20337) on 'COM11'
+29/02/24 15:57:17:738 : AeaBusyTime 03296 (Max 20337) on 'COM11'
+29/02/24 15:57:17:799 : AeaBusyTime 03343 (Max 20337) on 'COM11'
+29/02/24 15:57:17:860 : AeaBusyTime 03406 (Max 20337) on 'COM11'
+29/02/24 15:57:17:921 : AeaBusyTime 03468 (Max 20337) on 'COM11'
+29/02/24 15:57:17:985 : AeaBusyTime 03531 (Max 20337) on 'COM11'
+29/02/24 15:57:18:049 : AeaBusyTime 03609 (Max 20337) on 'COM11'
+29/02/24 15:57:18:113 : AeaBusyTime 03671 (Max 20337) on 'COM11'
+29/02/24 15:57:18:176 : AeaBusyTime 03734 (Max 20337) on 'COM11'
+29/02/24 15:57:18:239 : AeaBusyTime 03796 (Max 20337) on 'COM11'
+29/02/24 15:57:18:300 : AeaBusyTime 03859 (Max 20337) on 'COM11'
+29/02/24 15:57:18:361 : AeaBusyTime 03906 (Max 20337) on 'COM11'
+29/02/24 15:57:18:424 : AeaBusyTime 03984 (Max 20337) on 'COM11'
+29/02/24 15:57:18:486 : AeaBusyTime 04031 (Max 20337) on 'COM11'
+29/02/24 15:57:18:550 : AeaBusyTime 04109 (Max 20337) on 'COM11'
+29/02/24 15:57:18:613 : AeaBusyTime 04171 (Max 20337) on 'COM11'
+29/02/24 15:57:18:677 : AeaBusyTime 04234 (Max 20337) on 'COM11'
+29/02/24 15:57:18:741 : AeaBusyTime 04296 (Max 20337) on 'COM11'
+29/02/24 15:57:18:805 : AeaBusyTime 04359 (Max 20337) on 'COM11'
+29/02/24 15:57:18:867 : AeaBusyTime 04421 (Max 20337) on 'COM11'
+29/02/24 15:57:18:867 : ComData read on port 'COM11' for 'BP1'
+0000  02 54 2F 2F 43 49 50 52 4F 4B 23 31 30 30 23 32  |.T//CIPROK#100#2|
+0010  30 31 23 33 30 30 23 56 53 52 23 30 31 57 03     |01#300#VSR#01W. |
+29/02/24 15:57:18:867 : MsgDone on port COM11
+29/02/24 15:57:18:867 : Data received on port 'COM11' for 'BP1'
+0000  54 2F 2F 43 49 50 52 4F 4B 23 31 30 30 23 32 30  |T//CIPROK#100#20|
+0010  31 23 33 30 30 23 56 53 52 23 30 31 57           |1#300#VSR#01W   |
+29/02/24 15:57:18:867 : Releasing AEA Semaphore on 'COM11'
+29/02/24 15:57:21:628 : Waiting for AEA Semaphore on COM12
+29/02/24 15:57:21:628 : Acquired AEA Semaphore on COM12
+29/02/24 15:57:21:629 : Data sent to port 'COM12' from 'BT1'
+0000  42 54 54 30 35 30 31 30 30 30 35 30 30 32 34 36  |BTT0501000500246|
+0010  3D 23 30 32 43 30 20 31 32 35 35 30 31 30 34 30  |=#02C0 125501040|
+0020  33 23 30 33 43 30 20 31 32 33 37 30 31 30 32 30  |3#03C0 123701020|
+0030  31 23 30 35 43 30 20 35 34 39 30 34 38 30 33 30  |1#05C0 549048030|
+0040  32 23 30 36 43 30 20 35 34 38 36 34 38 30 33 30  |2#06C0 548648030|
+0050  32 23 30 37 43 30 20 35 34 38 32 34 38 30 33 30  |2#07C0 548248030|
+0060  32 23 30 38 43 30 20 35 34 37 36 34 38 30 33 30  |2#08C0 547648030|
+0070  32 23 30 41 43 30 4D 31 31 35 30 30 31 30 34 30  |2#0AC0M115001040|
+0080  32 23 30 42 43 30 4D 41 31 36 31 32 35 31 34 30  |2#0BC0MA16125140|
+0090  38 23 30 44 43 30 4D 31 31 37 38 30 31 30 34 30  |8#0DC0M117801040|
+00A0  32 23 30 45 43 30 4D 41 31 38 39 32 35 31 34 30  |2#0EC0MA18925140|
+00B0  38 23 31 30 43 30 4D 31 32 30 36 30 31 30 34 30  |8#10C0M120601040|
+00C0  32 23 31 31 43 30 4D 41 32 31 37 32 35 31 34 30  |2#11C0MA21725140|
+00D0  38 23 31 36 43 30 20 49 32 33 37 34 38 30 32 30  |8#16C0 I23748020|
+00E0  31 23 31 37 43 30 20 49 32 33 33 34 38 30 32 30  |1#17C0 I23348020|
+00F0  31 23 31 38 43 30 20 31 32 33 33 30 31 30 32 30  |1#18C0 123301020|
+0100  31 23 31 39 43 30 20 31 32 33 33 31 36 30 32 30  |1#19C0 123316020|
+0110  31 23 34 30 43 30 20 45 35 30 30 32 35 30 32 30  |1#40C0 E50025020|
+0120  31 23 34 31 43 30 20 31 32 34 31 33 37 31 38 31  |1#41C0 124137181|
+0130  32 23 34 32 43 30 4D 41 31 35 36 32 35 30 32 30  |2#42C0MA15625020|
+0140  32 23 34 33 43 30 4D 41 31 38 34 32 35 30 32 30  |2#43C0MA18425020|
+0150  32 23 34 34 43 30 4D 41 32 31 32 32 35 30 32 30  |2#44C0MA21225020|
+0160  32 23 34 35 43 30 4D 31 31 35 30 32 37 30 34 30  |2#45C0M115027040|
+0170  32 23 34 36 43 30 4D 31 31 37 38 32 37 30 34 30  |2#46C0M117827040|
+0180  32 23 34 37 43 30 4D 31 32 30 36 32 37 30 34 30  |2#47C0M120627040|
+0190  32 23 34 38 42 31 20 45 35 31 30 32 35 30 39 34  |2#48B1 E51025094|
+01A0  31 23 36 30 43 30 20 45 34 39 37 32 35 30 34 30  |1#60C0 E49725040|
+01B0  33 3D 30 32 23 36 31 43 30 20 35 34 36 38 34 38  |3=02#61C0 546848|
+01C0  30 33 30 32 3D 30 33 23 36 32 43 30 20 45 34 34  |0302=03#62C0 E44|
+01D0  35 32 35 30 32 30 31 3D 34 30 23 36 33 43 30 20  |5250201=40#63C0 |
+01E0  4D 34 37 32 30 32 30 33 30 32 3D 31 37 23 36 34  |M472020302=17#64|
+01F0  43 30 20 4D 34 36 38 30 32 30 33 30 32 3D 31 36  |C0 M468020302=16|
+0200  23 36 35 43 30 20 35 34 37 32 34 38 30 33 30 32  |#65C0 5472480302|
+0210  3D 31 38 23 36 36 42 31 4D 41 30 35 30 32 35 34  |=18#66B1MA050254|
+0220  38 34 31 3D 34 38 23 36 37 42 31 4D 43 31 32 33  |841=48#67B1MC123|
+0230  34 39 34 38 34 31 3D 34 38 23 36 38 43 30 20 45  |494841=48#68C0 E|
+0240  35 30 30 32 35 30 32 30 31 3D 34 30 23 36 39 42  |500250201=40#69B|
+0250  31 20 41 30 30 35 32 35 30 37 34 31 3D 34 38 23  |1 A005250741=48#|
+0260  36 41 42 31 20 41 30 32 30 32 35 30 37 34 31 3D  |6AB1 A020250741=|
+0270  34 38 23 36 42 42 31 20 41 30 33 35 32 35 30 37  |48#6BB1 A0352507|
+0280  34 31 3D 34 38 23 36 43 43 30 20 41 30 30 32 32  |41=48#6CC0 A0022|
+0290  35 30 32 30 31 23 36 44 43 30 20 41 30 31 37 32  |50201#6DC0 A0172|
+02A0  35 30 32 30 31 23 36 45 43 30 20 41 30 33 32 32  |50201#6EC0 A0322|
+02B0  35 30 32 30 31 23 36 46 43 30 20 4D 34 37 36 30  |50201#6FC0 M4760|
+02C0  32 30 33 30 32 3D 31 39 23 38 30 53 30 4D 41 31  |20302=19#80S0MA1|
+02D0  34 38 32 35 30 32 34 39 23 38 31 53 30 4D 41 31  |48250249#81S0MA1|
+02E0  37 36 32 35 30 32 34 39 23 38 32 53 30 4D 41 32  |76250249#82S0MA2|
+02F0  30 34 32 35 30 32 34 39 23 38 33 53 30 4D 41 32  |04250249#83S0MA2|
+0300  33 32 32 35 30 32 34 39 23 46 30 4C 30 20 31 32  |32250249#F0L0 12|
+0310  34 32 30 32 30 30 30 30 23 46 31 4C 30 20 35 34  |42020000#F1L0 54|
+0320  36 32 34 38 30 30 30 30 23                       |62480000#       |
+29/02/24 15:57:21:629 : ComData write on port 'COM12' for 'BT1'
+0000  02 42 54 54 30 35 30 31 30 30 30 35 30 30 32 34  |.BTT050100050024|
+0010  36 3D 23 30 32 43 30 20 31 32 35 35 30 31 30 34  |6=#02C0 12550104|
+0020  30 33 23 30 33 43 30 20 31 32 33 37 30 31 30 32  |03#03C0 12370102|
+0030  30 31 23 30 35 43 30 20 35 34 39 30 34 38 30 33  |01#05C0 54904803|
+0040  30 32 23 30 36 43 30 20 35 34 38 36 34 38 30 33  |02#06C0 54864803|
+0050  30 32 23 30 37 43 30 20 35 34 38 32 34 38 30 33  |02#07C0 54824803|
+0060  30 32 23 30 38 43 30 20 35 34 37 36 34 38 30 33  |02#08C0 54764803|
+0070  30 32 23 30 41 43 30 4D 31 31 35 30 30 31 30 34  |02#0AC0M11500104|
+0080  30 32 23 30 42 43 30 4D 41 31 36 31 32 35 31 34  |02#0BC0MA1612514|
+0090  30 38 23 30 44 43 30 4D 31 31 37 38 30 31 30 34  |08#0DC0M11780104|
+00A0  30 32 23 30 45 43 30 4D 41 31 38 39 32 35 31 34  |02#0EC0MA1892514|
+00B0  30 38 23 31 30 43 30 4D 31 32 30 36 30 31 30 34  |08#10C0M12060104|
+00C0  30 32 23 31 31 43 30 4D 41 32 31 37 32 35 31 34  |02#11C0MA2172514|
+00D0  30 38 23 31 36 43 30 20 49 32 33 37 34 38 30 32  |08#16C0 I2374802|
+00E0  30 31 23 31 37 43 30 20 49 32 33 33 34 38 30 32  |01#17C0 I2334802|
+00F0  30 31 23 31 38 43 30 20 31 32 33 33 30 31 30 32  |01#18C0 12330102|
+0100  30 31 23 31 39 43 30 20 31 32 33 33 31 36 30 32  |01#19C0 12331602|
+0110  30 31 23 34 30 43 30 20 45 35 30 30 32 35 30 32  |01#40C0 E5002502|
+0120  30 31 23 34 31 43 30 20 31 32 34 31 33 37 31 38  |01#41C0 12413718|
+0130  31 32 23 34 32 43 30 4D 41 31 35 36 32 35 30 32  |12#42C0MA1562502|
+0140  30 32 23 34 33 43 30 4D 41 31 38 34 32 35 30 32  |02#43C0MA1842502|
+0150  30 32 23 34 34 43 30 4D 41 32 31 32 32 35 30 32  |02#44C0MA2122502|
+0160  30 32 23 34 35 43 30 4D 31 31 35 30 32 37 30 34  |02#45C0M11502704|
+0170  30 32 23 34 36 43 30 4D 31 31 37 38 32 37 30 34  |02#46C0M11782704|
+0180  30 32 23 34 37 43 30 4D 31 32 30 36 32 37 30 34  |02#47C0M12062704|
+0190  30 32 23 34 38 42 31 20 45 35 31 30 32 35 30 39  |02#48B1 E5102509|
+01A0  34 31 23 36 30 43 30 20 45 34 39 37 32 35 30 34  |41#60C0 E4972504|
+01B0  30 33 3D 30 32 23 36 31 43 30 20 35 34 36 38 34  |03=02#61C0 54684|
+01C0  38 30 33 30 32 3D 30 33 23 36 32 43 30 20 45 34  |80302=03#62C0 E4|
+01D0  34 35 32 35 30 32 30 31 3D 34 30 23 36 33 43 30  |45250201=40#63C0|
+01E0  20 4D 34 37 32 30 32 30 33 30 32 3D 31 37 23 36  | M472020302=17#6|
+01F0  34 43 30 20 4D 34 36 38 30 32 30 33 30 32 3D 31  |4C0 M468020302=1|
+0200  36 23 36 35 43 30 20 35 34 37 32 34 38 30 33 30  |6#65C0 547248030|
+0210  32 3D 31 38 23 36 36 42 31 4D 41 30 35 30 32 35  |2=18#66B1MA05025|
+0220  34 38 34 31 3D 34 38 23 36 37 42 31 4D 43 31 32  |4841=48#67B1MC12|
+0230  33 34 39 34 38 34 31 3D 34 38 23 36 38 43 30 20  |3494841=48#68C0 |
+0240  45 35 30 30 32 35 30 32 30 31 3D 34 30 23 36 39  |E500250201=40#69|
+0250  42 31 20 41 30 30 35 32 35 30 37 34 31 3D 34 38  |B1 A005250741=48|
+0260  23 36 41 42 31 20 41 30 32 30 32 35 30 37 34 31  |#6AB1 A020250741|
+0270  3D 34 38 23 36 42 42 31 20 41 30 33 35 32 35 30  |=48#6BB1 A035250|
+0280  37 34 31 3D 34 38 23 36 43 43 30 20 41 30 30 32  |741=48#6CC0 A002|
+0290  32 35 30 32 30 31 23 36 44 43 30 20 41 30 31 37  |250201#6DC0 A017|
+02A0  32 35 30 32 30 31 23 36 45 43 30 20 41 30 33 32  |250201#6EC0 A032|
+02B0  32 35 30 32 30 31 23 36 46 43 30 20 4D 34 37 36  |250201#6FC0 M476|
+02C0  30 32 30 33 30 32 3D 31 39 23 38 30 53 30 4D 41  |020302=19#80S0MA|
+02D0  31 34 38 32 35 30 32 34 39 23 38 31 53 30 4D 41  |148250249#81S0MA|
+02E0  31 37 36 32 35 30 32 34 39 23 38 32 53 30 4D 41  |176250249#82S0MA|
+02F0  32 30 34 32 35 30 32 34 39 23 38 33 53 30 4D 41  |204250249#83S0MA|
+0300  32 33 32 32 35 30 32 34 39 23 46 30 4C 30 20 31  |232250249#F0L0 1|
+0310  32 34 32 30 32 30 30 30 30 23 46 31 4C 30 20 35  |242020000#F1L0 5|
+0320  34 36 32 34 38 30 30 30 30 23 03                 |462480000#.     |
+29/02/24 15:57:21:676 : AeaBusyTime 00063 (Max 20809) on 'COM12'
+29/02/24 15:57:21:738 : AeaBusyTime 00125 (Max 20809) on 'COM12'
+29/02/24 15:57:21:801 : AeaBusyTime 00188 (Max 20809) on 'COM12'
+29/02/24 15:57:21:833 : Waiting for AEA event on COM12
+29/02/24 15:57:21:862 : AeaBusyTime 00250 (Max 20809) on 'COM12'
+29/02/24 15:57:21:924 : AeaBusyTime 00297 (Max 20809) on 'COM12'
+29/02/24 15:57:21:986 : AeaBusyTime 00375 (Max 20809) on 'COM12'
+29/02/24 15:57:21:986 : ComData read on port 'COM12' for 'BT1'
+0000  02 45 41 53 45 50 54 4F 4B 30 31 30 31 30 31 30  |.EASEPTOK0101010|
+0010  33 30 31 30 34 30 35 30 31 03                    |301040501.      |
+29/02/24 15:57:21:986 : MsgDone on port COM12
+29/02/24 15:57:21:986 : Data received on port 'COM12' for 'BT1'
+0000  45 41 53 45 50 54 4F 4B 30 31 30 31 30 31 30 33  |EASEPTOK01010103|
+0010  30 31 30 34 30 35 30 31                          |01040501        |
+29/02/24 15:57:21:986 : Releasing AEA Semaphore on 'COM12'
+29/02/24 15:57:22:236 : Waiting for AEA Semaphore on COM12
+29/02/24 15:57:22:236 : Acquired AEA Semaphore on COM12
+29/02/24 15:57:22:236 : Data sent to port 'COM12' from 'BT1'
+0000  4C 54 30 31 30 36 36 30 0A 05 01 01 00 00 00 00  |LT010660........|
+0010  3F 00 3F 00 00 00 00 00 00 00 00 00 00 00 00 00  |?.?.............|
+0020  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  |................|
+0030  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  |................|
+0040  00 00 00 00 00 00 00 00 00 01 08 00 01 00 00 00  |................|
+0050  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  |................|
+0060  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  |................|
+0070  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  |................|
+0080  00 00 00 00 00 00 00 00 C8 FF C8 FF C8 FF C8 FF  |................|
+0090  C2 FF C1 C0 0F C4 FF C2 FF C1 C0 0F C4 FF C1 FF  |................|
+00A0  C1 F0 C2 00 3F C3 FF C1 FF C1 F0 C2 00 3F C3 FF  |....?........?..|
+00B0  C1 FF C3 00 0F C3 FF C1 FF C3 00 0F C3 FF C1 FF  |................|
+00C0  00 0F C1 C0 00 C3 FF C1 FF 00 0F C1 C0 00 C3 FF  |................|
+00D0  C1 F0 00 C2 FF 00 C3 FF C1 F0 00 C2 FF 00 C3 FF  |................|
+00E0  C1 F0 0F C2 FF C1 C0 00 C2 FF C1 F0 0F C2 FF C1  |................|
+00F0  C0 00 C2 FF C1 C0 3F C2 FF C1 F0 00 0F C1 FF C1  |......?.........|
+0100  C0 3F C2 FF C1 F0 00 0F C1 FF C1 C0 C3 FF C1 F0  |.?..............|
+0110  C2 00 C1 FF C1 C0 C3 FF C1 F0 C2 00 C1 FF C1 C0  |................|
+0120  C3 FF C1 FC C2 00 3F C1 C0 C3 FF C1 FC C2 00 3F  |......?........?|
+0130  00 C5 FF C1 C0 3F 00 C5 FF C1 C0 3F 00 C1 FF C1  |.....?.....?....|
+0140  F0 3F C2 FF C1 F0 0F 00 C1 FF C1 F0 3F C2 FF C1  |.?..........?...|
+0150  F0 0F C1 C0 C1 FF C1 FC 0F C2 FF C1 FC 03 C1 C0  |................|
+0160  C1 FF C1 FC 0F C2 FF C1 FC 03 C1 C0 C1 FF C1 FC  |................|
+0170  03 C2 FF C1 FC 03 C1 C0 C1 FF C1 FC 03 C2 FF C1  |................|
+0180  FC 03 C1 C0 C2 FF 00 C2 FF C1 FC 03 C1 C0 C2 FF  |................|
+0190  00 C2 FF C1 FC 03 C1 C0 0F C1 FF 00 C2 FF C1 FC  |................|
+01A0  03 C1 C0 0F C1 FF 00 C2 FF C1 FC 03 C1 F0 0F C1  |................|
+01B0  FF 00 3F C1 FF C1 FC 0F C1 F0 0F C1 FF 00 3F C1  |..?...........?.|
+01C0  FF C1 FC 0F C1 FC 03 C1 FF C1 C0 0F C1 FF C1 F0  |................|
+01D0  0F C1 FC 03 C1 FF C1 C0 0F C1 FF C1 F0 0F C1 FC  |................|
+01E0  00 0F C1 C0 03 C1 FF C1 C0 3F C1 FC 00 0F C1 C0  |.........?......|
+01F0  03 C1 FF C1 C0 3F C1 FF C4 00 03 C1 F0 C1 FF C1  |.....?..........|
+0200  FF C4 00 03 C1 F0 C1 FF C1 FF C1 F0 C3 00 03 C2  |................|
+0210  FF C1 FF C1 F0 C3 00 03 C2 FF C2 FF C3 00 03 C2  |................|
+0220  FF C2 FF C3 00 03 C2 FF C3 FF C1 C0 0F C3 FF C3  |................|
+0230  FF C1 C0 0F C3 FF C3 FF C1 C0 0F C3 FF C3 FF C1  |................|
+0240  C0 0F C3 FF C3 FF 00 3F C3 FF C3 FF 00 3F C3 FF  |.......?.....?..|
+0250  C3 FF 00 C4 FF C3 FF 00 C4 FF C3 FF 00 C4 FF C3  |................|
+0260  FF 00 C4 FF C2 FF C1 FC 03 C4 FF C2 FF C1 FC 03  |................|
+0270  C4 FF C2 FF C1 FC 3F C4 FF C2 FF C1 FC 3F C4 FF  |......?......?..|
+0280  C2 FF C1 FC 3F C4 FF C2 FF C1 FC 3F C4 FF C2 FF  |....?......?....|
+0290  C1 F0 3F C4 FF C2 FF C1 F0 3F C4 FF              |..?......?..    |
+29/02/24 15:57:22:237 : ComData write on port 'COM12' for 'BT1'
+0000  02 4C 54 30 31 30 36 36 30 10 0A 10 05 10 01 10  |.LT010660.......|
+0010  01 10 00 10 00 10 00 10 00 3F 10 00 3F 10 00 10  |.........?..?...|
+0020  00 10 00 10 00 10 00 10 00 10 00 10 00 10 00 10  |................|
+0030  00 10 00 10 00 10 00 10 00 10 00 10 00 10 00 10  |................|
+0040  00 10 00 10 00 10 00 10 00 10 00 10 00 10 00 10  |................|
+0050  00 10 00 10 00 10 00 10 00 10 00 10 00 10 00 10  |................|
+0060  00 10 00 10 00 10 00 10 00 10 00 10 00 10 00 10  |................|
+0070  00 10 00 10 00 10 00 10 00 10 00 10 00 10 00 10  |................|
+0080  00 10 00 10 00 10 00 10 00 10 01 10 08 10 00 10  |................|
+0090  01 10 00 10 00 10 00 10 00 10 00 10 00 10 00 10  |................|
+00A0  00 10 00 10 00 10 00 10 00 10 00 10 00 10 00 10  |................|
+00B0  00 10 00 10 00 10 00 10 00 10 00 10 00 10 00 10  |................|
+00C0  00 10 00 10 00 10 00 10 00 10 00 10 00 10 00 10  |................|
+00D0  00 10 00 10 00 10 00 10 00 10 00 10 00 10 00 10  |................|
+00E0  00 10 00 10 00 10 00 10 00 10 00 10 00 10 00 10  |................|
+00F0  00 10 00 10 00 10 00 10 00 10 00 10 00 10 00 10  |................|
+0100  00 10 00 10 00 10 00 C8 FF C8 FF C8 FF C8 FF C2  |................|
+0110  FF C1 C0 10 0F C4 FF C2 FF C1 C0 10 0F C4 FF C1  |................|
+0120  FF C1 F0 C2 10 00 3F C3 FF C1 FF C1 F0 C2 10 00  |......?.........|
+0130  3F C3 FF C1 FF C3 10 00 10 0F C3 FF C1 FF C3 10  |?...............|
+0140  00 10 0F C3 FF C1 FF 10 00 10 0F C1 C0 10 00 C3  |................|
+0150  FF C1 FF 10 00 10 0F C1 C0 10 00 C3 FF C1 F0 10  |................|
+0160  00 C2 FF 10 00 C3 FF C1 F0 10 00 C2 FF 10 00 C3  |................|
+0170  FF C1 F0 10 0F C2 FF C1 C0 10 00 C2 FF C1 F0 10  |................|
+0180  0F C2 FF C1 C0 10 00 C2 FF C1 C0 3F C2 FF C1 F0  |...........?....|
+0190  10 00 10 0F C1 FF C1 C0 3F C2 FF C1 F0 10 00 10  |........?.......|
+01A0  0F C1 FF C1 C0 C3 FF C1 F0 C2 10 00 C1 FF C1 C0  |................|
+01B0  C3 FF C1 F0 C2 10 00 C1 FF C1 C0 C3 FF C1 FC C2  |................|
+01C0  10 00 3F C1 C0 C3 FF C1 FC C2 10 00 3F 10 00 C5  |..?.........?...|
+01D0  FF C1 C0 3F 10 00 C5 FF C1 C0 3F 10 00 C1 FF C1  |...?......?.....|
+01E0  F0 3F C2 FF C1 F0 10 0F 10 00 C1 FF C1 F0 3F C2  |.?............?.|
+01F0  FF C1 F0 10 0F C1 C0 C1 FF C1 FC 10 0F C2 FF C1  |................|
+0200  FC 10 03 C1 C0 C1 FF C1 FC 10 0F C2 FF C1 FC 10  |................|
+0210  03 C1 C0 C1 FF C1 FC 10 03 C2 FF C1 FC 10 03 C1  |................|
+0220  C0 C1 FF C1 FC 10 03 C2 FF C1 FC 10 03 C1 C0 C2  |................|
+0230  FF 10 00 C2 FF C1 FC 10 03 C1 C0 C2 FF 10 00 C2  |................|
+0240  FF C1 FC 10 03 C1 C0 10 0F C1 FF 10 00 C2 FF C1  |................|
+0250  FC 10 03 C1 C0 10 0F C1 FF 10 00 C2 FF C1 FC 10  |................|
+0260  03 C1 F0 10 0F C1 FF 10 00 3F C1 FF C1 FC 10 0F  |.........?......|
+0270  C1 F0 10 0F C1 FF 10 00 3F C1 FF C1 FC 10 0F C1  |........?.......|
+0280  FC 10 03 C1 FF C1 C0 10 0F C1 FF C1 F0 10 0F C1  |................|
+0290  FC 10 03 C1 FF C1 C0 10 0F C1 FF C1 F0 10 0F C1  |................|
+02A0  FC 10 00 10 0F C1 C0 10 03 C1 FF C1 C0 3F C1 FC  |.............?..|
+02B0  10 00 10 0F C1 C0 10 03 C1 FF C1 C0 3F C1 FF C4  |............?...|
+02C0  10 00 10 03 C1 F0 C1 FF C1 FF C4 10 00 10 03 C1  |................|
+02D0  F0 C1 FF C1 FF C1 F0 C3 10 00 10 03 C2 FF C1 FF  |................|
+02E0  C1 F0 C3 10 00 10 03 C2 FF C2 FF C3 10 00 10 03  |................|
+02F0  C2 FF C2 FF C3 10 00 10 03 C2 FF C3 FF C1 C0 10  |................|
+0300  0F C3 FF C3 FF C1 C0 10 0F C3 FF C3 FF C1 C0 10  |................|
+0310  0F C3 FF C3 FF C1 C0 10 0F C3 FF C3 FF 10 00 3F  |...............?|
+0320  C3 FF C3 FF 10 00 3F C3 FF C3 FF 10 00 C4 FF C3  |......?.........|
+0330  FF 10 00 C4 FF C3 FF 10 00 C4 FF C3 FF 10 00 C4  |................|
+0340  FF C2 FF C1 FC 10 03 C4 FF C2 FF C1 FC 10 03 C4  |................|
+0350  FF C2 FF C1 FC 3F C4 FF C2 FF C1 FC 3F C4 FF C2  |.....?......?...|
+0360  FF C1 FC 3F C4 FF C2 FF C1 FC 3F C4 FF C2 FF C1  |...?......?.....|
+0370  F0 3F C4 FF C2 FF C1 F0 3F C4 FF 03              |.?......?...    |
+29/02/24 15:57:22:242 : AeaBusyTime 00062 (Max 20668) on 'COM12'
+29/02/24 15:57:22:306 : AeaBusyTime 00125 (Max 20668) on 'COM12'
+29/02/24 15:57:22:369 : AeaBusyTime 00187 (Max 20668) on 'COM12'
+29/02/24 15:57:22:432 : AeaBusyTime 00250 (Max 20668) on 'COM12'
+29/02/24 15:57:22:457 : Waiting for AEA event on COM12
+29/02/24 15:57:22:496 : AeaBusyTime 00312 (Max 20668) on 'COM12'
+29/02/24 15:57:22:559 : AeaBusyTime 00375 (Max 20668) on 'COM12'
+29/02/24 15:57:22:621 : AeaBusyTime 00437 (Max 20668) on 'COM12'
+29/02/24 15:57:22:621 : ComData read on port 'COM12' for 'BT1'
+0000  02 45 41 53 45 4C 54 4F 4B 30 31 30 34 03        |.EASELTOK0104.  |
+29/02/24 15:57:22:621 : MsgDone on port COM12
+29/02/24 15:57:22:621 : Data received on port 'COM12' for 'BT1'
+0000  45 41 53 45 4C 54 4F 4B 30 31 30 34              |EASELTOK0104    |
+29/02/24 15:57:22:621 : Releasing AEA Semaphore on 'COM12'
+29/02/24 15:57:22:829 : Waiting for AEA Semaphore on COM12
+29/02/24 15:57:22:829 : Acquired AEA Semaphore on COM12
+29/02/24 15:57:22:829 : Data sent to port 'COM12' from 'BT1'
+0000  42 54 50 30 35 30 31 30 31 23 30 32 58 48 30 30  |BTP050101#02XH00|
+0010  30 30 30 31 2D 23 30 33 42 41 47 20 54 41 47 20  |0001-#03BAG TAG |
+0020  54 45 53 23 30 35 42 42 42 20 46 4C 54 30 30 30  |TES#05BBB FLT000|
+0030  31 20 2F 33 30 46 45 42 59 59 23 30 36 43 43 43  |1 /30FEBYY#06CCC|
+0040  20 46 4C 54 30 30 30 32 59 2F 33 31 4E 4F 56 59  | FLT0002Y/31NOVY|
+0050  59 23 30 37 44 44 44 20 46 4C 54 30 30 30 33 5A  |Y#07DDD FLT0003Z|
+0060  2F 31 32 4E 45 56 59 59 23 30 38 46 49 4E 41 4C  |/12NEVYY#08FINAL|
+0070  20 44 45 53 54 49 4E 41 54 49 23 30 41 46 4C 54  | DESTINATI#0AFLT|
+0080  30 30 30 31 20 23 30 42 42 42 42 23 30 44 46 4C  |0001 #0BBBB#0DFL|
+0090  54 30 30 30 32 59 23 30 45 43 43 43 23 31 30 46  |T0002Y#0ECCC#10F|
+00A0  4C 54 30 30 30 33 5A 23 31 31 44 44 44 23 31 36  |LT0003Z#11DDD#16|
+00B0  50 4E 52 52 45 46 23 31 37 43 49 54 44 44 4D 4D  |PNRREF#17CITDDMM|
+00C0  4D 59 59 23 31 38 4C 4E 49 41 54 41 23 31 39 39  |MYY#18LNIATA#199|
+00D0  39 39 23 34 30 39 39 39 39 23 34 31 38 23 34 34  |99#409999#418#44|
+00E0  46 49 4E 41 4C 20 44 45 53 54 49 4E 41 54 49 23  |FINAL DESTINATI#|
+00F0  34 35 2F 33 30 30 39 34 35 23 34 36 2F 33 31 31  |45/300945#46/311|
+0100  32 32 30 23 34 37 2F 31 32 31 37 31 35 23 34 38  |220#47/121715#48|
+0110  39 39 39 39 30 30 30 30 30 31 23 36 43 42 42 42  |9999000001#6CBBB|
+0120  20 58 48 30 30 30 30 30 31 2D 46 4C 54 30 30 30  | XH000001-FLT000|
+0130  31 20 2F 33 30 46 45 42 23 36 44 43 43 43 20 58  |1 /30FEB#6DCCC X|
+0140  48 30 30 30 30 30 31 2D 46 4C 54 30 30 30 32 59  |H000001-FLT0002Y|
+0150  2F 33 31 4E 4F 56 23 36 45 44 44 44 20 58 48 30  |/31NOV#6EDDD XH0|
+0160  30 30 30 30 31 2D 46 4C 54 30 30 30 33 5A 2F 31  |00001-FLT0003Z/1|
+0170  32 4E 45 56 23 46 30 30 31 23 46 31 30 31        |2NEV#F001#F101  |
+29/02/24 15:57:22:829 : ComData write on port 'COM12' for 'BT1'
+0000  02 42 54 50 30 35 30 31 30 31 23 30 32 58 48 30  |.BTP050101#02XH0|
+0010  30 30 30 30 31 2D 23 30 33 42 41 47 20 54 41 47  |00001-#03BAG TAG|
+0020  20 54 45 53 23 30 35 42 42 42 20 46 4C 54 30 30  | TES#05BBB FLT00|
+0030  30 31 20 2F 33 30 46 45 42 59 59 23 30 36 43 43  |01 /30FEBYY#06CC|
+0040  43 20 46 4C 54 30 30 30 32 59 2F 33 31 4E 4F 56  |C FLT0002Y/31NOV|
+0050  59 59 23 30 37 44 44 44 20 46 4C 54 30 30 30 33  |YY#07DDD FLT0003|
+0060  5A 2F 31 32 4E 45 56 59 59 23 30 38 46 49 4E 41  |Z/12NEVYY#08FINA|
+0070  4C 20 44 45 53 54 49 4E 41 54 49 23 30 41 46 4C  |L DESTINATI#0AFL|
+0080  54 30 30 30 31 20 23 30 42 42 42 42 23 30 44 46  |T0001 #0BBBB#0DF|
+0090  4C 54 30 30 30 32 59 23 30 45 43 43 43 23 31 30  |LT0002Y#0ECCC#10|
+00A0  46 4C 54 30 30 30 33 5A 23 31 31 44 44 44 23 31  |FLT0003Z#11DDD#1|
+00B0  36 50 4E 52 52 45 46 23 31 37 43 49 54 44 44 4D  |6PNRREF#17CITDDM|
+00C0  4D 4D 59 59 23 31 38 4C 4E 49 41 54 41 23 31 39  |MMYY#18LNIATA#19|
+00D0  39 39 39 23 34 30 39 39 39 39 23 34 31 38 23 34  |999#409999#418#4|
+00E0  34 46 49 4E 41 4C 20 44 45 53 54 49 4E 41 54 49  |4FINAL DESTINATI|
+00F0  23 34 35 2F 33 30 30 39 34 35 23 34 36 2F 33 31  |#45/300945#46/31|
+0100  31 32 32 30 23 34 37 2F 31 32 31 37 31 35 23 34  |1220#47/121715#4|
+0110  38 39 39 39 39 30 30 30 30 30 31 23 36 43 42 42  |89999000001#6CBB|
+0120  42 20 58 48 30 30 30 30 30 31 2D 46 4C 54 30 30  |B XH000001-FLT00|
+0130  30 31 20 2F 33 30 46 45 42 23 36 44 43 43 43 20  |01 /30FEB#6DCCC |
+0140  58 48 30 30 30 30 30 31 2D 46 4C 54 30 30 30 32  |XH000001-FLT0002|
+0150  59 2F 33 31 4E 4F 56 23 36 45 44 44 44 20 58 48  |Y/31NOV#6EDDD XH|
+0160  30 30 30 30 30 31 2D 46 4C 54 30 30 30 33 5A 2F  |000001-FLT0003Z/|
+0170  31 32 4E 45 56 23 46 30 30 31 23 46 31 30 31 03  |12NEV#F001#F101.|
+29/02/24 15:57:22:871 : AeaBusyTime 00062 (Max 26382) on 'COM12'
+29/02/24 15:57:22:914 : Waiting for AEA event on COM12
+29/02/24 15:57:22:935 : AeaBusyTime 00125 (Max 26382) on 'COM12'
+29/02/24 15:57:22:999 : AeaBusyTime 00187 (Max 26382) on 'COM12'
+29/02/24 15:57:23:063 : AeaBusyTime 00250 (Max 26382) on 'COM12'
+29/02/24 15:57:23:125 : AeaBusyTime 00312 (Max 26382) on 'COM12'
+29/02/24 15:57:23:186 : AeaBusyTime 00375 (Max 26382) on 'COM12'
+29/02/24 15:57:23:249 : AeaBusyTime 00437 (Max 26382) on 'COM12'
+29/02/24 15:57:23:311 : AeaBusyTime 00500 (Max 26382) on 'COM12'
+29/02/24 15:57:23:375 : AeaBusyTime 00562 (Max 26382) on 'COM12'
+29/02/24 15:57:23:439 : AeaBusyTime 00625 (Max 26382) on 'COM12'
+29/02/24 15:57:23:500 : AeaBusyTime 00687 (Max 26382) on 'COM12'
+29/02/24 15:57:23:562 : AeaBusyTime 00750 (Max 26382) on 'COM12'
+29/02/24 15:57:23:623 : AeaBusyTime 00812 (Max 26382) on 'COM12'
+29/02/24 15:57:23:686 : AeaBusyTime 00875 (Max 26382) on 'COM12'
+29/02/24 15:57:23:749 : AeaBusyTime 00937 (Max 26382) on 'COM12'
+29/02/24 15:57:23:810 : AeaBusyTime 01000 (Max 26382) on 'COM12'
+29/02/24 15:57:23:873 : AeaBusyTime 01062 (Max 26382) on 'COM12'
+29/02/24 15:57:23:936 : AeaBusyTime 01125 (Max 26382) on 'COM12'
+29/02/24 15:57:23:999 : AeaBusyTime 01187 (Max 26382) on 'COM12'
+29/02/24 15:57:24:063 : AeaBusyTime 01250 (Max 26382) on 'COM12'
+29/02/24 15:57:24:127 : AeaBusyTime 01312 (Max 26382) on 'COM12'
+29/02/24 15:57:24:191 : AeaBusyTime 01391 (Max 26382) on 'COM12'
+29/02/24 15:57:24:254 : AeaBusyTime 01453 (Max 26382) on 'COM12'
+29/02/24 15:57:24:319 : AeaBusyTime 01516 (Max 26382) on 'COM12'
+29/02/24 15:57:24:380 : AeaBusyTime 01578 (Max 26382) on 'COM12'
+29/02/24 15:57:24:443 : AeaBusyTime 01641 (Max 26382) on 'COM12'
+29/02/24 15:57:24:505 : AeaBusyTime 01703 (Max 26382) on 'COM12'
+29/02/24 15:57:24:566 : AeaBusyTime 01766 (Max 26382) on 'COM12'
+29/02/24 15:57:24:627 : AeaBusyTime 01828 (Max 26382) on 'COM12'
+29/02/24 15:57:24:689 : AeaBusyTime 01875 (Max 26382) on 'COM12'
+29/02/24 15:57:24:753 : AeaBusyTime 01953 (Max 26382) on 'COM12'
+29/02/24 15:57:24:817 : AeaBusyTime 02016 (Max 26382) on 'COM12'
+29/02/24 15:57:24:877 : AeaBusyTime 02062 (Max 26382) on 'COM12'
+29/02/24 15:57:24:941 : AeaBusyTime 02141 (Max 26382) on 'COM12'
+29/02/24 15:57:25:004 : AeaBusyTime 02203 (Max 26382) on 'COM12'
+29/02/24 15:57:25:068 : AeaBusyTime 02266 (Max 26382) on 'COM12'
+29/02/24 15:57:25:132 : AeaBusyTime 02328 (Max 26382) on 'COM12'
+29/02/24 15:57:25:194 : AeaBusyTime 02391 (Max 26382) on 'COM12'
+29/02/24 15:57:25:257 : AeaBusyTime 02453 (Max 26382) on 'COM12'
+29/02/24 15:57:25:321 : AeaBusyTime 02516 (Max 26382) on 'COM12'
+29/02/24 15:57:25:383 : AeaBusyTime 02578 (Max 26382) on 'COM12'
+29/02/24 15:57:25:447 : AeaBusyTime 02641 (Max 26382) on 'COM12'
+29/02/24 15:57:25:511 : AeaBusyTime 02703 (Max 26382) on 'COM12'
+29/02/24 15:57:25:575 : AeaBusyTime 02766 (Max 26382) on 'COM12'
+29/02/24 15:57:25:637 : AeaBusyTime 02828 (Max 26382) on 'COM12'
+29/02/24 15:57:25:700 : AeaBusyTime 02891 (Max 26382) on 'COM12'
+29/02/24 15:57:25:761 : AeaBusyTime 02953 (Max 26382) on 'COM12'
+29/02/24 15:57:25:824 : AeaBusyTime 03016 (Max 26382) on 'COM12'
+29/02/24 15:57:25:888 : AeaBusyTime 03078 (Max 26382) on 'COM12'
+29/02/24 15:57:25:952 : AeaBusyTime 03141 (Max 26382) on 'COM12'
+29/02/24 15:57:26:016 : AeaBusyTime 03203 (Max 26382) on 'COM12'
+29/02/24 15:57:26:080 : AeaBusyTime 03266 (Max 26382) on 'COM12'
+29/02/24 15:57:26:142 : AeaBusyTime 03328 (Max 26382) on 'COM12'
+29/02/24 15:57:26:205 : AeaBusyTime 03406 (Max 26382) on 'COM12'
+29/02/24 15:57:26:269 : AeaBusyTime 03469 (Max 26382) on 'COM12'
+29/02/24 15:57:26:331 : AeaBusyTime 03531 (Max 26382) on 'COM12'
+29/02/24 15:57:26:394 : AeaBusyTime 03594 (Max 26382) on 'COM12'
+29/02/24 15:57:26:457 : AeaBusyTime 03656 (Max 26382) on 'COM12'
+29/02/24 15:57:26:519 : AeaBusyTime 03719 (Max 26382) on 'COM12'
+29/02/24 15:57:26:583 : AeaBusyTime 03781 (Max 26382) on 'COM12'
+29/02/24 15:57:26:645 : AeaBusyTime 03844 (Max 26382) on 'COM12'
+29/02/24 15:57:26:709 : AeaBusyTime 03906 (Max 26382) on 'COM12'
+29/02/24 15:57:26:773 : AeaBusyTime 03969 (Max 26382) on 'COM12'
+29/02/24 15:57:26:837 : AeaBusyTime 04031 (Max 26382) on 'COM12'
+29/02/24 15:57:26:898 : AeaBusyTime 04094 (Max 26382) on 'COM12'
+29/02/24 15:57:26:962 : AeaBusyTime 04156 (Max 26382) on 'COM12'
+29/02/24 15:57:27:026 : AeaBusyTime 04219 (Max 26382) on 'COM12'
+29/02/24 15:57:27:090 : AeaBusyTime 04281 (Max 26382) on 'COM12'
+29/02/24 15:57:27:153 : AeaBusyTime 04344 (Max 26382) on 'COM12'
+29/02/24 15:57:27:214 : AeaBusyTime 04406 (Max 26382) on 'COM12'
+29/02/24 15:57:27:277 : AeaBusyTime 04469 (Max 26382) on 'COM12'
+29/02/24 15:57:27:338 : AeaBusyTime 04531 (Max 26382) on 'COM12'
+29/02/24 15:57:27:399 : AeaBusyTime 04594 (Max 26382) on 'COM12'
+29/02/24 15:57:27:460 : AeaBusyTime 04656 (Max 26382) on 'COM12'
+29/02/24 15:57:27:524 : AeaBusyTime 04719 (Max 26382) on 'COM12'
+29/02/24 15:57:27:585 : AeaBusyTime 04781 (Max 26382) on 'COM12'
+29/02/24 15:57:27:647 : AeaBusyTime 04844 (Max 26382) on 'COM12'
+29/02/24 15:57:27:711 : AeaBusyTime 04906 (Max 26382) on 'COM12'
+29/02/24 15:57:27:775 : AeaBusyTime 04969 (Max 26382) on 'COM12'
+29/02/24 15:57:27:837 : AeaBusyTime 05031 (Max 26382) on 'COM12'
+29/02/24 15:57:27:899 : AeaBusyTime 05094 (Max 26382) on 'COM12'
+29/02/24 15:57:27:959 : AeaBusyTime 05156 (Max 26382) on 'COM12'
+29/02/24 15:57:28:022 : AeaBusyTime 05219 (Max 26382) on 'COM12'
+29/02/24 15:57:28:084 : AeaBusyTime 05281 (Max 26382) on 'COM12'
+29/02/24 15:57:28:146 : AeaBusyTime 05344 (Max 26382) on 'COM12'
+29/02/24 15:57:28:207 : AeaBusyTime 05406 (Max 26382) on 'COM12'
+29/02/24 15:57:28:270 : AeaBusyTime 05469 (Max 26382) on 'COM12'
+29/02/24 15:57:28:332 : AeaBusyTime 05531 (Max 26382) on 'COM12'
+29/02/24 15:57:28:395 : AeaBusyTime 05594 (Max 26382) on 'COM12'
+29/02/24 15:57:28:459 : AeaBusyTime 05656 (Max 26382) on 'COM12'
+29/02/24 15:57:28:523 : AeaBusyTime 05719 (Max 26382) on 'COM12'
+29/02/24 15:57:28:586 : AeaBusyTime 05781 (Max 26382) on 'COM12'
+29/02/24 15:57:28:649 : AeaBusyTime 05844 (Max 26382) on 'COM12'
+29/02/24 15:57:28:712 : AeaBusyTime 05906 (Max 26382) on 'COM12'
+29/02/24 15:57:28:776 : AeaBusyTime 05969 (Max 26382) on 'COM12'
+29/02/24 15:57:28:839 : AeaBusyTime 06031 (Max 26382) on 'COM12'
+29/02/24 15:57:28:900 : AeaBusyTime 06094 (Max 26382) on 'COM12'
+29/02/24 15:57:28:963 : AeaBusyTime 06156 (Max 26382) on 'COM12'
+29/02/24 15:57:29:024 : AeaBusyTime 06219 (Max 26382) on 'COM12'
+29/02/24 15:57:29:087 : AeaBusyTime 06281 (Max 26382) on 'COM12'
+29/02/24 15:57:29:150 : AeaBusyTime 06344 (Max 26382) on 'COM12'
+29/02/24 15:57:29:212 : AeaBusyTime 06406 (Max 26382) on 'COM12'
+29/02/24 15:57:29:276 : AeaBusyTime 06469 (Max 26382) on 'COM12'
+29/02/24 15:57:29:340 : AeaBusyTime 06531 (Max 26382) on 'COM12'
+29/02/24 15:57:29:404 : AeaBusyTime 06594 (Max 26382) on 'COM12'
+29/02/24 15:57:29:467 : AeaBusyTime 06656 (Max 26382) on 'COM12'
+29/02/24 15:57:29:531 : AeaBusyTime 06719 (Max 26382) on 'COM12'
+29/02/24 15:57:29:593 : AeaBusyTime 06781 (Max 26382) on 'COM12'
+29/02/24 15:57:29:657 : AeaBusyTime 06844 (Max 26382) on 'COM12'
+29/02/24 15:57:29:719 : AeaBusyTime 06906 (Max 26382) on 'COM12'
+29/02/24 15:57:29:783 : AeaBusyTime 06969 (Max 26382) on 'COM12'
+29/02/24 15:57:29:845 : AeaBusyTime 07031 (Max 26382) on 'COM12'
+29/02/24 15:57:29:906 : AeaBusyTime 07094 (Max 26382) on 'COM12'
+29/02/24 15:57:29:969 : AeaBusyTime 07156 (Max 26382) on 'COM12'
+29/02/24 15:57:30:030 : AeaBusyTime 07219 (Max 26382) on 'COM12'
+29/02/24 15:57:30:094 : AeaBusyTime 07281 (Max 26382) on 'COM12'
+29/02/24 15:57:30:158 : AeaBusyTime 07344 (Max 26382) on 'COM12'
+29/02/24 15:57:30:221 : AeaBusyTime 07422 (Max 26382) on 'COM12'
+29/02/24 15:57:30:285 : AeaBusyTime 07484 (Max 26382) on 'COM12'
+29/02/24 15:57:30:347 : AeaBusyTime 07547 (Max 26382) on 'COM12'
+29/02/24 15:57:30:411 : AeaBusyTime 07609 (Max 26382) on 'COM12'
+29/02/24 15:57:30:475 : AeaBusyTime 07672 (Max 26382) on 'COM12'
+29/02/24 15:57:30:539 : AeaBusyTime 07734 (Max 26382) on 'COM12'
+29/02/24 15:57:30:600 : AeaBusyTime 07797 (Max 26382) on 'COM12'
+29/02/24 15:57:30:661 : AeaBusyTime 07859 (Max 26382) on 'COM12'
+29/02/24 15:57:30:723 : AeaBusyTime 07922 (Max 26382) on 'COM12'
+29/02/24 15:57:30:787 : AeaBusyTime 07984 (Max 26382) on 'COM12'
+29/02/24 15:57:30:851 : AeaBusyTime 08047 (Max 26382) on 'COM12'
+29/02/24 15:57:30:915 : AeaBusyTime 08109 (Max 26382) on 'COM12'
+29/02/24 15:57:30:978 : AeaBusyTime 08172 (Max 26382) on 'COM12'
+29/02/24 15:57:31:040 : AeaBusyTime 08234 (Max 26382) on 'COM12'
+29/02/24 15:57:31:104 : AeaBusyTime 08297 (Max 26382) on 'COM12'
+29/02/24 15:57:31:168 : AeaBusyTime 08359 (Max 26382) on 'COM12'
+29/02/24 15:57:31:232 : AeaBusyTime 08422 (Max 26382) on 'COM12'
+29/02/24 15:57:31:296 : AeaBusyTime 08484 (Max 26382) on 'COM12'
+29/02/24 15:57:31:359 : AeaBusyTime 08547 (Max 26382) on 'COM12'
+29/02/24 15:57:31:359 : ComData read on port 'COM12' for 'BT1'
+0000  02 45 41 53 45 50 52 4F 4B 31 30 31 03           |.EASEPROK101.   |
+29/02/24 15:57:31:359 : MsgDone on port COM12
+29/02/24 15:57:31:359 : Data received on port 'COM12' for 'BT1'
+0000  45 41 53 45 50 52 4F 4B 31 30 31                 |EASEPROK101     |
+29/02/24 15:57:31:359 : Releasing AEA Semaphore on 'COM12'
+29/02/24 15:57:51:937 : Network error on 6004 with BP1
+29/02/24 15:57:51:937 : Stopping ServiceCupps(6004)
+29/02/24 15:57:51:937 : Releasing lock on device 'BP1'
+29/02/24 15:57:51:937 : 
+----------------------------- Outbound (PLT) 5352 -----------------------------
+0100000199
+<?xml version="1.0" encoding="utf-8" ?>
+<cupps xmlns="http://www.cupps.aero/cupps/01.04"
+deviceName="PLATFORM"
+timeStamp="2024-02-29 20:57:51.937"
+messageID="4294901764"
+xmlns:xsi="http://www.w3.org/2001/XMLschema-instance"
+messageName="notify">
+<notify>
+<dLkdExitedEvent workstation="SRQ1C059" device="SRQ1C059BP1" user="FS" applicationName="COMMONLAUNCHER" applicationVersion="1.44.0.0"/>
+</notify>
+</cupps>
+-------------------------------------------------------------------------------
+29/02/24 15:57:51:937 : 
+----------------------------- Outbound (PLT) 5352 -----------------------------
+010000013A
+<?xml version="1.0" encoding="utf-8" ?>
+<cupps xmlns="http://www.cupps.aero/cupps/01.04"
+deviceName="PLATFORM"
+timeStamp="2024-02-29 20:57:51.937"
+messageID="4294901765"
+xmlns:xsi="http://www.w3.org/2001/XMLschema-instance"
+messageName="notify">
+<notify>
+<dStdEnteredEvent device="SRQ1C059BP1"/>
+</notify>
+</cupps>
+-------------------------------------------------------------------------------
+29/02/24 15:57:51:937 : Releasing device lock on 'BP1'
+29/02/24 15:57:51:937 : Released  device lock on 'BP1'
+29/02/24 15:57:51:938 : DataLog File C:\APPS\CUPPSFS\SRQ1C059BPP1-240229-205751937793.JSON - Created
+29/02/24 15:57:51:945 : Network error on 5240 with BC1
+29/02/24 15:57:51:945 : Stopping ServiceCupps(5240)
+29/02/24 15:57:51:945 : Releasing lock on device 'BC1'
+29/02/24 15:57:51:945 : Network error on 5352 with ---
+29/02/24 15:57:51:945 : Released  device lock on 'BC1'
+29/02/24 15:57:51:945 : Stopping ServiceCupps(5352)
+29/02/24 15:57:51:946 : Network error on 792 with BT1
+29/02/24 15:57:51:946 : Stopping ServiceCupps(792)
+29/02/24 15:57:51:946 : Releasing lock on device 'BT1'
+29/02/24 15:57:51:946 : Network error on 5712 with MS1
+29/02/24 15:57:51:946 : Stopping ServiceCupps(5712)
+29/02/24 15:57:51:946 : Releasing lock on device 'MS1'
+29/02/24 15:57:51:946 : Released  device lock on 'MS1'
+29/02/24 15:57:51:946 : Network error on 5984 with OC1
+29/02/24 15:57:51:946 : Stopping ServiceCupps(5984)
+29/02/24 15:57:51:946 : Releasing lock on device 'OC1'
+29/02/24 15:57:51:946 : Released  device lock on 'OC1'
+29/02/24 15:57:51:946 : DataLog File C:\APPS\CUPPSFS\SRQ1C059XXXX-240229-205751946769.JSON - Created
+29/02/24 15:57:51:946 : NotifyEvent aStdExitedEvent Application COMMONLAUNCHER
+29/02/24 15:57:51:946 : NotifyEvent aStpEnteredEvent Application COMMONLAUNCHER
+29/02/24 15:57:51:946 : Network error on 5620 with PR1
+29/02/24 15:57:51:946 : Stopping ServiceCupps(5620)
+29/02/24 15:57:51:946 : Releasing lock on device 'PR1'
+29/02/24 15:57:51:946 : Released  device lock on 'PR1'
+29/02/24 15:57:51:947 : DataLog File C:\APPS\CUPPSFS\SRQ1C059BCR1-240229-205751945773.JSON - Created
+29/02/24 15:57:51:947 : DataLog File C:\APPS\CUPPSFS\SRQ1C059DCP1-240229-205751946769.JSON - Created
+29/02/24 15:57:51:948 : DataLog File C:\APPS\CUPPSFS\SRQ1C059OCR1-240229-205751946769.JSON - Created
+29/02/24 15:57:51:949 : DataLog File C:\APPS\CUPPSFS\SRQ1C059MSR1-240229-205751946769.JSON - Created
+29/02/24 15:57:51:950 : Releasing device lock on 'BT1'
+29/02/24 15:57:51:950 : Released  device lock on 'BT1'
+29/02/24 15:57:51:950 : DataLog File C:\APPS\CUPPSFS\SRQ1C059BTP1-240229-205751950758.JSON - Created
+29/02/24 15:57:51:953 : Stopped ServiceCupps(6004)
+29/02/24 15:57:51:968 : Stopped ServiceCupps(5240)
+29/02/24 15:57:51:968 : Stopped ServiceCupps(5620)
+29/02/24 15:57:51:968 : Stopped ServiceCupps(5712)
+29/02/24 15:57:51:968 : Stopped ServiceCupps(792)
+29/02/24 15:57:51:968 : Stopped ServiceCupps(5984)
+29/02/24 15:57:51:968 : Stopped ServiceCupps(5352)
+29/02/24 15:57:51:968 : Device BT1 State DEV_STD
+29/02/24 15:57:51:984 : Device BP1 State DEV_STD
+29/02/24 15:57:52:137 : DataLog File SRQ1C059BPP1-240229-205751937793.JSON - Uploaded
+29/02/24 15:57:52:832 : DataLog File SRQ1C059BCR1-240229-205751945773.JSON - Uploaded
+29/02/24 15:57:53:012 : DataLog File SRQ1C059BTP1-240229-205751950758.JSON - Uploaded
+29/02/24 15:57:53:186 : OnSessionChange 'SessionLogoff'
+29/02/24 15:57:53:186 : NotifyEvent uStdExitedEvent
+29/02/24 15:57:53:186 : NotifyEvent uSpgEnteredEvent
+29/02/24 15:57:53:186 : NotifyEvent uSpgExitedEvent
+29/02/24 15:57:53:186 : NotifyEvent uStpEnteredEvent
+29/02/24 15:57:53:194 : DataLog File SRQ1C059DCP1-240229-205751946769.JSON - Uploaded
+29/02/24 15:57:53:305 : OnSessionChange 'ConsoleDisconnect'
+29/02/24 15:57:53:377 : DataLog File SRQ1C059MSR1-240229-205751946769.JSON - Uploaded
+29/02/24 15:57:53:574 : DataLog File SRQ1C059OCR1-240229-205751946769.JSON - Uploaded
+29/02/24 15:57:53:601 : OnSessionChange 'ConsoleConnect'
+29/02/24 15:57:53:758 : DataLog File SRQ1C059XXXX-240229-205751946769.JSON - Uploaded
+29/02/24 15:58:05:290 : OnSessionChange 'SessionLogon'
+29/02/24 15:58:05:290 : NotifyEvent uStpExitedEvent
+29/02/24 15:58:05:290 : NotifyEvent uStgEnteredEvent
+29/02/24 15:58:05:290 : NotifyEvent uStgExitedEvent
+29/02/24 15:58:05:290 : NotifyEvent uStdEnteredEvent
+29/02/24 15:58:12:225 : OnSessionChange 'SessionLogoff'
+29/02/24 15:58:12:225 : NotifyEvent uStdExitedEvent
+29/02/24 15:58:12:225 : NotifyEvent uSpgEnteredEvent
+29/02/24 15:58:12:225 : NotifyEvent uSpgExitedEvent
+29/02/24 15:58:12:225 : NotifyEvent uStpEnteredEvent
+29/02/24 15:58:12:344 : OnSessionChange 'ConsoleDisconnect'
+29/02/24 15:58:12:639 : OnSessionChange 'ConsoleConnect'
+29/02/24 15:58:24:266 : OnSessionChange 'SessionLogon'
+29/02/24 15:58:24:266 : NotifyEvent uStpExitedEvent
+29/02/24 15:58:24:266 : NotifyEvent uStgEnteredEvent
+29/02/24 15:58:24:266 : NotifyEvent uStgExitedEvent
+29/02/24 15:58:24:266 : NotifyEvent uStdEnteredEvent
+
