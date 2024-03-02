@@ -16,11 +16,11 @@ const cuppsfsFileName = `CUPPSFS${date.getFullYear().toString().slice(-2)}${(
 const MapStatus = (function () {
   let btCount = 0;
   let btRemaining = 200;
-  let btLoadPath = 'FULL'; 
+  let btLoadPath = "FULL";
   let bpCount = 0;
   let bpRemaining = 10000;
-  let bpLoadPathA = 'FULL';
-  let bpLoadPathB = 'FULL';
+  let bpLoadPathA = "FULL";
+  let bpLoadPathB = "FULL";
   let btStatus = null;
   let bpStatus = null;
   let btTimestamp = null;
@@ -42,14 +42,13 @@ const MapStatus = (function () {
   };
 })();
 
-// IFEE object that contains all the possible successful print status messages. Differing due to multiple printing applications used my multiple airlines. 
+// IFEE object that contains all the possible successful print status messages. Differing due to multiple printing applications used my multiple airlines.
 const aeaPrintMessages = (function () {
   // successful print messages in order: CUPPS Diagnostic,
   const bpSuccessMessages = ["T//CIPROK#100#201#300#VSR#01W"];
   const btSuccessMessages = ["HDCPROK101"];
-  return {bpSuccessMessages, btSuccessMessages};
+  return { bpSuccessMessages, btSuccessMessages };
 })();
-
 
 const domhandler = new hp2.DomHandler((err, dom) => {
   if (err) throw err;
@@ -70,11 +69,11 @@ const domhandler = new hp2.DomHandler((err, dom) => {
     const hasSuccessMessage = (currMessage, successMessages) => {
       for (let message in successMessages) {
         if (currMessage === message) {
-          return true; 
+          return true;
         }
       }
-      return false; 
-    }
+      return false;
+    };
 
     const countPrints = (dom, isBp) => {
       const successMessages = isBp
@@ -83,26 +82,27 @@ const domhandler = new hp2.DomHandler((err, dom) => {
 
       return hp2.DomUtils.filter((elem) => {
         return (
-          elem.name === "aeaText" && hasSuccessMessage(elem.children[0].data, successMessages)
+          elem.name === "aeaText" &&
+          hasSuccessMessage(elem.children[0].data, successMessages)
         );
       }, dom).length;
     };
 
     const countCuppsMonitorPrints = (dom, isBp) => {
       const successMessage = isBp ? ".T//CIPROK#100#2" : ".EASEPROK101.";
-      let successMessageRegex = new RegExp(`\\${successMessage}`,`g`);
+      let successMessageRegex = new RegExp(`\\${successMessage}`, `g`);
       let counter = 0;
 
       const successNodes = hp2.DomUtils.filter((elem) => {
-          if (elem.data === undefined) {
-            return; 
-          }
-          return elem.data.includes(successMessage);
+        if (elem.data === undefined) {
+          return;
+        }
+        return elem.data.includes(successMessage);
       }, dom);
       for (let currNode of successNodes) {
         counter += currNode.data.match(successMessageRegex).length;
       }
-      return counter; 
+      return counter;
     };
 
     const loadPathStatus = (paperRemainder, isBp) => {
@@ -127,19 +127,21 @@ const domhandler = new hp2.DomHandler((err, dom) => {
           return "EMPTY";
         }
       }
-    }
+    };
 
     const btStatusArray = hp2.DomUtils.getElementsByTagName("btStatus", dom);
     const bpStatusArray = hp2.DomUtils.getElementsByTagName("bpStatus", dom);
     const recentBtStatus = getRecentTag(btStatusArray);
     const recentBpStatus = getRecentTag(bpStatusArray);
 
-    MapStatus.btCount = countPrints(dom, false) + countCuppsMonitorPrints(dom, false);
+    MapStatus.btCount =
+      countPrints(dom, false) + countCuppsMonitorPrints(dom, false);
     MapStatus.btRemaining = 200 - MapStatus.btCount;
     MapStatus.btLoadPath = loadPathStatus(MapStatus.btRemaining, false);
-    MapStatus.bpCount = countPrints(dom, true) + countCuppsMonitorPrints(dom, true);
+    MapStatus.bpCount =
+      countPrints(dom, true) + countCuppsMonitorPrints(dom, true);
     MapStatus.bpRemaining = 10000 - MapStatus.bpCount;
-    MapStatus.bpLoadPathA = loadPathStatus((MapStatus.bpRemaining - 5000), true);
+    MapStatus.bpLoadPathA = loadPathStatus(MapStatus.bpRemaining - 5000, true);
     MapStatus.bpLoadPathB = loadPathStatus(MapStatus.bpRemaining, true);
     MapStatus.btStatus = recentBtStatus.attribs;
     MapStatus.bpStatus = recentBpStatus.attribs;
@@ -160,11 +162,12 @@ const domhandler = new hp2.DomHandler((err, dom) => {
 
 const parser = new hp2.Parser(domhandler, { xmlMode: true });
 
-const watchCuppsLog = (filename) => {
+const watchCuppsLog = () => {
   chokidar
-    .watch(filename, { awaitWriteFinish: { stabilityThreshold: 5000 } })
+    .watch(cuppsfsFileName, { awaitWriteFinish: { stabilityThreshold: 5000 } })
     .on("change", () => {
-      fs.readFile(filename, "utf8", (err, data) => {
+      const chunkReader = fs.createReadStream(cuppsfsFileName);
+      fs.readFile(cuppsfsFileName, "utf8", (err, data) => {
         if (err) throw err;
         else {
           parser.write(data);
@@ -179,4 +182,5 @@ console.log("---- MapStatus object has been created ----");
 console.log(MapStatus);
 console.log("------------------------------------------");
 console.log(`Accessing: ${cuppsfsFileName}`);
-watchCuppsLog(cuppsfsFileName);
+
+module.exports = { watchCuppsLog };
