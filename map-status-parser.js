@@ -44,9 +44,12 @@ const MapStatus = (function () {
 
 // IFEE object that contains all the possible successful print status messages. Differing due to multiple printing applications used my multiple airlines.
 const aeaPrintMessages = (function () {
-  // successful print messages in order: CUPPS Diagnostic,
-  const bpSuccessMessages = ["T//CIPROK#100#201#300#VSR#01W"];
-  const btSuccessMessages = ["HDCPROK101"];
+  // successful print messages in order: CUPPS Diagnostic, GoNow (G4, F9),
+  const bpSuccessMessages = [
+    "T//CIPROK#100#201#300#VSR#01W",
+    "CHECPROK#100#201#300#VSR#01S",
+  ];
+  const btSuccessMessages = ["HDCPROK101", "GONOWPROK101"];
   return { bpSuccessMessages, btSuccessMessages };
 })();
 
@@ -67,7 +70,7 @@ const domhandler = new hp2.DomHandler((err, dom) => {
 
     // Function used in conjunction with the countPrints function. Used to iteratively check if an aea message has any of the successful print messages.
     const hasSuccessMessage = (currMessage, successMessages) => {
-      for (let message in successMessages) {
+      for (let message of successMessages) {
         if (currMessage === message) {
           return true;
         }
@@ -88,7 +91,7 @@ const domhandler = new hp2.DomHandler((err, dom) => {
       }, dom).length;
     };
 
-    const countCuppsMonitorPrints = (dom, isBp) => {
+    /*const countCuppsMonitorPrints = (dom, isBp) => {
       const successMessage = isBp ? ".T//CIPROK#100#2" : ".EASEPROK101.";
       let successMessageRegex = new RegExp(`\\${successMessage}`, `g`);
       let counter = 0;
@@ -103,7 +106,7 @@ const domhandler = new hp2.DomHandler((err, dom) => {
         counter += currNode.data.match(successMessageRegex).length;
       }
       return counter;
-    };
+    };*/
 
     const loadPathStatus = (paperRemainder, isBp) => {
       if (isBp) {
@@ -134,12 +137,10 @@ const domhandler = new hp2.DomHandler((err, dom) => {
     const recentBtStatus = getRecentTag(btStatusArray);
     const recentBpStatus = getRecentTag(bpStatusArray);
 
-    MapStatus.btCount =
-      countPrints(dom, false) + countCuppsMonitorPrints(dom, false);
+    MapStatus.btCount = countPrints(dom, false); //+ countCuppsMonitorPrints(dom, false);
     MapStatus.btRemaining = 200 - MapStatus.btCount;
     MapStatus.btLoadPath = loadPathStatus(MapStatus.btRemaining, false);
-    MapStatus.bpCount =
-      countPrints(dom, true) + countCuppsMonitorPrints(dom, true);
+    MapStatus.bpCount = countPrints(dom, true); //+ countCuppsMonitorPrints(dom, true);
     MapStatus.bpRemaining = 10000 - MapStatus.bpCount;
     MapStatus.bpLoadPathA = loadPathStatus(MapStatus.bpRemaining - 5000, true);
     MapStatus.bpLoadPathB = loadPathStatus(MapStatus.bpRemaining, true);
