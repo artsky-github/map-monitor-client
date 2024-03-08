@@ -2,6 +2,7 @@ const hp2 = require("htmlparser2");
 const chokidar = require("chokidar");
 const fs = require("fs");
 const os = require("os");
+const mongo = require("./mongodb-connection");
 const date = new Date();
 
 // Dependent on the correct time set on the individual CUPPS computer to access the right file.
@@ -25,7 +26,7 @@ const MapStatus = (function () {
   let bpStatus = null;
   let btTimestamp = null;
   let bpTimestamp = null;
-  let pcName = os.hostname();
+  let _id = os.hostname();
   return {
     btCount,
     btRemaining,
@@ -38,7 +39,7 @@ const MapStatus = (function () {
     bpStatus,
     btTimestamp,
     bpTimestamp,
-    pcName,
+    _id,
   };
 })();
 
@@ -157,6 +158,7 @@ const domhandler = new hp2.DomHandler((err, dom) => {
 
     console.log("---- MapStatus object has been updated ----");
     console.log(MapStatus);
+    mongo.add(MapStatus).catch(console.dir);
     console.log("-------------------------------------------");
   }
 });
@@ -165,9 +167,16 @@ const parser = new hp2.Parser(domhandler, { xmlMode: true });
 
 const watchCuppsLog = () => {
   chokidar
-    .watch(cuppsfsFileName, { awaitWriteFinish: { stabilityThreshold: 5000 } })
-    .on("change", () => {
-      const chunkReader = fs.createReadStream(cuppsfsFileName);
+    .watch(cuppsfsFileName, { awaitWriteFinish: { stabilityThreshold: 5000 } }).on("ready", () => {
+      fs.readFile(cuppsfsFileName, "utf8", (err, data) => {
+        if (err) throw err;
+        else {
+          parser.write(data);
+          parser.end();
+          parser.reset();
+        }
+      });
+    }).on("change", () => {
       fs.readFile(cuppsfsFileName, "utf8", (err, data) => {
         if (err) throw err;
         else {

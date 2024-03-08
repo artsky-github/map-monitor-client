@@ -3,6 +3,18 @@
     "chokidar": "^3.6.0",
     "domhandler": "^5.0.3",
     "htmlparser2": "^9.1.0",
+    "mongodb": "6.4",
     "node-schedule": "^2.1.1"
-  }
+  },
+  "name": "map-monitor",
+  "description": "MAP Monitor software application created in-house for the SRQ ITS department to monitor the status of boarding pass and baggage tag printers.",
+  "version": "1.0.0",
+  "main": "map-status-parser.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
