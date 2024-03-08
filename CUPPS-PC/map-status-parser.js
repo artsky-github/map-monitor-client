@@ -47,12 +47,18 @@ const MapStatus = (function () {
 
 // IFEE object that contains all the possible successful print status messages. Differing due to multiple printing applications used my multiple airlines.
 const aeaPrintMessages = (function () {
-  // successful print messages in order: CUPPS Diagnostic, GoNow (G4, F9),
+  // Various AEA successful print messages from airlines in SRQ
   const bpSuccessMessages = [
     "T//CIPROK#100#201#300#VSR#01W",
     "CHECPROK#100#201#300#VSR#01S",
+    "ATBCPROK#101#200#300#VSR",
+    "CPROK#101#200#300#VSR",
+    "CPROK#100#201#300#VSR",
+    "C?ACIPROK#101#200#300#VSR",
+    "CHECKPROK^100^201^300^VSR",
+    "CHKINPROK_100_201_300_VSR",
   ];
-  const btSuccessMessages = ["HDCPROK101", "GONOWPROK101"];
+  const btSuccessMessages = ["HDCPROK101", "GONOWPROK101", "MUSEPROK101"];
   return { bpSuccessMessages, btSuccessMessages };
 })();
 
