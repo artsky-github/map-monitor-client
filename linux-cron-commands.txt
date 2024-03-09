@@ -1,5 +1,0 @@
-which node
-crontab -e
-1
-*/15 * * * * /home/artlevitsky/.nvm/versions/node/v21.2.0/bin/node /home/artlevitsky/Documents/Github-Repos/map-monitor/main.js
-
