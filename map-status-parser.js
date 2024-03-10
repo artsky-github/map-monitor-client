@@ -33,8 +33,8 @@ const MapStatusPromise = (async function () {
     let btLoadPath = "EMPTY";
     let bpCountToday = 0;
     let bpCountTotal = 0;
-    let bpRemainingA = 0;
-    let bpRemainingB = 200;
+    let bpRemainingA = 5000;
+    let bpRemainingB = 5000;
     let bpLoadPathA = "EMPTY";
     let bpLoadPathB = "EMPTY";
     let btStatus = null;
@@ -94,7 +94,7 @@ const domhandler = new hp2.DomHandler((err, dom) => {
   if (err) throw err;
   else {
     // Given a child node and its parent tag name, traverse to the parent node from the child node.
-    const findParentTag = (parentTagName, childNode) => {
+    const getParentTag = (parentTagName, childNode) => {
       let parentNode = childNode;
       while (parentNode.name !== parentTagName) {
         parentNode = parentNode.parent;
@@ -191,9 +191,9 @@ const domhandler = new hp2.DomHandler((err, dom) => {
       data.btStatus = recentBtStatus.attribs;
       data.bpStatus = recentBpStatus.attribs;
       data.btTimestamp =
-        findParentTag("cupps", recentBtStatus).attribs.timeStamp ?? "UNKNOWN";
+        getParentTag("cupps", recentBtStatus).attribs.timeStamp ?? "UNKNOWN";
       data.bpTimestamp =
-        findParentTag("cupps", recentBpStatus).attribs.timeStamp ?? "UNKNOWN";
+        getParentTag("cupps", recentBpStatus).attribs.timeStamp ?? "UNKNOWN";
 
       console.log(
         "---------------------------------------------------------------------"
@@ -218,19 +218,42 @@ const parser = new hp2.Parser(domhandler, { xmlMode: true });
 const watchLog = () => {
   // callback function when the file is read, its contents are stored in data and parsed.
   const readAndParse = () => {
-    fs.readFile(cuppsfsFileName, "utf8", (err, data) => {
-      if (err) throw err;
-      else {
-        parser.write(data);
-        parser.end();
-        parser.reset();
-      }
+    const readStream = fs.createReadStream(cuppsfsFileName, {
+      encoding: "utf8",
+    });
+
+    console.log(
+      "---------------------------------------------------------------------"
+    );
+    console.log(`${date.toLocaleString()}: Reading File ${cuppsfsFileName}`);
+    console.log(
+      "---------------------------------------------------------------------"
+    );
+
+    readStream.on("data", (chunk) => {
+      parser.write(chunk);
+    });
+
+    readStream.on("end", () => {
+      console.log(
+        "---------------------------------------------------------------------"
+      );
+      console.log(`${date.toLocaleString()}: Finished Reading File.`);
+      console.log(
+        "---------------------------------------------------------------------"
+      );
+      parser.end();
+    });
+
+    readStream.on("error", (err) => {
+      console.error(`Error reading the file: ${err}`);
     });
   };
+
   console.log(
     "---------------------------------------------------------------------"
   );
-  console.log(`${date.toLocaleString()}: Accessing: ${cuppsfsFileName}`);
+  console.log(`${date.toLocaleString()}: Watching File ${cuppsfsFileName}`);
   console.log(
     "---------------------------------------------------------------------"
   );
