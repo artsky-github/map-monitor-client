@@ -16,23 +16,25 @@ const cuppsfsFileName = `CUPPSFS${date.getFullYear().toString().slice(-2)}${(
 // IIFE promise object for Vidtronix MAP printers used in SRQ Airport.
 const MapStatusPromise = (async function () {
   if (await mongo.existsMapStatus()) {
-    console.log("-------------------------------------------");
     console.log(
-      `${date.toLocaleString()}: MAP Status entry exists! Pulling from database...`
+      "---------------------------------------------------------------------"
     );
-    console.log("-------------------------------------------");
+    console.log(`${date.toLocaleString()}: MAP Status entry exists!`);
+    console.log(
+      "---------------------------------------------------------------------"
+    );
     const MapStatus = await mongo.getMapStatus();
     console.log(MapStatus);
     return MapStatus;
   } else {
-    let btCountCurrent = 0;
-    let btCountPrevious = 0;
-    let btRemaining = 0;
+    let btCountToday = 0;
+    let btCountTotal = 0;
+    let btRemaining = 200;
     let btLoadPath = "EMPTY";
-    let bpCountCurrent = 0;
-    let bpCountPrevious = 0;
+    let bpCountToday = 0;
+    let bpCountTotal = 0;
     let bpRemainingA = 0;
-    let bpRemainingB = 0;
+    let bpRemainingB = 200;
     let bpLoadPathA = "EMPTY";
     let bpLoadPathB = "EMPTY";
     let btStatus = null;
@@ -40,18 +42,22 @@ const MapStatusPromise = (async function () {
     let btTimestamp = null;
     let bpTimestamp = null;
     let _id = os.hostname();
-    console.log("-------------------------------------------");
+    console.log(
+      "---------------------------------------------------------------------"
+    );
     console.log(
       `${date.toLocaleString()}: MAP Status object has been created. `
     );
-    console.log("-------------------------------------------");
+    console.log(
+      "---------------------------------------------------------------------"
+    );
     const MapStatus = {
-      btCountCurrent,
-      btCountPrevious,
+      btCountToday,
+      btCountTotal,
       btRemaining,
       btLoadPath,
-      bpCountCurrent,
-      bpCountPrevious,
+      bpCountToday,
+      bpCountTotal,
       bpRemainingA,
       bpRemainingB,
       bpLoadPathA,
@@ -151,20 +157,35 @@ const domhandler = new hp2.DomHandler((err, dom) => {
       }
     };
 
-    const recentBtStatus = getRecentTag("btStatus", dom);
-    const recentBpStatus = getRecentTag("bpStatus", dom);
-
     MapStatusPromise.then((data) => {
-      data.btCountCurrent = countPrints(dom, false);
-      data.btRemaining = 200 - data.btCountCurrent - data.btCountPrevious;
-      data.btLoadPath = loadPathStatus(data.btRemaining, false);
-      data.bpCountCurrent = countPrints(dom, true);
-      data.bpRemainingA =
-        data.bpCount > 5000
+      const recentBtStatus = getRecentTag("btStatus", dom);
+      const recentBpStatus = getRecentTag("bpStatus", dom);
+
+      data.btCountToday =
+        data.btRemaining - countPrints(dom, false) < 0
+          ? countPrints(dom, false) +
+            (data.btRemaining - countPrints(dom, false))
+          : countPrints(dom, false);
+      data.btRemaining =
+        data.btCountToday >= data.btRemaining
           ? 0
-          : 5000 - data.bpCountCurrent - data.bpCountPrevious;
+          : data.btRemaining - data.btCountToday;
+      data.btCountTotal = 200 - data.btRemaining;
+      data.btLoadPath = loadPathStatus(data.btRemaining, false);
+      data.bpCountToday =
+        data.bpRemainingB - countPrints(dom, true) < 0
+          ? countPrints(dom, true) +
+            (data.bpRemainingB - countPrints(dom, true))
+          : countPrints(dom, true);
       data.bpRemainingB =
-        data.bpRemainingA === 0 ? 5000 - (data.bpCount - 5000) : 5000;
+        data.bpCountToday >= data.bpRemainingA
+          ? data.bpRemainingB - Math.abs(data.bpCountToday - data.bpRemainingA)
+          : 5000;
+      data.bpRemainingA =
+        data.bpCountToday >= data.bpRemainingA
+          ? 0
+          : data.bpRemainingA - data.bpCountToday;
+      data.bpCountTotal = 10000 - (data.bpRemainingA + data.bpRemainingB);
       data.bpLoadPathA = loadPathStatus(data.bpRemainingA, true);
       data.bpLoadPathB = loadPathStatus(data.bpRemainingB, true);
       data.btStatus = recentBtStatus.attribs;
@@ -174,30 +195,18 @@ const domhandler = new hp2.DomHandler((err, dom) => {
       data.bpTimestamp =
         findParentTag("cupps", recentBpStatus).attribs.timeStamp ?? "UNKNOWN";
 
-      date = new Date();
-      console.log("-------------------------------------------");
       console.log(
-        `${date.toLocaleString()}: MAP Status Promise object data has been updated`
+        "---------------------------------------------------------------------"
       );
-      console.log("-------------------------------------------");
+      console.log(
+        `${(date =
+          new Date().toLocaleString())}: MAP Status Promise object data has been updated`
+      );
+      console.log(
+        "---------------------------------------------------------------------"
+      );
       console.log(data);
       mongo.insertMapStatus(data).catch(console.dir);
-
-      process.on("SIGINT", async () => {
-        date = new Date();
-        data.bpCountPrevious = data.bpCountPrevious + data.bpCountCurrent;
-        data.bpCountCurrent = 0;
-        data.btCountPrevious = data.btCountPrevious + data.btCountCurrent;
-        data.btCountCurrent = 0;
-        console.log("-------------------------------------------");
-        console.log(
-          `${date.toLocaleString()}: Program Terminating, Saving Print Counts!`
-        );
-        console.log("-------------------------------------------");
-        console.log(data);
-        await mongo.insertMapStatus(data).catch(console.dir);
-        process.exit();
-      });
     });
   }
 });
@@ -218,9 +227,13 @@ const watchLog = () => {
       }
     });
   };
-  console.log("-------------------------------------------");
+  console.log(
+    "---------------------------------------------------------------------"
+  );
   console.log(`${date.toLocaleString()}: Accessing: ${cuppsfsFileName}`);
-  console.log("-------------------------------------------");
+  console.log(
+    "---------------------------------------------------------------------"
+  );
   // Due to issues with fs.watch(), chokidar library is more refined for watching events occuring to files. It runs on program load and runs when a change occurs on a file.
   chokidar
     .watch(cuppsfsFileName, { awaitWriteFinish: { stabilityThreshold: 5000 } })
