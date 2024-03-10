@@ -2,7 +2,7 @@ const hp2 = require("htmlparser2");
 const chokidar = require("chokidar");
 const fs = require("fs");
 const os = require("os");
-const mongo = require("./mongodb-connection");
+const db = require("./map-status-db");
 let date = new Date();
 
 // Dependent on the correct time set on the individual CUPPS computer to access the right file.
@@ -15,7 +15,7 @@ const cuppsfsFileName = `CUPPSFS${date.getFullYear().toString().slice(-2)}${(
 
 // IIFE promise object for Vidtronix MAP printers used in SRQ Airport.
 const MapStatusPromise = (async function () {
-  if (await mongo.existsMapStatus()) {
+  if (await db.existsMapStatus()) {
     console.log(
       "---------------------------------------------------------------------"
     );
@@ -23,16 +23,16 @@ const MapStatusPromise = (async function () {
     console.log(
       "---------------------------------------------------------------------"
     );
-    const MapStatus = await mongo.getMapStatus();
+    const MapStatus = await db.getMapStatus();
     console.log(MapStatus);
     return MapStatus;
   } else {
     let btCountToday = 0;
-    let btCountTotal = 0;
+    let btCountParSum = 0;
     let btRemaining = 200;
     let btLoadPath = "EMPTY";
     let bpCountToday = 0;
-    let bpCountTotal = 0;
+    let bpCountParSum = 0;
     let bpRemainingA = 5000;
     let bpRemainingB = 5000;
     let bpLoadPathA = "EMPTY";
@@ -53,11 +53,11 @@ const MapStatusPromise = (async function () {
     );
     const MapStatus = {
       btCountToday,
-      btCountTotal,
+      btCountParSum,
       btRemaining,
       btLoadPath,
       bpCountToday,
-      bpCountTotal,
+      bpCountParSum,
       bpRemainingA,
       bpRemainingB,
       bpLoadPathA,
@@ -169,8 +169,7 @@ const domhandler = new hp2.DomHandler((err, dom) => {
       data.btRemaining =
         data.btCountToday >= data.btRemaining
           ? 0
-          : data.btRemaining - data.btCountToday;
-      data.btCountTotal = 200 - data.btRemaining;
+          : 200 - data.btCountParSum - data.btCountToday;
       data.btLoadPath = loadPathStatus(data.btRemaining, false);
       data.bpCountToday =
         data.bpRemainingB - countPrints(dom, true) < 0
@@ -179,13 +178,13 @@ const domhandler = new hp2.DomHandler((err, dom) => {
           : countPrints(dom, true);
       data.bpRemainingB =
         data.bpCountToday >= data.bpRemainingA
-          ? data.bpRemainingB - Math.abs(data.bpCountToday - data.bpRemainingA)
+          ? 5000 -
+            Math.abs(data.bpCountParSum + data.bpCountToday - data.bpRemainingA)
           : 5000;
       data.bpRemainingA =
-        data.bpCountToday >= data.bpRemainingA
+        data.bpCountParSum + data.bpCountToday >= data.bpRemainingA
           ? 0
-          : data.bpRemainingA - data.bpCountToday;
-      data.bpCountTotal = 10000 - (data.bpRemainingA + data.bpRemainingB);
+          : 5000 - (data.bpCountParSum + data.bpCountToday);
       data.bpLoadPathA = loadPathStatus(data.bpRemainingA, true);
       data.bpLoadPathB = loadPathStatus(data.bpRemainingB, true);
       data.btStatus = recentBtStatus.attribs;
@@ -194,6 +193,15 @@ const domhandler = new hp2.DomHandler((err, dom) => {
         getParentTag("cupps", recentBtStatus).attribs.timeStamp ?? "UNKNOWN";
       data.bpTimestamp =
         getParentTag("cupps", recentBpStatus).attribs.timeStamp ?? "UNKNOWN";
+
+      process.on("SIGINT", async () => {
+        data.btCountParSum = data.btCountParSum + data.btCountToday;
+        data.btCountToday = 0;
+        data.bpCountParSum = data.bpCountParSum + data.bpCountToday;
+        data.bpCountToday = 0;
+        await db.insertMapStatus(data).catch(console.dir);
+        process.exit();
+      });
 
       console.log(
         "---------------------------------------------------------------------"
@@ -206,7 +214,7 @@ const domhandler = new hp2.DomHandler((err, dom) => {
         "---------------------------------------------------------------------"
       );
       console.log(data);
-      mongo.insertMapStatus(data).catch(console.dir);
+      db.insertMapStatus(data).catch(console.dir);
     });
   }
 });
@@ -217,7 +225,7 @@ const parser = new hp2.Parser(domhandler, { xmlMode: true });
 // function that immediately runs on program load and watches the file afterwards for changes.
 const watchLog = () => {
   // callback function when the file is read, its contents are stored in data and parsed.
-  const readAndParse = () => {
+  const readStreamAndParse = () => {
     const readStream = fs.createReadStream(cuppsfsFileName, {
       encoding: "utf8",
     });
@@ -243,6 +251,7 @@ const watchLog = () => {
         "---------------------------------------------------------------------"
       );
       parser.end();
+      parser.reset();
     });
 
     readStream.on("error", (err) => {
@@ -261,10 +270,19 @@ const watchLog = () => {
   chokidar
     .watch(cuppsfsFileName, { awaitWriteFinish: { stabilityThreshold: 5000 } })
     .on("ready", () => {
-      readAndParse();
+      readStreamAndParse();
     })
     .on("change", () => {
-      readAndParse();
+      console.log(
+        "---------------------------------------------------------------------"
+      );
+      console.log(
+        `${date.toLocaleString()}: File Change Detected! Update MapStatus...`
+      );
+      console.log(
+        "---------------------------------------------------------------------"
+      );
+      readStreamAndParse();
     });
 };
 
