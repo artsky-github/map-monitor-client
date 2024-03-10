@@ -13,10 +13,17 @@ const cuppsfsFileName = `CUPPSFS${date.getFullYear().toString().slice(-2)}${(
   .toString()
   .slice(-2)}${("0" + date.getDate()).toString().slice(-2)}.LOG`;
 
-// IIFE object for Vidtronix MAP printers used in SRQ Airport.
+// IIFE promise object for Vidtronix MAP printers used in SRQ Airport.
 const MapStatusPromise = (async function () {
-  if (await mongo.statusExists()) {
-    return await mongo.getStatus();
+  if (await mongo.existsMapStatus()) {
+    console.log("-------------------------------------------");
+    console.log(
+      `${date.toLocaleString()}: MAP Status entry exists! Pulling from database...`
+    );
+    console.log("-------------------------------------------");
+    const MapStatus = await mongo.getMapStatus();
+    console.log(MapStatus);
+    return MapStatus;
   } else {
     let btCountCurrent = 0;
     let btCountPrevious = 0;
@@ -33,7 +40,12 @@ const MapStatusPromise = (async function () {
     let btTimestamp = null;
     let bpTimestamp = null;
     let _id = os.hostname();
-    return {
+    console.log("-------------------------------------------");
+    console.log(
+      `${date.toLocaleString()}: MAP Status object has been created. `
+    );
+    console.log("-------------------------------------------");
+    const MapStatus = {
       btCountCurrent,
       btCountPrevious,
       btRemaining,
@@ -50,6 +62,8 @@ const MapStatusPromise = (async function () {
       bpTimestamp,
       _id,
     };
+    console.log(MapStatus);
+    return MapStatus;
   }
 })();
 
@@ -82,8 +96,9 @@ const domhandler = new hp2.DomHandler((err, dom) => {
       return parentNode;
     };
 
-    // Given an array of tags, return the lastest tag.
-    const getRecentTag = (tagArray) => {
+    // In the DOM object, obtain the most recent tag given the tag name.
+    const getRecentTag = (tagName, domObject) => {
+      const tagArray = hp2.DomUtils.getElementsByTagName(tagName, domObject);
       return tagArray[tagArray.length - 1];
     };
 
@@ -136,10 +151,8 @@ const domhandler = new hp2.DomHandler((err, dom) => {
       }
     };
 
-    const btStatusArray = hp2.DomUtils.getElementsByTagName("btStatus", dom);
-    const bpStatusArray = hp2.DomUtils.getElementsByTagName("bpStatus", dom);
-    const recentBtStatus = getRecentTag(btStatusArray);
-    const recentBpStatus = getRecentTag(bpStatusArray);
+    const recentBtStatus = getRecentTag("btStatus", dom);
+    const recentBpStatus = getRecentTag("bpStatus", dom);
 
     MapStatusPromise.then((data) => {
       data.btCountCurrent = countPrints(dom, false);
@@ -168,9 +181,10 @@ const domhandler = new hp2.DomHandler((err, dom) => {
       );
       console.log("-------------------------------------------");
       console.log(data);
-      mongo.insert(data).catch(console.dir);
+      mongo.insertMapStatus(data).catch(console.dir);
 
       process.on("SIGINT", async () => {
+        date = new Date();
         data.bpCountPrevious = data.bpCountPrevious + data.bpCountCurrent;
         data.bpCountCurrent = 0;
         data.btCountPrevious = data.btCountPrevious + data.btCountCurrent;
@@ -181,7 +195,7 @@ const domhandler = new hp2.DomHandler((err, dom) => {
         );
         console.log("-------------------------------------------");
         console.log(data);
-        await mongo.insert(data).catch(console.dir);
+        await mongo.insertMapStatus(data).catch(console.dir);
         process.exit();
       });
     });
@@ -217,11 +231,5 @@ const watchLog = () => {
       readAndParse();
     });
 };
-
-console.log("-------------------------------------------");
-console.log(
-  `${date.toLocaleString()}: MAP Status Promise object has been created`
-);
-console.log("-------------------------------------------");
 
 module.exports = { watchLog };

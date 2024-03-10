@@ -4,7 +4,7 @@ const os = require("os");
 const uri = "mongodb://localhost:27017"; // local uri for testing
 const mapStatuses = new MongoClient(uri).db("MapStatusDB").collection("active");
 
-async function insert(obj) {
+async function insertMapStatus(obj) {
   console.log("Added to the DB");
   const hasOne = await mapStatuses.findOne({ _id: os.hostname() });
   if (hasOne) {
@@ -14,12 +14,12 @@ async function insert(obj) {
   }
 }
 
-async function statusExists() {
+async function existsMapStatus() {
   return (await mapStatuses.findOne({ _id: os.hostname() })) !== null;
 }
 
-async function getStatus() {
+async function getMapStatus() {
   return await mapStatuses.findOne({ _id: os.hostname() });
 }
 
-module.exports = { insert, statusExists, getStatus };
+module.exports = { insertMapStatus, existsMapStatus, getMapStatus };
