@@ -13,86 +13,86 @@ const cuppsfsFileName = `CUPPSFS${date.getFullYear().toString().slice(-2)}${(
   .toString()
   .slice(-2)}${("0" + date.getDate()).toString().slice(-2)}.LOG`;
 
-// IIFE promise object for Vidtronix MAP printers used in SRQ Airport.
-const MapStatusPromise = (async function () {
-  if (await db.existsMapStatus()) {
-    console.log(
-      "---------------------------------------------------------------------"
-    );
-    console.log(`${date.toLocaleString()}: MAP Status entry exists!`);
-    console.log(
-      "---------------------------------------------------------------------"
-    );
-    const MapStatus = await db.getMapStatus();
-    console.log(MapStatus);
-    return MapStatus;
-  } else {
-    let btCountToday = 0;
-    let btCountParSum = 0;
-    let btRemaining = 200;
-    let btLoadPath = "EMPTY";
-    let bpCountToday = 0;
-    let bpCountParSum = 0;
-    let bpRemainingA = 5000;
-    let bpRemainingB = 5000;
-    let bpLoadPathA = "EMPTY";
-    let bpLoadPathB = "EMPTY";
-    let btStatus = null;
-    let bpStatus = null;
-    let btTimestamp = null;
-    let bpTimestamp = null;
-    let _id = os.hostname();
-    console.log(
-      "---------------------------------------------------------------------"
-    );
-    console.log(
-      `${date.toLocaleString()}: MAP Status object has been created. `
-    );
-    console.log(
-      "---------------------------------------------------------------------"
-    );
-    const MapStatus = {
-      btCountToday,
-      btCountParSum,
-      btRemaining,
-      btLoadPath,
-      bpCountToday,
-      bpCountParSum,
-      bpRemainingA,
-      bpRemainingB,
-      bpLoadPathA,
-      bpLoadPathB,
-      btStatus,
-      bpStatus,
-      btTimestamp,
-      bpTimestamp,
-      _id,
-    };
-    console.log(MapStatus);
-    return MapStatus;
-  }
-})();
-
-// IFEE object that contains all the possible successful AEA print status messages. Differing due to multiple printing applications used my multiple airlines.
-const aeaPrintMessages = (function () {
-  const bpSuccessMessages = [
-    "T//CIPROK#100#201#300#VSR#01W",
-    "CHECPROK#100#201#300#VSR#01S",
-    "ATBCPROK#101#200#300#VSR",
-    "CPROK#101#200#300#VSR",
-    "CPROK#100#201#300#VSR",
-    "C?ACIPROK#101#200#300#VSR",
-    "CHECKPROK^100^201^300^VSR",
-    "CHKINPROK_100_201_300_VSR",
-  ];
-  const btSuccessMessages = ["HDCPROK101", "GONOWPROK101", "MUSEPROK101"];
-  return { bpSuccessMessages, btSuccessMessages };
-})();
-
 // The parsed document gets converted into a big DOM tree object. This object is then filtered based on the functions below.
 const domhandler = new hp2.DomHandler((err, dom) => {
   if (err) throw err;
   else {
+    // IFEE object that contains all the possible successful AEA print status messages. Differing due to multiple printing applications used my multiple airlines.
+    const aeaPrintMessages = (function () {
+      const bpSuccessMessages = [
+        "T//CIPROK#100#201#300#VSR#01W",
+        "CHECPROK#100#201#300#VSR#01S",
+        "ATBCPROK#101#200#300#VSR",
+        "CPROK#101#200#300#VSR",
+        "CPROK#100#201#300#VSR",
+        "C?ACIPROK#101#200#300#VSR",
+        "CHECKPROK^100^201^300^VSR",
+        "CHKINPROK_100_201_300_VSR",
+      ];
+      const btSuccessMessages = ["HDCPROK101", "GONOWPROK101", "MUSEPROK101"];
+      return { bpSuccessMessages, btSuccessMessages };
+    })();
+
+    // IIFE promise object for Vidtronix MAP printers used in SRQ Airport.
+    let MapStatusPromise = (async function () {
+      if (await db.existsMapStatus()) {
+        console.log(
+          "---------------------------------------------------------------------"
+        );
+        console.log(`${date.toLocaleString()}: MAP Status entry exists!`);
+        console.log(
+          "---------------------------------------------------------------------"
+        );
+        const MapStatus = await db.getMapStatus();
+        console.log(MapStatus);
+        return MapStatus;
+      } else {
+        let btCountToday = 0;
+        let btCountParSum = 0;
+        let btRemaining = 200;
+        let btLoadPath = "EMPTY";
+        let bpCountToday = 0;
+        let bpCountParSum = 0;
+        let bpRemainingA = 5000;
+        let bpRemainingB = 5000;
+        let bpLoadPathA = "EMPTY";
+        let bpLoadPathB = "EMPTY";
+        let btStatus = null;
+        let bpStatus = null;
+        let btTimestamp = null;
+        let bpTimestamp = null;
+        let _id = os.hostname();
+        console.log(
+          "---------------------------------------------------------------------"
+        );
+        console.log(
+          `${date.toLocaleString()}: MAP Status object has been created. `
+        );
+        console.log(
+          "---------------------------------------------------------------------"
+        );
+        const MapStatus = {
+          btCountToday,
+          btCountParSum,
+          btRemaining,
+          btLoadPath,
+          bpCountToday,
+          bpCountParSum,
+          bpRemainingA,
+          bpRemainingB,
+          bpLoadPathA,
+          bpLoadPathB,
+          btStatus,
+          bpStatus,
+          btTimestamp,
+          bpTimestamp,
+          _id,
+        };
+        console.log(MapStatus);
+        return MapStatus;
+      }
+    })();
+
     // Given a child node and its parent tag name, traverse to the parent node from the child node.
     const getParentTag = (parentTagName, childNode) => {
       let parentNode = childNode;
@@ -194,14 +194,16 @@ const domhandler = new hp2.DomHandler((err, dom) => {
       data.bpTimestamp =
         getParentTag("cupps", recentBpStatus).attribs.timeStamp ?? "UNKNOWN";
 
+      /*
       process.on("SIGINT", async () => {
         data.btCountParSum = data.btCountParSum + data.btCountToday;
         data.btCountToday = 0;
         data.bpCountParSum = data.bpCountParSum + data.bpCountToday;
         data.bpCountToday = 0;
         await db.insertMapStatus(data).catch(console.dir);
+        MapStatusPromise = null;
         process.exit();
-      });
+      });*/
 
       console.log(
         "---------------------------------------------------------------------"
