@@ -3,134 +3,10 @@ const chokidar = require("chokidar");
 const fs = require("fs");
 const os = require("os");
 const db = require("./map-status-db");
-let date = new Date();
-
-// The parsed document gets converted into a big DOM tree object. This object is then filtered based on the functions below.
-const domhandler = new hp2.DomHandler((err, dom) => {
-  if (err) throw err;
-  else {
-    // Given a child node and its parent tag name, traverse to the parent node from the child node.
-    const getParentTag = (parentTagName, childNode) => {
-      let parentNode = childNode;
-      while (parentNode.name !== parentTagName) {
-        parentNode = parentNode.parent;
-      }
-      return parentNode;
-    };
-
-    // In the DOM object, obtain the most recent tag given the tag name.
-    const getRecentTag = (tagName, domObject) => {
-      const tagArray = hp2.DomUtils.getElementsByTagName(tagName, domObject);
-      return tagArray[tagArray.length - 1];
-    };
-
-    // Function used in conjunction with the countPrints function. Used to iteratively check if an aea message has any of the successful print messages.
-    const hasSuccessMessage = (currMessage, successMessages) => {
-      for (let message of successMessages) {
-        if (currMessage === message) {
-          return true;
-        }
-      }
-      return false;
-    };
-
-    // Utilizing the AEA IFEE, DOM object, and whether we are counting BP or BT, filter the DOM and return the array length of all found success print messages.
-    const countPrints = (dom, isBp) => {
-      const successMessages = isBp
-        ? aeaPrintMessages.bpSuccessMessages
-        : aeaPrintMessages.btSuccessMessages;
-
-      return hp2.DomUtils.filter((elem) => {
-        return (
-          elem.name === "aeaText" &&
-          hasSuccessMessage(elem.children[0].data, successMessages)
-        );
-      }, dom).length;
-    };
-
-    // Depending if its BP or BT remainder and how much is left, return a status.
-    const loadPathStatus = (paperRemainder, isBp) => {
-      if (isBp) {
-        if (paperRemainder >= 5000) {
-          return "FULL";
-        } else if (paperRemainder < 5000 && paperRemainder > 250) {
-          return "GOOD";
-        } else if (paperRemainder < 250 && paperRemainder > 0) {
-          return "LOW";
-        } else {
-          return "EMPTY";
-        }
-      } else {
-        if (paperRemainder >= 250) {
-          return "FULL";
-        } else if (paperRemainder < 250 && paperRemainder > 50) {
-          return "GOOD";
-        } else if (paperRemainder < 50 && paperRemainder > 0) {
-          return "LOW";
-        } else {
-          return "EMPTY";
-        }
-      }
-    };
-
-    MapStatusPromise.then((data) => {
-      const recentBtStatus = getRecentTag("btStatus", dom);
-      const recentBpStatus = getRecentTag("bpStatus", dom);
-
-      data.btCountToday =
-        data.btRemaining - countPrints(dom, false) < 0
-          ? countPrints(dom, false) +
-            (data.btRemaining - countPrints(dom, false))
-          : countPrints(dom, false);
-      data.btRemaining =
-        data.btCountToday >= data.btRemaining
-          ? 0
-          : 200 - data.btCountParSum - data.btCountToday;
-      data.btLoadPath = loadPathStatus(data.btRemaining, false);
-      data.bpCountToday =
-        data.bpRemainingB - countPrints(dom, true) < 0
-          ? countPrints(dom, true) +
-            (data.bpRemainingB - countPrints(dom, true))
-          : countPrints(dom, true);
-      data.bpRemainingB =
-        data.bpCountToday >= data.bpRemainingA
-          ? 5000 -
-            Math.abs(data.bpCountParSum + data.bpCountToday - data.bpRemainingA)
-          : 5000;
-      data.bpRemainingA =
-        data.bpCountParSum + data.bpCountToday >= data.bpRemainingA
-          ? 0
-          : 5000 - (data.bpCountParSum + data.bpCountToday);
-      data.bpLoadPathA = loadPathStatus(data.bpRemainingA, true);
-      data.bpLoadPathB = loadPathStatus(data.bpRemainingB, true);
-      data.btStatus = recentBtStatus.attribs;
-      data.bpStatus = recentBpStatus.attribs;
-      data.btTimestamp =
-        getParentTag("cupps", recentBtStatus).attribs.timeStamp ?? "UNKNOWN";
-      data.bpTimestamp =
-        getParentTag("cupps", recentBpStatus).attribs.timeStamp ?? "UNKNOWN";
-
-      console.log(
-        "---------------------------------------------------------------------"
-      );
-      console.log(
-        `${(date =
-          new Date().toLocaleString())}: MAP Status Promise object data has been updated`
-      );
-      console.log(
-        "---------------------------------------------------------------------"
-      );
-      console.log(data);
-      db.insertMapStatus(data).catch(console.dir);
-    });
-  }
-});
-
-// parser object that takes in the DomHandler object. xmlMode option has been set to true.
-const parser = new hp2.Parser(domhandler, { xmlMode: true });
 
 // function that immediately runs on program load and watches the file afterwards for changes.
 const watchLog = () => {
+  let date = new Date();
   // IFEE object that contains all the possible successful AEA print status messages. Differing due to multiple printing applications used my multiple airlines.
   const aeaPrintMessages = (function () {
     const bpSuccessMessages = [
@@ -233,11 +109,141 @@ const watchLog = () => {
       data.bpCountParSum = data.bpCountParSum + data.bpCountToday;
       data.bpCountToday = 0;
       await db.insertMapStatus(data).catch(console.dir);
+      process.exit();
     });
   });
 
   // callback function when the file is read, its contents are stored in data and parsed.
   const readStreamAndParse = () => {
+    // The parsed document gets converted into a big DOM tree object. This object is then filtered based on the functions below.
+    const domhandler = new hp2.DomHandler((err, dom) => {
+      if (err) throw err;
+      else {
+        // Given a child node and its parent tag name, traverse to the parent node from the child node.
+        const getParentTag = (parentTagName, childNode) => {
+          let parentNode = childNode;
+          while (parentNode.name !== parentTagName) {
+            parentNode = parentNode.parent;
+          }
+          return parentNode;
+        };
+
+        // In the DOM object, obtain the most recent tag given the tag name.
+        const getRecentTag = (tagName, domObject) => {
+          const tagArray = hp2.DomUtils.getElementsByTagName(
+            tagName,
+            domObject
+          );
+          return tagArray[tagArray.length - 1];
+        };
+
+        // Function used in conjunction with the countPrints function. Used to iteratively check if an aea message has any of the successful print messages.
+        const hasSuccessMessage = (currMessage, successMessages) => {
+          for (let message of successMessages) {
+            if (currMessage === message) {
+              return true;
+            }
+          }
+          return false;
+        };
+
+        // Utilizing the AEA IFEE, DOM object, and whether we are counting BP or BT, filter the DOM and return the array length of all found success print messages.
+        const countPrints = (dom, isBp) => {
+          const successMessages = isBp
+            ? aeaPrintMessages.bpSuccessMessages
+            : aeaPrintMessages.btSuccessMessages;
+
+          return hp2.DomUtils.filter((elem) => {
+            return (
+              elem.name === "aeaText" &&
+              hasSuccessMessage(elem.children[0].data, successMessages)
+            );
+          }, dom).length;
+        };
+
+        // Depending if its BP or BT remainder and how much is left, return a status.
+        const loadPathStatus = (paperRemainder, isBp) => {
+          if (isBp) {
+            if (paperRemainder >= 5000) {
+              return "FULL";
+            } else if (paperRemainder < 5000 && paperRemainder > 250) {
+              return "GOOD";
+            } else if (paperRemainder < 250 && paperRemainder > 0) {
+              return "LOW";
+            } else {
+              return "EMPTY";
+            }
+          } else {
+            if (paperRemainder >= 250) {
+              return "FULL";
+            } else if (paperRemainder < 250 && paperRemainder > 50) {
+              return "GOOD";
+            } else if (paperRemainder < 50 && paperRemainder > 0) {
+              return "LOW";
+            } else {
+              return "EMPTY";
+            }
+          }
+        };
+
+        MapStatusPromise.then((data) => {
+          const recentBtStatus = getRecentTag("btStatus", dom);
+          const recentBpStatus = getRecentTag("bpStatus", dom);
+
+          data.btCountToday =
+            data.btRemaining - countPrints(dom, false) < 0
+              ? countPrints(dom, false) +
+                (data.btRemaining - countPrints(dom, false))
+              : countPrints(dom, false);
+          data.btRemaining =
+            data.btCountToday >= data.btRemaining
+              ? 0
+              : 200 - data.btCountParSum - data.btCountToday;
+          data.btLoadPath = loadPathStatus(data.btRemaining, false);
+          data.bpCountToday =
+            data.bpRemainingB - countPrints(dom, true) < 0
+              ? countPrints(dom, true) +
+                (data.bpRemainingB - countPrints(dom, true))
+              : countPrints(dom, true);
+          data.bpRemainingB =
+            data.bpCountToday >= data.bpRemainingA
+              ? 5000 -
+                Math.abs(
+                  data.bpCountParSum + data.bpCountToday - data.bpRemainingA
+                )
+              : 5000;
+          data.bpRemainingA =
+            data.bpCountParSum + data.bpCountToday >= data.bpRemainingA
+              ? 0
+              : 5000 - (data.bpCountParSum + data.bpCountToday);
+          data.bpLoadPathA = loadPathStatus(data.bpRemainingA, true);
+          data.bpLoadPathB = loadPathStatus(data.bpRemainingB, true);
+          data.btStatus = recentBtStatus.attribs;
+          data.bpStatus = recentBpStatus.attribs;
+          data.btTimestamp =
+            getParentTag("cupps", recentBtStatus).attribs.timeStamp ??
+            "UNKNOWN";
+          data.bpTimestamp =
+            getParentTag("cupps", recentBpStatus).attribs.timeStamp ??
+            "UNKNOWN";
+
+          console.log(
+            "---------------------------------------------------------------------"
+          );
+          console.log(
+            `${(date =
+              new Date().toLocaleString())}: MAP Status Promise object data has been updated`
+          );
+          console.log(
+            "---------------------------------------------------------------------"
+          );
+          console.log(data);
+          db.insertMapStatus(data).catch(console.dir);
+        });
+      }
+    });
+    // parser object that takes in the DomHandler object. xmlMode option has been set to true.
+    const parser = new hp2.Parser(domhandler, { xmlMode: true });
     const readStream = fs.createReadStream(cuppsfsFileName, {
       encoding: "utf8",
     });
@@ -278,6 +284,7 @@ const watchLog = () => {
   console.log(
     "---------------------------------------------------------------------"
   );
+
   // Due to issues with fs.watch(), chokidar library is more refined for watching events occuring to files. It runs on program load and runs when a change occurs on a file.
   chokidar
     .watch(cuppsfsFileName, { awaitWriteFinish: { stabilityThreshold: 5000 } })
