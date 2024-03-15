@@ -2,7 +2,7 @@ const hp2 = require("htmlparser2");
 const chokidar = require("chokidar");
 const fs = require("fs");
 const os = require("os");
-const db = require("./map-status-db");
+//const db = require("./map-status-db");
 
 // function that immediately runs on program load and watches the file afterwards for changes.
 const watchLog = () => {
