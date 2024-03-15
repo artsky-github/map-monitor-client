@@ -3,7 +3,8 @@
     "chokidar": "^3.6.0",
     "domhandler": "^5.0.3",
     "htmlparser2": "^9.1.0",
-    "mongodb": "6.4"
+    "mongodb": "6.4",
+    "pm2": "^5.3.1"
   },
   "name": "map-monitor",
   "description": "MAP Monitor software application created in-house for the SRQ ITS department to monitor the status of boarding pass and baggage tag printers.",

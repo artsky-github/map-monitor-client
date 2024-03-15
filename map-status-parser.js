@@ -13,6 +13,19 @@ const cuppsfsFileName = `CUPPSFS${date.getFullYear().toString().slice(-2)}${(
   .toString()
   .slice(-2)}${("0" + date.getDate()).toString().slice(-2)}.LOG`;
 
+process.on("message", (message) => {
+  if (message === "shutdown") {
+    MapStatusPromise.then(async (data) => {
+      console.log("Passed through here when exiting");
+      data.btCountParSum = data.btCountParSum + data.btCountToday;
+      data.btCountToday = 0;
+      data.bpCountParSum = data.bpCountParSum + data.bpCountToday;
+      data.bpCountToday = 0;
+      await db.insertMapStatus(data).catch(console.dir);
+    });
+  }
+});
+
 // The parsed document gets converted into a big DOM tree object. This object is then filtered based on the functions below.
 const domhandler = new hp2.DomHandler((err, dom) => {
   if (err) throw err;
@@ -193,17 +206,6 @@ const domhandler = new hp2.DomHandler((err, dom) => {
         getParentTag("cupps", recentBtStatus).attribs.timeStamp ?? "UNKNOWN";
       data.bpTimestamp =
         getParentTag("cupps", recentBpStatus).attribs.timeStamp ?? "UNKNOWN";
-
-      /*
-      process.on("SIGINT", async () => {
-        data.btCountParSum = data.btCountParSum + data.btCountToday;
-        data.btCountToday = 0;
-        data.bpCountParSum = data.bpCountParSum + data.bpCountToday;
-        data.bpCountToday = 0;
-        await db.insertMapStatus(data).catch(console.dir);
-        MapStatusPromise = null;
-        process.exit();
-      });*/
 
       console.log(
         "---------------------------------------------------------------------"
