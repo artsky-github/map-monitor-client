@@ -1,16 +1,21 @@
 const axios = require("axios");
+const os = require("os");
 
-const url = "http://localhost:3000/post";
+const urlPost = "http://localhost:3000/post-data";
 
-function sendData(postData) {
-  axios
-    .post(url, postData)
+async function postMapData(mapData) {
+  await axios
+    .post(urlPost, mapData)
     .then((res) => {
-      console.log(`Response: ${res}`);
+      console.log(`Response: ${res.data}`);
     })
     .catch((err) => {
       console.log(`Error: ${err}`);
     });
 }
 
-module.exports = { sendData };
+const getMapData = axios.get(
+  `http://localhost:3000/data?${new URLSearchParams(os.hostname()).toString()}`
+);
+
+module.exports = { postMapData, getMapData };

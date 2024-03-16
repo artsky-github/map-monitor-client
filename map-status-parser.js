@@ -2,8 +2,7 @@ const hp2 = require("htmlparser2");
 const chokidar = require("chokidar");
 const fs = require("fs");
 const os = require("os");
-const db = require("./map-status-db");
-const sender = require("./send-data.js");
+const sender = require("./send-data");
 
 // function that immediately runs on program load and watches the file afterwards for changes.
 const watchLog = () => {
@@ -34,17 +33,12 @@ const watchLog = () => {
 
   // IIFE promise object for Vidtronix MAP printers used in SRQ Airport.
   let MapStatusPromise = (async function () {
-    if (await db.existsMapStatus()) {
-      console.log(
-        "---------------------------------------------------------------------"
-      );
-      console.log(`${date.toLocaleString()}: MAP Status entry exists!`);
-      console.log(
-        "---------------------------------------------------------------------"
-      );
-      const MapStatus = await db.getMapStatus();
-      console.log(MapStatus);
-      return MapStatus;
+    const foundMapStatus = await sender.getMapData.then((res) => {
+      return res.data;
+    });
+    if (foundMapStatus) {
+      console.log(foundMapStatus);
+      return foundMapStatus;
     } else {
       let btCountToday = 0;
       let btCountParSum = 0;
@@ -109,7 +103,7 @@ const watchLog = () => {
       data.btCountToday = 0;
       data.bpCountParSum = data.bpCountParSum + data.bpCountToday;
       data.bpCountToday = 0;
-      await db.insertMapStatus(data).catch(console.dir);
+      await sender.postMapData(data);
       process.exit();
     });
   });
@@ -239,8 +233,7 @@ const watchLog = () => {
             "---------------------------------------------------------------------"
           );
           console.log(data);
-          sender.sendData(data);
-          db.insertMapStatus(data).catch(console.dir);
+          sender.postMapData(data);
         });
       }
     });
