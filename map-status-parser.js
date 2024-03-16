@@ -2,7 +2,8 @@ const hp2 = require("htmlparser2");
 const chokidar = require("chokidar");
 const fs = require("fs");
 const os = require("os");
-//const db = require("./map-status-db");
+const db = require("./map-status-db");
+const sender = require("./send-data.js");
 
 // function that immediately runs on program load and watches the file afterwards for changes.
 const watchLog = () => {
@@ -238,6 +239,7 @@ const watchLog = () => {
             "---------------------------------------------------------------------"
           );
           console.log(data);
+          sender.sendData(data);
           db.insertMapStatus(data).catch(console.dir);
         });
       }
