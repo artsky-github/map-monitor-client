@@ -2,7 +2,7 @@ const hp2 = require("htmlparser2");
 const chokidar = require("chokidar");
 const fs = require("fs");
 const os = require("os");
-const sender = require("./send-data");
+const requester = require("./requests");
 
 // function that immediately runs on program load and watches the file afterwards for changes.
 const watchLog = () => {
@@ -33,10 +33,17 @@ const watchLog = () => {
 
   // IIFE promise object for Vidtronix MAP printers used in SRQ Airport.
   let MapStatusPromise = (async function () {
-    const foundMapStatus = await sender.getMapData.then((res) => {
-      return res.data;
-    });
+    const foundMapStatus = await requester.getMapData();
     if (foundMapStatus) {
+      console.log(
+        "---------------------------------------------------------------------"
+      );
+      console.log(
+        `${date.toLocaleString()}: MAP Status object found in database. `
+      );
+      console.log(
+        "---------------------------------------------------------------------"
+      );
       console.log(foundMapStatus);
       return foundMapStatus;
     } else {
@@ -94,7 +101,7 @@ const watchLog = () => {
       );
       console.log(
         `${(date =
-          new Date().toLocaleString())}: SIGINT caught! Saving to MAP partial sum and stopping process...`
+          new Date().toLocaleString())}: SIGINT caught! Saving partial sums and stopping process...`
       );
       console.log(
         "---------------------------------------------------------------------"
@@ -103,7 +110,7 @@ const watchLog = () => {
       data.btCountToday = 0;
       data.bpCountParSum = data.bpCountParSum + data.bpCountToday;
       data.bpCountToday = 0;
-      await sender.postMapData(data);
+      await requester.postMapData(data);
       process.exit();
     });
   });
@@ -233,7 +240,7 @@ const watchLog = () => {
             "---------------------------------------------------------------------"
           );
           console.log(data);
-          sender.postMapData(data);
+          requester.postMapData(data);
         });
       }
     });
