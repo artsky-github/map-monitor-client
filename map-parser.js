@@ -3,6 +3,7 @@ const chokidar = require("chokidar");
 const fs = require("fs");
 const os = require("os");
 const requester = require("./requests");
+const { archiveCounts } = require("./schedule");
 
 // function that immediately runs on program load and watches the file afterwards for changes.
 const watchLog = () => {
@@ -93,27 +94,7 @@ const watchLog = () => {
     }
   })();
 
-  // When the process is shutdown, a SIGINT event signal is sent from pm2. This callback function will be run before exiting.
-  process.on("SIGINT", () => {
-    MapStatusPromise.then(async (data) => {
-      console.log(
-        "---------------------------------------------------------------------"
-      );
-      console.log(
-        `${(date =
-          new Date().toLocaleString())}: SIGINT caught! Saving partial sums and stopping process...`
-      );
-      console.log(
-        "---------------------------------------------------------------------"
-      );
-      data.btCountParSum = data.btCountParSum + data.btCountToday;
-      data.btCountToday = 0;
-      data.bpCountParSum = data.bpCountParSum + data.bpCountToday;
-      data.bpCountToday = 0;
-      await requester.postMapData(data);
-      process.exit();
-    });
-  });
+  archiveCounts(MapStatusPromise);
 
   // callback function when the file is read, its contents are stored in data and parsed.
   const readStreamAndParse = () => {
