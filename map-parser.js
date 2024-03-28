@@ -33,7 +33,7 @@ const watchLog = () => {
 
   // IIFE promise object for Vidtronix MAP printers used in SRQ Airport.
   let MapStatusPromise = (async function () {
-    const foundMapStatus = await requester.getMapData();
+    const foundMapStatus = 0; //await requester.getMapData();
     if (foundMapStatus) {
       console.log(
         "---------------------------------------------------------------------"
@@ -240,7 +240,7 @@ const watchLog = () => {
             "---------------------------------------------------------------------"
           );
           console.log(data);
-          requester.postMapData(data);
+          //requester.postMapData(data);
         });
       }
     });

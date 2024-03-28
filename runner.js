@@ -1,3 +1,2 @@
-const mapParser = require("./map-status-parser");
-
+const mapParser = require("./map-parser");
 mapParser.watchLog();
