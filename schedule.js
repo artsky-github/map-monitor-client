@@ -1,26 +1,24 @@
-const scheduler = require("node-cron");
+const ncron = require("node-cron");
+const cacher = require("./cacher");
 
-function archiveCount(MapStatusPromise) {
-  scheduler.schedule("0 2 * * *", () => {
-    MapStatusPromise.then(async (data) => {
-      console.log(
-        "---------------------------------------------------------------------"
-      );
-      console.log(
-        `${(date =
-          new Date().toLocaleString())}: CRON executed. Archiving paper counts... `
-      );
-      console.log(
-        "---------------------------------------------------------------------"
-      );
-      data.btCountParSum = data.btCountParSum + data.btCountToday;
-      data.btCountToday = 0;
-      data.bpCountParSum = data.bpCountParSum + data.bpCountToday;
-      data.bpCountToday = 0;
-      //await requester.postMapData(data);
-      console.log(data);
-    });
+function archiveCounts(MapStatus) {
+  ncron.schedule("0 2 * * *", () => {
+    console.log(
+      "---------------------------------------------------------------------"
+    );
+    console.log(
+      `${new Date().toLocaleString()}: CRON executed. Archiving paper counts... `
+    );
+    console.log(
+      "---------------------------------------------------------------------"
+    );
+    MapStatus.btCountParSum = MapStatus.btCountParSum + MapStatus.btCountToday;
+    MapStatus.btCountToday = 0;
+    MapStatus.bpCountParSum = MapStatus.bpCountParSum + MapStatus.bpCountToday;
+    MapStatus.bpCountToday = 0;
+    console.log(MapStatus);
+    cacher.setMapBackup(MapStatus);
   });
 }
 
-module.exports = { archiveCount };
+module.exports = { archiveCounts };

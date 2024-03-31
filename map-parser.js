@@ -2,8 +2,8 @@ const hp2 = require("htmlparser2");
 const chokidar = require("chokidar");
 const fs = require("fs");
 const os = require("os");
-const requester = require("./requests");
-const { archiveCounts } = require("./schedule");
+const scheduler = require("./schedule");
+const cacher = require("./cacher");
 
 // function that immediately runs on program load and watches the file afterwards for changes.
 const watchLog = () => {
@@ -32,16 +32,14 @@ const watchLog = () => {
     .toString()
     .slice(-2)}${("0" + date.getDate()).toString().slice(-2)}.LOG`;
 
-  // IIFE promise object for Vidtronix MAP printers used in SRQ Airport.
-  let MapStatusPromise = (async function () {
-    const foundMapStatus = 0; //await requester.getMapData();
+  // IIFE object for Vidtronix MAP printers used in SRQ Airport.
+  let MapStatus = (function () {
+    const foundMapStatus = cacher.getMapBackup();
     if (foundMapStatus) {
       console.log(
         "---------------------------------------------------------------------"
       );
-      console.log(
-        `${date.toLocaleString()}: MAP Status object found in database. `
-      );
+      console.log(`${date.toLocaleString()}: MAP status found in cache. `);
       console.log(
         "---------------------------------------------------------------------"
       );
@@ -90,11 +88,12 @@ const watchLog = () => {
         _id,
       };
       console.log(MapStatus);
+      cacher.setMapBackup(MapStatus);
       return MapStatus;
     }
   })();
 
-  archiveCounts(MapStatusPromise);
+  scheduler.archiveCounts(MapStatus);
 
   // callback function when the file is read, its contents are stored in data and parsed.
   const readStreamAndParse = () => {
@@ -168,61 +167,58 @@ const watchLog = () => {
             }
           }
         };
+        const recentBtStatus = getRecentTag("btStatus", dom);
+        const recentBpStatus = getRecentTag("bpStatus", dom);
 
-        MapStatusPromise.then((data) => {
-          const recentBtStatus = getRecentTag("btStatus", dom);
-          const recentBpStatus = getRecentTag("bpStatus", dom);
+        MapStatus.btCountToday =
+          MapStatus.btRemaining - countPrints(dom, false) < 0
+            ? countPrints(dom, false) +
+              (MapStatus.btRemaining - countPrints(dom, false))
+            : countPrints(dom, false);
+        MapStatus.btRemaining =
+          MapStatus.btCountToday >= MapStatus.btRemaining
+            ? 0
+            : 200 - MapStatus.btCountParSum - MapStatus.btCountToday;
+        MapStatus.btLoadPath = loadPathStatus(MapStatus.btRemaining, false);
+        MapStatus.bpCountToday =
+          MapStatus.bpRemainingB - countPrints(dom, true) < 0
+            ? countPrints(dom, true) +
+              (MapStatus.bpRemainingB - countPrints(dom, true))
+            : countPrints(dom, true);
+        MapStatus.bpRemainingB =
+          MapStatus.bpCountToday >= MapStatus.bpRemainingA
+            ? 5000 -
+              Math.abs(
+                MapStatus.bpCountParSum +
+                  MapStatus.bpCountToday -
+                  MapStatus.bpRemainingA
+              )
+            : 5000;
+        MapStatus.bpRemainingA =
+          MapStatus.bpCountParSum + MapStatus.bpCountToday >=
+          MapStatus.bpRemainingA
+            ? 0
+            : 5000 - (MapStatus.bpCountParSum + MapStatus.bpCountToday);
+        MapStatus.bpLoadPathA = loadPathStatus(MapStatus.bpRemainingA, true);
+        MapStatus.bpLoadPathB = loadPathStatus(MapStatus.bpRemainingB, true);
+        MapStatus.btStatus = recentBtStatus.attribs;
+        MapStatus.bpStatus = recentBpStatus.attribs;
+        MapStatus.btTimestamp =
+          getParentTag("cupps", recentBtStatus).attribs.timeStamp ?? "UNKNOWN";
+        MapStatus.bpTimestamp =
+          getParentTag("cupps", recentBpStatus).attribs.timeStamp ?? "UNKNOWN";
 
-          data.btCountToday =
-            data.btRemaining - countPrints(dom, false) < 0
-              ? countPrints(dom, false) +
-                (data.btRemaining - countPrints(dom, false))
-              : countPrints(dom, false);
-          data.btRemaining =
-            data.btCountToday >= data.btRemaining
-              ? 0
-              : 200 - data.btCountParSum - data.btCountToday;
-          data.btLoadPath = loadPathStatus(data.btRemaining, false);
-          data.bpCountToday =
-            data.bpRemainingB - countPrints(dom, true) < 0
-              ? countPrints(dom, true) +
-                (data.bpRemainingB - countPrints(dom, true))
-              : countPrints(dom, true);
-          data.bpRemainingB =
-            data.bpCountToday >= data.bpRemainingA
-              ? 5000 -
-                Math.abs(
-                  data.bpCountParSum + data.bpCountToday - data.bpRemainingA
-                )
-              : 5000;
-          data.bpRemainingA =
-            data.bpCountParSum + data.bpCountToday >= data.bpRemainingA
-              ? 0
-              : 5000 - (data.bpCountParSum + data.bpCountToday);
-          data.bpLoadPathA = loadPathStatus(data.bpRemainingA, true);
-          data.bpLoadPathB = loadPathStatus(data.bpRemainingB, true);
-          data.btStatus = recentBtStatus.attribs;
-          data.bpStatus = recentBpStatus.attribs;
-          data.btTimestamp =
-            getParentTag("cupps", recentBtStatus).attribs.timeStamp ??
-            "UNKNOWN";
-          data.bpTimestamp =
-            getParentTag("cupps", recentBpStatus).attribs.timeStamp ??
-            "UNKNOWN";
-
-          console.log(
-            "---------------------------------------------------------------------"
-          );
-          console.log(
-            `${(date =
-              new Date().toLocaleString())}: MAP Status Promise object data has been updated`
-          );
-          console.log(
-            "---------------------------------------------------------------------"
-          );
-          console.log(data);
-          //requester.postMapData(data);
-        });
+        console.log(
+          "---------------------------------------------------------------------"
+        );
+        console.log(
+          `${(date = new Date().toLocaleString())}: MAP status has been updated`
+        );
+        console.log(
+          "---------------------------------------------------------------------"
+        );
+        console.log(MapStatus);
+        cacher.setMapBackup(MapStatus);
       }
     });
     // parser object that takes in the DomHandler object. xmlMode option has been set to true.
