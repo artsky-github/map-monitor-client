@@ -29,7 +29,15 @@ function getMapBackup() {
   try {
     return JSON.parse(fs.readFileSync(filePath, "utf8"));
   } catch {
-    console.log("MAP status backup data not found");
+    console.log(
+      "---------------------------------------------------------------------"
+    );
+    console.log(
+      `${new Date().toLocaleString()}: MAP status backup not found. `
+    );
+    console.log(
+      "---------------------------------------------------------------------"
+    );
     return 0;
   }
 }
