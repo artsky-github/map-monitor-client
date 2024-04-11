@@ -3,6 +3,7 @@ const fs = require("fs");
 const os = require("os");
 const scheduler = require("./schedule");
 const cacher = require("./cache");
+const sender = require("./ws-client");
 const extractor = require("./extract");
 
 // IFEE object that contains all the possible successful AEA print status messages. Differing due to multiple printing applications used my multiple airlines.
@@ -80,6 +81,7 @@ let MapStatus = (function () {
     };
     console.log(MapStatus);
     cacher.setMapBackup(MapStatus);
+    sender.sendMapData(MapStatus);
     return MapStatus;
   }
 })();
@@ -210,8 +212,9 @@ const readStreamAndParse = (cuppsfsFileName) => {
 
       const extractedMap = extractor.extractChanges(
         MapStatus,
-        MapStatus["_id"]
+        cacher.getMapBackup()
       );
+      extractedMap["_id"] = MapStatus._id;
       console.log(
         "---------------------------------------------------------------------"
       );
@@ -224,6 +227,7 @@ const readStreamAndParse = (cuppsfsFileName) => {
       console.log(extractedMap);
 
       cacher.setMapBackup(MapStatus);
+      sender.sendMapData(extractedMap);
     }
   });
   // parser object that takes in the DomHandler object. xmlMode option has been set to true.

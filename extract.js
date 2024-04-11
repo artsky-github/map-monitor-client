@@ -1,16 +1,17 @@
 const cacher = require("./cache");
 
-const extractChanges = (mapData, primaryKey) => {
-  const backupData = cacher.getMapBackup();
+const extractChanges = (mapData, comparisonData) => {
   const extractedData = {};
   for (let key of Object.keys(mapData)) {
     if (typeof mapData[key] === "object") {
-      extractChanges(mapData[key], backupData[key]);
-    } else if (mapData[key] !== backupData[key]) {
+      const subData = extractChanges(mapData[key], comparisonData[key]);
+      if (Object.keys(subData).length !== 0) {
+        extractedData[key] = subData;
+      }
+    } else if (mapData[key] !== comparisonData[key]) {
       extractedData[key] = mapData[key];
     }
   }
-  extractedData["_id"] = primaryKey;
   return extractedData;
 };
 
