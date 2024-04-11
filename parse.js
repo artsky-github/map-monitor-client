@@ -34,6 +34,8 @@ let MapStatus = (function () {
       "---------------------------------------------------------------------"
     );
     console.log(foundMapStatus);
+    cacher.setMapBackup(foundMapStatus);
+    sender.sendMapData(foundMapStatus);
     return foundMapStatus;
   } else {
     let btCountToday = 0;
