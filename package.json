@@ -10,7 +10,7 @@
   "name": "map-monitor",
   "description": "MAP Monitor software application created in-house for the SRQ ITS department to monitor the status of boarding pass and baggage tag printers.",
   "version": "1.0.0",
-  "main": "map-status-parser.js",
+  "main": "run.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

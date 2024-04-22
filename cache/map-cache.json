@@ -1,0 +1,36 @@
+{
+  "btCountToday": 0,
+  "btCountIgnore": 42,
+  "btCountParSum": 0,
+  "btRemaining": 200,
+  "btLoadPath": "FULL",
+  "bpCountToday": 0,
+  "bpCountIgnore": 27,
+  "bpCountParSum": 0,
+  "bpRemainingA": 5000,
+  "bpRemainingB": 5000,
+  "bpLoadPathA": "FULL",
+  "bpLoadPathB": "FULL",
+  "btStatus": {
+    "init": "false",
+    "powerOff": "true",
+    "ready": "true",
+    "unknown": "false",
+    "paperOut": "false",
+    "paperJam": "false",
+    "desc": "ONLINE"
+  },
+  "bpStatus": {
+    "init": "false",
+    "powerOff": "false",
+    "ready": "true",
+    "unknown": "false",
+    "paperOut": "false",
+    "paperJam": "false",
+    "desc": "ONLINE"
+  },
+  "btTimestamp": "2024-03-04 20:52:54.280",
+  "bpTimestamp": "2024-03-04 20:52:53.892",
+  "lastUpdated": "4/19/2024, 6:20:03 PM",
+  "_id": "artsky-ubuntu"
+}

@@ -1,18 +1,19 @@
 const chokidar = require("chokidar");
 const parser = require("./parse");
+const net = require("net");
+
+const cuppsDate = new Date();
+// Dependent on the correct time set on the individual CUPPS computer to access the right file.
+const cuppsfsFileName = `CUPPSFS${cuppsDate
+  .getFullYear()
+  .toString()
+  .slice(-2)}${("0" + (cuppsDate.getMonth() + 1)).toString().slice(-2)}${(
+  "0" + cuppsDate.getDate()
+)
+  .toString()
+  .slice(-2)}.LOG`;
 
 function watchLog() {
-  const cuppsDate = new Date();
-  // Dependent on the correct time set on the individual CUPPS computer to access the right file.
-  const cuppsfsFileName = `CUPPSFS${cuppsDate
-    .getFullYear()
-    .toString()
-    .slice(-2)}${("0" + (cuppsDate.getMonth() + 1)).toString().slice(-2)}${(
-    "0" + cuppsDate.getDate()
-  )
-    .toString()
-    .slice(-2)}.LOG`;
-
   console.log(
     "---------------------------------------------------------------------"
   );
@@ -25,7 +26,9 @@ function watchLog() {
 
   // Due to issues with fs.watch(), chokidar library is more refined for watching events occuring to files. It runs on program load and runs when a change occurs on a file.
   chokidar
-    .watch(cuppsfsFileName, { awaitWriteFinish: { stabilityThreshold: 5000 } })
+    .watch(`../${cuppsfsFileName}`, {
+      awaitWriteFinish: { stabilityThreshold: 5000 },
+    })
     .on("ready", () => {
       parser.readStreamAndParse(cuppsfsFileName);
     })
@@ -42,4 +45,27 @@ function watchLog() {
       parser.readStreamAndParse(cuppsfsFileName);
     });
 }
+
+const PORT = 6000;
+
+const server = net.createServer((socket) => {
+  console.log("Client connected");
+
+  socket.on("data", (data) => {
+    console.log("Received data:", data.toString());
+
+    if (data.toString()) {
+      parser.readStreamAndParse(cuppsfsFileName, data.toString());
+    }
+  });
+
+  socket.on("end", () => {
+    console.log("Client disconnected");
+  });
+});
+
+server.listen(PORT, () => {
+  console.log(`Server listening on port ${PORT}`);
+});
+
 module.exports = { watchLog };

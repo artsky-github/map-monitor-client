@@ -1,28 +1,35 @@
 const fs = require("fs");
 
-const cacheDir = "./cache";
-const filePath = `${cacheDir}/map-backup.json`;
+const cacheDir = "../cache";
+const filePath = `${cacheDir}/map-cache.json`;
 
 if (!fs.existsSync(cacheDir)) {
   fs.mkdirSync(cacheDir);
 }
 
 function setMapBackup(MapData) {
-  fs.writeFile(filePath, JSON.stringify(MapData), (err) => {
-    if (err) {
-      console.log(err);
-    } else {
-      console.log(
-        "---------------------------------------------------------------------"
-      );
-      console.log(
-        `${new Date().toLocaleString()}: MAP status successfully cached. `
-      );
-      console.log(
-        "---------------------------------------------------------------------"
-      );
-    }
-  });
+  try {
+    fs.writeFileSync(filePath, JSON.stringify(MapData, null, 2));
+    console.log(
+      "---------------------------------------------------------------------"
+    );
+    console.log(
+      `${new Date().toLocaleString()}: MAP status successfully cached. `
+    );
+    console.log(
+      "---------------------------------------------------------------------"
+    );
+  } catch (err) {
+    console.log(
+      "---------------------------------------------------------------------"
+    );
+    console.log(
+      `${new Date().toLocaleString()}: Error writing JSON file: ${err}`
+    );
+    console.log(
+      "---------------------------------------------------------------------"
+    );
+  }
 }
 
 function getMapBackup() {

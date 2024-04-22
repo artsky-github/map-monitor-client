@@ -39,10 +39,12 @@ let MapStatus = (function () {
     return foundMapStatus;
   } else {
     let btCountToday = 0;
+    let btCountIgnore = 0;
     let btCountParSum = 0;
     let btRemaining = 200;
     let btLoadPath = "EMPTY";
     let bpCountToday = 0;
+    let bpCountIgnore = 0;
     let bpCountParSum = 0;
     let bpRemainingA = 5000;
     let bpRemainingB = 5000;
@@ -65,10 +67,12 @@ let MapStatus = (function () {
     );
     const MapStatus = {
       btCountToday,
+      btCountIgnore,
       btCountParSum,
       btRemaining,
       btLoadPath,
       bpCountToday,
+      bpCountIgnore,
       bpCountParSum,
       bpRemainingA,
       bpRemainingB,
@@ -91,7 +95,10 @@ let MapStatus = (function () {
 scheduler.archiveCounts(MapStatus);
 
 // callback function when the file is read, its contents are stored in data and parsed.
-const readStreamAndParse = (cuppsfsFileName) => {
+const readStreamAndParse = (cuppsfsFileName, resetFound) => {
+  if (resetFound) {
+    MapStatus = cacher.getMapBackup();
+  }
   // The parsed document gets converted into a big DOM tree object. This object is then filtered based on the functions below.
   const domhandler = new hp2.DomHandler((err, dom) => {
     if (err) throw err;
@@ -148,9 +155,9 @@ const readStreamAndParse = (cuppsfsFileName) => {
             return "EMPTY";
           }
         } else {
-          if (paperRemainder >= 250) {
+          if (paperRemainder >= 200) {
             return "FULL";
-          } else if (paperRemainder < 250 && paperRemainder > 50) {
+          } else if (paperRemainder < 200 && paperRemainder > 50) {
             return "GOOD";
           } else if (paperRemainder < 50 && paperRemainder > 0) {
             return "LOW";
@@ -163,20 +170,20 @@ const readStreamAndParse = (cuppsfsFileName) => {
       const recentBpStatus = getRecentTag("bpStatus", dom);
 
       MapStatus.btCountToday =
-        MapStatus.btRemaining - countPrints(dom, false) < 0
-          ? countPrints(dom, false) +
-            (MapStatus.btRemaining - countPrints(dom, false))
-          : countPrints(dom, false);
-      MapStatus.btRemaining =
-        MapStatus.btCountToday >= MapStatus.btRemaining
-          ? 0
-          : 200 - MapStatus.btCountParSum - MapStatus.btCountToday;
+        countPrints(dom, false) - MapStatus.btCountIgnore > 200
+          ? 200
+          : countPrints(dom, false) - MapStatus.btCountIgnore;
+      MapStatus.btRemaining = 200 - MapStatus.btCountToday;
       MapStatus.btLoadPath = loadPathStatus(MapStatus.btRemaining, false);
       MapStatus.bpCountToday =
-        MapStatus.bpRemainingB - countPrints(dom, true) < 0
-          ? countPrints(dom, true) +
-            (MapStatus.bpRemainingB - countPrints(dom, true))
-          : countPrints(dom, true);
+        countPrints(dom, true) - MapStatus.bpCountIgnore > 10000
+          ? 10000
+          : countPrints(dom, true) - MapStatus.bpCountIgnore;
+      MapStatus.bpRemainingA =
+        MapStatus.bpCountParSum + MapStatus.bpCountToday >=
+        MapStatus.bpRemainingA
+          ? 0
+          : 5000 - (MapStatus.bpCountParSum + MapStatus.bpCountToday);
       MapStatus.bpRemainingB =
         MapStatus.bpCountToday >= MapStatus.bpRemainingA
           ? 5000 -
@@ -186,11 +193,6 @@ const readStreamAndParse = (cuppsfsFileName) => {
                 MapStatus.bpRemainingA
             )
           : 5000;
-      MapStatus.bpRemainingA =
-        MapStatus.bpCountParSum + MapStatus.bpCountToday >=
-        MapStatus.bpRemainingA
-          ? 0
-          : 5000 - (MapStatus.bpCountParSum + MapStatus.bpCountToday);
       MapStatus.bpLoadPathA = loadPathStatus(MapStatus.bpRemainingA, true);
       MapStatus.bpLoadPathB = loadPathStatus(MapStatus.bpRemainingB, true);
       MapStatus.btStatus = recentBtStatus.attribs;
@@ -234,7 +236,7 @@ const readStreamAndParse = (cuppsfsFileName) => {
   });
   // parser object that takes in the DomHandler object. xmlMode option has been set to true.
   const parser = new hp2.Parser(domhandler, { xmlMode: true });
-  const readStream = fs.createReadStream(cuppsfsFileName, {
+  const readStream = fs.createReadStream(`../${cuppsfsFileName}`, {
     encoding: "utf8",
   });
 

@@ -14,8 +14,10 @@ function archiveCounts(MapStatus) {
     );
     MapStatus.btCountParSum = MapStatus.btCountParSum + MapStatus.btCountToday;
     MapStatus.btCountToday = 0;
+    MapStatus.btCountIgnore = 0;
     MapStatus.bpCountParSum = MapStatus.bpCountParSum + MapStatus.bpCountToday;
     MapStatus.bpCountToday = 0;
+    MapStatus.btCountIgnore = 0;
     console.log(MapStatus);
     cacher.setMapBackup(MapStatus);
   });

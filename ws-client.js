@@ -26,4 +26,9 @@ async function sendMapData(mapData) {
   wsClient.send(JSON.stringify(mapData));
 }
 
-module.exports = { sendMapData };
+async function closeConnection() {
+  const wsClient = await wsClientPromise;
+  wsClient.close();
+}
+
+module.exports = { sendMapData, closeConnection };
