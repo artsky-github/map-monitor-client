@@ -236,7 +236,7 @@ const readStreamAndParse = (cuppsfsFileName, resetFound) => {
   });
   // parser object that takes in the DomHandler object. xmlMode option has been set to true.
   const parser = new hp2.Parser(domhandler, { xmlMode: true });
-  const readStream = fs.createReadStream(`../${cuppsfsFileName}`, {
+  const readStream = fs.createReadStream(cuppsfsFileName, {
     encoding: "utf8",
   });
 

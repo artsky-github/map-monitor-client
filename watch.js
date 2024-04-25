@@ -4,7 +4,7 @@ const net = require("net");
 
 const cuppsDate = new Date();
 // Dependent on the correct time set on the individual CUPPS computer to access the right file.
-const cuppsfsFileName = `CUPPSFS${cuppsDate
+const cuppsfsFileName = `../CUPPSFS${cuppsDate
   .getFullYear()
   .toString()
   .slice(-2)}${("0" + (cuppsDate.getMonth() + 1)).toString().slice(-2)}${(
@@ -26,7 +26,7 @@ function watchLog() {
 
   // Due to issues with fs.watch(), chokidar library is more refined for watching events occuring to files. It runs on program load and runs when a change occurs on a file.
   chokidar
-    .watch(`../${cuppsfsFileName}`, {
+    .watch(cuppsfsFileName, {
       awaitWriteFinish: { stabilityThreshold: 5000 },
     })
     .on("ready", () => {
