@@ -1,34 +1,43 @@
 const WebSocket = require("ws");
+const cacher = require("./cache");
 
-const serverURI = "ws://localhost:4000";
+const serverURI = "ws://10.220.20.189:4040";
 
-const wsClientPromise = new Promise((resolve, reject) => {
+let wsClientPromise = createConnectPromise(); 
+
+function createConnectPromise() {
+  return new Promise((resolve) => {
+    attemptConnectPromise(resolve);
+  })
+}
+
+function attemptConnectPromise(resolve) {
   const wsClient = new WebSocket(serverURI);
-
   wsClient.on("open", () => {
-    console.log("Successfully connected to WS Server");
+    console.log(`WS Client Successfully Connected to WS Server on: ${serverURI}`);
     resolve(wsClient);
   });
   wsClient.on("error", (err) => {
-    console.log("Web Socket error: " + err);
-    reject(err);
+    console.log(err);
+    console.log("Auto Reconnecting in 5 seconds...")
+    setTimeout(() => {attemptConnectPromise(resolve)}, 5000);
   });
-  wsClient.on("message", (message) => {
-    console.log("recieved from server" + message);
-  });
-  wsClient.on("close", () => {
-    console.log("Web Socket Connection Closed");
-  });
-});
-
-async function sendMapData(mapData) {
-  const wsClient = await wsClientPromise;
-  wsClient.send(JSON.stringify(mapData));
 }
 
-async function closeConnection() {
-  const wsClient = await wsClientPromise;
-  wsClient.close();
+function sendMapData(mapData) { 
+  wsClientPromise.then((wsClient) => {
+    if (wsClient._readyState === 3) {
+      wsClientPromise = createConnectPromise();
+      wsClientPromise.then((wsClient) => {
+        console.log("Sending entire map cache...");
+        console.log(cacher.getMapBackup());
+        wsClient.send(JSON.stringify(cacher.getMapBackup()));
+      })
+    } else {
+      console.log("WS Client Sending Data to WS Server");
+      wsClient.send(JSON.stringify(mapData));
+    }
+  });
 }
 
-module.exports = { sendMapData, closeConnection };
+module.exports = { sendMapData };

@@ -1,0 +1,472 @@
+2024-04-29 19:33:36 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\admin\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file C:\Apps\map-monitor-client\runnables\run-client.js --scriptoptions= --log "MAP Status Client wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-04-29 19:33:36 - Started 1104
+2024-04-29 19:34:30 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\admin\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file C:\Apps\map-monitor-client\runnables\run-client.js --scriptoptions= --log "MAP Status Client wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-04-29 19:34:30 - Started 6600
+2024-04-29 19:36:14 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\admin\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file C:\Apps\map-monitor-client\runnables\run-client.js --scriptoptions= --log "MAP Status Client wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-04-29 19:36:14 - Started 9968
+2024-04-29 19:37:27 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\admin\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file C:\Apps\map-monitor-client\runnables\run-client.js --scriptoptions= --log "MAP Status Client wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-04-29 19:37:27 - Started 8992
+2024-04-30 02:00:02 - Stopping mapstatusclient.exe
+2024-04-30 02:00:02 - ProcessKill 8992
+2024-04-30 02:00:02 - Shutdown exception
+Message:Class not registered
+
+Stacktrace:   at System.Runtime.InteropServices.Marshal.ThrowExceptionForHRInternal(Int32 errorCode, IntPtr errorInfo)
+   at System.Management.ManagementScope.InitializeGuts(Object o)
+   at System.Management.ManagementScope.Initialize()
+   at System.Management.ManagementObjectSearcher.Initialize()
+   at System.Management.ManagementObjectSearcher.Get()
+   at winsw.WrapperService.GetChildPids(Int32 pid)
+   at winsw.WrapperService.StopProcessAndChildren(Int32 pid)
+   at winsw.WrapperService.StopIt()
+   at winsw.WrapperService.OnShutdown()
+2024-04-30 02:00:21 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\admin\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file C:\Apps\map-monitor-client\runnables\run-client.js --scriptoptions= --log "MAP Status Client wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-04-30 02:00:21 - Started 6708
+2024-04-30 02:02:05 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\admin\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file C:\Apps\map-monitor-client\runnables\run-client.js --scriptoptions= --log "MAP Status Client wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-04-30 02:02:05 - Started 11840
+2024-05-01 02:00:23 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\admin\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file C:\Apps\map-monitor-client\runnables\run-client.js --scriptoptions= --log "MAP Status Client wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-05-01 02:00:23 - Started 6664
+2024-05-01 02:02:07 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\admin\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file C:\Apps\map-monitor-client\runnables\run-client.js --scriptoptions= --log "MAP Status Client wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-05-01 02:02:07 - Started 3920
+2024-05-01 12:41:47 - Stopping mapstatusclient.exe
+2024-05-01 12:41:47 - ProcessKill 3920
+2024-05-01 12:41:47 - Found child process: 4664 Name: conhost.exe
+2024-05-01 12:41:47 - Found child process: 9156 Name: node.exe
+2024-05-01 12:41:47 - Stopping process 4664
+2024-05-01 12:41:47 - Send SIGINT 4664
+2024-05-01 12:41:47 - SIGINT to 4664 failed - Killing as fallback
+2024-05-01 12:41:47 - Stopping process 9156
+2024-05-01 12:41:47 - Send SIGINT 9156
+2024-05-01 12:41:47 - SIGINT to 9156 failed - Killing as fallback
+2024-05-01 12:41:47 - Stopping process 3920
+2024-05-01 12:41:47 - Send SIGINT 3920
+2024-05-01 12:41:47 - SIGINT to 3920 failed - Killing as fallback
+2024-05-01 12:41:47 - Finished mapstatusclient.exe
+2024-05-01 15:19:04 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\admin\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file C:\Apps\map-monitor-client\runnables\run-client.js --scriptoptions= --log "MAP Status Client wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-05-01 15:19:04 - Started 6512
+2024-05-01 15:20:48 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\admin\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file C:\Apps\map-monitor-client\runnables\run-client.js --scriptoptions= --log "MAP Status Client wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-05-01 15:20:48 - Started 5052
+2024-05-01 16:23:51 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\admin\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file C:\Apps\map-monitor-client\runnables\run-client.js --scriptoptions= --log "MAP Status Client wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-05-01 16:23:51 - Started 6244
+2024-05-01 15:39:07 - Stopping mapstatusclient.exe
+2024-05-01 15:39:07 - ProcessKill 6244
+2024-05-01 15:39:08 - Shutdown exception
+Message:Class not registered
+
+Stacktrace:   at System.Runtime.InteropServices.Marshal.ThrowExceptionForHRInternal(Int32 errorCode, IntPtr errorInfo)
+   at System.Management.ManagementScope.InitializeGuts(Object o)
+   at System.Management.ManagementScope.Initialize()
+   at System.Management.ManagementObjectSearcher.Initialize()
+   at System.Management.ManagementObjectSearcher.Get()
+   at winsw.WrapperService.GetChildPids(Int32 pid)
+   at winsw.WrapperService.StopProcessAndChildren(Int32 pid)
+   at winsw.WrapperService.StopIt()
+   at winsw.WrapperService.OnShutdown()
+2024-05-01 15:39:30 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\admin\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file C:\Apps\map-monitor-client\runnables\run-client.js --scriptoptions= --log "MAP Status Client wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-05-01 15:39:30 - Started 6600
+2024-05-01 15:41:14 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\admin\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file C:\Apps\map-monitor-client\runnables\run-client.js --scriptoptions= --log "MAP Status Client wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-05-01 15:41:14 - Started 9596
+2024-05-01 15:42:58 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\admin\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file C:\Apps\map-monitor-client\runnables\run-client.js --scriptoptions= --log "MAP Status Client wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-05-01 15:42:58 - Started 15296
+2024-05-01 16:28:37 - Stopping mapstatusclient.exe
+2024-05-01 16:28:37 - ProcessKill 15296
+2024-05-01 16:28:37 - Shutdown exception
+Message:A system shutdown is in progress.
+
+Stacktrace:   at System.Runtime.InteropServices.Marshal.ThrowExceptionForHRInternal(Int32 errorCode, IntPtr errorInfo)
+   at System.Management.ManagementScope.InitializeGuts(Object o)
+   at System.Management.ManagementScope.Initialize()
+   at System.Management.ManagementObjectSearcher.Initialize()
+   at System.Management.ManagementObjectSearcher.Get()
+   at winsw.WrapperService.GetChildPids(Int32 pid)
+   at winsw.WrapperService.StopProcessAndChildren(Int32 pid)
+   at winsw.WrapperService.StopIt()
+   at winsw.WrapperService.OnShutdown()
+2024-05-01 16:28:58 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\admin\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file C:\Apps\map-monitor-client\runnables\run-client.js --scriptoptions= --log "MAP Status Client wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-05-01 16:28:58 - Started 6380
+2024-05-01 16:30:42 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\admin\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file C:\Apps\map-monitor-client\runnables\run-client.js --scriptoptions= --log "MAP Status Client wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-05-01 16:30:42 - Started 10036
+2024-05-01 16:31:56 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\admin\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file C:\Apps\map-monitor-client\runnables\run-client.js --scriptoptions= --log "MAP Status Client wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-05-01 16:31:56 - Started 15300
+2024-05-01 17:07:11 - Stopping mapstatusclient.exe
+2024-05-01 17:07:11 - ProcessKill 15300
+2024-05-01 17:07:11 - Shutdown exception
+Message:A system shutdown is in progress.
+
+Stacktrace:   at System.Runtime.InteropServices.Marshal.ThrowExceptionForHRInternal(Int32 errorCode, IntPtr errorInfo)
+   at System.Management.ManagementScope.InitializeGuts(Object o)
+   at System.Management.ManagementScope.Initialize()
+   at System.Management.ManagementObjectSearcher.Initialize()
+   at System.Management.ManagementObjectSearcher.Get()
+   at winsw.WrapperService.GetChildPids(Int32 pid)
+   at winsw.WrapperService.StopProcessAndChildren(Int32 pid)
+   at winsw.WrapperService.StopIt()
+   at winsw.WrapperService.OnShutdown()
+2024-05-01 17:07:32 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\admin\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file C:\Apps\map-monitor-client\runnables\run-client.js --scriptoptions= --log "MAP Status Client wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-05-01 17:07:32 - Started 6656
+2024-05-01 17:09:16 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\admin\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file C:\Apps\map-monitor-client\runnables\run-client.js --scriptoptions= --log "MAP Status Client wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-05-01 17:09:16 - Started 11400
+2024-05-01 17:11:34 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\admin\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file C:\Apps\map-monitor-client\runnables\run-client.js --scriptoptions= --log "MAP Status Client wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-05-01 17:11:34 - Started 6380
+2024-05-01 17:13:18 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\admin\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file C:\Apps\map-monitor-client\runnables\run-client.js --scriptoptions= --log "MAP Status Client wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-05-01 17:13:18 - Started 6612
+2024-05-01 17:23:56 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\admin\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file C:\Apps\map-monitor-client\runnables\run-client.js --scriptoptions= --log "MAP Status Client wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-05-01 17:23:56 - Started 12620
+2024-05-01 17:24:59 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\admin\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file C:\Apps\map-monitor-client\runnables\run-client.js --scriptoptions= --log "MAP Status Client wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-05-01 17:24:59 - Started 12184
+2024-05-01 17:26:02 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\admin\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file C:\Apps\map-monitor-client\runnables\run-client.js --scriptoptions= --log "MAP Status Client wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-05-01 17:26:02 - Started 12652
+2024-05-01 17:26:54 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\admin\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file C:\Apps\map-monitor-client\runnables\run-client.js --scriptoptions= --log "MAP Status Client wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-05-01 17:26:54 - Started 6308
+2024-05-01 17:28:38 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\admin\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file C:\Apps\map-monitor-client\runnables\run-client.js --scriptoptions= --log "MAP Status Client wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-05-01 17:28:38 - Started 8884
+2024-05-01 17:30:53 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\admin\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file C:\Apps\map-monitor-client\runnables\run-client.js --scriptoptions= --log "MAP Status Client wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-05-01 17:30:53 - Started 2672
+2024-05-01 17:30:56 - Stopping mapstatusclient.exe
+2024-05-01 17:30:56 - ProcessKill 2672
+2024-05-01 17:30:56 - Found child process: 10820 Name: conhost.exe
+2024-05-01 17:30:56 - Found child process: 11296 Name: node.exe
+2024-05-01 17:30:56 - Stopping process 10820
+2024-05-01 17:30:56 - Send SIGINT 10820
+2024-05-01 17:30:56 - SIGINT to 10820 failed - Killing as fallback
+2024-05-01 17:30:56 - Stopping process 11296
+2024-05-01 17:30:56 - Send SIGINT 11296
+2024-05-01 17:30:56 - SIGINT to 11296 failed - Killing as fallback
+2024-05-01 17:30:56 - Stopping process 2672
+2024-05-01 17:30:56 - Send SIGINT 2672
+2024-05-01 17:30:56 - SIGINT to 2672 failed - Killing as fallback
+2024-05-01 17:30:56 - Finished mapstatusclient.exe
+2024-05-01 17:31:21 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\admin\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file C:\Apps\map-monitor-client\runnables\run-client.js --scriptoptions= --log "MAP Status Client wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-05-01 17:31:21 - Started 12900
+2024-05-01 17:32:24 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\admin\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file C:\Apps\map-monitor-client\runnables\run-client.js --scriptoptions= --log "MAP Status Client wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-05-01 17:32:24 - Started 9036
+2024-05-01 17:33:27 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\admin\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file C:\Apps\map-monitor-client\runnables\run-client.js --scriptoptions= --log "MAP Status Client wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-05-01 17:33:27 - Started 7252
+2024-05-01 17:36:49 - Stopping mapstatusclient.exe
+2024-05-01 17:36:49 - ProcessKill 7252
+2024-05-01 17:36:49 - Found child process: 11156 Name: conhost.exe
+2024-05-01 17:36:49 - Found child process: 14240 Name: node.exe
+2024-05-01 17:36:49 - Stopping process 11156
+2024-05-01 17:36:49 - Send SIGINT 11156
+2024-05-01 17:36:49 - SIGINT to 11156 failed - Killing as fallback
+2024-05-01 17:36:49 - Stopping process 14240
+2024-05-01 17:36:49 - Send SIGINT 14240
+2024-05-01 17:36:49 - SIGINT to 14240 failed - Killing as fallback
+2024-05-01 17:36:49 - Stopping process 7252
+2024-05-01 17:36:49 - Send SIGINT 7252
+2024-05-01 17:36:49 - SIGINT to 7252 failed - Killing as fallback
+2024-05-01 17:36:49 - Finished mapstatusclient.exe
+2024-05-01 17:36:51 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\admin\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file C:\Apps\map-monitor-client\runnables\run-client.js --scriptoptions= --log "MAP Status Client wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-05-01 17:36:51 - Started 11664
+2024-05-01 17:38:35 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\admin\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file C:\Apps\map-monitor-client\runnables\run-client.js --scriptoptions= --log "MAP Status Client wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-05-01 17:38:35 - Started 9024
+2024-05-01 18:19:23 - Stopping mapstatusclient.exe
+2024-05-01 18:19:23 - ProcessKill 9024
+2024-05-01 18:19:23 - Found child process: 968 Name: conhost.exe
+2024-05-01 18:19:23 - Found child process: 2248 Name: node.exe
+2024-05-01 18:19:23 - Stopping process 968
+2024-05-01 18:19:23 - Send SIGINT 968
+2024-05-01 18:19:23 - SIGINT to 968 failed - Killing as fallback
+2024-05-01 18:19:23 - Stopping process 2248
+2024-05-01 18:19:23 - Send SIGINT 2248
+2024-05-01 18:19:23 - SIGINT to 2248 failed - Killing as fallback
+2024-05-01 18:19:23 - Stopping process 9024
+2024-05-01 18:19:23 - Send SIGINT 9024
+2024-05-01 18:19:23 - SIGINT to 9024 failed - Killing as fallback
+2024-05-01 18:19:23 - Finished mapstatusclient.exe
+2024-05-01 18:28:55 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\admin\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file C:\Apps\map-monitor-client\runnables\run-client.js --scriptoptions= --log "MAP Status Client wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-05-01 18:28:55 - Started 6552
+2024-05-01 18:30:39 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\admin\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file C:\Apps\map-monitor-client\runnables\run-client.js --scriptoptions= --log "MAP Status Client wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-05-01 18:30:39 - Started 12192
+2024-05-01 18:35:45 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\admin\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file C:\Apps\map-monitor-client\runnables\run-client.js --scriptoptions= --log "MAP Status Client wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-05-01 18:35:45 - Started 12416
+2024-05-01 18:37:52 - Stopping mapstatusclient.exe
+2024-05-01 18:37:52 - ProcessKill 12416
+2024-05-01 18:37:52 - Shutdown exception
+Message:Class not registered
+
+Stacktrace:   at System.Runtime.InteropServices.Marshal.ThrowExceptionForHRInternal(Int32 errorCode, IntPtr errorInfo)
+   at System.Management.ManagementScope.InitializeGuts(Object o)
+   at System.Management.ManagementScope.Initialize()
+   at System.Management.ManagementObjectSearcher.Initialize()
+   at System.Management.ManagementObjectSearcher.Get()
+   at winsw.WrapperService.GetChildPids(Int32 pid)
+   at winsw.WrapperService.StopProcessAndChildren(Int32 pid)
+   at winsw.WrapperService.StopIt()
+   at winsw.WrapperService.OnShutdown()
+2024-05-01 18:38:13 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\admin\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file C:\Apps\map-monitor-client\runnables\run-client.js --scriptoptions= --log "MAP Status Client wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-05-01 18:38:13 - Started 6584
+2024-05-01 18:39:57 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\admin\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file C:\Apps\map-monitor-client\runnables\run-client.js --scriptoptions= --log "MAP Status Client wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-05-01 18:39:57 - Started 13964
+2024-05-01 18:50:21 - Stopping mapstatusclient.exe
+2024-05-01 18:50:21 - ProcessKill 13964
+2024-05-01 18:50:21 - Found child process: 13976 Name: conhost.exe
+2024-05-01 18:50:21 - Found child process: 14164 Name: node.exe
+2024-05-01 18:50:21 - Stopping process 13976
+2024-05-01 18:50:21 - Send SIGINT 13976
+2024-05-01 18:50:21 - SIGINT to 13976 failed - Killing as fallback
+2024-05-01 18:50:21 - Stopping process 14164
+2024-05-01 18:50:21 - Send SIGINT 14164
+2024-05-01 18:50:21 - SIGINT to 14164 failed - Killing as fallback
+2024-05-01 18:50:21 - Stopping process 13964
+2024-05-01 18:50:21 - Send SIGINT 13964
+2024-05-01 18:50:21 - SIGINT to 13964 failed - Killing as fallback
+2024-05-01 18:50:21 - Finished mapstatusclient.exe
+2024-05-01 18:50:23 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\admin\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file C:\Apps\map-monitor-client\runnables\run-client.js --scriptoptions= --log "MAP Status Client wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-05-01 18:50:23 - Started 17944
+2024-05-01 18:53:37 - Stopping mapstatusclient.exe
+2024-05-01 18:53:37 - ProcessKill 17944
+2024-05-01 18:53:37 - Found child process: 17956 Name: conhost.exe
+2024-05-01 18:53:37 - Found child process: 2308 Name: node.exe
+2024-05-01 18:53:37 - Stopping process 17956
+2024-05-01 18:53:37 - Send SIGINT 17956
+2024-05-01 18:53:37 - SIGINT to 17956 failed - Killing as fallback
+2024-05-01 18:53:37 - Stopping process 2308
+2024-05-01 18:53:37 - Send SIGINT 2308
+2024-05-01 18:53:37 - SIGINT to 2308 failed - Killing as fallback
+2024-05-01 18:53:37 - Stopping process 17944
+2024-05-01 18:53:37 - Send SIGINT 17944
+2024-05-01 18:53:37 - SIGINT to 17944 failed - Killing as fallback
+2024-05-01 18:53:37 - Finished mapstatusclient.exe
+2024-05-01 18:55:23 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\admin\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file C:\Apps\map-monitor-client\runnables\run-client.js --scriptoptions= --log "MAP Status Client wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-05-01 18:55:23 - Started 6580
+2024-05-01 18:57:07 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\admin\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file C:\Apps\map-monitor-client\runnables\run-client.js --scriptoptions= --log "MAP Status Client wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-05-01 18:57:07 - Started 9960
+2024-05-01 19:14:03 - Stopping mapstatusclient.exe
+2024-05-01 19:14:03 - ProcessKill 9960
+2024-05-01 19:14:03 - Found child process: 9788 Name: conhost.exe
+2024-05-01 19:14:03 - Found child process: 9288 Name: node.exe
+2024-05-01 19:14:03 - Stopping process 9788
+2024-05-01 19:14:03 - Send SIGINT 9788
+2024-05-01 19:14:03 - SIGINT to 9788 failed - Killing as fallback
+2024-05-01 19:14:03 - Stopping process 9288
+2024-05-01 19:14:03 - Send SIGINT 9288
+2024-05-01 19:14:03 - SIGINT to 9288 failed - Killing as fallback
+2024-05-01 19:14:03 - Stopping process 9960
+2024-05-01 19:14:03 - Send SIGINT 9960
+2024-05-01 19:14:03 - SIGINT to 9960 failed - Killing as fallback
+2024-05-01 19:14:03 - Finished mapstatusclient.exe
+2024-05-01 19:18:51 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\admin\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file C:\Apps\map-monitor-client\runnables\run-client.js --scriptoptions= --log "MAP Status Client wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-05-01 19:18:51 - Started 11716
+2024-05-01 19:29:18 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\admin\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file C:\Apps\map-monitor-client\runnables\run-client.js --scriptoptions= --log "MAP Status Client wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-05-01 19:29:18 - Started 12004
+2024-05-01 19:30:49 - Stopping mapstatusclient.exe
+2024-05-01 19:30:49 - ProcessKill 12004
+2024-05-01 19:30:49 - Found child process: 7328 Name: conhost.exe
+2024-05-01 19:30:49 - Found child process: 11688 Name: node.exe
+2024-05-01 19:30:49 - Stopping process 7328
+2024-05-01 19:30:49 - Send SIGINT 7328
+2024-05-01 19:30:49 - SIGINT to 7328 failed - Killing as fallback
+2024-05-01 19:30:49 - Stopping process 11688
+2024-05-01 19:30:49 - Send SIGINT 11688
+2024-05-01 19:30:49 - SIGINT to 11688 failed - Killing as fallback
+2024-05-01 19:30:49 - Stopping process 12004
+2024-05-01 19:30:49 - Send SIGINT 12004
+2024-05-01 19:30:49 - SIGINT to 12004 failed - Killing as fallback
+2024-05-01 19:30:49 - Finished mapstatusclient.exe
+2024-05-01 19:31:06 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\admin\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file C:\Apps\map-monitor-client\runnables\run-client.js --scriptoptions= --log "MAP Status Client wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-05-01 19:31:06 - Started 11452
+2024-05-01 19:38:10 - Stopping mapstatusclient.exe
+2024-05-01 19:38:10 - ProcessKill 11452
+2024-05-01 19:38:10 - Found child process: 4264 Name: conhost.exe
+2024-05-01 19:38:10 - Found child process: 11852 Name: node.exe
+2024-05-01 19:38:10 - Stopping process 4264
+2024-05-01 19:38:10 - Send SIGINT 4264
+2024-05-01 19:38:10 - SIGINT to 4264 failed - Killing as fallback
+2024-05-01 19:38:10 - Stopping process 11852
+2024-05-01 19:38:10 - Send SIGINT 11852
+2024-05-01 19:38:10 - SIGINT to 11852 failed - Killing as fallback
+2024-05-01 19:38:10 - Stopping process 11452
+2024-05-01 19:38:10 - Send SIGINT 11452
+2024-05-01 19:38:10 - SIGINT to 11452 failed - Killing as fallback
+2024-05-01 19:38:10 - Finished mapstatusclient.exe
+2024-05-01 19:38:11 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\admin\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file C:\Apps\map-monitor-client\runnables\run-client.js --scriptoptions= --log "MAP Status Client wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-05-01 19:38:12 - Started 2088
+2024-05-01 19:38:47 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\admin\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file C:\Apps\map-monitor-client\runnables\run-client.js --scriptoptions= --log "MAP Status Client wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-05-01 19:38:47 - Started 4620
+2024-05-01 19:39:14 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\admin\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file C:\Apps\map-monitor-client\runnables\run-client.js --scriptoptions= --log "MAP Status Client wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-05-01 19:39:14 - Started 2004
+2024-05-01 19:39:49 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\admin\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file C:\Apps\map-monitor-client\runnables\run-client.js --scriptoptions= --log "MAP Status Client wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-05-01 19:39:49 - Started 8588
+2024-05-01 19:39:52 - Stopping mapstatusclient.exe
+2024-05-01 19:39:52 - ProcessKill 8588
+2024-05-01 19:39:52 - Found child process: 14008 Name: conhost.exe
+2024-05-01 19:39:52 - Found child process: 11500 Name: node.exe
+2024-05-01 19:39:52 - Stopping process 14008
+2024-05-01 19:39:52 - Send SIGINT 14008
+2024-05-01 19:39:52 - SIGINT to 14008 failed - Killing as fallback
+2024-05-01 19:39:52 - Stopping process 11500
+2024-05-01 19:39:52 - Send SIGINT 11500
+2024-05-01 19:39:52 - SIGINT to 11500 failed - Killing as fallback
+2024-05-01 19:39:52 - Stopping process 8588
+2024-05-01 19:39:52 - Send SIGINT 8588
+2024-05-01 19:39:52 - SIGINT to 8588 failed - Killing as fallback
+2024-05-01 19:39:52 - Finished mapstatusclient.exe
+2024-05-01 19:39:54 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\admin\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file C:\Apps\map-monitor-client\runnables\run-client.js --scriptoptions= --log "MAP Status Client wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-05-01 19:39:54 - Started 5728
+2024-05-01 19:43:15 - Stopping mapstatusclient.exe
+2024-05-01 19:43:15 - ProcessKill 5728
+2024-05-01 19:43:15 - Found child process: 10184 Name: conhost.exe
+2024-05-01 19:43:15 - Found child process: 11636 Name: node.exe
+2024-05-01 19:43:15 - Stopping process 10184
+2024-05-01 19:43:15 - Send SIGINT 10184
+2024-05-01 19:43:15 - SIGINT to 10184 failed - Killing as fallback
+2024-05-01 19:43:15 - Stopping process 11636
+2024-05-01 19:43:15 - Send SIGINT 11636
+2024-05-01 19:43:15 - SIGINT to 11636 failed - Killing as fallback
+2024-05-01 19:43:15 - Stopping process 5728
+2024-05-01 19:43:15 - Send SIGINT 5728
+2024-05-01 19:43:15 - SIGINT to 5728 failed - Killing as fallback
+2024-05-01 19:43:15 - Finished mapstatusclient.exe
+2024-05-01 20:06:00 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\admin\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file C:\Apps\map-monitor-client\runnables\run-client.js --scriptoptions= --log "MAP Status Client wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-05-01 20:06:00 - Started 6528
+2024-05-01 20:07:44 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\admin\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file C:\Apps\map-monitor-client\runnables\run-client.js --scriptoptions= --log "MAP Status Client wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-05-01 20:07:44 - Started 9540
+2024-05-01 20:08:47 - Stopping mapstatusclient.exe
+2024-05-01 20:08:47 - ProcessKill 9540
+2024-05-01 20:08:47 - Found child process: 10444 Name: conhost.exe
+2024-05-01 20:08:47 - Found child process: 9836 Name: node.exe
+2024-05-01 20:08:47 - Stopping process 10444
+2024-05-01 20:08:47 - Send SIGINT 10444
+2024-05-01 20:08:47 - SIGINT to 10444 failed - Killing as fallback
+2024-05-01 20:08:47 - Stopping process 9836
+2024-05-01 20:08:47 - Send SIGINT 9836
+2024-05-01 20:08:47 - SIGINT to 9836 failed - Killing as fallback
+2024-05-01 20:08:47 - Stopping process 9540
+2024-05-01 20:08:47 - Send SIGINT 9540
+2024-05-01 20:08:47 - SIGINT to 9540 failed - Killing as fallback
+2024-05-01 20:08:47 - Finished mapstatusclient.exe
+2024-05-01 20:08:48 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\admin\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file C:\Apps\map-monitor-client\runnables\run-client.js --scriptoptions= --log "MAP Status Client wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-05-01 20:08:48 - Started 11020
+2024-05-01 20:12:48 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\admin\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file C:\Apps\map-monitor-client\runnables\run-client.js --scriptoptions= --log "MAP Status Client wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-05-01 20:12:48 - Started 11060
+2024-05-01 20:12:51 - Stopping mapstatusclient.exe
+2024-05-01 20:12:51 - ProcessKill 11060
+2024-05-01 20:12:51 - Found child process: 6672 Name: conhost.exe
+2024-05-01 20:12:51 - Found child process: 14092 Name: node.exe
+2024-05-01 20:12:51 - Stopping process 6672
+2024-05-01 20:12:51 - Send SIGINT 6672
+2024-05-01 20:12:51 - SIGINT to 6672 failed - Killing as fallback
+2024-05-01 20:12:51 - Stopping process 14092
+2024-05-01 20:12:51 - Send SIGINT 14092
+2024-05-01 20:12:51 - SIGINT to 14092 failed - Killing as fallback
+2024-05-01 20:12:51 - Stopping process 11060
+2024-05-01 20:12:51 - Send SIGINT 11060
+2024-05-01 20:12:51 - SIGINT to 11060 failed - Killing as fallback
+2024-05-01 20:12:51 - Finished mapstatusclient.exe
+2024-05-01 20:12:52 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\admin\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file C:\Apps\map-monitor-client\runnables\run-client.js --scriptoptions= --log "MAP Status Client wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-05-01 20:12:52 - Started 13080
+2024-05-02 02:00:03 - Stopping mapstatusclient.exe
+2024-05-02 02:00:03 - ProcessKill 13080
+2024-05-02 02:00:03 - Shutdown exception
+Message:Class not registered
+
+Stacktrace:   at System.Runtime.InteropServices.Marshal.ThrowExceptionForHRInternal(Int32 errorCode, IntPtr errorInfo)
+   at System.Management.ManagementScope.InitializeGuts(Object o)
+   at System.Management.ManagementScope.Initialize()
+   at System.Management.ManagementObjectSearcher.Initialize()
+   at System.Management.ManagementObjectSearcher.Get()
+   at winsw.WrapperService.GetChildPids(Int32 pid)
+   at winsw.WrapperService.StopProcessAndChildren(Int32 pid)
+   at winsw.WrapperService.StopIt()
+   at winsw.WrapperService.OnShutdown()
+2024-05-02 02:00:22 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\admin\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file C:\Apps\map-monitor-client\runnables\run-client.js --scriptoptions= --log "MAP Status Client wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-05-02 02:00:22 - Started 6556
+2024-05-02 02:02:06 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\admin\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file C:\Apps\map-monitor-client\runnables\run-client.js --scriptoptions= --log "MAP Status Client wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-05-02 02:02:06 - Started 10284
+2024-05-02 13:33:53 - Stopping mapstatusclient.exe
+2024-05-02 13:33:53 - ProcessKill 10284
+2024-05-02 13:33:53 - Found child process: 10384 Name: conhost.exe
+2024-05-02 13:33:53 - Found child process: 9196 Name: node.exe
+2024-05-02 13:33:53 - Stopping process 10384
+2024-05-02 13:33:53 - Send SIGINT 10384
+2024-05-02 13:33:53 - SIGINT to 10384 failed - Killing as fallback
+2024-05-02 13:33:53 - Stopping process 9196
+2024-05-02 13:33:53 - Send SIGINT 9196
+2024-05-02 13:33:53 - SIGINT to 9196 failed - Killing as fallback
+2024-05-02 13:33:53 - Stopping process 10284
+2024-05-02 13:33:53 - Send SIGINT 10284
+2024-05-02 13:33:53 - SIGINT to 10284 failed - Killing as fallback
+2024-05-02 13:33:53 - Finished mapstatusclient.exe
+2024-05-02 13:33:55 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\admin\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file C:\Apps\map-monitor-client\runnables\run-client.js --scriptoptions= --log "MAP Status Client wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-05-02 13:33:55 - Started 11756
+2024-05-02 13:48:40 - Stopping mapstatusclient.exe
+2024-05-02 13:48:40 - ProcessKill 11756
+2024-05-02 13:48:40 - Found child process: 5304 Name: conhost.exe
+2024-05-02 13:48:40 - Found child process: 10816 Name: node.exe
+2024-05-02 13:48:40 - Stopping process 5304
+2024-05-02 13:48:40 - Send SIGINT 5304
+2024-05-02 13:48:40 - SIGINT to 5304 failed - Killing as fallback
+2024-05-02 13:48:40 - Stopping process 10816
+2024-05-02 13:48:40 - Send SIGINT 10816
+2024-05-02 13:48:40 - SIGINT to 10816 failed - Killing as fallback
+2024-05-02 13:48:40 - Stopping process 11756
+2024-05-02 13:48:40 - Send SIGINT 11756
+2024-05-02 13:48:40 - SIGINT to 11756 failed - Killing as fallback
+2024-05-02 13:48:40 - Finished mapstatusclient.exe
+2024-05-02 13:48:41 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\admin\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file C:\Apps\map-monitor-client\runnables\run-client.js --scriptoptions= --log "MAP Status Client wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-05-02 13:48:41 - Started 9784
+2024-05-02 13:49:50 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\admin\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file C:\Apps\map-monitor-client\runnables\run-client.js --scriptoptions= --log "MAP Status Client wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-05-02 13:49:50 - Started 3252
+2024-05-02 13:53:34 - Stopping mapstatusclient.exe
+2024-05-02 13:53:34 - ProcessKill 3252
+2024-05-02 13:53:34 - Found child process: 6548 Name: conhost.exe
+2024-05-02 13:53:34 - Found child process: 6064 Name: node.exe
+2024-05-02 13:53:35 - Stopping process 6548
+2024-05-02 13:53:35 - Send SIGINT 6548
+2024-05-02 13:53:35 - SIGINT to 6548 failed - Killing as fallback
+2024-05-02 13:53:35 - Stopping process 6064
+2024-05-02 13:53:35 - Send SIGINT 6064
+2024-05-02 13:53:35 - SIGINT to 6064 failed - Killing as fallback
+2024-05-02 13:53:35 - Stopping process 3252
+2024-05-02 13:53:35 - Send SIGINT 3252
+2024-05-02 13:53:35 - SIGINT to 3252 failed - Killing as fallback
+2024-05-02 13:53:35 - Finished mapstatusclient.exe
+2024-05-02 19:40:10 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\admin\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file C:\Apps\map-monitor-client\runnables\run-client.js --scriptoptions= --log "MAP Status Client wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-05-02 19:40:10 - Started 1252
+2024-05-02 20:32:32 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\admin\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file C:\Apps\map-monitor-client\runnables\run-client.js --scriptoptions= --log "MAP Status Client wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-05-02 20:32:32 - Started 2828
+2024-05-03 02:00:03 - Stopping mapstatusclient.exe
+2024-05-03 02:00:03 - ProcessKill 2828
+2024-05-03 02:00:03 - Shutdown exception
+Message:Class not registered
+
+Stacktrace:   at System.Runtime.InteropServices.Marshal.ThrowExceptionForHRInternal(Int32 errorCode, IntPtr errorInfo)
+   at System.Management.ManagementScope.InitializeGuts(Object o)
+   at System.Management.ManagementScope.Initialize()
+   at System.Management.ManagementObjectSearcher.Initialize()
+   at System.Management.ManagementObjectSearcher.Get()
+   at winsw.WrapperService.GetChildPids(Int32 pid)
+   at winsw.WrapperService.StopProcessAndChildren(Int32 pid)
+   at winsw.WrapperService.StopIt()
+   at winsw.WrapperService.OnShutdown()
+2024-05-03 02:00:24 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\admin\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file C:\Apps\map-monitor-client\runnables\run-client.js --scriptoptions= --log "MAP Status Client wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-05-03 02:00:24 - Started 6444
+2024-05-03 02:02:08 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\admin\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file C:\Apps\map-monitor-client\runnables\run-client.js --scriptoptions= --log "MAP Status Client wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-05-03 02:02:08 - Started 5416
+2024-05-04 02:00:20 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\admin\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file C:\Apps\map-monitor-client\runnables\run-client.js --scriptoptions= --log "MAP Status Client wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-05-04 02:00:20 - Started 6712
+2024-05-04 02:02:04 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\admin\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file C:\Apps\map-monitor-client\runnables\run-client.js --scriptoptions= --log "MAP Status Client wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-05-04 02:02:04 - Started 9320
+2024-05-05 02:00:20 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\admin\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file C:\Apps\map-monitor-client\runnables\run-client.js --scriptoptions= --log "MAP Status Client wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-05-05 02:00:20 - Started 6620
+2024-05-05 02:02:04 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\admin\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file C:\Apps\map-monitor-client\runnables\run-client.js --scriptoptions= --log "MAP Status Client wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-05-05 02:02:04 - Started 9692
+2024-05-06 02:00:20 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\admin\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file C:\Apps\map-monitor-client\runnables\run-client.js --scriptoptions= --log "MAP Status Client wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-05-06 02:00:20 - Started 6304
+2024-05-06 02:02:04 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\admin\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file C:\Apps\map-monitor-client\runnables\run-client.js --scriptoptions= --log "MAP Status Client wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-05-06 02:02:04 - Started 9864
+2024-05-06 15:08:13 - Stopping mapstatusclient.exe
+2024-05-06 15:08:13 - ProcessKill 9864
+2024-05-06 15:08:13 - Found child process: 12660 Name: conhost.exe
+2024-05-06 15:08:13 - Found child process: 3192 Name: node.exe
+2024-05-06 15:08:13 - Stopping process 12660
+2024-05-06 15:08:13 - Send SIGINT 12660
+2024-05-06 15:08:13 - SIGINT to 12660 failed - Killing as fallback
+2024-05-06 15:08:13 - Stopping process 3192
+2024-05-06 15:08:13 - Send SIGINT 3192
+2024-05-06 15:08:13 - SIGINT to 3192 failed - Killing as fallback
+2024-05-06 15:08:13 - Stopping process 9864
+2024-05-06 15:08:13 - Send SIGINT 9864
+2024-05-06 15:08:13 - SIGINT to 9864 failed - Killing as fallback
+2024-05-06 15:08:13 - Finished mapstatusclient.exe
