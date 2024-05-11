@@ -2,6 +2,7 @@
   "dependencies": {
     "chokidar": "^3.6.0",
     "domhandler": "^5.0.3",
+    "dotenv": "^16.4.5",
     "htmlparser2": "^9.1.0",
     "mongodb": "6.4",
     "node-cron": "^3.0.3",
@@ -15,6 +16,6 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "author": "Arthur Levitsky",
+  "license": "UNLICENSED"
 }

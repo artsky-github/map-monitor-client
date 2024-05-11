@@ -173,7 +173,7 @@ const readStreamAndParse = (cuppsfsFileName, resetFound) => {
         countPrints(dom, false) - MapStatus.btCountIgnore > 200
           ? 200
           : countPrints(dom, false) - MapStatus.btCountIgnore;
-      MapStatus.btRemaining = 200 - MapStatus.btCountToday;
+      MapStatus.btRemaining = 200 - (MapStatus.btCountToday + MapStatus.btCountParSum);
       MapStatus.btLoadPath = loadPathStatus(MapStatus.btRemaining, false);
       MapStatus.bpCountToday =
         countPrints(dom, true) - MapStatus.bpCountIgnore > 10000
@@ -197,7 +197,7 @@ const readStreamAndParse = (cuppsfsFileName, resetFound) => {
       MapStatus.bpLoadPathB = loadPathStatus(MapStatus.bpRemainingB, true);
       MapStatus.btStatus = recentBtStatus.attribs;
       MapStatus.bpStatus = recentBpStatus.attribs;
-      MapStatus.lastUpdated = new Date().toLocaleString();
+      MapStatus.lastUpdated = new Date().toLocaleString("en-US");
       MapStatus.btTimestamp =
         getParentTag("cupps", recentBtStatus).attribs.timeStamp ?? "UNKNOWN";
       MapStatus.bpTimestamp =
