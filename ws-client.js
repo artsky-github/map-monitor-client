@@ -1,7 +1,8 @@
 const WebSocket = require("ws");
 const cacher = require("./cache");
+require("dotenv").config({ path: "../.env"});
 
-const serverURI = "ws://10.220.20.189:4040";
+const serverURI = `ws://${process.env.WSS_IP}:${process.env.WSS_PORT}`;
 
 let wsClientPromise = createConnectPromise(); 
 
