@@ -5,7 +5,6 @@ const path = require("path");
 require("dotenv").config({ path: "../.env"});
 
 
-console.log(process.env.LOG_PATH);
 const cuppsDate = new Date();
 // Dependent on the correct time set on the individual CUPPS computer to access the right file.
 const cuppsfsFileName = path.join(process.env.LOG_PATH, `CUPPSFS${cuppsDate

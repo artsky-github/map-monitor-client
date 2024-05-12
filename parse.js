@@ -3,7 +3,7 @@ const fs = require("fs");
 const os = require("os");
 const scheduler = require("./schedule");
 const cacher = require("./cache");
-const sender = require("./ws-client");
+const sender = require("./wss-client");
 const extractor = require("./extract");
 
 // IFEE object that contains all the possible successful AEA print status messages. Differing due to multiple printing applications used my multiple airlines.
