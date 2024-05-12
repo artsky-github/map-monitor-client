@@ -2,7 +2,7 @@ const WebSocket = require("ws");
 const cacher = require("./cache");
 require("dotenv").config({ path: "../.env"});
 
-const serverURI = `ws://${process.env.WSS_IP}:${process.env.WSS_PORT}`;
+const serverURI = `wss://${process.env.WSS_IP}:${process.env.WSS_PORT}`;
 
 let wsClientPromise = createConnectPromise(); 
 
@@ -13,7 +13,7 @@ function createConnectPromise() {
 }
 
 function attemptConnectPromise(resolve) {
-  const wsClient = new WebSocket(serverURI);
+  const wsClient = new WebSocket(serverURI, {rejectUnauthorized: false});
   wsClient.on("open", () => {
     console.log(`WS Client Successfully Connected to WS Server on: ${serverURI}`);
     resolve(wsClient);
