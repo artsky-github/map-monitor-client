@@ -1,5 +1,5 @@
 @echo off
 call npm install
-cd service
 call npm link node-windows
+cd service
 node install-w-service.js
